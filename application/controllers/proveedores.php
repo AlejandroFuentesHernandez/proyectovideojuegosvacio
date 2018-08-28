@@ -49,4 +49,12 @@ class Proveedores extends CI_Controller
 					$this->error();
 				}
         }
+
+        public function mostrar_proveedores()
+        {
+        	$proveedores= $this->proveedores->mostrar(); 
+        	$data['dproveedores']=$proveedores; 
+        	$this->load->view('mostrarproveedores_view', $data); 
+
+        }
 }

@@ -16,4 +16,10 @@ class Proveedores_model extends CI_Model
 		}
 
 	}
+
+	public function mostrar(){
+		$proveedores=$this->db->get('tab_proveedores'); 
+		return $proveedores->result();
+
+	}
 }
