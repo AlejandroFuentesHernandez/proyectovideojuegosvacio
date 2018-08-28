@@ -70,18 +70,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
 
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+	<form id='form' action="" method="POST">
+			
+			<div><label>Numero de empleado:</label><input type="text" id="numero_empleado" name="numero_empleado"></div><br>
+			<div><label>Nombre del empleado:</label><input type="text"  id="nombre_empleado" name="nombre_empleado"></div><br>
+			<div><label>DUI del empleado:</label><input type="text" id="DUI_empleado" name="DUI_empleado"></div><br>
+			<div><label>Direccion del empleado:</label><input type="text" id="direccion_empleado" name="direccion_empleado"></div><br>
+			<div><label>Fecha de nacimiento:</label><input type="date" id="fecha_nacimiento" name="fecha_nacimiento"></div><br>
+			<div><label>Cargo del empleado:</label><input type="text" id="cargo_empleado" name="cargo_empleado"></div><br>
+			<div><label>Estado_usuario</label><input type="text" id="estado_usuario" name="estado_usuario"></div><br>
+			<div><input type="submit"  id="ingresar" value="Ingresar"></div>
 
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-	</div>
-
+		</form>
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
