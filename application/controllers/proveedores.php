@@ -15,13 +15,16 @@ class Proveedores extends CI_Controller
 
     public function index(){
     	//$this->load
-    	$mensaje['insertar']="";
-    	$this->load->view('ingresarproveedores_view',$mensaje);
+    	$proveedores= $this->proveedores->mostrar();
+    	//$data['insertar']=""; 
+    	$data['dproveedores']=$proveedores;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
+    	$this->load->view('ingresarproveedores_view', $data);
     }
 
         public function Registrar_proveedores()
         {  //Obteniendo datos del formulario, los cuales los almacenaremos en una variable 
 
+        	//$id_proveedores=$this->input->post('id_proveedor');
         	$nombre_empresa=$this->input->post('nombre_empresa');
         	$tipo_empresa=$this->input->post('tipo_empresa');
         	$representante_empresa=$this->input->post('representante_empresa');
@@ -30,7 +33,8 @@ class Proveedores extends CI_Controller
 
         	//mandamos los datos por medio de un array al modelo, cada elemento corresponde con una columna en la tabla Proveedores de la Base de datos, esto quiere decir que lo que esta al lado izquierdo serian dichas columnas y tendran el valor correspondiente de la informacion que se mande del formulario.
 				$data=array
-				(
+				(	
+					//'id_proveedores'=>$id_proveedores,
 					'nombre_empresa'=>$nombre_empresa,
 					'tipo_empresa'=>$tipo_empresa,
 					'representante_empresa'=>$representante_empresa,
@@ -40,10 +44,18 @@ class Proveedores extends CI_Controller
 
 				//mandamos a llamar un metodo de nuestro modelo, donde mandaremos como parametro el array. 
 				$registro=$this->proveedores->insertar($data); 
-				$mensaje['insertar']="Registro exitoso";
+				$mensaje['insertar']="Registro exitoso"; //NO OLVIDAR BORRAR MENSAJE!!!!! xD 
               
 				if($registro==1){
+					$ruta=base_url('Proveedores');
+
+					echo "<script>
+							alert('Proveedor guardado satifactoriamente.');
+							window.location= '{$ruta}'; 
+							</script>";
 					$this->load->view('ingresarproveedores_view', $mensaje);
+					
+
 				}
 				else{
 					$this->error();
@@ -58,3 +70,4 @@ class Proveedores extends CI_Controller
 
         }
 }
+
