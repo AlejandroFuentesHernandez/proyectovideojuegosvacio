@@ -31,7 +31,7 @@
 			<div><label>Fecha de nacimiento:</label><input type="date" id="fecha_nacimiento" name="fecha_nacimiento"></div><br>
 			<div><label>Cargo del empleado:</label><input type="text" id="cargo_empleado" name="cargo_empleado"></div><br>
 			<div><label>Id_tienda:</label><input type="text" id="id_empleados" name="id_tienda"></div><br>
-			<div><label>Estado_usuario</label><input type="text" id="estado_usuario" name="estado_usuario"><select><option value="habilitado"></option><option value="inhabilitado"></option></select></div><br>
+			<div><label>Estado_usuario</label><input type="text" id="estado_usuario" name="estado_empleado"><select><option value="habilitado"></option><option value="inhabilitado"></option></select></div><br>
 			<div><input type="submit"  id="ingresar" value="Ingresar"></div>
 
 		</form>

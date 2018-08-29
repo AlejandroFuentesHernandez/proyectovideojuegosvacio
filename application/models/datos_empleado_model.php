@@ -13,7 +13,7 @@ class Datos_empleado_model extends CI_Model
 	public function getdataempleados()
 	{
 		//nombre de la tabla
-		$usuario = $this->db-get('tab_datos_empleados');
+		$usuario = $this->db->get('tab_datos_empleados');
 		return $usuario->result();
 	}
 	public function insertar_empleados($data)
@@ -25,8 +25,8 @@ class Datos_empleado_model extends CI_Model
 		$this->db->set('direccion_empleado',$data['direccion_empleado']);
 		$this->db->set('fecha_nacimiento',$data['fecha_nacimiento']);
 		$this->db->set('cargo_empleado',$data['cargo_empleado']);
-		$this->db->set('id_tienda'),$data['id_tienda'];
-		$this->db->set('estado_usuario',$data['estado_usuario']);
+		$this->db->set('id_tienda',$data['id_tienda']);
+		$this->db->set('estado_empleado',$data['estado_empleado']);
 		$this->db->insert('tab_datos_empleados');
 
 
@@ -34,7 +34,7 @@ class Datos_empleado_model extends CI_Model
 	public function deshabilitar_empleados($numero_empleado,$estado_usuario)
 	{
 		//eliminar empleados es deshabilitar
-		$this->db->set('estado_usuario',$data['estado_usuario']);
+		$this->db->set('estado_empleado',$data['estado_empleado']);
 		$this->db->where('numero_empleado',$numero_empleado);
 		$this->db->update('tab_datos_empleados');
 
@@ -47,10 +47,10 @@ class Datos_empleado_model extends CI_Model
 		//$this->db->delete('tab_datos_empleados');
 	}*/
 
-	public function obtener_usuarios($numero_empleado)
+	public function obtener_empleados($numero_empleado)
 	{
 		//obtener usuarios en base numero empleado
-		$this->db->select('numero_empleado','nombre_empleado','DUI_empleado','direccion_empleado','fecha_nacimiento','cargo_empleado','estado_usuario');
+		$this->db->select('numero_empleado','nombre_empleado','DUI_empleado','direccion_empleado','fecha_nacimiento','cargo_empleado','estado_empleado');
 		$this->db->from('tab_datos_empleados');
 		//iria id?
 		$this->db->where('$numero_empleado'.$numero_empleado);
