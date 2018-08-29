@@ -31,7 +31,7 @@
         <!-- Columna 2-->
          <div class="row"> 
             <!--PARTE 2-->
-             <div class="col-md-4"> 
+             <div class="col-md-4" > 
                 <div class="panel panel-defaul"> 
                     <div class="panel-heading">Agregar Proveedores</div>
                     <div class="panel-body">
@@ -73,6 +73,11 @@
                                 <a href="<?php echo site_url();?>Proveedores" class="btn btn-primary">Nuevo proveedor</a>
                                 <!-- Boton-->
                                 <button type="submit" class="btn btn-success">Guardar proveedor</button>
+                                <br>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> Visualizar Proveedores </button>
                                
                             </div>
                          </form>
@@ -119,27 +124,21 @@
             
             </div> -->
 
-               <!-- Button trigger modal -->
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> <!--MODIFICAR MODAL!!-->
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h1 class="modal-title" id="exampleModalLongTitle">Proveedores</h1>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="col-md-8">
-                <div class="panel panel-defaul"> 
-                    <div class="panel-heading">Proveedores Agregadores </div>
-                    <div class="panel-body">
+        
+                
+                   
                        <!-- TABLA PARA MOSTRAR DATOS-->
                        <table border="solid">
                          <thead>
@@ -170,10 +169,10 @@
                       </table>
                       
 
-                    </div>
-                </div>
+             
+                
             
-            </div> 
+            
        
       </div>
       <div class="modal-footer">
@@ -184,7 +183,7 @@
   </div>
 </div>
 
-
+            
         </div>
     </disv> <!--  fin class container-->
  
