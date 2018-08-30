@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ingresar</title>
+	<meta charset="utf-8">
+	<script src="<?php echo base_url();?>/js/jquery.min.js"></script>
+</head>
+<body>
+	
+<div  id="ingrempleado"  name="ingrempleado" align="">
+
+<button type="button" id="ingresarusuario" onclick="">Asignar usuario</button>
+
+</div>
+<div id="ingreusuario" name="ingreusuario" align="">
+<form id='form' action="jquery.min.js" method="POST">
+			
+			<div><label>Id usuario:</label><input type="text" id="id_usuarios" name="id_usuarios"></div><br>
+			<div><label>Nombre usuario:</label><input type="text"  id="nombre_usuarios" name="nombre_usuarios"></div><br>
+			<div><label>Contraseña:</label><input type="text" id="contraseña_usuario" name="contraseña_usuario"></div><br>
+			<div><label>Rol usuario:</label><input type="text" id="rol_usuario" name="rol_usuario"></div><br>
+			<div><label>Id del empleado:</label><input type="text" id="id_empleado" name="id_empleado"></div><br>
+			<div><label>Estado_usuario</label><input type="text" id="estado_usuario" name="estado_usuario"><select><option value="habilitado"></option><option value="inhabilitado"></option></select></div><br>
+			<div><input type="submit"  id="ingresar" value="Ingresar"></div>
+
+		</form>
+</div>
+</body>
+<script src='<?php echo base_url()?>/js/Script_ingusuempl.js'></script>
+</html>
