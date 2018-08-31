@@ -41,7 +41,7 @@
 
 <body style="padding: 20px">
    <fieldset>
-            <form id="gracia" action="<?php echo site_url(); ?>/Local/RegistroCompra" method="POST"  >
+            <form id="gracia" action="<?php echo site_url(); ?>Compra/RegistroCompra" method="POST"  >
              <div align="center">
                 <h1>Registro de compras</h1>
              </div>
