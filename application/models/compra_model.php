@@ -5,7 +5,7 @@ function __construct()
     $this->load->database();
 }
 //Creamos la insercion de datos a una tabla
-class Local_model extends CI_Model{ //Inicio de Insercion
+class Compra_model extends CI_Model{ //Inicio de Insercion
     
     public function realizarCompra($data)
     {
