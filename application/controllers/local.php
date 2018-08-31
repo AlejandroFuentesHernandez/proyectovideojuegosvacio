@@ -37,7 +37,7 @@ class Local extends CI_Controller {
 		//Utilizamos metodo del modelo//
 		$resultado=$this->LM->realizarCompra($data);
 		if ($resultado==1) {
-            $this->load->view('mensaje');
+            $this->load->view('mensaje_compra');
 		}
 		else
 		{
