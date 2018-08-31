@@ -24,7 +24,7 @@ class Compra extends CI_Controller {
 		//---------------------------------------------
 
         //Llamamos al modelo//
-		$this->load->model('Local_model', 'LM', true);
+		$this->load->model('compra_model', 'CM', true);
 		$data=array(
 			'codigo_juego'=>$codigo,
 			'nombre_juego'=>$juego,
@@ -35,7 +35,7 @@ class Compra extends CI_Controller {
 		);
 
 		//Utilizamos metodo del modelo//
-		$resultado=$this->LM->realizarCompra($data);
+		$resultado=$this->CM->realizarCompra($data);
 		if ($resultado==1) {
             $this->load->view('mensaje_compra');
 		}
