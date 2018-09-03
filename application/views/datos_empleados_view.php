@@ -57,61 +57,62 @@
 								<!-- primer campo-->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Numero de empleado:</label>
-				<input type="text" id="numero_empleado" name="numero_empleado" class="form-control"></div><br>
+				<input type="text" id="numero_empleado" name="numero_empleado" class="form-control">
+								</div>
 								</div>
 								<!-- segundo campo-->
 								<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Nombre del empleado:</label>
-								<input type="text"  id="nombre_empleado" name="nombre_empleado" class="form-control"></div>
+								<input type="text"  id="nombre_empleado" name="nombre_empleado" class="form-control">
+								</div>
 								<!--tercer campo-->
 								<div class="col-md-12 form-group input-group" >
-						<label for="" class="input-group-addon">DUI del empleado:</label>
-						<input type="text" id="DUI_empleado" name="DUI_empleado" class="form-control"></div>
+									<label for="" class="input-group-addon">DUI del empleado:</label>
+									<input type="text" id="DUI_empleado" name="DUI_empleado" class="form-control">
+								</div>
 						<!--cuarto campo-->
 						<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Direccion del empleado:</label>
-								<input type="text" id="direccion_empleado" name="direccion_empleado" class="form-control"></div>
+								<input type="text" id="direccion_empleado" name="direccion_empleado" class="form-control">
+						</div>
 								<!--quinto campo-->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Fecha de nacimiento:</label>
-									<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control"></div>
+									<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control">
+								</div>
 									<!--sexto campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Cargo del empleado:</label>
-										<input type="text" id="cargo_empleado" name="cargo_empleado" class="form-control"></div>
+										<input type="text" id="cargo_empleado" name="cargo_empleado" class="form-control">
+									</div>
 										<!-- septimo campo-->
 									<div class="col-md-12 form-group input-group">
-											<label>Id_tienda:</label>
-											<input type="text" id="id_empleados" name="id_tienda" class="form-control"></div><br>
-												<div>
+											<label for="" class="input-group-addon">Id_tienda:</label>
+											<input type="text" id="id_empleados" name="id_tienda" class="form-control">
+									</div>
+													<!--octavo campo -->
+									<div class="col-md-12 form-group input-group">
+										<label for="" class="input-group-addon">Estado_usuario</label>
+												<input type="text" id="estado_usuario" name="estado_empleado" class="form-control">
+												<select class="form-control"><option value="habilitado"></option><option value="inhabilitado"></option></select>
+									</div><br>
+									</div>
+									<!--boton--->
+									<div class="col-md-12 text-center">
+										<!-- nuevo-->
+										<a href="<?php echo site_url();?>" class="btn btn-prymary">Nuevo empleado
+										</a>
+										<button type="submit" class="btn btn-success">Ingresar empleado</button>
+									</div>
+									<div class="col-md-12 text-center">
+									<!-- buton trigger modal -->
+									<button type="button" class="btn btn-prymary" data-toggle="modal" data-target="#exampleModalLong">Visualizar Proveedores</button>
+								</div>
 							</form>
+						</div><!--fin del cuerpo-->		
 						</div>
-					</div>
-				</div>
-			</div>
-
-	
-		
-			
-				
-			
-				
-				<<br>
-					
-							
-									
-										
-											
-												<label>Estado_usuario</label>
-												<input type="text" id="estado_usuario" name="estado_empleado">
-												<select><option value="habilitado"></option><option value="inhabilitado"></option></select></div><br>
-													<div><input type="submit"  id="ingresar" value="Ingresar"></div>
-
-		</form>
-	
-
-	
-		
-</div>
+						</div>
+						</div><!-- fin class container--->
+						
 </body>
 </html>
