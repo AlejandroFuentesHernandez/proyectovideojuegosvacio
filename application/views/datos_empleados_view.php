@@ -44,7 +44,7 @@
 				<div class="row" style="padding-left: 400px;">
 					<!--parte 2 -->
 					<div class="col-md-6">
-						<div class="panel panel-default"></div>
+						<div class="panel panel-default">
 						<!--<div class="panel-heading">Agregar </div>-->
 						<!--cuerpo-->
 						<div class="panel-body">
@@ -58,7 +58,6 @@
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Numero de empleado:</label>
 				<input type="text" id="numero_empleado" name="numero_empleado" class="form-control">
-								</div>
 								</div>
 								<!-- segundo campo-->
 								<div class="col-md-12 form-group input-group">
@@ -95,13 +94,13 @@
 										<label for="" class="input-group-addon">Estado_usuario</label>
 												<input type="text" id="estado_usuario" name="estado_empleado" class="form-control">
 												<select class="form-control"><option value="habilitado"></option><option value="inhabilitado"></option></select>
-									</div><br>
 									</div>
-									<!--boton--->
+									
 									<div class="col-md-12 text-center">
 										<!-- nuevo-->
 										<a href="<?php echo site_url();?>" class="btn btn-prymary">Nuevo empleado
 										</a>
+										<!--boton--->
 										<button type="submit" class="btn btn-success">Ingresar empleado</button>
 									</div>
 									<div class="col-md-12 text-center">
@@ -113,6 +112,6 @@
 						</div>
 						</div>
 						</div><!-- fin class container--->
-						
+
 </body>
 </html>
