@@ -18,7 +18,8 @@
 <head>
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/style.css">
+	<script src="/css/Script_datos_empleados.css"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/datos_empleados.css">
 </head>
 <body style="padding: 20px">
 	
