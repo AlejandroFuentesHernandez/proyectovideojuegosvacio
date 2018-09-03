@@ -23,7 +23,7 @@
 <body style="padding: 40px">
 	<h1>Ingresar Empleado</h1>
 	<div align="center">
-		<form id='form' action="<?php echo site_url();?>/models/datos/empleados-model" method="POST">
+		<form id='form' action="<?php echo site_url();?>/controller/datos_empleados_controller" method="POST">
 			
 			<div><label>Numero de empleado:</label><input type="text" id="numero_empleado" name="numero_empleado"></div><br>
 			<div><label>Nombre del empleado:</label><input type="text"  id="nombre_empleado" name="nombre_empleado"></div><br>
