@@ -18,11 +18,12 @@
 <head>
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/css/style.css">
 </head>
-<body>
+<body style="padding: 40px">
 	<h1>Ingresar Empleado</h1>
 	<div align="center">
-		<form id='form' action="" method="POST">
+		<form id='form' action="<?php echo site_url();?>/models/datos/empleados-model" method="POST">
 			
 			<div><label>Numero de empleado:</label><input type="text" id="numero_empleado" name="numero_empleado"></div><br>
 			<div><label>Nombre del empleado:</label><input type="text"  id="nombre_empleado" name="nombre_empleado"></div><br>

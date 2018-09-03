@@ -7,6 +7,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //la clase inicia con mayuscula 
 
  */
+
+function__construct()
+{
+	$this->load->database();
+}
+
+
 class Datos_empleado_model extends CI_Model
 {
 	//los modelo no necesitan un constructor
