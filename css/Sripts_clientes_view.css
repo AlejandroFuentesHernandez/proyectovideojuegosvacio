@@ -1,0 +1,27 @@
+
+body{
+	font-family:Georgia,
+	"Times New Roman",
+	Times,serif;
+	color:purple;
+	background-color:lightblue;
+}
+input{
+	width:20%;
+	padding:12px 20px;
+	margin:8px;
+	display:inline-block;
+	border:1px solid #ccc;
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+button{
+	width:10px;
+	background-color: gray;
+	color:white;
+	padding:14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius:10px;
+	cursor:pointer;
+}

@@ -3,6 +3,17 @@ define('BASEPATH') OR exit('No direct script access allowed');
 
 class Datos_empleados extends CI_Controller
 {
+		public function error()
+		{
+			$this->load->helper('url');
+			$this->load->view('error');
+		}
+
+
+
+
+
+
 	public __construt()
 	{
 		parent::construt();
@@ -14,6 +25,8 @@ class Datos_empleados extends CI_Controller
 	public function inicio_empleados()
 	{
 	//mostrar datos en una vista
+		 $this->load->helper('url');//index
+		 $this->load->view('datos_empleado_view');//index
 		 $usuarios = $this->datos_empleado_model->getdataempleados();
 		$data['usuarios']=$usuarios;
 		$this->load->view('mostrar_datos_empleados',$data);
