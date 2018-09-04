@@ -48,7 +48,7 @@ include 'url_include.php'
 								<!-- quinto campo -->
 								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Id del empleado:</label><input type="text" id="id_empleado" name="id_empleado" class="form-control"></div>
 								<!-- sexto campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Estado_usuario</label><input type="text" id="estado_usuario" name="estado_usuario" class="form-control"><select class="form-control"><option value="habilitado"></option><option value="inhabilitado"></option></select></div>
+								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Estado usuario</label><select name="estado_usuario"><option value="habilitado"></option><option value="inhabilitado"></option></select></div>
 					
 								<div class="col-md-12 text-center"><a href="<? echo site_url();?>" class="btn btn-primary">nuevo usuario</a>
 									<!-- boton -->
