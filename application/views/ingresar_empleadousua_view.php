@@ -1,17 +1,19 @@
 <?php
 /*
-//id_empleados int
+//id_empleado int 						//id_usuarios		int
 //numero_empleado varchar
-//nombre_empleado varchar
-//DUI_empleados		varchar
-//direccion_empleado		varchar
-//fecha_nacimiento date
+//nombre_empleado varchar				//nombre_usuarios		varchar
+//DUI_empleados		varchar				//contraseña_usuario	varchar
+//direccion_empleado		varchar		//rol_usuario		varchar
+//fecha_nacimiento date(format)			//estado_usuario (enum varchar)
 //cargo_empleado	varchar
 //telefono_ empleado varchar
-//id_ tienda varchar
 //estado_usuario (enum varchar)
 
+
+//id_ tienda varchar
 */
+
 include 'url_include.php';
 
 ?>
@@ -21,6 +23,7 @@ include 'url_include.php';
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
 	<script src="js/Scripts_datose.js"></script>
+	<!--<script src="js/Script_ingusuempl.js"></script>-->
 </head>
 <body>
 		<div class="container-fluid" style="padding-right: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px;">
@@ -96,6 +99,10 @@ include 'url_include.php';
 									<!-- buton trigger modal -->
 									<button type="button" class="btn btn-prymary" data-toggle="modal" data-target="#exampleModalLong">Visualizar Proveedores</button>
 								</div>
+								<div class="col-md-12 text-center">
+									<!-- -->
+									<button type="button" class="btn btn-prymary " data-toggle="modal" data-target="#ingresarModalLong">Ingresar usuario</button>
+								</div>
 							</form>
 						</div><!--fin del cuerpo-->		
 						</div>
@@ -158,6 +165,23 @@ include 'url_include.php';
 					<!-- <button type="button" class="btn btn-prymary">Save changes</button>-->
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<div class="modal fade" id="ingresarModalLong" tabindex="-1" role="dialog" aria-labelledy="ingresarModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title" id="ingresarModalLongTitle">Tabla usuario</h1>
+					<button type="button" class="close" data-dismiss="modal" aria-label="close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					
+				</div>
+				
+			</div>
+		</div>
 		</div>
 	</div>
 </div>
