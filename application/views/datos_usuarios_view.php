@@ -7,7 +7,7 @@
 //id_empleado		int
 //estado_usuario (enum varchar)	
 */
-include 'url_include.php'
+include 'url_include.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@ include 'url_include.php'
 	<script src="js/Scripts_datosu"></script>
 </head>
 <body>
-		<div class="container-fluid" style="padding-right: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px;">
+		<div class="container-fluid" style="padding-right: 50px; padding-left: 50px; padding-top: 50px; padding-bottom: 50px;">
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<h1>Ingresar usuarios</h1>
@@ -31,7 +31,7 @@ include 'url_include.php'
 						<!--<div class="panel-heading" -->
 						<!-- cuerpo -->
 						<div class="panel-body">
-							<form id="formus" action="<?php echo site_url();?>/datos_usuario_controller/agregar_usuario" method="POST">
+							<form id="formus" action="<?php echo site_url();?>/datos_usuario_controller/registrar_usuario" method="POST">
 								<!--
 									<div class="col-md-12 form-group input-group">
 										<input type="text" id="idprov" name="id_" class="form-control">
@@ -50,7 +50,7 @@ include 'url_include.php'
 								<!-- sexto campo -->
 								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Estado usuario</label><select name="estado_usuario"><option value="habilitado"></option><option value="inhabilitado"></option></select></div>
 					
-								<div class="col-md-12 text-center"><a href="<? echo site_url();?>" class="btn btn-primary">nuevo usuario</a>
+								<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_usuario_controller" class="btn btn-primary">nuevo usuario</a>
 									<!-- boton -->
 									<button type="submit"  id="ingresar"  class="btn btn-success">Ingresar usuario</button>
 								</div>

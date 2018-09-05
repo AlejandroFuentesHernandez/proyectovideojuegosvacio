@@ -26,7 +26,7 @@ include 'url_include.php';
 	<!--<script src="js/Script_ingusuempl.js"></script>-->
 </head>
 <body>
-		<div class="container-fluid" style="padding-right: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px;">
+		<div class="container-fluid" style="padding-right: 50px; padding-left: 50px; padding-top: 50px; padding-bottom: 50px;">
 			<!--columna1-->
 				<div class="row">
 					<div class="col-md-12 text-center">
