@@ -26,8 +26,10 @@ class Proveedores extends CI_Controller
 
         	//$id_proveedores=$this->input->post('id_proveedor');
         	$nombre_empresa=$this->input->post('nombre_empresa');
-        	$tipo_empresa=$this->input->post('tipo_empresa');
+        	$tipo_persona=$this->input->post('tipo_persona');
         	$representante_empresa=$this->input->post('representante_empresa');
+            $direccion_proveedores=$this->input->post('direccion_proveedores');
+            $correo_proveedores=$this->input->post('correo_proveedores'); 
         	$contacto_proveedores=$this->input->post('contacto_proveedores');
         	$estado_proveedores=$this->input->post('estado_proveedores'); 
 
@@ -36,8 +38,10 @@ class Proveedores extends CI_Controller
 				(	
 					//'id_proveedores'=>$id_proveedores,
 					'nombre_empresa'=>$nombre_empresa,
-					'tipo_empresa'=>$tipo_empresa,
+					'tipo_persona'=>$tipo_persona,
 					'representante_empresa'=>$representante_empresa,
+                    'direccion_proveedores'=>$direccion_proveedores,
+                    'correo_proveedores'=>$correo_proveedores,
 					'contacto_proveedores'=>$contacto_proveedores, 
 					'estado_provedores'=>$estado_proveedores, 
 				); 

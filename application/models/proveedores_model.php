@@ -5,7 +5,7 @@ class Proveedores_model extends CI_Model
 {
 	public function insertar($data){
 
-	$resultado=$this->db->insert('tab_proveedores', $data); // Que es lo mismo que: INSERT INTO tab_proveedroes (nombre_empresa, tipo_empresa, representante_empresa,contacto_proveedores,estado_provedores ) VALUES ('$nombre_empresa', '$tipo_empresa', '$representante_empresa', '$contacto_proveedores', '$estado_provedores') 
+	$resultado=$this->db->insert('tab_proveedores', $data); // Que es lo mismo que: INSERT INTO tab_proveedroes (nombre_empresa, tipo_persona, representante_empresa,contacto_proveedores,estado_provedores ) VALUES ('$nombre_empresa', '$tipo_empresa', '$representante_empresa', '$contacto_proveedores', '$estado_provedores') 
 		if($resultado==true)
 		{
 			return 1;

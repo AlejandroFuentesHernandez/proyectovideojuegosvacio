@@ -20,14 +20,14 @@
 </head>
 <body>
     <div class="container-fluid">
-      <!--columna 1-->
+      <!--Fila 1-->
         <div class="row">
             <div class="col-md-12 text-center">
                 <h1>Registro de Proveedores</h1>
             </div>
         </div>
-         <!-- Columna 2-->
-        <div class="row" style=" padding-left: 435px;" > 
+         <!-- Fila 2-->
+        <div class="row" style=" padding-left: 435px;"> 
           <!--PARTE 2-->
           <div class="col-md-6">
              <div class="panel panel-primary"> 
@@ -48,23 +48,41 @@
                    </div>
                     <!-- Segundo campo-->
                     <div class="col-md-12 form-group input-group">
-                      <label for="" class="input-group-addon"> Tipo de empresa:</label>
-                      <input type="text" id="tipo" name="tipo_empresa" class="form-control">
-                    </div>
+                      <label for="" class="input-group-addon"> Tipo de persona:</label>
+                        <select class="form-control" id="tipo" name="tipo_persona">
+                          <option value=""></option>
+                          <option value="Natural">Natural</option>
+                          <option value="Juridica">Juridica</option>
+                        </select>
+                    </div>                              
                     <!-- Tercero campo-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Representante:</label>
                       <input type="text" id="repre" name="representante_empresa" class="form-control">
                     </div>
-                    <!-- Cuarto campo-->
-                      <div class="col-md-12 form-group input-group">
-                        <label for="" class="input-group-addon">Contacto:</label>
-                        <input type="text" id="contacto" name="contacto_proveedores" class="form-control">
-                      </div>
+                     <!-- Cuarto campo-->
+                    <div class="col-md-12 form-group input-group">
+                      <label for="" class="input-group-addon"> Direccion:</label>
+                      <input type="text" id="direccion" name="direccion_proveedores" class="form-control">
+                    </div>
                     <!-- Quinto campo-->
                     <div class="col-md-12 form-group input-group">
+                      <label for="" class="input-group-addon"> Email:</label>
+                      <input type="email" id="correo" name="correo_proveedores" class="form-control">
+                    </div>
+                    <!-- sexto campo-->
+                    <div class="col-md-12 form-group input-group">
+                        <label for="" class="input-group-addon">Contacto:</label>
+                        <input type="text" id="contacto" name="contacto_proveedores" class="form-control">
+                    </div>
+                    <!-- septimo campo-->
+                    <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Estado:</label>
-                      <input type="text" id="estado" name="estado_proveedores" class="form-control">
+                        <select class="form-control" id="estado" name="estado_proveedores">
+                          <option value=""></option>
+                          <option value="Habilitado">Habilitado</option>
+                          <option value="Deshabilitado">Deshabilitado</option>
+                        </select>
                     </div>
 
                     <div class="col-md-12 text-center">
@@ -98,16 +116,16 @@
         </button>
       </div>
       <div class="modal-body">
-        
-                
-                   
-                       <!-- TABLA PARA MOSTRAR DATOS-->
-                       <table border="solid">
+                    <div class="table-responsive">  
+                     <!-- TABLA PARA MOSTRAR DATOS-->
+                      <table class="table table-bordered">
                          <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Tipo de la empresa</th>
+                                <th>Tipo de persona</th>
                                 <th>Representante de la empresa</th> 
+                                <th>Direccion </th>
+                                <th>Correo</th>
                                 <th>Contacto</th>
                                 <th>Estado</th>
                                <!-- <th>borrar</th>
@@ -120,8 +138,10 @@
                             <tr>
                                 <!-- <td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td> -->
                                 <td><?=$dp->nombre_empresa?></td>
-                                <td><?=$dp->tipo_empresa?></td>
+                                <td><?=$dp->tipo_persona?></td>
                                 <td><?=$dp->representante_empresa?></td>
+                                <td><?=$dp->direccion_proveedores?> </td>
+                                <td><?=$dp->correo_proveedores?> </td>
                                 <td><?=$dp->contacto_proveedores?></td>
                                 <td><?=$dp->estado_provedores?></td>
                             </tr>
@@ -129,6 +149,7 @@
                             <?php endforeach;?>
                         </tbody>
                       </table>
+                    </div>  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
