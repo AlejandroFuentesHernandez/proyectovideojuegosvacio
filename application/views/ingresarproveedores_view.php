@@ -19,7 +19,7 @@
 
 </head>
 <body>
-    <div class="container-fluid " style="padding-right: 50px; padding-left: 50px; padding-top: 50px; padding-bottom: 50px;" >
+    <div class="container-fluid">
       <!--columna 1-->
         <div class="row">
             <div class="col-md-12 text-center">
@@ -27,11 +27,11 @@
             </div>
         </div>
          <!-- Columna 2-->
-        <div class="row" style=" padding-left: 400px;" > 
+        <div class="row" style=" padding-left: 435px;" > 
           <!--PARTE 2-->
           <div class="col-md-6">
-             <div class="panel panel-defaul"> 
-              <!-- <div class="panel-heading">Agregar Proveedores</div>-->
+             <div class="panel panel-primary"> 
+              <div class="panel-heading">Agregar Proveedores</div>
               <!-- Cuerpo-->
               <div class="panel-body"> 
                 <form id="formProv" action="<?php echo site_url(); ?>Proveedores/Registrar_proveedores" method="POST"> 
@@ -73,13 +73,14 @@
                     <!-- Boton-->
                       <button type="submit" class="btn btn-success">Guardar proveedor</button>
                     </div>
-                    <div class="col-md-12 text-center">
                     <!-- Button trigger modal -->
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> Visualizar Proveedores </button>
+                    <div class="col-md-12  text-center">
+                    
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong"> Visualizar Proveedores </button>
                     </div>         
                 </form>
               </div>   <!-- FIN DEL CUERPO -->          
-             </div>
+             </div>  <!-- FIN DEL Panel -->       
           </div> 
         </div>
     </div> <!-- fin class container-->

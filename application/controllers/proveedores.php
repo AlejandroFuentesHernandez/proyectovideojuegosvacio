@@ -13,8 +13,8 @@ class Proveedores extends CI_Controller
        $this->load->model('proveedores_model', 'proveedores', TRUE); //Forma de como cargar el modelo para poder acceder a sus metodos, en el primer paramentro se pone el nombre del modelo, en el segundo se le esta asignando un nombre diferente al modelo y en el tercero se le pondra TRUE para que se conecte automaticamente a la base de datos 
     }
 
-    public function index(){
-    	//$this->load
+    public function index(){ //Esta funcion se ejecutara por defecto cuando se ingrese al controlador
+    	
     	$proveedores= $this->proveedores->mostrar();
     	//$data['insertar']=""; 
     	$data['dproveedores']=$proveedores;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
@@ -62,12 +62,12 @@ class Proveedores extends CI_Controller
 				}
         }
 
-        public function mostrar_proveedores()
+       /*public function mostrar_proveedores() esta funcion ya se realizo arriba
         {
         	$proveedores= $this->proveedores->mostrar(); 
         	$data['dproveedores']=$proveedores; 
         	$this->load->view('mostrarproveedores_view', $data); 
 
-        }
+        }*/
 }
 
