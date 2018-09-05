@@ -4,11 +4,35 @@ define('BASEPATH') OR exit('No direct script access allowed');
 /**
  * 
  */
+
+function __construct()
+	{
+		$this->load->database();
+	}
 class Datos_usuarios extends CI_Model
 {
-	
+	public function insertar($data){
+		$resultado=$this->db->insert('tab_usuario',$data);
+		if($resultado==true)
+		{
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+public function mostrar(){
+	$usuarios=$this->db->get('tab_usuario');
+	return $empleado->result();
+}
+
+}
+
+
+
+
+
 	//los modelos no necesitan un constructor
-	public function getdatausuario()
+	/*public function getdatausuario()
 	{
 		//nombre de la tabla
 		$usuario = $this->db->get('tab_usuario');
@@ -35,7 +59,7 @@ class Datos_usuarios extends CI_Model
 	{
 		$this->db->where('id_usuario',$id_usuario);
 		//$this->db->delete('tab_datos_empleados');
-	}*/
+	}
 	public function obtener_usuario($id_empleado)
 	{
 		//obtener usuarios en base numero empleado
@@ -58,8 +82,8 @@ class Datos_usuarios extends CI_Model
 	$this->db->where('id_usuario'),$data['id_usuario'];
 	$this->db->update('tab_usuario');
 
-	}
-}
+	}*/
+
 
 
 ?>
