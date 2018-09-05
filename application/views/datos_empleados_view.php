@@ -38,7 +38,7 @@ include 'url_include.php';
 						<!--<div class="panel-heading">Agregar </div>-->
 						<!--cuerpo-->
 						<div class="panel-body">
-							<form id="formemple" action="<?php echo site_url();?>/datos_empleados_controller/agregar_empleado" method="POST">
+							<form id="formemple" action="<?php echo site_url();?>/datos_empleados_controller/registrar_empleado" method="POST">
 								<!-- Esto estara oculto
 									<div class="col-md-12 form-group input-group">
 										<input type="text" id="idprov" name="id_" class="form-control">
@@ -88,7 +88,7 @@ include 'url_include.php';
 									
 									<div class="col-md-12 text-center">
 										<!-- nuevo-->
-										<div class="col-md-12 text-center"><a href="<? echo site_url();?>" class="btn btn-primary">nuevo empleado</a>
+										<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_empleados_controller" class="btn btn-primary">nuevo empleado</a>
 										<!--boton--->
 										<button type="submit" class="btn btn-success">Ingresar empleado</button>
 									</div>

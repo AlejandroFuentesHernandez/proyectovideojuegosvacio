@@ -17,7 +17,29 @@ function__construct()
 class Datos_empleado_model extends CI_Model
 {
 	//los modelo no necesitan un constructor
-	public function getdataempleados()
+	
+public function insertar($data){
+	$resultado=$this->db->insert('tab_empleados',$data);/* que es lo mismo que: INSERT INTO tab_empleados()values()*/
+	if($resultado==true)
+	{
+		return 1;
+	}else
+	{
+		return 0;
+	}
+}
+
+public function mostrar(){
+$empleados=$this->db->get('tab_empleados');//que es lo mismo que: SELECT * FROM tab_empleados
+return $empleados->result();
+}
+
+}
+
+
+
+
+	/*public function getdataempleados()
 	{
 		//nombre de la tabla
 		$usuario = $this->db->get('tab_datos_empleados');
@@ -52,7 +74,7 @@ class Datos_empleado_model extends CI_Model
 	{
 		$this->db->where('numero_empleado',$numero_empleado);
 		//$this->db->delete('tab_datos_empleados');
-	}*/
+	}
 
 	public function obtener_empleados($numero_empleado)
 	{
@@ -78,6 +100,6 @@ class Datos_empleado_model extends CI_Model
 		$this->db->where('id_empleado'),$data['id_empleado'];
 		$this->db->update('tab_datos_empleados');
 
-	}
-}
+	}*/
+
 ?>

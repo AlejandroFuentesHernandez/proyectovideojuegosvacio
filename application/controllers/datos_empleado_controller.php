@@ -1,8 +1,80 @@
 <?php
 define('BASEPATH') OR exit('No direct script access allowed');
+// controlador de datos empleados
 
 class Datos_empleados extends CI_Controller
 {
+		public function  __construt()
+{
+		parent::construt();//constructor padre
+		$this->load->model('datos_empleado_model','empleados_model',TRUE);/*Forma de como cargar el modelo para poder acceder a sus metodos, en el primer parametro se pone el nombre del modelo, en el segundo se asignando un nombre diferente al modelo y en el tercero se le pondra True para que se conecte automaticamente a la base de datos*/
+}
+public function index(){
+	//$this->load cargar un archivo
+	$empleados=$this->empleados_model->mostrar();
+	//$data['insertar']="";
+	$data['dempleados']=$empleados;//enviamos la variable vacia, para que cuando le mandemos parametros no me de el error de variable indefinida
+	$this->load->view('datos_empleado_view',$data);
+}
+public function registrar_empleado()
+{
+	//obteniendo datos del formulario, los cuales los almacenaremos en una variable
+
+	//$id_empleados=$this->input->post('id_empleados');
+	$numero_empleado=$this->input->post('nombre_empresa');
+	$nombre_empleado=$this->input->post('nombre_empleado');
+	$DUI_empleado=$this->input->post('DUI_empleado');
+	$direccion_empleados=$this->input->post('direccion_empleados');
+	$fecha_nacimiento=$this->input->post('fecha_nacimiento');
+	$cargo_empleado=$this->input->post('cargo_empleado');
+	$id_tienda=$this->input->post('id_tienda');
+	$estado_empleado=$this->input->post('estado_empleado');
+
+	/*
+		mandamos los datos por medio de un array al modelo, cada elemento corresponde con una columna en la tabla Empleados de la base de datos, esto quiere decir que lo que esta al lado izquierdo seria dicha columna y tendran el valor correspondiente de la informacion que se mande al formulario
+	*/
+	$data=array
+	(
+		//'id_empleado'=>$id_empleado,
+		'numero_empleado'=>$numero_empleado,
+		'nombre_empleado'=>$nombre_empresa,
+		'DUI_empleado'=>$DUI_empleado,
+		'direccion_empleados'=>$direccion_empleados,
+		'fecha_nacimiento'=>$fecha_nacimiento,
+		'cargo_empleado'=>$cargo_empleado,
+		'id_tienda'=>$id_tienda,
+		'estado_empleado'=>$estado_empleado,
+	);
+
+	//mandamos a llamar un metodo de nuestro modelo, donde mandaremos como parametro el array.
+	$registro=$this->empleados_model->insertar($data);
+	$mensaje['insertar']='Registro exitoso';
+	if($registro==1){
+		$ruta=base_url('datos_empleados_controller');
+
+		echo "<script> alert('Empleado guardado satisfactoriamente.');
+				window.location='{$ruta}';
+				</script>";
+		$this->load->view('datos_empleado_view',$mensaje);
+
+	}
+	else{
+		$this->error();
+	}
+}
+
+public function mostrar_empleados()
+{
+	$empleados=$this->empleados->mostrar();
+	$data['dempleados']=$empleados;
+	$this->load->view('mostrar_empleados_view',$data);
+}
+}
+
+
+
+
+/*
 		public function error()
 		{
 			$this->load->helper('url');
@@ -10,18 +82,6 @@ class Datos_empleados extends CI_Controller
 		}
 
 
-
-
-
-
-	public __construt()
-	{
-		parent::construt();
-		$this->load->model('datos_empleado_model');
-	}
-
-
-	
 	public function inicio_empleados()
 	{
 	//mostrar datos en una vista
@@ -94,5 +154,5 @@ class Datos_empleados extends CI_Controller
 			//$this-> inicio_empleados();
 
 		}*/
-}
+
 ?>
