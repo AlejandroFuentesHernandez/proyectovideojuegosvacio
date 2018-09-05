@@ -82,8 +82,7 @@ include 'url_include.php';
 													<!--octavo campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Estado_usuario</label>
-												<input type="text" id="estado_usuario" name="estado_empleado" class="form-control">
-												<select class="form-control"><option value="habilitado"></option><option value="inhabilitado"></option></select>
+												<select id="estado_usuario" class="form-control"><option value="habilitado">habilitado</option><option value="inhabilitado">inhabilitado</option></select>
 									</div>
 									
 									<div class="col-md-12 text-center">
