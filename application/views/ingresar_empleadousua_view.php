@@ -41,7 +41,7 @@ include 'url_include.php';
 						<!--<div class="panel-heading">Agregar </div>-->
 						<!--cuerpo-->
 						<div class="panel-body">
-							<form id="formemple" action="<?php echo site_url();?>/datos_empleados_controller/agregar_empleado" method="POST">
+							<form id="formemple" action="<?php echo site_url();?>/datos_empleados_controller/registrar_empleado" method="POST">
 								<!-- Esto estara oculto
 									<div class="col-md-12 form-group input-group">
 										<input type="text" id="idprov" name="id_" class="form-control">
