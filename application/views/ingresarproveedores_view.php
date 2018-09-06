@@ -94,7 +94,7 @@
                     <!-- Button trigger modal -->
                     <div class="col-md-12  text-center">
                     
-                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalLong"> Visualizar Proveedores </button>
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#proveedores"> Visualizar Proveedores </button>
                     </div>         
                 </form>
               </div>   <!-- FIN DEL CUERPO -->          
@@ -106,8 +106,8 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="proveedores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document"> <!-- Establece el ancho y el margen del modal-->
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title" id="exampleModalLongTitle">Proveedores</h1>
@@ -118,7 +118,7 @@
       <div class="modal-body">
                     <div class="table-responsive">  
                      <!-- TABLA PARA MOSTRAR DATOS-->
-                      <table class="table table-bordered">
+                      <table class="table table-striped table-hover table-bordered">
                          <thead>
                             <tr>
                                 <th>Nombre</th>
@@ -144,6 +144,8 @@
                                 <td><?=$dp->correo_proveedores?> </td>
                                 <td><?=$dp->contacto_proveedores?></td>
                                 <td><?=$dp->estado_provedores?></td>
+                                <td> <a href="" title="" ></a>
+
                             </tr>
              
                             <?php endforeach;?>
