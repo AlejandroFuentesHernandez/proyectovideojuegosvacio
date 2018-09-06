@@ -1,8 +1,8 @@
 <?php
 define('BASEPATH') OR exit('No direct script access allowed');
 // controlador de datos empleados
-
-class Datos_empleados extends CI_Controller
+Datos_empleados_controller/registrar_empleado
+class Datos_empleados_controller extends CI_Controller
 {
 		public function  __construt()
 {
@@ -21,10 +21,10 @@ public function registrar_empleado()
 	//obteniendo datos del formulario, los cuales los almacenaremos en una variable
 
 	//$id_empleados=$this->input->post('id_empleados');
-	$numero_empleado=$this->input->post('nombre_empresa');
+	$numero_empleado=$this->input->post('numero_emmpleado');
 	$nombre_empleado=$this->input->post('nombre_empleado');
 	$DUI_empleado=$this->input->post('DUI_empleado');
-	$direccion_empleados=$this->input->post('direccion_empleados');
+	$direccion_empleados=$this->input->post('direccion_empleado');
 	$fecha_nacimiento=$this->input->post('fecha_nacimiento');
 	$cargo_empleado=$this->input->post('cargo_empleado');
 	$id_tienda=$this->input->post('id_tienda');
