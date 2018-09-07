@@ -121,6 +121,7 @@
                       <table class="table table-striped table-hover table-bordered">
                          <thead>
                             <tr>
+                                <th> Id </th>
                                 <th>Nombre</th>
                                 <th>Tipo de persona</th>
                                 <th>Representante de la empresa</th> 
@@ -133,10 +134,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($dproveedores as $dp):?>
+                            <?php foreach ($dproveedores as $dp):
+                             $rutaEditar= base_url("Proveedores/Guardar/{$dp['id_proveedores']}");
+                             $rutaEliminar= base_url("Proveedores/borrar?borrar={$dp['id_proveedores']}");?>
  
                             <tr>
-                                <!-- <td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td> -->
+                               
+                                <td><?=$dp->id_proveedores?></td>
                                 <td><?=$dp->nombre_empresa?></td>
                                 <td><?=$dp->tipo_persona?></td>
                                 <td><?=$dp->representante_empresa?></td>
@@ -144,9 +148,14 @@
                                 <td><?=$dp->correo_proveedores?> </td>
                                 <td><?=$dp->contacto_proveedores?></td>
                                 <td><?=$dp->estado_provedores?></td>
-                                <td> <a href="" title="" ></a>
-
-                            </tr>
+                                <td>
+                                  <a href="<?php $rutaEditar?> class="class="btn btn-info"">Eliminar <a/>
+                                </td>
+                               <!-- <td> 
+                                  <a href="<?php //echo base_url();?>Proveedores/Guardar?id_proveedores=<?php //echo $dproveedores['id_proveedores'];?>" class="btn btn-info">Editar<a/>
+                                  <a href="<?php //echo base_url();?>Proveedores/eliminar?id_proveedores=<?php //echo $dproveedores['id_proveedores'];?>" class="button">Eliminar <a/>
+                                </td> --> 
+                              </tr>
              
                             <?php endforeach;?>
                         </tbody>
