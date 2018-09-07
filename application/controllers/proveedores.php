@@ -21,7 +21,7 @@ class Proveedores extends CI_Controller
     	$this->load->view('ingresarproveedores_view', $data);
     }
 
-        public function Registrar_proveedores()
+    public function Registrar_proveedores()
         {  //Obteniendo datos del formulario, los cuales los almacenaremos en una variable 
 
         	//$id_proveedores=$this->input->post('id_proveedor');
@@ -65,6 +65,16 @@ class Proveedores extends CI_Controller
 					$this->error();
 				}
         }
+
+    public function eliminar()
+        {
+            
+        $eliminar = $_GET['idp'];
+        $this->proveedores->eliminar($eliminar);
+        $this->index();
+
+        }
+
 
        /*public function mostrar_proveedores() esta funcion ya se realizo arriba
         {

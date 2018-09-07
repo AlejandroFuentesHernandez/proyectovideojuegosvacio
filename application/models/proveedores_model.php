@@ -17,9 +17,17 @@ class Proveedores_model extends CI_Model
 
 	}
 
-	public function mostrar(){
+	public function mostrar()
+	{
 		$proveedores=$this->db->get('tab_proveedores'); //que es lo mismo que:  SELECT * FROM tab_proveedores
 		return $proveedores->result();
 
 	}
+
+	public function eliminar($eliminar)
+    {
+        $proveedores=$this->db->query('DELETE FROM tab_proveedores WHERE id_proveedores='.$eliminar); 
+    }
+
+
 }

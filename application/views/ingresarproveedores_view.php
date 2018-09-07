@@ -17,6 +17,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+
 </head>
 <body>
     <div class="container-fluid">
@@ -129,15 +130,13 @@
                                 <th>Correo</th>
                                 <th>Contacto</th>
                                 <th>Estado</th>
-                               <!-- <th>borrar</th>
-                                <th>editar</th> -->
+                                <th>Acciones</th>
+                               
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($dproveedores as $dp):
-                             $rutaEditar= base_url("Proveedores/Guardar/{$dp['id_proveedores']}");
-                             $rutaEliminar= base_url("Proveedores/borrar?borrar={$dp['id_proveedores']}");?>
- 
+                            ?>
                             <tr>
                                
                                 <td><?=$dp->id_proveedores?></td>
@@ -148,14 +147,12 @@
                                 <td><?=$dp->correo_proveedores?> </td>
                                 <td><?=$dp->contacto_proveedores?></td>
                                 <td><?=$dp->estado_provedores?></td>
-                                <td>
-                                  <a href="<?php $rutaEditar?> class="class="btn btn-info"">Eliminar <a/>
-                                </td>
-                               <!-- <td> 
-                                  <a href="<?php //echo base_url();?>Proveedores/Guardar?id_proveedores=<?php //echo $dproveedores['id_proveedores'];?>" class="btn btn-info">Editar<a/>
-                                  <a href="<?php //echo base_url();?>Proveedores/eliminar?id_proveedores=<?php //echo $dproveedores['id_proveedores'];?>" class="button">Eliminar <a/>
-                                </td> --> 
-                              </tr>
+                               
+                               <td> 
+                                  <a href="<?php echo base_url();?>Proveedores/Guardar?idp=<?php $dp->id_proveedores;?>" class="btn btn-info">Editar</a>
+                                  <a href="<?php echo base_url();?>Proveedores/eliminar?idp=<?php echo $dp->id_proveedores;?>" class="btn btn-info">Eliminar </a>
+                                </td> 
+                            </tr>
              
                             <?php endforeach;?>
                         </tbody>
@@ -180,7 +177,7 @@
 </html>
 
 <script>
-    $('#exampleModalLong').on('shown.bs.modal', function () {
+    $('#proveedores').on('shown.bs.modal', function () {
       $('#myInput').trigger('focus')
     });
 </script>
