@@ -23,7 +23,7 @@
         <!--columna 1-->
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1>Registro de Clientes</h1>
+                <h1>Modificar de Clientes</h1>
             </div>
         </div>
          <!-- Columna 2-->
@@ -52,28 +52,28 @@
                               <input type="date" id="nombre" name="nombre_juego" class="form-control" value="<?php echo $item['nombre_juego'];?>"  required>
                            </div>
                             <!-- Tercer campo-->
+                            <div class="col-md-12 form-group input-group">
+                               <label for="" class="input-group-addon"> Cantidad producto:</label>
+                              <input type="text" id="cantidad" name="cantidad_juego" class="form-control"  value="<?php echo $item['fecha_compra'];?>" required>
+                           </div>
+                           <!-- Cuarto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Fecha de compra:</label>
                               <input type="text" id="fecha" name="fecha_compra" class="form-control"  value="<?php echo $item['fecha_compra'];?>" required>
                            </div>
-                             <!-- Cuarto campo-->
+                             <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Precio Unitario de Compra:</label>
                               <input type="text" id="precio" name="precio_unitario_compra" class="form-control"  value="<?php echo $item['precio_unitario_compra'];?>" required>
                            </div>
-                             <!-- Quinto campo-->
+                            <!-- Sexto campo--> 
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Total de compra:</label>
                               <input type="text" id="total" name="total_compra" class="form-control"  value="<?php echo $item['total_compra'];?>" required>
                            </div>
-                            <!-- Sexto campo-->
-                           <div class="col-md-12 form-group input-group">
-                              <label for="" class="input-group-addon"> Telefono de cliente:</label>
-                              <input type="text" id="telefono" name="telefono_cliente"  value="<?php echo $item['telefono_cliente'];?>" class="form-control" required>
-                           </div>
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
-                              <button type="submit" class="btn btn-success">Ingresar Cliente</button>
+                              <button type="submit" class="btn btn-success">Modificar</button>
                           </div><br><br>
                           <div class="col-md-12 text-center">
                             <!-- Button trigger modal -->

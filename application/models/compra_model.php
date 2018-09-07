@@ -42,7 +42,8 @@ class Compra_model extends CI_Model{ //Inicio de Insercion
         $compra=$this->db->query('delete from tab_compra where id_compra
             ='.$data); 
     }//Fin de eliminacion de datos//
-
+   
+   //Inicia modificacion de datos//
     public function modificar($data){
     $this->db->set('codigo_juego', $data['codigo']);
     $this->db->set('nombre_juego', $data['juego']);
@@ -52,7 +53,7 @@ class Compra_model extends CI_Model{ //Inicio de Insercion
     $this->db->set('total_compra', $data['total']);
     $this->db->where('id_compra', $data['id']);
     $this->db->update('tab_compra');  
-}
+}//Fin modificacionde datos//
 
 
 }

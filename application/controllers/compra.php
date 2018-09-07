@@ -16,7 +16,7 @@ class Compra extends CI_Controller
     public function index(){
 
     	//$this->load
-    	$compra= $this->cliente->mostrar();
+    	$compra= $this->compra->mostrar();
     	//$data['insertar']=""; 
     	$data['dcompra']=$compra;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
     	$this->load->view('compra_view', $data);
@@ -25,8 +25,8 @@ class Compra extends CI_Controller
     public function editar()//metodo editar("comoYoQuiero")
     {
     	
-    	$data['variable']=$this->cliente->mostrarById($this->input->get('id'));
-    	$this->load->view('editar_compra', $data);
+    	$data['variable']=$this->compra->mostrarById($this->input->get('id'));
+    	$this->load->view('modificar_compras', $data);
     }
 
       //Insertar registros a base de datos//
