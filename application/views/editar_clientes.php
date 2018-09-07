@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="panel panel-defaul"> 
                       <div class="panel-body"> 
-                        <form id="gracia" action="<?php echo site_url(); ?>/Clientes/RegistroCliente" method="POST">
+                        <form id="gracia" action="<?php echo site_url(); ?>Clientes/RegistroCliente" method="POST">
                             <!------------------ESTO ESTARA OCULTO--------------------------------------
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Id:</label>
@@ -69,12 +69,14 @@
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Estado de Cliente:</label>
                               <select name="estado_cliente">
+                        
                                 <?php if($item['estado_cliente']=='Habilitado'){?>
                                   <option value="Habilitado" class="form-control" selected="true">Habilitado</option>
-                                  <option value="Habilitado" class="form-control">Habilitado</option>
+                                  <option value="deshabilitado" class="form-control">Deshabilitado</option>
                                 <?php }else{?>
-                                 <option value="deshabilitado" selected=''>deshabilitado</option>
-                                  <option value="Deshabilitado" class="form-control" selected="true">Deshabilitado</option>
+                                  <option value="Habilitado" class="form-control" >Habilitado</option>
+                                  <option value="deshabilitado" class="form-control" selected="true">Deshabilitado</option>
+                                  
                                   
                                 <?php }?>
                                 
