@@ -68,8 +68,8 @@
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Estado de Cliente:</label>
                               <select name="estado_cliente">
-                                  <option value="Activo" class="form-control">Habilitado</option>
-                                  <option value="Inactivo" class="form-control">deshabilitado</option>
+                                  <option value="Habilitado" class="form-control">Habilitado</option>
+                                  <option value="Deshabilitado" class="form-control">Deshabilitado</option>
                               </select>
                               <!--<input type="text" id="estado" name="estado_cliente" class="form-control" required>-->
                            </div>
