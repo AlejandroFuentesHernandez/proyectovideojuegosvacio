@@ -71,10 +71,10 @@
                               <select name="estado_cliente">
                                 <?php if($item['estado_cliente']=='Habilitado'){?>
                                   <option value="Habilitado" class="form-control" selected="true">Habilitado</option>
-                                  <option value="deshabilitado" class="form-control">deshabilitado</option>
+                                  <option value="Habilitado" class="form-control">Habilitado</option>
                                 <?php }else{?>
                                  <option value="deshabilitado" selected=''>deshabilitado</option>
-                                  <option value="Habilitado" class="form-control" selected="true">Habilitado</option>
+                                  <option value="Deshabilitado" class="form-control" selected="true">Deshabilitado</option>
                                   
                                 <?php }?>
                                 

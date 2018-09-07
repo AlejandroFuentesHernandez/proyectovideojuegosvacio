@@ -63,7 +63,7 @@ class Clientes extends CI_Controller
 					$ruta=base_url('Cliente');
 
 					echo "<script>
-							alert('Proveedor guardado satifactoriamente.');
+							alert('Cliente guardado satifactoriamente.');
 							window.location= '{$ruta}'; 
 							</script>";
 					$this->load->view('clientes_view', $mensaje);
