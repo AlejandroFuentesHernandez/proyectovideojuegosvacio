@@ -48,7 +48,7 @@ class Cliente_model extends CI_Model{ //Inicio de Insercion
     $this->db->set('fecha_nacimiento_cliente', $data['nacimiento']);
     $this->db->set('edad_cliente', $data['edad']);
     $this->db->set('numero_DUI', $data['dui']);
-    $this->db->set('numero_NIT', $data['dui']);
+    $this->db->set('numero_NIT', $data['nit']);
     $this->db->set('estado_cliente', $data['estado']);
     $this->db->set('telefono_cliente', $data['telefono']);
     $this->db->where('id_cliente', $data['id']);
