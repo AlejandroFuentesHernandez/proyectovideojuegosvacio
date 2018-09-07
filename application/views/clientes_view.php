@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="panel panel-defaul"> 
                       <div class="panel-body"> 
-                        <form id="gracia" action="<?php echo site_url(); ?>/Clientes/RegistroCliente" method="POST">
+                        <form id="gracia" action="<?php echo site_url(); ?>Clientes/RegistroCliente" method="POST">
                             <!------------------ESTO ESTARA OCULTO--------------------------------------
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Id:</label>

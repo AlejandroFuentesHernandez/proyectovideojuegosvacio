@@ -60,7 +60,7 @@ class Clientes extends CI_Controller
 				$mensaje['insertar']="Registro exitoso"; //NO OLVIDAR BORRAR MENSAJE!!!!! xD 
               
 				if($registro==1){
-					$ruta=base_url('Cliente');
+					$ruta=base_url('clientes');
 
 					echo "<script>
 							alert('Cliente guardado satifactoriamente.');
