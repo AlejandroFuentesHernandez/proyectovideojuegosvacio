@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  Controlador para hacer el CRUD de los proveedores
  */
-class Cliente extends CI_Controller
+class Clientes extends CI_Controller
 {
     
     public function __construct()
@@ -70,8 +70,9 @@ class Cliente extends CI_Controller
 
         public function eliminar()
         {
+        	
 		$eliminar = $_GET['id'];
-		$this->Cliente_model->eliminar($eliminar);
+		$this->cliente->eliminar($eliminar);
 		$this->index();
 
 		}
