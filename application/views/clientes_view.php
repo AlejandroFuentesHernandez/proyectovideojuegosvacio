@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="panel panel-defaul"> 
                       <div class="panel-body"> 
-                        <form id="gracia" action="<?php echo site_url(); ?>/Cliente/RegistroCliente" method="POST">
+                        <form id="gracia" action="<?php echo site_url(); ?>/Clientes/RegistroCliente" method="POST">
                             <!------------------ESTO ESTARA OCULTO--------------------------------------
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Id:</label>
@@ -134,7 +134,7 @@
                                 <td><?=$dc->numero_NIT?></td>
                                 <td><?=$dc->estado_cliente?></td>
                                 <td><?=$dc->telefono_cliente?></td>
-                                <td><a href="<?php base_url(); ?>/cliente/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>
+                                <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>
                             </tr>
              
                             <?php endforeach;?>
