@@ -118,7 +118,7 @@
                                 <th>Número de NIT</th>
                                 <th>Estado de cliente</th>
                                 <th>Telefono de cliente</th>
-                                <th>Eliminar</th>
+                               <!-- <th>Eliminar</th>-->
                                 <th>Modificar</th>
                             </tr>
                         </thead>
@@ -134,7 +134,7 @@
                                 <td><?=$dc->numero_NIT?></td>
                                 <td><?=$dc->estado_cliente?></td>
                                 <td><?=$dc->telefono_cliente?></td>
-                                <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>
+                              <!--  <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>-->
                                 <td><a href="<?php echo base_url(); ?>Clientes/comoYoQuiero?id=<?php echo $dc->id_cliente;?>">Modificar</a></td>
                             </tr>
              
