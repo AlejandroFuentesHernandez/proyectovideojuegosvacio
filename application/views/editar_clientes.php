@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Registro de clientes</title>
+    <title>Editar clientes</title>
       <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -39,44 +39,52 @@
                       <input type="text" id="idCte" name="id_cliente" class="form-control">
                     </div>
                   <------------------------------------------------------------------------->
-
-                            <!-- Primer campo-->
+                  <?php foreach ($variable as $item) { ?>
+                   
+                          <!-- Primer campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Nombre del cliente:</label>
-                              <input type="text" id="nombre" name="nombre_cliente" class="form-control" required>
+                              <input type="text" id="nombre" name="nombre_cliente" class="form-control" value="<?php echo $item['nombre_cliente'];?>" required>
                            </div>
                             <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Fecha de nacimiento cliente:</label>
-                              <input type="date" id="nombre" name="fecha_nacimiento_cliente" class="form-control" required>
+                              <input type="date" id="nombre" name="fecha_nacimiento_cliente"  value="<?php echo $item['fecha_nacimiento_cliente'];?>" class="form-control" required>
                            </div>
                             <!-- Segundo campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Edad de Cliente:</label>
-                              <input type="text" id="edad" name="edad_cliente" class="form-control" required>
+                              <input type="text" id="edad" name="edad_cliente" class="form-control"  value="<?php echo $item['edad_cliente'];?>" required>
                            </div>
                              <!-- Tercer campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Número de DUI:</label>
-                              <input type="text" id="DUI" name="numero_DUI" class="form-control" required>
+                              <input type="text" id="DUI" name="numero_DUI" class="form-control"  value="<?php echo $item['numero_DUI'];?>" required>
                            </div>
                              <!-- Cuarto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Número de NIT:</label>
-                              <input type="text" id="NIT" name="numero_NIT" class="form-control" required>
+                              <input type="text" id="NIT" name="numero_NIT" class="form-control"  value="<?php echo $item['numero_NIT'];?>" required>
                            </div>
                             <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Estado de Cliente:</label>
                               <select name="estado_cliente">
-                                  <option value="Activo" class="form-control">Habilitado</option>
-                                  <option value="Inactivo" class="form-control">deshabilitado</option>
+                                <?php if($item['estado_cliente']=='Habilitado'){?>
+                                  <option value="Habilitado" class="form-control" selected="true">Habilitado</option>
+                                  <option value="deshabilitado" class="form-control">deshabilitado</option>
+                                <?php }else{?>
+                                 <option value="deshabilitado" selected=''>deshabilitado</option>
+                                  <option value="Habilitado" class="form-control" selected="true">Habilitado</option>
+                                  
+                                <?php }?>
+                                
                               </select>
                               <!--<input type="text" id="estado" name="estado_cliente" class="form-control" required>-->
                            </div>
                             <!-- Sexto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Telefono de cliente:</label>
-                              <input type="text" id="telefono" name="telefono_cliente" class="form-control" required>
+                              <input type="text" id="telefono" name="telefono_cliente"  value="<?php echo $item['telefono_cliente'];?>" class="form-control" required>
                            </div>
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
@@ -88,76 +96,14 @@
                               </button>
                             </div> 
                         </form>
+                  <?php  } ?>
+                    
                     </div> <!--Fin del cuerpo-->
                 </div>
             </div>
         </div>
     </div> <!-- fin class container-->
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h1 class="modal-title" id="exampleModalLongTitle">Clientes</h1>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-         <!-- TABLA PARA MOSTRAR DATOS-->
-                       <table border="solid" class="text-center">
-                         <thead>
-                            <tr>
-                                <th >Nombre de cliente</th>
-                                <th>Fecha de nacimiento</th>
-                                <th>Edad de cliente</th>
-                                <th>Número de DUI</th> 
-                                <th>Número de NIT</th>
-                                <th>Estado de cliente</th>
-                                <th>Telefono de cliente</th>
-                                <th>Eliminar</th>
-                                <th>Modificar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($dcliente as $dc):?>
- 
-                            <tr>
-                                <!-- <td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td> -->
-                                <td><?=$dc->nombre_cliente?></td>
-                                <td><?=$dc->fecha_nacimiento_cliente?></td>
-                                <td><?=$dc->edad_cliente?></td>
-                                <td><?=$dc->numero_DUI?></td>
-                                <td><?=$dc->numero_NIT?></td>
-                                <td><?=$dc->estado_cliente?></td>
-                                <td><?=$dc->telefono_cliente?></td>
-                                <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>
-                                <td><a href="<?php echo base_url(); ?>Clientes/comoYoQuiero?id=<?php echo $dc->id_cliente;?>">Modificar</a></td>
-                            </tr>
-             
-                            <?php endforeach;?>
-                        </tbody>
-                      </table>
-
-                       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      <!--  <button type="button" class="btn btn-primary">Save changes</button>-->
-      </div>
-
-      </div>
-     
-    </div>
-  </div>
-</div>
-
-            
-      
- 
-
-   
 
 </body>
 </html>
