@@ -75,7 +75,28 @@ class Proveedores extends CI_Controller
 
         }
 
+    public function accion()
+    {        
+        $data['editarprov']=$this->cliente->mostrarById($this->input->get('id'));
+        $this->load->view('editar_proveedores', $data);
+    }
 
+
+    public function modificar()
+        {
+
+            $data ['id'] = $_POST['id_proveedores'];
+            $data ['nombre'] = $_POST['nombre_empresa'];
+            $data ['tipo'] = $_POST['tipo_persona'];
+            $data ['representante'] = $_POST['representante_empresa'];
+            $data ['direccion'] = $_POST['direccion_proveedores '];
+            $data ['correo'] = $_POST['correo_proveedores '];
+            $data ['contacto'] = $_POST['contacto_proveedores '];
+            $data ['estado'] = $_POST['estado_provedores'];
+            $this->proveedores->modificar($data);
+            $this->index();
+
+        }
        /*public function mostrar_proveedores() esta funcion ya se realizo arriba
         {
         	$proveedores= $this->proveedores->mostrar(); 

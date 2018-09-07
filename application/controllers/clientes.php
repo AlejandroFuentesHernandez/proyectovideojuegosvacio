@@ -26,6 +26,7 @@ class Clientes extends CI_Controller
     {
     	
     	$data['variable']=$this->cliente->mostrarById($this->input->get('id'));
+    	//foreach --array-- mandar variables
     	$this->load->view('editar_clientes', $data);
     }
 
