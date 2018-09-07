@@ -23,7 +23,7 @@
         <!--columna 1-->
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1>Registro de Clientes</h1>
+                <h1>Modificar de Clientes</h1>
             </div>
         </div>
          <!-- Columna 2-->
@@ -90,11 +90,7 @@
                             <!-- Boton-->
                               <button type="submit" class="btn btn-success">Ingresar Cliente</button>
                           </div><br><br>
-                          <div class="col-md-12 text-center">
-                            <!-- Button trigger modal -->
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> Visualizar clientes 
-                              </button>
-                            </div> 
+                         
                         </form>
                   <?php  } ?>
                     
@@ -107,13 +103,5 @@
 
 </body>
 </html>
-
-<script>
-    $('#exampleModalLong').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus')
-    });
-</script>
-
-
 </body>
 </html>
