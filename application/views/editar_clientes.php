@@ -75,10 +75,10 @@
                         
                                 <?php if($item['estado_cliente']=='Habilitado'){?>
                                   <option value="Habilitado" class="form-control" selected="true">Habilitado</option>
-                                  <option value="deshabilitado" class="form-control">Deshabilitado</option>
+                                  <option value="Deshabilitado" class="form-control">Deshabilitado</option>
                                 <?php }else{?>
                                   <option value="Habilitado" class="form-control" >Habilitado</option>
-                                  <option value="deshabilitado" class="form-control" selected="true">Deshabilitado</option>
+                                  <option value="Deshabilitado" class="form-control" selected="true">Deshabilitado</option>
                                   
                                   
                                 <?php }?>
