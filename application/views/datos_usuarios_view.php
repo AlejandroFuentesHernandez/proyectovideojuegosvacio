@@ -14,7 +14,7 @@ include 'url_include.php';
 <head>
 	<title>Ingresar usarios</title>
 	<meta charset="utf-8">
-	<script src="js/Scripts_datosu"></script>
+	<script src="<?php echo base_url();?>/js/Script_datosu"></script>
 </head>
 <body>
 		<div class="container-fluid" style="padding-right: 50px; padding-left: 50px; padding-top: 50px; padding-bottom: 50px;">
@@ -38,7 +38,8 @@ include 'url_include.php';
 									</div>
 								-->
 								<!--primer campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Id usuario:</label><input type="text" id="id_usuarios" name="id_usuarios" class="form-control"></div>
+								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Id usuario:</label>
+								<input type="text" id="id_usuario" name="id_usuario"  onblur="" placeholder="id usuario" class="form-control"></div>
 								<!-- segundo campo -->
 								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Nombre usuario:</label><input type="text"  id="nombre_usuarios" name="nombre_usuarios" class="form-control"></div>
 								<!-- tercer campo -->

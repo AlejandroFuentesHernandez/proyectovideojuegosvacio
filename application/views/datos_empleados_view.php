@@ -48,7 +48,7 @@ include 'url_include.php';
 								<!-- primer campo-->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Numero de empleado:</label>
-				<input type="text" id="numero_empleado"  id="numero_empleado" name="numero_empleado" class="form-control" onblur="numero_vacio()" placeholder="Numero empleados">
+				<input type="text" id="numero_empleado" name="numero_empleado" class="form-control" onblur="numero_vacio()" placeholder="Numero empleados">
 								</div>
 								<!-- segundo campo-->
 								<div class="col-md-12 form-group input-group">

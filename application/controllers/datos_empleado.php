@@ -3,10 +3,16 @@
 
 	class Datos_e extends CI_Controller{
 
-		public funcion index()
+		public function index()
 		{
 			$this->load->helper('url');
 			$this->load->view('datos_empleados_view');
+		}
+
+		public function registroempleados()
+		{
+			//Recuperamos datos del formulario
+			
 		}
 	}
 
