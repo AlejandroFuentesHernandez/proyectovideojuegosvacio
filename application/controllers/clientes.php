@@ -26,7 +26,7 @@ class Clientes extends CI_Controller
     {
     	
     	$data['variable']=$this->cliente->mostrarById($this->input->get('id'));
-    	//foreach --array-- mandar variables
+    	
     	$this->load->view('editar_clientes', $data);
     }
 
@@ -97,7 +97,7 @@ class Clientes extends CI_Controller
 			$data ['nit'] = $_POST['numero_NIT'];
 			$data ['estado'] = $_POST['estado_cliente'];
 			$data ['telefono'] = $_POST['telefono_cliente'];
-			$this->Cliente_model->modificar($data);
+			$this->cliente->modificar($data);
 			$this->index();
 
 		}

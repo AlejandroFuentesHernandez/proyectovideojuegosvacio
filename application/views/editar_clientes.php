@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="panel panel-defaul"> 
                       <div class="panel-body"> 
-                        <form id="gracia" action="<?php echo site_url(); ?>Clientes/RegistroCliente" method="POST">
+                        <form id="gracia" action="<?php echo site_url(); ?>Clientes/modificar" method="POST">
                             <!------------------ESTO ESTARA OCULTO--------------------------------------
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Id:</label>
@@ -90,6 +90,7 @@
                            </div>
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
+                              <input type="hidden" name="id_cliente" value="<?php echo $item['id_cliente'];?>"/>
                               <button type="submit" class="btn btn-success">Ingresar Cliente</button>
                           </div><br><br>
                          
