@@ -7,9 +7,10 @@
 //direccion_empleado		varchar
 //fecha_nacimiento date
 //cargo_empleado	varchar
+//correo_empleado varchar
 //telefono_ empleado varchar
-//id_ tienda varchar
 //estado_usuario (enum varchar)
+//id_ tienda varchar
 
 */
 include 'url_include.php';
@@ -20,7 +21,7 @@ include 'url_include.php';
 <head>
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
-	<script src="js/Scripts_datose.js"></script>
+	<script src="<?php echo base_url();?>/js/Script_datose.js"></script>
 </head>
 <body>
 		<div class="container-fluid" style="padding-right: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px;">
@@ -41,23 +42,23 @@ include 'url_include.php';
 							<form id="formemple" action="<?php echo site_url();?>/datos_empleados_controller/registrar_empleado" method="POST">
 								<!-- Esto estara oculto
 									<div class="col-md-12 form-group input-group">
-										<input type="text" id="idprov" name="id_" class="form-control">
+										<input type="text" id="id_empleados" name="id_empleados" class="form-control">
 									</div>
 								-->
 								<!-- primer campo-->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Numero de empleado:</label>
-				<input type="text" id="numero_empleado" name="numero_empleado" class="form-control">
+				<input type="text" id="numero_empleado"  id="numero_empleado" name="numero_empleado" class="form-control" onblur="numero_vacio()" placeholder="Numero empleados">
 								</div>
 								<!-- segundo campo-->
 								<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Nombre del empleado:</label>
-								<input type="text"  id="nombre_empleado" name="nombre_empleado" class="form-control">
+								<input type="text"  id="nombre_empleado" name="nombre_empleado" onblur="" placeholder="Nombre empleado"class="form-control">
 								</div>
 								<!--tercer campo-->
 								<div class="col-md-12 form-group input-group" >
 									<label for="" class="input-group-addon">DUI del empleado:</label>
-									<input type="text" id="DUI_empleado" name="DUI_empleado" class="form-control">
+									<input type="text" id="DUI_empleado" onblur=""  placeholder="55555555-5" name="DUI_empleado" class="form-control">
 								</div>
 						<!--cuarto campo-->
 						<div class="col-md-12 form-group input-group">
@@ -72,17 +73,34 @@ include 'url_include.php';
 									<!--sexto campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Cargo del empleado:</label>
-										<input type="text" id="cargo_empleado" name="cargo_empleado" class="form-control">
+										<input type="text" id="cargo_empleado" name="cargo_empleado"placeholder="Vendedor" class="form-control">
 									</div>
 										<!-- septimo campo-->
+
+
+
 									<div class="col-md-12 form-group input-group">
-											<label for="" class="input-group-addon">Id_tienda:</label>
-											<input type="text" id="id_empleados" name="id_tienda" class="form-control">
+										<label for="" class="input-group-addon">Correo del empleado</label>
+										<input type="text"  id="correo_empleado" name="correo_empleado" placeholder="asdf@asd.as" class="form-control">
 									</div>
+
+
+									<div class="col-md-12 form-group input-group">
+										<label for="" class="input-group-addon">Telefono del empleado</label>
+										<input type=""  id="telefono_empleado" name="telefono_empleado" placeholder="5555-5555" class="form-control">
+									</div>
+
+
+									
 													<!--octavo campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Estado_usuario</label>
 												<select id="estado_usuario" class="form-control"><option value="habilitado">habilitado</option><option value="inhabilitado">inhabilitado</option></select>
+									</div>
+
+									<div class="col-md-12 form-group input-group">
+											<label for="" class="input-group-addon">Id_tienda:</label>
+											<input type="text" id="id_empleados" name="id_tienda" class="form-control">
 									</div>
 									
 									<div class="col-md-12 text-center">

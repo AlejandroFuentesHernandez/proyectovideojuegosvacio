@@ -27,8 +27,10 @@
 				<th>direccion del empleado</th>
 				<th>fecha de nacimiento</th>
 				<th>cargo del empleado</th>
-				<th>Id tienda</th>
+				<th>correo del empleado</th>
+				<th>Telefono del empleado</th>
 				<th>estado del empleado</th>
+				<th>Id tienda</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -41,8 +43,10 @@
 				<td><?=$de->direccion_empleado?></td>
 				<td><?=$de->fecha_nacimiento?></td>
 				<td><?=$de->cargo_empleado?></td>
-				<td><?=$de->id_tienda?></td>
+				<td><?=$de->correo_empleado?></td>
+				<td><?=$de->telefono_empleado?></td>
 				<td><?=$de->estado_empleado?></td>
+				<td><?=$de->id_tienda?></td>
 			</tr>	
 			<?php endforeach;?>
 		</tbody>
