@@ -31,7 +31,7 @@ class Proveedores extends CI_Controller
             $direccion_proveedores=$this->input->post('direccion_proveedores');
             $correo_proveedores=$this->input->post('correo_proveedores'); 
         	$contacto_proveedores=$this->input->post('contacto_proveedores');
-        	$estado_proveedores=$this->input->post('estado_proveedores'); 
+        	$estado_provedores=$this->input->post('estado_provedores'); 
 
         	//mandamos los datos por medio de un array al modelo, cada elemento corresponde con una columna en la tabla Proveedores de la Base de datos, esto quiere decir que lo que esta al lado izquierdo serian dichas columnas y tendran el valor correspondiente de la informacion que se mande del formulario.
 				$data=array
@@ -43,7 +43,7 @@ class Proveedores extends CI_Controller
                     'direccion_proveedores'=>$direccion_proveedores,
                     'correo_proveedores'=>$correo_proveedores,
 					'contacto_proveedores'=>$contacto_proveedores, 
-					'estado_provedores'=>$estado_proveedores, 
+					'estado_provedores'=>$estado_provedores, 
 				); 
 
 				//mandamos a llamar un metodo de nuestro modelo, donde mandaremos como parametro el array. 
@@ -75,23 +75,24 @@ class Proveedores extends CI_Controller
 
         }
 
-    public function accion()
+    public function mostrarId()
     {        
-        $data['editarprov']=$this->cliente->mostrarById($this->input->get('id'));
-        $this->load->view('editar_proveedores', $data);
+        
+        $data['editarprov']=$this->proveedores->mostrarById($this->input->get('idp'));
+        $this->load->view('editar_proveedores_view', $data);
     }
 
 
     public function modificar()
         {
-
+//foreach --array-- mandar variables
             $data ['id'] = $_POST['id_proveedores'];
             $data ['nombre'] = $_POST['nombre_empresa'];
             $data ['tipo'] = $_POST['tipo_persona'];
             $data ['representante'] = $_POST['representante_empresa'];
-            $data ['direccion'] = $_POST['direccion_proveedores '];
-            $data ['correo'] = $_POST['correo_proveedores '];
-            $data ['contacto'] = $_POST['contacto_proveedores '];
+            $data ['direccion'] = $_POST['direccion_proveedores'];
+            $data ['correo'] = $_POST['correo_proveedores'];
+            $data ['contacto'] = $_POST['contacto_proveedores'];
             $data ['estado'] = $_POST['estado_provedores'];
             $this->proveedores->modificar($data);
             $this->index();
@@ -105,4 +106,5 @@ class Proveedores extends CI_Controller
 
         }*/
 }
+
 

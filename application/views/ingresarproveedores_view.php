@@ -79,7 +79,7 @@
                     <!-- septimo campo-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Estado:</label>
-                        <select class="form-control" id="estado" name="estado_proveedores">
+                        <select class="form-control" id="estado" name="estado_provedores">
                           <option value=""></option>
                           <option value="Habilitado">Habilitado</option>
                           <option value="Deshabilitado">Deshabilitado</option>
@@ -149,7 +149,7 @@
                                 <td><?=$dp->estado_provedores?></td>
                                
                                <td> 
-                                  <a href="<?php echo base_url();?>Proveedores/Guardar?idp=<?php $dp->id_proveedores;?>" class="btn btn-info">Editar</a>
+                                  <a href="<?php echo base_url();?>Proveedores/mostrarId?idp=<?php echo $dp->id_proveedores;?>" class="btn btn-info">Editar</a>
                                   <a href="<?php echo base_url();?>Proveedores/eliminar?idp=<?php echo $dp->id_proveedores;?>" class="btn btn-info">Eliminar </a>
                                 </td> 
                             </tr>
