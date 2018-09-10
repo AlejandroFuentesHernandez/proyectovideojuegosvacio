@@ -45,26 +45,27 @@
                               <label for="" class="input-group-addon"> Nombre del cliente:</label>
                               <input type="text" id="nombre" name="nombre_cliente" class="form-control" required>
                            </div>
+                            <!-- Segundo campo-->
                             <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Fecha de nacimiento cliente:</label>
                               <input type="date" id="nombre" name="fecha_nacimiento_cliente" class="form-control" required>
                            </div>
-                            <!-- Segundo campo-->
+                            <!-- Tercer campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Edad de Cliente:</label>
                               <input type="text" id="edad" name="edad_cliente" class="form-control" required>
                            </div>
-                             <!-- Tercer campo-->
+                             <!-- Cuarto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Número de DUI:</label>
                               <input type="text" id="DUI" name="numero_DUI" class="form-control" required>
                            </div>
-                             <!-- Cuarto campo-->
+                             <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Número de NIT:</label>
                               <input type="text" id="NIT" name="numero_NIT" class="form-control" required>
                            </div>
-                            <!-- Quinto campo-->
+                            <!-- Sexto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Estado de Cliente:</label>
                               <select name="estado_cliente">

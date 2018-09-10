@@ -26,7 +26,7 @@ class Compra extends CI_Controller
     {
     	
     	$data['variable']=$this->compra->mostrarById($this->input->get('id'));
-    	$this->load->view('modificar_compras', $data);
+    	$this->load->view('modificar_compras', $data); 
     }
 
       //Insertar registros a base de datos//
@@ -64,7 +64,7 @@ class Compra extends CI_Controller
 							alert('Compra guardada satifactoriamente.');
 							window.location= '{$ruta}'; 
 							</script>";
-					$this->load->view('ccompra_view', $mensaje);
+					$this->load->view('compra_view', $mensaje);
 					
 
 				}
@@ -93,58 +93,10 @@ class Compra extends CI_Controller
 			$data ['fecha'] = $_POST['fecha_compra'];
 			$data ['precio'] = $_POST['precio_unitario_compra'];
 			$data ['total'] = $_POST['total_compra'];
-			$this->Compra_model->modificar($data);
+			$this->compra->modificar($data);
 			$this->index();
 
 		}
 
 
 }
-/*defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Compra extends CI_Controller {
-
-	
-	public function index()
-	{
-        $this->load->helper('url');
-		$this->load->view('compra_view');
-	}
-        
-        public function RegistroCompra()
-	{
-		$this->load->helper('url'); //Instaciamos url's dinamicos//
-
-		//Recuperamos datos del formulario//
-		$codigo = $this->input->post('codigo_juego');
-		$juego =$this->input->post('nombre_juego');
-		$cantidad = $this->input->post('cantidad_juego');
-		$fecha = $this->input->post('fecha_compra');
-		$precio = $this->input->post('precio_unitario_compra');
-		$total = $this->input->post('total_compra');
-		//---------------------------------------------
-
-        //Llamamos al modelo//
-		$this->load->model('compra_model', 'CM', true);
-		$data=array(
-			'codigo_juego'=>$codigo,
-			'nombre_juego'=>$juego,
-			'cantidad_juego'=>$cantidad,
-			'fecha_compra'=>$fecha,
-			'precio_unitario_compra'=>$precio,
-			'total_compra'=>$total
-		);
-
-		//Utilizamos metodo del modelo//
-		$resultado=$this->CM->realizarCompra($data);
-		if ($resultado==1) {
-            $this->load->view('mensaje_compra');
-		}
-		else
-		{
-			$this->index();
-		}
-
-		//$this->load->view('mensaje');
-	}
-}*/

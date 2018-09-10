@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Editar clientes</title>
+    <title>Modificar Compras</title>
       <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -23,7 +23,7 @@
         <!--columna 1-->
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1>Modificar de Clientes</h1>
+                <h1>Modificar  Compra</h1>
             </div>
         </div>
          <!-- Columna 2-->
@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="panel panel-defaul"> 
                       <div class="panel-body"> 
-                        <form id="gracia" action="<?php echo site_url(); ?>/Compra/RegistroCompra" method="POST">
+                        <form id="gracia" action="<?php echo site_url(); ?>/Compra/modificar" method="POST">
                             <!------------------ESTO ESTARA OCULTO--------------------------------------
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Id:</label>
@@ -40,7 +40,8 @@
                     </div>
                   <------------------------------------------------------------------------->
                   <?php foreach ($variable as $item) { ?>
-                   
+
+                             <input type="hidden" id="id" name="id_compra" class="form-control" value="<?php echo $item['id_compra'];?>">
                           <!-- Primer campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Codigo de juego:</label>
@@ -49,7 +50,7 @@
                            <!-- Segundo campo-->
                             <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Nombre de juego:</label>
-                              <input type="date" id="nombre" name="nombre_juego" class="form-control" value="<?php echo $item['nombre_juego'];?>"  required>
+                              <input type="text" id="nombre" name="nombre_juego" class="form-control" value="<?php echo $item['nombre_juego'];?>"  required>
                            </div>
                             <!-- Tercer campo-->
                             <div class="col-md-12 form-group input-group">
@@ -59,7 +60,7 @@
                            <!-- Cuarto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Fecha de compra:</label>
-                              <input type="text" id="fecha" name="fecha_compra" class="form-control"  value="<?php echo $item['fecha_compra'];?>" required>
+                              <input type="date" id="fecha" name="fecha_compra" class="form-control"  value="<?php echo $item['fecha_compra'];?>" required>
                            </div>
                              <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
@@ -73,13 +74,8 @@
                            </div>
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
-                              <button type="submit" class="btn btn-success">Modificar</button>
-                          </div><br><br>
-                          <div class="col-md-12 text-center">
-                            <!-- Button trigger modal -->
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> Visualizar Compras
-                              </button>
-                            </div> 
+                              <button type="submit" class="btn btn-success">Actualizar Compra</button>
+                          </div><br><br> 
                         </form>
                   <?php  } ?>
                     

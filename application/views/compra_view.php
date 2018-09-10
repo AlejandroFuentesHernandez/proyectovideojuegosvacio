@@ -48,7 +48,7 @@
                            <!-- Segundo campo-->
                             <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Nombre de juego:</label>
-                              <input type="date" id="nombre" name="nombre_juego" class="form-control" required>
+                              <input type="text" id="nombre" name="nombre_juego" class="form-control" required>
                            </div>
                             <!-- Tercer campo-->
                            <div class="col-md-12 form-group input-group">
@@ -58,19 +58,20 @@
                             <!-- Cuarto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Fecha de compra:</label>
-                              <input type="text" id="fecha" name="fecha_compra" class="form-control" required>
+                              <input type="date" id="fecha" name="fecha_compra" class="form-control" required>
                            </div>
                             <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Precio Unitario de Compra:</label>
                               <input type="text" id="precio" name="precio_unitario_compra" class="form-control" required>
                            </div>
-                           </div>
+                           
                             <!-- Sexto campo-->
-                           <div class="col-md-12 form-group input-group">
+                          <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Total de compra:</label>
                               <input type="text" id="total" name="total_compra" class="form-control" required>
                            </div>
+
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
                               <button type="submit" class="btn btn-success">Realizar compra</button>
