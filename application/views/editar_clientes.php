@@ -92,7 +92,7 @@
                            </div>
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
-                              <button type="submit" class="btn btn-success">Ingresar Actualizacion de Cliente</button>
+                              <button type="submit" class="btn btn-success">Actualizar Datos</button>
                           </div><br><br>
                          
                         </form>

@@ -48,7 +48,7 @@
                             <!-- Segundo campo-->
                             <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Fecha de nacimiento cliente:</label>
-                              <input type="date" id="nombre" name="fecha_nacimiento_cliente" class="form-control" required>
+                              <input type="date" id="fecha" onblur="calculaEdad()" name="fecha_nacimiento_cliente" class="form-control" required>
                            </div>
                             <!-- Tercer campo-->
                            <div class="col-md-12 form-group input-group">
@@ -172,3 +172,15 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+  function calculaEdad()
+{
+    var hoy = new Date();
+    var nac = new Date(document.getElementById('fecha').value);
+    var edad = hoy.getFullYear()-nac.getFullYear();
+    document.getElementById('edad').value=edad;
+}
+
+</script>
+

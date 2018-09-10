@@ -53,7 +53,7 @@
                             <!-- Tercer campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Cantidad producto:</label>
-                              <input type="text" id="cantidad" name="cantidad_juego" class="form-control" required>
+                              <input type="text" id="cantidad"  name="cantidad_juego" class="form-control" required>
                            </div>
                             <!-- Cuarto campo-->
                            <div class="col-md-12 form-group input-group">
@@ -63,7 +63,7 @@
                             <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Precio Unitario de Compra:</label>
-                              <input type="text" id="precio" name="precio_unitario_compra" class="form-control" required>
+                              <input type="text" id="precio" onblur="operacion()" name="precio_unitario_compra" class="form-control" required>
                            </div>
                            
                             <!-- Sexto campo-->
@@ -156,3 +156,14 @@
 
 </body>
 </html>
+<script type="text/javascript">
+
+  function operacion()
+{
+    var uno=parseInt($('#cantidad').val());
+    var dos=parseInt($('#precio').val());
+    var multi=uno*dos;
+    $('#total').val(multi);
+}
+
+</script>
