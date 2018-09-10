@@ -38,19 +38,40 @@ include 'url_include.php';
 									</div>
 								-->
 								<!--primer campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Id usuario:</label>
-								<input type="text" id="id_usuario" name="id_usuario"  onblur="" placeholder="id usuario" class="form-control"></div>
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Id usuario:</label>
+									<input type="text" id="id_usuario" name="id_usuario"  onblur="" placeholder="id usuario" class="form-control">
+								</div>
 								<!-- segundo campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Nombre usuario:</label><input type="text"  id="nombre_usuarios" name="nombre_usuarios" class="form-control"></div>
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Nombre usuario:</label>
+									<input type="text"  id="nombre_usuario" onblur="" placeholder="Nombre usuario" name="nombre_usuario" class="form-control">
+								</div>
 								<!-- tercer campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Contraseña:</label><input type="text" id="contraseña_usuario" name="contraseña_usuario" class="form-control"></div>
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Contraseña:</label>
+									<input type="text" id="contraseña_usuario" onblur="" placeholder="contraseña"name="contraseña_usuario" class="form-control">
+								</div>
 								<!--cuarto campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Rol usuario:</label><input type="text" id="rol_usuario" name="rol_usuario" class="form-control"></div>
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Rol usuario:</label>
+									<input type="text" id="rol_usuario" onblur="" placeholder="rol_usuario"name="rol_usuario" class="form-control">
+								</div>
 								<!-- quinto campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Id del empleado:</label><input type="text" id="id_empleado" name="id_empleado" class="form-control"></div>
-								<!-- sexto campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Estado usuario</label><select name="estado_usuario"><option value="habilitado"></option><option value="inhabilitado"></option></select></div>
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Estado usuario</label>
+									<select name="estado_usuario" class="form-control">
+										<option value="habilitado">habilitado</option>
+										<option value="inhabilitado">inhabilitado</option>
+									</select>
+								</div>
 					
+								<!-- sexto campo -->
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Id del empleado:</label>
+									<input type="text" id="id_empleado" name="id_empleado" class="form-control">
+								</div>
+								
 								<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_usuario_controller" class="btn btn-primary">nuevo usuario</a>
 									<!-- boton -->
 									<button type="submit"  id="ingresar"  class="btn btn-success">Ingresar usuario</button>
