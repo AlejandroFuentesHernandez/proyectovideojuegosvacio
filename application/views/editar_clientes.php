@@ -79,8 +79,7 @@
                                 <?php }else{?>
                                   <option value="Habilitado" class="form-control" >Habilitado</option>
                                   <option value="Deshabilitado" class="form-control" selected="true">Deshabilitado</option>
-                                  
-                                  
+    
                                 <?php }?>
                                 
                               </select>
@@ -93,7 +92,7 @@
                            </div>
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
-                              <button type="submit" class="btn btn-success">Ingresar Cliente</button>
+                              <button type="submit" class="btn btn-success">Ingresar Actualizacion de Cliente</button>
                           </div><br><br>
                          
                         </form>
