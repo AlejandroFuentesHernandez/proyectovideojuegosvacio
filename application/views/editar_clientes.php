@@ -23,7 +23,7 @@
         <!--columna 1-->
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1>Modificar de Clientes</h1>
+                <h1>Modificar  Clientes</h1>
             </div>
         </div>
          <!-- Columna 2-->
@@ -40,6 +40,9 @@
                     </div>
                   <------------------------------------------------------------------------->
                   <?php foreach ($variable as $item) { ?>
+
+                           
+                              <input type="hidden" id="id" name="id_cliente" class="form-control" value="<?php echo $item['id_cliente'];?>">
                    
                           <!-- Primer campo-->
                            <div class="col-md-12 form-group input-group">
@@ -81,7 +84,7 @@
                                 <?php }?>
                                 
                               </select>
-                              <!--<input type="text" id="estado" name="estado_cliente" class="form-control" required>-->
+                  
                            </div>
                             <!-- Sexto campo-->
                            <div class="col-md-12 form-group input-group">
@@ -90,7 +93,6 @@
                            </div>
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
-                              <input type="hidden" name="id_cliente" value="<?php echo $item['id_cliente'];?>"/>
                               <button type="submit" class="btn btn-success">Ingresar Cliente</button>
                           </div><br><br>
                          

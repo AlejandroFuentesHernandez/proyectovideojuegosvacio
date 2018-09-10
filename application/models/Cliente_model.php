@@ -43,7 +43,8 @@ class Cliente_model extends CI_Model{ //Inicio de Insercion
             ='.$data); 
     }//Fin de eliminacion de datos//
 
-    public function modificar($data){
+    public function update ($data){
+    $this->db->set('id_cliente', $data['id']);  
     $this->db->set('nombre_cliente', $data['nombre']);
     $this->db->set('fecha_nacimiento_cliente', $data['nacimiento']);
     $this->db->set('edad_cliente', $data['edad']);
