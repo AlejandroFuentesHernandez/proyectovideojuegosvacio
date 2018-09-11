@@ -78,7 +78,7 @@
                     <!-- septimo campo-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Estado:</label>
-                        <select class="form-control" id="estado" name="estado_proveedores">
+                        <select class="form-control" id="estado" name="estado_provedores">
                           <option value=""></option>
                           <option value="Habilitado">Habilitado</option>
                           <option value="Deshabilitado">Deshabilitado</option>
@@ -129,14 +129,13 @@
                                 <th>Correo</th>
                                 <th>Contacto</th>
                                 <th>Estado</th>
-                               <!-- <th>borrar</th>
-                                <th>editar</th> -->
+                                <th>Acciones</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($dproveedores as $dp):
-                             $rutaEditar= base_url("Proveedores/Guardar/{$dp['id_proveedores']}");
-                             $rutaEliminar= base_url("Proveedores/borrar?borrar={$dp['id_proveedores']}");?>
+                             ?>
  
                             <tr>
                                
@@ -149,12 +148,10 @@
                                 <td><?=$dp->contacto_proveedores?></td>
                                 <td><?=$dp->estado_provedores?></td>
                                 <td>
-                                  <a href="<?php $rutaEditar?> class="class="btn btn-info"">Eliminar <a/>
+                                  <a href="<?php echo base_url();?>Proveedores/mostrarId?idp=<?php echo $dp->id_proveedores;?>" class="btn btn-info">Editar</a>
+                                  <a href="<?php echo base_url();?>Proveedores/eliminar?idp=<?php echo $dp->id_proveedores;?>" class="btn btn-info">Eliminar </a>
                                 </td>
-                               <!-- <td> 
-                                  <a href="<?php //echo base_url();?>Proveedores/Guardar?id_proveedores=<?php //echo $dproveedores['id_proveedores'];?>" class="btn btn-info">Editar<a/>
-                                  <a href="<?php //echo base_url();?>Proveedores/eliminar?id_proveedores=<?php //echo $dproveedores['id_proveedores'];?>" class="button">Eliminar <a/>
-                                </td> --> 
+                          
                               </tr>
              
                             <?php endforeach;?>
@@ -180,7 +177,7 @@
 </html>
 
 <script>
-    $('#exampleModalLong').on('shown.bs.modal', function () {
+    $('#proveedores').on('shown.bs.modal', function () {
       $('#myInput').trigger('focus')
     });
 </script>
