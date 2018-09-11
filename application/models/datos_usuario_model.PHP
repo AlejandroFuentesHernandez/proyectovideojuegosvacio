@@ -1,5 +1,5 @@
 <?php
-define('BASEPATH') OR exit('No direct script access allowed');
+//define('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * 
@@ -9,7 +9,7 @@ function __construct()
 	{
 		$this->load->database();
 	}
-class Datos_usuarios extends CI_Model
+class Datos_usuario_model extends CI_Model
 {
 	public function insertar($data){
 		
@@ -23,7 +23,7 @@ class Datos_usuarios extends CI_Model
 		}
 	}
 
-	public function mostrar('tab_usuario')
+	public function mostrar()
 	{
 		$usuarios=$this->db->get('tab_usuario');
 		return $usuarios->result();

@@ -31,17 +31,17 @@ include 'url_include.php';
 						<!--<div class="panel-heading" -->
 						<!-- cuerpo -->
 						<div class="panel-body">
-							<form id="formus" action="<?php echo site_url();?>/datos_usuario_controller/registrar_usuario" method="POST">
+							<form id="formus" action="<?php echo site_url();?>Datos_usuario/registrousuarios" method="POST">
 								<!--
 									<div class="col-md-12 form-group input-group">
 										<input type="text" id="idprov" name="id_" class="form-control">
 									</div>
 								-->
-								<!--primer campo -->
+								<!--primer campo 
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Id usuario:</label>
 									<input type="text" id="id_usuario" name="id_usuario"  onblur="idvacio()" placeholder="id usuario" class="form-control">
-								</div>
+								</div>-->
 								<!-- segundo campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Nombre usuario:</label>
@@ -72,7 +72,7 @@ include 'url_include.php';
 									<input type="text" id="id_empleado" name="id_empleado"  onblur=""placeholder="id empleado"class="form-control">
 								</div>
 								
-								<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_usuario_controller" class="btn btn-primary">nuevo usuario</a>
+								<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_usuario.php" class="btn btn-primary">nuevo usuario</a>
 									<!-- boton -->
 									<button type="submit"  id="ingresar"  class="btn btn-success">Ingresar usuario</button>
 								</div>
@@ -116,7 +116,7 @@ include 'url_include.php';
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach($dusuarioc as $du):?>
+							<!--<?php foreach($dusuario as $du):?>-->
 								<tr>
 									<!--<td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td>-->
 									<!--<td><?=$du->id_usuario?></td> -->
@@ -126,7 +126,7 @@ include 'url_include.php';
 									<td><?=$du->id_empleado?></td>
 									<td><?=$du->estado_usuario?></td>
 								</tr>
-							<?php endforeach;?>
+							<!--<?php endforeach;?>-->
 						</tbody>
 					</table>
 				</div>

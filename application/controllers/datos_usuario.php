@@ -1,28 +1,30 @@
 <?php
-	define('BASEPATH') OR exit('No direct script access allowed');
+	//define('BASEPATH') OR exit('No direct script access allowed');
 
-class Datos_u extends CI_Controller{
-	public function__construct()
+class Datos_usuario extends CI_Controller{
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('datos_usuario_model');
 	}
 	public function index()
 	{
-		$usuario=$this->empleado->mostrar();
+		
+		$usuario=$this->datos_usuario_model->mostrar();
 
 		$data['dusuario']=$usuario;
 
-		$this->load->view('',$data);
+		$this->load->view('datos_usuarios_view',$data);
 	}
 	public function registrousuarios()
 	{
+	
 		//$id_usuario=$this->post('id_usuario');
-		$nombre_usuario=$this->post('nombre_usuario');
-		$contraseña_usuario=$this->post('contraseña_usuario');
-		$rol_usuario=$this->post('rol_usuario');
-		$estado_usuario=$this->post('estado_usuario');
-		$id_empleado=$this->post('id_empleado');
+		$nombre_usuario=$this->input->post('nombre_usuario');
+		$contraseña_usuario=$this->input->post('contraseña_usuario');
+		$rol_usuario=$this->input->post('rol_usuario');
+		$estado_usuario=$this->input->post('estado_usuario');
+		$id_empleado=$this->input->post('id_empleado');
 
 		$data=array
 		(
@@ -35,16 +37,15 @@ class Datos_u extends CI_Controller{
 
 		);
 
-		$registro=$this->usuario->insertar($data);
-		$mensaje['insertar']='Registro exitoso';
-
+		$registro=$this->datos_usuario_model->insertar($data);
+		
 		if($registro==1){
-			$ruta=base_url('Datos_u');
+			$ruta=base_url('Datos_usuario');
 			echo "<script>
-			alert('');
+			alert('ingresado exitosamente');
 			window.location='{$ruta};
 			'</script>";
-			$this->load->view('datos_usuarios_view',$mensaje);
+			$this->load->view('datos_usuarios_view');
 		}
 		else{
 			$this->error();
@@ -53,7 +54,7 @@ class Datos_u extends CI_Controller{
 	public function eliminar()
 	{
 		$eliminar=$_Get['id'];
-		$this->usuario->usuario($usuario);
+		$this->datos_usuario_model->usuario($usuario);
 		$this->index();
 	}
 }

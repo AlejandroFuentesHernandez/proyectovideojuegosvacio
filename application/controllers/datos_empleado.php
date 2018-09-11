@@ -3,9 +3,9 @@
 /**
 	controlador para hacer el crud de los proveedores
 */
-	class Datos_e extends CI_Controller{
+	class Datos_empleado extends CI_Controller{
 
-		public function__construct()
+		public function __construct()
 		{
 			parent::__construct();//constructor del padre
 			$this->load->model('empleado_model','empleado',true);//forma de cargar el modelo para poder acceder a sus metodos, en el primer parametro sepone el nombre del modelo, en el segundo se le esta asignado un nombre diferente al modelo y en el tercero se le pondra TRUE para que se conecte automaticamente a la base de datos
@@ -24,6 +24,7 @@
 		//Insertar registros a base de datos
 		public function registroempleados()
 		{
+			
 			//obteniendo datos del formulario, los cuales los almacenaremos en una variable
 			//$id_empleados=$this->input->post('id_empleados');
 			$numero_empleado=$this->post('numero_empleado');
@@ -56,7 +57,7 @@
 			$mensaje['insertar']="Registro exitoso";//no olvidar borrar mensaje!!!!!!xd
 
 			if($registro==1){
-				$ruta=base_url('Datos_e');
+				$ruta=base_url('Datos_empleado');
 				echo "<script> 
 				alert('');
 				window.location='{$ruta}';
