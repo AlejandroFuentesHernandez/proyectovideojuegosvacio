@@ -5,7 +5,7 @@ class Datos_u extends CI_Controller{
 	public function__construct()
 	{
 		parent::__construct();
-		$this->load->model('');
+		$this->load->model('datos_usuario_model');
 	}
 	public function index()
 	{
@@ -39,12 +39,12 @@ class Datos_u extends CI_Controller{
 		$mensaje['insertar']='Registro exitoso';
 
 		if($registro==1){
-			$ruta=base_url('Usuario');
+			$ruta=base_url('Datos_u');
 			echo "<script>
 			alert('');
 			window.location='{$ruta};
 			'</script>";
-			$this->load->view('',$mensaje);
+			$this->load->view('datos_usuarios_view',$mensaje);
 		}
 		else{
 			$this->error();

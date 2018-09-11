@@ -8,7 +8,7 @@
 		public function__construct()
 		{
 			parent::__construct();//constructor del padre
-			$this->load->model('');//forma de cargar el modelo para poder acceder a sus metodos, en el primer parametro sepone el nombre del modelo, en el segundo se le esta asignado un nombre diferente al modelo y en el tercero se le pondra TRUE para que se conecte automaticamente a la base de datos
+			$this->load->model('empleado_model','empleado',true);//forma de cargar el modelo para poder acceder a sus metodos, en el primer parametro sepone el nombre del modelo, en el segundo se le esta asignado un nombre diferente al modelo y en el tercero se le pondra TRUE para que se conecte automaticamente a la base de datos
 		}
 
 //Mostrar datos ingresados
@@ -18,7 +18,7 @@
 			$empleado=$this->empleado->mostrar();
 			//$data['insertar']="";
 			$data['dempleado']=$empleado;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
-			$this->load->view('',$data);
+			$this->load->view('datos_emplados_view',$data);
 			
 		}
 		//Insertar registros a base de datos
@@ -56,12 +56,12 @@
 			$mensaje['insertar']="Registro exitoso";//no olvidar borrar mensaje!!!!!!xd
 
 			if($registro==1){
-				$ruta=base_url('Empleado');
+				$ruta=base_url('Datos_e');
 				echo "<script> 
 				alert('');
 				window.location='{$ruta}';
 				</script>";
-				$this->load->view('',$mensaje);
+				$this->load->view('datos_emplados_view',$mensaje);
 			}
 			else{
 				$this->error();
