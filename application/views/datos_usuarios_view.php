@@ -1,11 +1,11 @@
 <?php
 /*
-//id_usuarios		int
+//id_usuario		int
 //nombre_usuarios		varchar
 //contraseña_usuario	varchar
 //rol_usuario		varchar
-//id_empleado		int
 //estado_usuario (enum varchar)	
+//id_empleado
 */
 include 'url_include.php';
 ?>
@@ -14,7 +14,7 @@ include 'url_include.php';
 <head>
 	<title>Ingresar usarios</title>
 	<meta charset="utf-8">
-	<script src="<?php echo base_url();?>/js/Script_datosu"></script>
+	<script src="<?php echo base_url();?>/js/Script_datosu.js"></script>
 </head>
 <body>
 		<div class="container-fluid" style="padding-right: 50px; padding-left: 50px; padding-top: 50px; padding-bottom: 50px;">
@@ -40,7 +40,7 @@ include 'url_include.php';
 								<!--primer campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Id usuario:</label>
-									<input type="text" id="id_usuario" name="id_usuario"  onblur="" placeholder="id usuario" class="form-control">
+									<input type="text" id="id_usuario" name="id_usuario"  onblur="idvacio()" placeholder="id usuario" class="form-control">
 								</div>
 								<!-- segundo campo -->
 								<div class="col-md-12 form-group input-group">
@@ -60,7 +60,7 @@ include 'url_include.php';
 								<!-- quinto campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Estado usuario</label>
-									<select name="estado_usuario" class="form-control">
+									<select id="estado_usuario" name="estado_usuario" onblur="" class="form-control">
 										<option value="habilitado">habilitado</option>
 										<option value="inhabilitado">inhabilitado</option>
 									</select>
@@ -69,7 +69,7 @@ include 'url_include.php';
 								<!-- sexto campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Id del empleado:</label>
-									<input type="text" id="id_empleado" name="id_empleado" class="form-control">
+									<input type="text" id="id_empleado" name="id_empleado"  onblur=""placeholder="id empleado"class="form-control">
 								</div>
 								
 								<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_usuario_controller" class="btn btn-primary">nuevo usuario</a>

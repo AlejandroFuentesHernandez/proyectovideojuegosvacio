@@ -40,7 +40,7 @@
 			$data=array
 			(
 				//'id_empleados'=>$id_empleados,
-				'numero_empleado'=>$numero_empleado
+				'numero_empleado'=>$numero_empleado,
 				'nombre_empleado'=>$nombre_empleado,
 				'DUI_empleado'=>$DUI_empleado,
 				'direccion_empleado'=>$direccion_empleado,
