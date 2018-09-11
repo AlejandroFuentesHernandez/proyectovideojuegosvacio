@@ -12,19 +12,27 @@ function __construct()
 class Datos_usuarios extends CI_Model
 {
 	public function insertar($data){
-		$resultado=$this->db->insert('tab_usuario',$data);
-		if($resultado==true)
-		{
+		
+		$x=$this->db->insert('tab_usuario',$data);
+		if ($x==true) {
 			return 1;
-		}else{
+		}
+		else
+		{
 			return 0;
 		}
 	}
-public function mostrar(){
-	$usuarios=$this->db->get('tab_usuario');
-	return $empleado->result();
-}
 
+	public function mostrar('tab_usuario')
+	{
+		$usuarios=$this->db->get('tab_usuario');
+		return $usuarios->result();
+	}
+
+	public function eliminar($data)
+	{
+		$cliente=$this->db->query('delete from tab_usuario where id_usuario'.$data);
+	}
 }
 
 

@@ -9,7 +9,7 @@ class Empleado_model extends CI_Model{//Inicio de insercion
 	public function insertar($data)
 	{
 		//se insertan los datos
-		$x=$this->db->insert('',$data);
+		$x=$this->db->insert('tab_datos_empleado',$data);
 		if($x==true)
 		{
 			return 1;
@@ -22,7 +22,7 @@ class Empleado_model extends CI_Model{//Inicio de insercion
 	//Inicio de musetra de datos
 	public function mostrar('tab_empleado')
 	{
-		$empleado=$this->db->get('tab_empleado');//que es lo mismo que: SELECT* FROM tab_empleado
+		$empleado=$this->db->get('tab_datos_empleado');//que es lo mismo que: SELECT* FROM tab_empleado
 		return $empleado->result();
 	}//Fin de muestra de datos
 
