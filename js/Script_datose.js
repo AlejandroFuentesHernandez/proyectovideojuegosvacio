@@ -1,3 +1,8 @@
+$('#exampleModalLong').on('shown.bs.modal',function(){
+	$('#myInput').trigger('focus')
+});
+
+
 function numero_vacio(){
 	var numv=document.getElementById("numero_empleado").value.trim();
 	if(numv==''){
@@ -80,9 +85,3 @@ function estado_vacio(){
 
 
 }*/
-
-
-
-$('#exampleModalLong').on('shown.bs.modal',function(){
-		$('#myInput').trigger('focus')
-	});
