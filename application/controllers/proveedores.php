@@ -33,7 +33,8 @@ class Proveedores extends CI_Controller
         	$contacto_proveedores=$this->input->post('contacto_proveedores');
         	$estado_provedores=$this->input->post('estado_provedores'); 
 
-      //mandamos los datos por medio de un array al modelo, cada elemento corresponde con una columna en la tabla Proveedores de la Base de datos, esto quiere decir que lo que esta al lado izquierdo serian dichas columnas y tendran el valor correspondiente de la informacion que se mande del formulario.
+
+        	//mandamos los datos por medio de un array al modelo, cada elemento corresponde con una columna en la tabla Proveedores de la Base de datos, esto quiere decir que lo que esta al lado izquierdo serian dichas columnas y tendran el valor correspondiente de la informacion que se mande del formulario.
 				$data=array
 				(	
 					//'id_proveedores'=>$id_proveedores,
@@ -42,7 +43,7 @@ class Proveedores extends CI_Controller
 					'representante_empresa'=>$representante_empresa,
                     'direccion_proveedores'=>$direccion_proveedores,
                     'correo_proveedores'=>$correo_proveedores,
-					'contacto_provedores'=>$contacto_provedores, 
+					'contacto_proveedores'=>$contacto_proveedores, 
 					'estado_provedores'=>$estado_provedores, 
 				); 
 
@@ -84,6 +85,7 @@ class Proveedores extends CI_Controller
 
     public function modificar()
         {
+
             $data ['id'] = $_POST['id_proveedores'];
             $data ['nombre'] = $_POST['nombre_empresa'];
             $data ['tipo'] = $_POST['tipo_persona'];
@@ -96,6 +98,7 @@ class Proveedores extends CI_Controller
             $this->index();
 
         }
+
        /*public function mostrar_proveedores() esta funcion ya se realizo arriba
         {
         	$proveedores= $this->proveedores->mostrar(); 
@@ -104,5 +107,4 @@ class Proveedores extends CI_Controller
 
         }*/
 }
-
 
