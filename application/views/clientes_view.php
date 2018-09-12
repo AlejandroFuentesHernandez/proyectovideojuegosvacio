@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="panel panel-defaul"> 
                       <div class="panel-body"> 
-                        <form id="gracia" action="<?php echo site_url(); ?>/Clientes/RegistroCliente" method="POST">
+                        <form id="gracia" action="<?php echo site_url(); ?>Clientes/RegistroCliente" method="POST">
                             <!------------------ESTO ESTARA OCULTO--------------------------------------
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Id:</label>
@@ -45,31 +45,32 @@
                               <label for="" class="input-group-addon"> Nombre del cliente:</label>
                               <input type="text" id="nombre" name="nombre_cliente" class="form-control" required>
                            </div>
+                            <!-- Segundo campo-->
                             <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Fecha de nacimiento cliente:</label>
-                              <input type="date" id="nombre" name="fecha_nacimiento_cliente" class="form-control" required>
+                              <input type="date" id="fecha" onblur="calculaEdad()" name="fecha_nacimiento_cliente" class="form-control" required>
                            </div>
-                            <!-- Segundo campo-->
+                            <!-- Tercer campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Edad de Cliente:</label>
                               <input type="text" id="edad" name="edad_cliente" class="form-control" required>
                            </div>
-                             <!-- Tercer campo-->
+                             <!-- Cuarto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Número de DUI:</label>
                               <input type="text" id="DUI" name="numero_DUI" class="form-control" required>
                            </div>
-                             <!-- Cuarto campo-->
+                             <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Número de NIT:</label>
                               <input type="text" id="NIT" name="numero_NIT" class="form-control" required>
                            </div>
-                            <!-- Quinto campo-->
+                            <!-- Sexto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Estado de Cliente:</label>
                               <select name="estado_cliente">
-                                  <option value="Activo" class="form-control">Habilitado</option>
-                                  <option value="Inactivo" class="form-control">deshabilitado</option>
+                                  <option value="Habilitado" class="form-control">Habilitado</option>
+                                  <option value="Deshabilitado" class="form-control">Deshabilitado</option>
                               </select>
                               <!--<input type="text" id="estado" name="estado_cliente" class="form-control" required>-->
                            </div>
@@ -118,8 +119,8 @@
                                 <th>Número de NIT</th>
                                 <th>Estado de cliente</th>
                                 <th>Telefono de cliente</th>
-                                <th>Eliminar</th>
-                               
+                               <!-- <th>Eliminar</th>-->
+                                <th>Modificar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -134,7 +135,8 @@
                                 <td><?=$dc->numero_NIT?></td>
                                 <td><?=$dc->estado_cliente?></td>
                                 <td><?=$dc->telefono_cliente?></td>
-                                <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>
+                              <!--  <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>-->
+                                <td><a href="<?php echo base_url(); ?>Clientes/comoYoQuiero?id=<?php echo $dc->id_cliente;?>">Modificar</a></td>
                             </tr>
              
                             <?php endforeach;?>
@@ -170,3 +172,15 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+  function calculaEdad()
+{
+    var hoy = new Date();
+    var nac = new Date(document.getElementById('fecha').value);
+    var edad = hoy.getFullYear()-nac.getFullYear();
+    document.getElementById('edad').value=edad;
+}
+
+</script>
+

@@ -38,7 +38,7 @@ include 'url_include.php';
 						<!--<div class="panel-heading">Agregar </div>-->
 						<!--cuerpo-->
 						<div class="panel-body">
-							<form id="formemple" action="<?php echo site_url();?>/Datos_empleados_controller/registrar_empleado" method="POST">
+							<form id="formemple" action="<?php echo site_url();?>Datos_empleados_controller/registrar_empleado" method="POST">
 								<!-- Esto estara oculto
 									<div class="col-md-12 form-group input-group">
 										<input type="text" id="idprov" name="id_" class="form-control">
@@ -82,7 +82,7 @@ include 'url_include.php';
 													<!--octavo campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Estado_usuario</label>
-												<select id="estado_usuario" class="form-control"><option value="habilitado">habilitado</option><option value="inhabilitado">inhabilitado</option></select>
+												<select name="estado_empleado" id="estado_usuario" class="form-control"><option value="habilitado">habilitado</option><option value="inhabilitado">inhabilitado</option></select>
 									</div>
 									
 									<div class="col-md-12 text-center">

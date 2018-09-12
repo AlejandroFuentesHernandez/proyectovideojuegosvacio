@@ -61,7 +61,9 @@
                      <!-- Cuarto campo-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Direccion:</label>
+
                       <input type="text" id="direccion" name="direccion_proveedores" class="form-control" value="<?=$item['direccion_proveedores'];?>">
+
                     </div>
                     <!-- Quinto campo-->
                     <div class="col-md-12 form-group input-group">
@@ -71,7 +73,9 @@
                     <!-- sexto campo-->
                     <div class="col-md-12 form-group input-group">
                         <label for="" class="input-group-addon">Contacto:</label>
+
                         <input type="text" id="contacto" name="contacto_proveedores" class="form-control" value="<?=$item['contacto_proveedores'];?>">
+
                     </div>
                     <!-- septimo campo-->
                     <div class="col-md-12 form-group input-group">

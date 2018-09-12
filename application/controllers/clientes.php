@@ -22,6 +22,13 @@ class Clientes extends CI_Controller
     	$this->load->view('clientes_view', $data);
     }
 
+    public function comoYoQuiero()
+    {
+    	
+    	$data['variable']=$this->cliente->mostrarById($this->input->get('id'));
+    	$this->load->view('editar_clientes', $data);
+    }
+
       //Insertar registros a base de datos//
         public function RegistroCliente()
         {  //Obteniendo datos del formulario, los cuales los almacenaremos en una variable 
@@ -53,10 +60,10 @@ class Clientes extends CI_Controller
 				$mensaje['insertar']="Registro exitoso"; //NO OLVIDAR BORRAR MENSAJE!!!!! xD 
               
 				if($registro==1){
-					$ruta=base_url('Cliente');
+					$ruta=base_url('clientes');
 
 					echo "<script>
-							alert('Proveedor guardado satifactoriamente.');
+							alert('Cliente guardado satifactoriamente.');
 							window.location= '{$ruta}'; 
 							</script>";
 					$this->load->view('clientes_view', $mensaje);
@@ -71,9 +78,26 @@ class Clientes extends CI_Controller
         public function eliminar()
         {
         	
-		$eliminar = $_GET['id'];
-		$this->cliente->eliminar($eliminar);
-		$this->index();
+			$eliminar = $_GET['id'];
+			$this->cliente->eliminar($eliminar);
+			$this->index();
+
+		}
+
+
+		public function modificar()
+		{
+
+			$data ['id'] = $_POST['id_cliente'];
+			$data ['nombre'] = $_POST['nombre_cliente'];
+			$data ['nacimiento'] = $_POST['fecha_nacimiento_cliente'];
+			$data ['edad'] = $_POST['edad_cliente'];
+			$data ['dui'] = $_POST['numero_DUI'];
+			$data ['nit'] = $_POST['numero_NIT'];
+			$data ['estado'] = $_POST['estado_cliente'];
+			$data ['telefono'] = $_POST['telefono_cliente'];
+			$this->cliente->update($data);
+			$this->index();
 
 		}
 

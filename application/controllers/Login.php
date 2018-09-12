@@ -11,7 +11,7 @@ public function error()
 public function index()
 	{
 		$this->load->helper('url'); //esto sirve para habilitar las url 
-		$this->load->view('formlogin');
+		$this->load->view('login_view');
 	}
 
 	public function iniciosesion()
@@ -27,7 +27,7 @@ public function index()
          $resultado=$this->LM->verificarUsuario($user, $pass);//utilizamos metodo del modelo
 
 		if ($resultado==1) {
-         	$this->load->view('bootstrap');
+         	$this->load->view('boostrap');
 
          }
          else
