@@ -1,11 +1,11 @@
 <?php
 /*
-//id_usuarios		int
+//id_usuario		int
 //nombre_usuarios		varchar
 //contraseña_usuario	varchar
 //rol_usuario		varchar
-//id_empleado		int
 //estado_usuario (enum varchar)	
+//id_empleado
 */
 include 'url_include.php';
 ?>
@@ -14,7 +14,7 @@ include 'url_include.php';
 <head>
 	<title>Ingresar usarios</title>
 	<meta charset="utf-8">
-	<script src="js/Scripts_datosu"></script>
+	<script src="<?php echo base_url();?>/js/Script_datosu.js"></script>
 </head>
 <body>
 		<div class="container-fluid" style="padding-right: 50px; padding-left: 50px; padding-top: 50px; padding-bottom: 50px;">
@@ -31,26 +31,56 @@ include 'url_include.php';
 						<!--<div class="panel-heading" -->
 						<!-- cuerpo -->
 						<div class="panel-body">
-							<form id="formus" action="<?php echo site_url();?>/datos_usuario_controller/registrar_usuario" method="POST">
+							<form id="formus" action="<?php echo site_url();?>Datos_usuario/registrousuarios" method="POST">
 								<!--
 									<div class="col-md-12 form-group input-group">
 										<input type="text" id="idprov" name="id_" class="form-control">
 									</div>
 								-->
-								<!--primer campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Id usuario:</label><input type="text" id="id_usuarios" name="id_usuarios" class="form-control"></div>
+								<!--primer campo 
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Id usuario:</label>
+									<input type="text" id="id_usuario" name="id_usuario"  onblur="idvacio()" placeholder="id usuario" class="form-control">
+								</div>-->
 								<!-- segundo campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Nombre usuario:</label><input type="text"  id="nombre_usuarios" name="nombre_usuarios" class="form-control"></div>
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Nombre usuario:</label>
+									<input type="text"  id="nombre_usuario" onblur="" placeholder="Nombre usuario" name="nombre_usuario" class="form-control">
+								</div>
 								<!-- tercer campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Contraseña:</label><input type="text" id="contraseña_usuario" name="contraseña_usuario" class="form-control"></div>
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Contraseña:</label>
+									<input type="text" id="contraseña_usuario" onblur="" placeholder="contraseña"name="contraseña_usuario" class="form-control">
+								</div>
 								<!--cuarto campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Rol usuario:</label><input type="text" id="rol_usuario" name="rol_usuario" class="form-control"></div>
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Rol usuario:</label>
+									<input type="text" id="rol_usuario" onblur="" placeholder="rol_usuario"name="rol_usuario" class="form-control">
+								</div>
 								<!-- quinto campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Id del empleado:</label><input type="text" id="id_empleado" name="id_empleado" class="form-control"></div>
-								<!-- sexto campo -->
-								<div class="col-md-12 form-group input-group"><label for="" class="input-group-addon">Estado usuario</label><select name="estado_usuario"><option value="habilitado"></option><option value="inhabilitado"></option></select></div>
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Estado usuario</label>
+									<select id="estado_usuario" name="estado_usuario" onblur="" class="form-control">
+										<option value="habilitado">habilitado</option>
+										<option value="inhabilitado">inhabilitado</option>
+									</select>
+								</div>
 					
-								<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_usuario_controller" class="btn btn-primary">nuevo usuario</a>
+								<!-- sexto campo -->
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Id del empleado:</label>
+									<input type="text" id="id_empleado" name="id_empleado"  onblur=""placeholder="id empleado"class="form-control">
+								</div>
+								
+								<div>
+									<button type="button" onclick="">
+										Click
+									</button>
+									<label id=""></label><input type="text" placeholder="ver" id="campo">
+								</div>
+
+
+								<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_usuario.php" class="btn btn-primary">nuevo usuario</a>
 									<!-- boton -->
 									<button type="submit"  id="ingresar"  class="btn btn-success">Ingresar usuario</button>
 								</div>
@@ -94,7 +124,7 @@ include 'url_include.php';
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach($dusuarioc as $du):?>
+							<!--<?php foreach($dusuario as $du):?>-->
 								<tr>
 									<!--<td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td>-->
 									<!--<td><?=$du->id_usuario?></td> -->
@@ -104,7 +134,7 @@ include 'url_include.php';
 									<td><?=$du->id_empleado?></td>
 									<td><?=$du->estado_usuario?></td>
 								</tr>
-							<?php endforeach;?>
+							<!--<?php endforeach;?>-->
 						</tbody>
 					</table>
 				</div>

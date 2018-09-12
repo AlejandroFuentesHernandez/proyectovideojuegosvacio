@@ -1,5 +1,5 @@
 <?php
-define('BASEPATH') OR exit('No direct script access allowed');
+//define('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * 
@@ -9,22 +9,30 @@ function __construct()
 	{
 		$this->load->database();
 	}
-class Datos_usuarios extends CI_Model
+class Datos_usuario_model extends CI_Model
 {
 	public function insertar($data){
-		$resultado=$this->db->insert('tab_usuario',$data);
-		if($resultado==true)
-		{
+		
+		$x=$this->db->insert('tab_usuario',$data);
+		if ($x==true) {
 			return 1;
-		}else{
+		}
+		else
+		{
 			return 0;
 		}
 	}
-public function mostrar(){
-	$usuarios=$this->db->get('tab_usuario');
-	return $empleado->result();
-}
 
+	public function mostrar()
+	{
+		$usuarios=$this->db->get('tab_usuario');
+		return $usuarios->result();
+	}
+
+	public function eliminar($data)
+	{
+		$cliente=$this->db->query('delete from tab_usuario where id_usuario'.$data);
+	}
 }
 
 
