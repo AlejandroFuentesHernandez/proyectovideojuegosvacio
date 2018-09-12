@@ -131,12 +131,12 @@
                                 <th>Contacto</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
-                               
-                            </tr>
+         </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($dproveedores as $dp):
                             ?>
+
                             <tr>
                                
                                 <td><?=$dp->id_proveedores?></td>
@@ -147,13 +147,14 @@
                                 <td><?=$dp->correo_proveedores?> </td>
                                 <td><?=$dp->contacto_proveedores?></td>
                                 <td><?=$dp->estado_provedores?></td>
-                               
-                               <td> 
+
+                                <td>
                                   <a href="<?php echo base_url();?>Proveedores/mostrarId?idp=<?php echo $dp->id_proveedores;?>" class="btn btn-info">Editar</a>
                                   <a href="<?php echo base_url();?>Proveedores/eliminar?idp=<?php echo $dp->id_proveedores;?>" class="btn btn-info">Eliminar </a>
-                                </td> 
-                            </tr>
-             
+                                </td>
+                          
+                              </tr>
+
                             <?php endforeach;?>
                         </tbody>
                       </table>

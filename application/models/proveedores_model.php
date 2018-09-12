@@ -36,7 +36,7 @@ class Proveedores_model extends CI_Model
         return $proveedores->result_array();
     }
 
-    public function modificar($data)
+       public function modificar($data)
     {
     	$this->db->set('nombre_empresa', $data['nombre']);
     	$this->db->set('tipo_persona', $data['tipo']);
