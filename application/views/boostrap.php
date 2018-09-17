@@ -278,7 +278,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?php echo site_url(); ?>/Local/InicioSesion"><i class="fa fa-dashboard fa-fw"></i> Ingresar libro </a>
+                            <a href="<?php echo site_url(); ?>/Local/InicioSesion"><i class="fa fa-dashboard fa-fw"></i> Início </a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> Usuarios<span class="fa arrow"></span></a>
@@ -296,7 +296,7 @@
                             <a href="tables.html"><i class="fa fa-user fa-fw"></i> Empleados<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo site_url(); ?>/Dtos_empleados/visual">Ingresar Empleado</a>
+                                    <a href="<?php echo base_url() ?>add-empleado">Ingresar Empleado</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Datos Empleados</a>

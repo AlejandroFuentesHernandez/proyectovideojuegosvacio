@@ -30,7 +30,7 @@ public function insertar($data){
 }
 
 public function mostrar(){
-$empleados=$this->db->get('tab_empleados');//que es lo mismo que: SELECT * FROM tab_empleados
+$empleados=$this->db->get('tab_datos_empleados');//que es lo mismo que: SELECT * FROM tab_empleados
 return $empleados->result();
 }
 public function eliminar($data)

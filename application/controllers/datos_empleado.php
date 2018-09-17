@@ -18,8 +18,8 @@
 			$usuario=$this->datos_empleado_model->mostrar();
 
 			//$data['insertar']="";
-			$data['dempleado']=$empleado;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
-			$this->load->view('datos_emplados_view',$data);
+			$data['dempleado']=$usuario;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
+			$this->load->view('datos_empleados_view',$data);
 			
 		}
 		//Insertar registros a base de datos
