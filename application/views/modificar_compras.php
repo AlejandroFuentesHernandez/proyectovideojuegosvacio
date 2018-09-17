@@ -65,12 +65,12 @@
                              <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Precio Unitario de Compra:</label>
-                              <input type="text" id="precio" name="precio_unitario_compra" class="form-control"  value="<?php echo $item['precio_unitario_compra'];?>" required>
+                              <input type="text" id="precio" onblur="operacion()" name="precio_unitario_compra" class="form-control"  value="<?php echo $item['precio_unitario_compra'];?>" required>
                            </div>
                             <!-- Sexto campo--> 
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Total de compra:</label>
-                              <input type="text" id="total" name="total_compra" class="form-control"  value="<?php echo $item['total_compra'];?>" required>
+                              <input type="text" id="total"  name="total_compra" class="form-control"  value="<?php echo $item['total_compra'];?>" required>
                            </div>
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
@@ -98,4 +98,15 @@
 
 </body>
 </html>
+<script type="text/javascript">
+
+  function operacion()
+{
+    var uno=parseInt($('#cantidad').val());
+    var dos=parseInt($('#precio').val());
+    var multi=uno*dos;
+    $('#total').val(multi);
+}
+
+</script>
 
