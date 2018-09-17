@@ -57,3 +57,4 @@ $route['add-empleado'] = 'datos_empleado/index';
 $route['add-usuario'] = 'datos_usuario/index';
 $route['proveedores'] = 'proveedores/index';
 $route['add-compra'] = 'compra/index';
+$route['index'] = 'Login/index';
