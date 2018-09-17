@@ -23,8 +23,8 @@ include 'url_include.php';
 	<meta charset="utf-8">
 	<script src="<?php echo base_url();?>/js/Script_datose.js"></script>
 </head>
-<body>
-		<div class="container-fluid" style="padding-right: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px;">
+<body style="padding: 20px">
+		<div class="container-fluid">
 			<!--columna1-->
 				<div class="row">
 					<div class="col-md-12 text-center">
@@ -32,10 +32,11 @@ include 'url_include.php';
 					</div>
 				</div>
 				<!--columna 2-->
-				<div class="row" style="padding-left: 430px;">
+				<div class="row" style="padding-left: 435px;">
 					<!--parte 2 -->
 					<div class="col-md-6">
-						<div class="panel panel-default">
+						<div class="panel panel-primary">
+							<div class="panel-heading">Ingresar empleado</div>
 						<!--<div class="panel-heading">Agregar </div>-->
 						<!--cuerpo-->
 						<div class="panel-body">

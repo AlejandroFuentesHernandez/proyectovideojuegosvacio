@@ -16,18 +16,19 @@ include 'url_include.php';
 	<meta charset="utf-8">
 	<script src="<?php echo base_url();?>/js/Script_datosu.js"></script>
 </head>
-<body>
-		<div class="container-fluid" style="padding-right: 50px; padding-left: 50px; padding-top: 50px; padding-bottom: 50px;">
+<body style="padding:20px">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<h1>Ingresar usuarios</h1>
 				</div>
 			</div>
 			<!--columna2-->
-			<div class="row" style="padding-left: 430px;">
+			<div class="row" style="padding-left: 435px;">
 				<!-- parte 2 -->
 				<div class="col-md-6">
-					<div class="panel panel-default">
+					<div class="panel panel-primary">
+						<div class="panel panel-heading">Ingresar usuario</div>
 						<!--<div class="panel-heading" -->
 						<!-- cuerpo -->
 						<div class="panel-body">
