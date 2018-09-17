@@ -278,13 +278,13 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?php echo site_url(); ?>/Local/InicioSesion"><i class="fa fa-dashboard fa-fw"></i> Início </a>
+                            <a href="<?php echo site_url(); ?>inicio"><i class="fa fa-dashboard fa-fw"></i> Início </a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> Usuarios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo site_url(); ?>/Usuario/crear">Crear Usuario</a>
+                                    <a href="<?php echo site_url(); ?>add-usuario">Crear Usuario</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Info Usuario</a>
@@ -296,7 +296,7 @@
                             <a href="tables.html"><i class="fa fa-user fa-fw"></i> Empleados<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo base_url() ?>add-empleado">Ingresar Empleado</a>
+                                    <a href="<?php echo site_url(); ?>add-empleado">Ingresar Empleado</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Datos Empleados</a>
@@ -304,14 +304,14 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo site_url(); ?>/proveedores/index"><i class="fa fa-shopping-cart fa"></i>Proveedores</a>
+                            <a href="<?php echo site_url(); ?>proveedores"><i class="fa fa-shopping-cart fa"></i>Proveedores</a>
                              
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Compras<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo site_url(); ?>/Compra/index">Realizar Compra</a>
+                                    <a href="<?php echo site_url(); ?>add-compra">Realizar Compra</a>
                                 </li>
                                 <li>
                                     <a href="buttons.html"></a>
