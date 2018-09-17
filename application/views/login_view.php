@@ -41,16 +41,16 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Registrese por favor</h3>
+                        <h3 class="panel-title">Inicio de Sesión de Usuario</h3>
                     </div>
                     <div class="panel-body">
                         <form action="<?php echo site_url(); ?>Login/iniciosesion" method=POST role="form">
                             <fieldset>
                                 <div class="form-group">
-                                  <label>Ingrese su usuario<input type="text" name="usuario" placeholder="Usuario" autocomplete="off" class="form-control" autofocus></label>
+                                  <label>Ingrese su usuario<input type="text" name="usuario" placeholder="Usuario" autocomplete="off" class="form-control" autofocus required></label>
                                 </div>
                                 <div class="form-group">
-                                    <label>Digite su contraseña<input class="form-control" placeholder="Contraseña" name="password" type="password" value=""></label>
+                                    <label>Digite su contraseña<input class="form-control" placeholder="Contraseña" name="password" type="password" value="" required></label>
                                 </div>
                                 <div class="checkbox">
                                     <label>

@@ -19,7 +19,7 @@
 </head>
 
 <body style="padding: 20px">
-    <div class="container-fluid " style="padding-right: 50px; padding-left: 50px; padding-top: 50px; padding-bottom: 50px;">
+    <div class="container-fluid">
         <!--columna 1-->
         <div class="row">
             <div class="col-md-12 text-center">
@@ -27,10 +27,12 @@
             </div>
         </div>
          <!-- Columna 2-->
-        <div class="row" style=" padding-left: 400px;" > 
+        <div class="row" style=" padding-left: 435px;" > 
           <!--PARTE 2-->
             <div class="col-md-6">
-                <div class="panel panel-defaul"> 
+                <div class="panel panel-primary"> 
+                  <div class="panel-heading">Agregar Cliente</div>
+              <!-- Cuerpo-->
                       <div class="panel-body"> 
                         <form id="gracia" action="<?php echo site_url(); ?>Clientes/RegistroCliente" method="POST">
                             <!------------------ESTO ESTARA OCULTO--------------------------------------
@@ -79,6 +81,7 @@
                               <label for="" class="input-group-addon"> Telefono de cliente:</label>
                               <input type="text" id="telefono" name="telefono_cliente" class="form-control" required>
                            </div>
+
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
                               <button type="submit" class="btn btn-success">Ingresar Cliente</button>
@@ -153,12 +156,7 @@
     </div>
   </div>
 </div>
-
-            
-      
- 
-
-   
+  
 
 </body>
 </html>

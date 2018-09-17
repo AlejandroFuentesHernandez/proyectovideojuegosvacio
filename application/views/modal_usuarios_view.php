@@ -33,8 +33,8 @@
 								<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Estado usuario</label>
 								<select name="estado_usuario" class="form-control">
-								<option value="habilitado">habilitado</option>
-								<option value="inhabilitado">inhabilitado</option>
+								<option value="Habilitado">Habilitado</option>
+								<option value="Inhabilitado">Inhabilitado</option>
 								</select></div>
 					<div class="col-md-12 text-center">
 									<!-- boton -->
