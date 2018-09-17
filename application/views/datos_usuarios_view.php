@@ -14,7 +14,7 @@ include 'url_include.php';
 <head>
 	<title>Ingresar usarios</title>
 	<meta charset="utf-8">
-	<script src="<?php echo base_url();?>/js/Script_datosu.js"></script>
+	
 </head>
 <body style="padding:20px">
 		<div class="container-fluid">
@@ -152,4 +152,5 @@ include 'url_include.php';
 		</div>
 </div>
 </body>
+<script src="<?php echo base_url();?>/js/Script_datosu.js"></script>
 </html>

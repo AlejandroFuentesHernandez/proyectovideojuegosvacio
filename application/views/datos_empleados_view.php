@@ -21,7 +21,7 @@ include 'url_include.php';
 <head>
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
-	<script src="<?php echo base_url();?>/js/Script_datose.js"></script>
+	
 </head>
 <body style="padding: 20px">
 		<div class="container-fluid">
@@ -180,4 +180,5 @@ include 'url_include.php';
 	</div>
 </div>
 </body>
+<script src="<?php echo base_url();?>/js/Script_datose.js"></script>
 </html>
