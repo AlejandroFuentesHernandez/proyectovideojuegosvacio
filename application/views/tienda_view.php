@@ -63,7 +63,49 @@ include 'url_include.php';
 
 
 	<div>
-		<div class="modal fade"></div>
+		<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelly="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title" id="exampleModalLongTitle">Tabla tiendas</h1>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body"></div>
+					<!-- tabla para mostrar datos-->
+					<table border="solid">
+						<thead>
+							<tr>
+								<!--<th>Id de la tienda</th> -->
+								<th>Nombre de la tienda</th>
+								<th>Direccion de la tienda</th>
+								<th>telefono de la tienda</th>
+								<!-- 
+									<th>borrar</th>
+									<th>editar</th>
+								-->
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach($dtienda as $dt):?>
+								<tr>
+									<!--<td><input type="radio" name="editar" value="<?=$u->idcontacto?>"/></td>-->
+									<!--<td><?=$dt->id_tienda?></td> -->
+									<td><?=$dt->nombre_tienda?></td>
+									<td><?=$dt->direccion_tienda?></td>
+									<td><?=$dt->telefono_tienda?></td>
+								</tr>
+							<?php endforeach;?>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<!--<button type="button" class="btn btn-prymary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
 	</div>
 
 </body>

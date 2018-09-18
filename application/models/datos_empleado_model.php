@@ -19,7 +19,7 @@ class Datos_empleado_model extends CI_Model
 	//los modelo no necesitan un constructor
 	
 public function insertar($data){
-	$x=$this->db->insert('tab_empleados',$data);/* que es lo mismo que: INSERT INTO tab_empleados()values()*/
+	$x=$this->db->insert('tab_datos_empleados',$data);/* que es lo mismo que: INSERT INTO tab_empleados()values()*/
 	if($x==true)
 	{
 		return 1;

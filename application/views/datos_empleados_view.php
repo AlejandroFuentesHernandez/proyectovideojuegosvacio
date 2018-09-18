@@ -21,7 +21,7 @@ include 'url_include.php';
 <head>
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
-	
+	<script src="<?php echo base_url();?>/js/Script_datose.js"></script>
 </head>
 <body style="padding: 20px">
 		<div class="container-fluid">
@@ -112,7 +112,7 @@ include 'url_include.php';
 									</div>
 									<div class="col-md-12 text-center">
 									<!-- buton trigger modal -->
-									<button type="button" class="btn btn-prymary" data-toggle="modal" data-target="#exampleModalLong">Visualizar Proveedores</button>
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Visualizar Proveedores</button>
 								</div>
 							</form>
 						</div><!--fin del cuerpo-->		
@@ -180,5 +180,5 @@ include 'url_include.php';
 	</div>
 </div>
 </body>
-<script src="<?php echo base_url();?>/js/Script_datose.js"></script>
+
 </html>
