@@ -1,24 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-
-/**
- * 
-//la clase inicia con mayuscula 
-
- */
-
 function __construct()
 {
+	//parent:: __construct();
 	$this->load->database();
 }
 
-
+//creamos la insercion de datos a una tabla
 class Datos_empleado_model extends CI_Model
-{
-	//los modelo no necesitan un constructor
-	
-public function insertar($data){
+{//Inicio de insercion
+	public function insertar($data)
+	{
+		//se inserta datos//
 	$x=$this->db->insert('tab_datos_empleados',$data);/* que es lo mismo que: INSERT INTO tab_empleados()values()*/
 	if($x==true)
 	{
@@ -33,10 +25,42 @@ public function mostrar(){
 $empleados=$this->db->get('tab_datos_empleados');//que es lo mismo que: SELECT * FROM tab_empleados
 return $empleados->result();
 }
+
+public function mostrarById($id)
+{
+	$this->db->where('id_empleado');
+	$empleado=$this->bd->get('tab_empleados');
+	return $empleado->result_array();
+}
+	
 public function eliminar($data)
 {
 	$empleado=$this->db->query('delete from tab_usuario where id_usuario'.$data);
 }
+
+
+public function modificar($data)
+{
+	$this->bd->set('numero_empleado',$data['numero_empleado']);
+	$this->bd->set('nombre_empleado',$data['nombre_empleado']);
+	$this->bd->set('DUI_empleados',$data['DUI_empleados']);
+	$this->bd->set('direccion_empleado',$data['direccion_empleado']);
+	$this->bd->set('fecha_nacimiento',$data['fecha_nacimiento']);
+	$this->bd->set('cargo_empleado',$data['cargo_empleado']);
+	$this->bd->set('correo_empleado',$data['correo_empleado']);
+	$this->bd->set('telefono_empleado',$data['telefono_empleado']);
+	$this->bd->set('estado_usuario',$data['estado_usuario']);
+	$this->bd->set('id_tienda',$data['id_tienda']);
+
+}
+
+public function getTienda()
+        {
+            $this->load->database();
+            $resultado=$this->db->get('tab_cliente');
+            return $resultado->result_array();
+        }//Fin de llamado de cliente//
+
 
 }
 

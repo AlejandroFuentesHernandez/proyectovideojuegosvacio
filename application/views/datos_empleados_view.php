@@ -21,7 +21,7 @@ include 'url_include.php';
 <head>
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
-	<script src="<?php echo base_url();?>/js/Script_datose.js"></script>
+	<script src="<?php echo base_url();?>js/Script_datose.js"></script>
 </head>
 <body style="padding: 20px">
 		<div class="container-fluid">
@@ -40,7 +40,7 @@ include 'url_include.php';
 						<!--<div class="panel-heading">Agregar </div>-->
 						<!--cuerpo-->
 						<div class="panel-body">
-							<form id="formemple" action="<?php echo site_url();?>/Datos_empleado/registroempleados" method="POST">
+							<form id="formemple" action="<?php echo site_url();?>/Datos_empleado/" method="POST">
 								<!-- Esto estara oculto
 									<div class="col-md-12 form-group input-group">
 										<input type="text" id="id_empleados" name="id_empleados" class="form-control">
@@ -49,7 +49,7 @@ include 'url_include.php';
 								<!-- primer campo-->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Numero de empleado:</label>
-									<input type="text" id="numero_empleado" name="numero_empleado" class="form-control" onblur="numero_vacio()" placeholder="Numero empleados">
+									<input type="text" id="numero_empleado" name="numero_empleado" class="form-control" onblur="" placeholder="Numero empleados">
 								</div>
 								<!-- segundo campo-->
 								<div class="col-md-12 form-group input-group">
@@ -99,14 +99,22 @@ include 'url_include.php';
 												<select id="estado_usuario" class="form-control"><option value="habilitado">habilitado</option><option value="inhabilitado">inhabilitado</option></select>
 									</div>
 
-									<div class="col-md-12 form-group input-group">
-											<label for="" class="input-group-addon">Id_tienda:</label>
-											<input type="text" id="id_empleados" name="id_tienda" onblur="" class="form-control">
-									</div>
+									<div class="col-md-12 form-group input-group"> 
+            							<label for="" class="input-group-addon">Seleccionar Tienda:</label>
+            							<select class="form-control" id='id_tienda' name="nombre_cliente">
+           	 							</select>
+                      
+          							</div>  
+
+
+          							<!--<div class="col-md-12 form-group input-group">
+										<label for="" class="input-group-addon">Telefono del empleado</label>
+										<input type=""  id="id_tienda2" name="telefono_empleado" onblur=""placeholder="5555-5555" class="form-control">
+									</div>-->
 									
 									<div class="col-md-12 text-center">
 										<!-- nuevo-->
-										<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_empleado.php" class="btn btn-primary">nuevo empleado</a>
+										<div class="col-md-12 text-center">
 										<!--boton--->
 										<button type="submit" class="btn btn-success">Ingresar empleado</button>
 									</div>
@@ -120,19 +128,21 @@ include 'url_include.php';
 						</div>
 						</div><!-- fin class container--->
 <!-- Modal-->
-<div>
-	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledy="exampleModalLongTitle" aria-hidden="true">
-		<div class="modal-dialog" role="document">
+
+	<div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledy="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			
 			<div class="modal-content">
+
 				<div class="modal-header">
-					<h1 class="modal-title" id="exampleModalLongTitle"> Tabla Empleados</h1>
+
+					<h1 class="modal-title" id="exampleModalLongTitle">Tabla Empleados</h1>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 				</div>
-				<div class="modal-body">
 					<!--tabla para mostrar datos-->
-					<table border="solid">
+					<table border="solid" class="text-center">
 					<thead>
 						<tr>
 							<!--<th>Id del empleado</th>-->
@@ -154,7 +164,7 @@ include 'url_include.php';
 					<tbody>
 						<?php foreach($dempleados as $de):?>
 						<tr>
-							<!--<td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td>-->
+							<!--<td><input type="radio" name="editar" value="<?=$u->id_empleado?>"/></td>-->
 							<!--<td><?=$de->id_empleado?></td>-->
 							<td><?=$de->numero_empleado?></td>
 							<td><?=$de->nombre_empleado?></td>
@@ -164,13 +174,14 @@ include 'url_include.php';
 							<td><?=$de->cargo_empleado?></td>
 							<td><?=$de->telefono_empleado?></td>
 							<td><?=$de->id_tienda?></td>
-							<td><?=$de->estado_usuario?></td>
+							<td><?=$de->estado_empleado?></td>
+							<!-- <td><a href="<?php echo base_url();?>Datosempleado/eliminar?id=<?php echo $de->id_empleado;?>">Eliminar</a></td>-->
+							<td><a href="<?php echo base_url();?>Datosempleado/editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>
 						</tr>
 
 						<?php endforeach; ?>
 					</tbody>
 				</table>
-				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					<!-- <button type="button" class="btn btn-prymary">Save changes</button>-->
@@ -178,7 +189,7 @@ include 'url_include.php';
 			</div>
 		</div>
 	</div>
-</div>
+
 </body>
 
 </html>
