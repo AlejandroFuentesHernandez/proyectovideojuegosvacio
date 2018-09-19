@@ -25,11 +25,11 @@ include 'url_include.php';
 			<!--parte 2 -->
 			<div class="col-md-6">
 				<div class="panel panel-primary">
-					<div class="panel-heading"> Datos tienda</div>
+					<div class="panel-heading">Datos tienda</div>
 					<!--<div class -->
 					<!--cuerpo -->
 					<div class="panel-body">
-						<form id="formtienda" action="" method="POST">
+						<form id="formtienda" action="<?php echo site_url();?>Tienda/RegistroTienda" method="POST">
 							<!-- esto estara oculto-->
 							<!--primer campo-->
 							<div class="col-md-12 form-group input-group">
@@ -38,22 +38,22 @@ include 'url_include.php';
 							<!-- segundo campo-->
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Direccion tienda</label>
-								<input type="text" id="direccion_tienda" name="direccion_tienda" class="form-control" onblur="" placeholder="direccion"></div>
+								<textarea id="direccion_tienda" name="direccion_tienda" class="form-control" onblur="" placeholder="direccion"></textarea></div>
 							<!--tercer campo -->
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Telefono tienda</label>
 								<input type="text" id="telefono_tienda" name="telefono_tienda" class="form-control" onblur="" placeholder="5555-5555"></div>
 
+
 								<div class="col-md-12 text-center">
-									<!-- nuevo-->
-									<div class="col-md-12 text-center"><a href="<? echo site_url();?>" class="btn btn-primary">nueva tienda</a>
 										<!-- boton-->
 										<button type="submit" class="btn btn-success">Ingresar tienda</button>
-									</div>
+									</div><br><br>
 									<div class="col-md-12 text-center">
-										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">visualizar Tienda</button>
+										<!-- boton trigger modal-->
+										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">visualizar tienda
+										</button>
 									</div>
-								</div>
 						</form>
 					</div><!-- fin del cuerpo-->
 				</div><!-- panel -->
@@ -62,51 +62,58 @@ include 'url_include.php';
 	</div><!-- finclass container-->
 
 
-	<div>
-		<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelly="exampleModalLongTitle" aria-hidden="true">
-			<div class="modal-dialog" role="document">
+	
+		<div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelly="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+
 				<div class="modal-content">
+
 					<div class="modal-header">
+
 						<h1 class="modal-title" id="exampleModalLongTitle">Tabla tiendas</h1>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<div class="modal-body"></div>
-					<!-- tabla para mostrar datos-->
-					<table border="solid">
+					<!-- Tabla mostrar datos-->
+					<table border="solid" class="text-center">
 						<thead>
 							<tr>
 								<!--<th>Id de la tienda</th> -->
 								<th>Nombre de la tienda</th>
 								<th>Direccion de la tienda</th>
 								<th>telefono de la tienda</th>
+								<th>Modificar</th>
 								<!-- 
 									<th>borrar</th>
-									<th>editar</th>
 								-->
 							</tr>
 						</thead>
 						<tbody>
 							<?php foreach($dtienda as $dt):?>
 								<tr>
-									<!--<td><input type="radio" name="editar" value="<?=$u->idcontacto?>"/></td>-->
+									<!--<td><input type="radio" name="editar" value="<?=$u->id_tienda?>"/></td>-->
 									<!--<td><?=$dt->id_tienda?></td> -->
 									<td><?=$dt->nombre_tienda?></td>
 									<td><?=$dt->direccion_tienda?></td>
 									<td><?=$dt->telefono_tienda?></td>
+									<!-- <td><a href="<?php echo base_url(); ?>Tienda/eliminar?id=<?php echo $dt->id_tienda;?>">Eliminar</a></td>-->
+									<td><a href="<?php echo base_url();?>Tienda/editar?id=<?php echo $dt->id_tienda;?>">Modificar</a></td>
 								</tr>
 							<?php endforeach;?>
 						</tbody>
 					</table>
-				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 					<!--<button type="button" class="btn btn-prymary">Save changes</button> -->
 				</div>
+				</div>
+				
+
 			</div>
+
 		</div>
-	</div>
+	
 
 </body>
 </html>
