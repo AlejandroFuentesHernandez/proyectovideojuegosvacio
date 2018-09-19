@@ -37,11 +37,11 @@ include 'url_include.php';
 								<input type="text" id="nombre_tienda" name="nombre_tienda" class="form-control" onblur="" placeholder="Nombre tienda"></div>
 							<!-- segundo campo-->
 							<div class="col-md-12 form-group input-group">
-								<label>Direccion tienda</label>
+								<label for="" class="input-group-addon">Direccion tienda</label>
 								<input type="text" id="direccion_tienda" name="direccion_tienda" class="form-control" onblur="" placeholder="direccion"></div>
 							<!--tercer campo -->
 							<div class="col-md-12 form-group input-group">
-								<label>Telefono tienda</label>
+								<label for="" class="input-group-addon">Telefono tienda</label>
 								<input type="text" id="telefono_tienda" name="telefono_tienda" class="form-control" onblur="" placeholder="5555-5555"></div>
 
 								<div class="col-md-12 text-center">
@@ -51,7 +51,7 @@ include 'url_include.php';
 										<button type="submit" class="btn btn-success">Ingresar tienda</button>
 									</div>
 									<div class="col-md-12 text-center">
-										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">visualizar Proveedores</button>
+										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">visualizar Tienda</button>
 									</div>
 								</div>
 						</form>
