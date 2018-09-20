@@ -7,7 +7,15 @@ function __construct()
 
 //creamos la insercion de datos a una tabla
 class Datos_empleado_model extends CI_Model
-{//Inicio de insercion
+{
+	public function getTienda()//insertar id
+        {
+            $this->load->database();
+            $resultado=$this->db->get('tab_tienda');
+            return $resultado->result_array();
+        }//Fin de llamado de cliente//
+
+//Inicio de insercion
 	public function insertar($data)
 	{
 		//se inserta datos//
@@ -22,14 +30,14 @@ class Datos_empleado_model extends CI_Model
 }
 
 public function mostrar(){
-$empleados=$this->db->get('tab_datos_empleados');//que es lo mismo que: SELECT * FROM tab_empleados
-return $empleados->result();
+$empleado=$this->db->get('tab_datos_empleados');//que es lo mismo que: SELECT * FROM tab_empleados
+return $empleado->result();
 }
 
 public function mostrarById($id)
 {
-	$this->db->where('id_empleado');
-	$empleado=$this->bd->get('tab_empleados');
+	$this->db->where('id_empleados');
+	$empleado=$this->bd->get('tab_datos_empleados');
 	return $empleado->result_array();
 }
 	
@@ -54,12 +62,6 @@ public function modificar($data)
 
 }
 
-public function getTienda()
-        {
-            $this->load->database();
-            $resultado=$this->db->get('tab_cliente');
-            return $resultado->result_array();
-        }//Fin de llamado de cliente//
 
 
 }

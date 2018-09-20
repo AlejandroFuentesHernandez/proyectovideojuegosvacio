@@ -11,34 +11,33 @@
 			$this->load->model('datos_empleado_model','empleado','TRUE');//forma de cargar el modelo para poder acceder a sus metodos, en el primer parametro sepone el nombre del modelo, en el segundo se le esta asignado un nombre diferente al modelo y en el tercero se le pondra TRUE para que se conecte automaticamente a la base de datos
 		}
 
-//Mostrar datos ingresados
 		public function index()
 		{
 			//$this->load
 			$empleado=$this->empleado->mostrar();
 
 			//$data['insertar']="";
-			$data['dempleados']=$empleado;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
+			$data['dempleado']=$empleado;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
 			$this->load->view('datos_empleados_view',$data);
 			
 		}
 
-
 		public function cargaridtienda()
-	{
-		$resultado=$this->empleado->getTienda();
-		foreach ($resultado as $item) {
-			echo '<option value="'.$item['id_tienda'].'">'.$item['nombre_tienda'].'</option>';
+		{
+			//$this->load->model('datos_empleado_model','empleado','TRUE');
+			$resultado=$this->empleado->getTienda();
+			foreach ($resultado as $item) {
+				echo '<option value="'.$item['id_tienda'].'">'.$item['nombre_tienda'].'</option>';
+			}
 		}
-	}
+
 		public function editar()
 		{
 			$data['variable']=$this->empleado->mostrarById($this->input->get('id'));
-			$this->load->view('modificar_empleado',$data);
+			$this->load->view('modificar',$data);
 		}
 
-		//Insertar registros a base de datos
-		public function registroempleados()
+		public function RegistroEmpleados()
 		{
 			
 			//obteniendo datos del formulario, los cuales los almacenaremos en una variable
@@ -79,10 +78,11 @@
 				window.location='{$ruta}';
 				</script>";
 				$this->load('datos_emplados_view');
-			}
+					}
 			else{
 				$this->error();
-			}
+				}
+		
 		}
 		public function eliminar()
 		{
@@ -107,6 +107,6 @@
 			$this->empleado->modificar($data);
 			$this->index();
 		}
-	}
+}
 
 ?>

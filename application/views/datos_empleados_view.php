@@ -21,7 +21,7 @@ include 'url_include.php';
 <head>
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
-	<script src="<?php echo base_url();?>js/Script_datose.js"></script>
+	
 </head>
 <body style="padding: 20px">
 		<div class="container-fluid">
@@ -40,10 +40,12 @@ include 'url_include.php';
 						<!--<div class="panel-heading">Agregar </div>-->
 						<!--cuerpo-->
 						<div class="panel-body">
-							<form id="formemple" action="<?php echo site_url();?>/Datos_empleado/" method="POST">
+							<form id="formemple" action="<?php echo site_url();?>Datos_empleado/RegistroEmpleados" method="POST">
 								<!-- Esto estara oculto
 									<div class="col-md-12 form-group input-group">
-										<input type="text" id="id_empleados" name="id_empleados" class="form-control">
+										<input type="text" id="id_empleados" name="id_empleados" class="form-control"
+
+										>
 									</div>
 								-->
 								<!-- primer campo-->
@@ -64,7 +66,7 @@ include 'url_include.php';
 						<!--cuarto campo-->
 						<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Direccion del empleado:</label>
-								<input type="text" id="direccion_empleado" name="direccion_empleado" onblur="" class="form-control">
+								<textarea id="direccion_empleado" name="direccion_empleado" onblur="" class="form-control"></textarea>
 						</div>
 								<!--quinto campo-->
 								<div class="col-md-12 form-group input-group">
@@ -93,31 +95,30 @@ include 'url_include.php';
 
 
 									
-													<!--octavo campo -->
+													<!--octavo campo html solo reconoce name no id el ajax si por id-->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Estado_usuario</label>
-												<select id="estado_usuario" class="form-control"><option value="habilitado">habilitado</option><option value="inhabilitado">inhabilitado</option></select>
+												<select id="estado_empleado" name="estado_empleado" class="form-control">
+													<option value="habilitado">habilitado</option>
+													<option value="inhabilitado">inhabilitado</option>
+												</select>
 									</div>
 
-									<div class="col-md-12 form-group input-group"> 
-            							<label for="" class="input-group-addon">Seleccionar Tienda:</label>
-            							<select class="form-control" id='id_tienda' name="nombre_cliente">
-           	 							</select>
-                      
-          							</div>  
+									<div class="col-md-12 form-group input-group">
+										<label for="" class="input-group-addon">Id tienda</label>
+										<select id="id_tienda" name="id_tienda" class="form-control">
+										</select>
+									</div> 
 
 
-          							<!--<div class="col-md-12 form-group input-group">
-										<label for="" class="input-group-addon">Telefono del empleado</label>
-										<input type=""  id="id_tienda2" name="telefono_empleado" onblur=""placeholder="5555-5555" class="form-control">
-									</div>-->
+          							
 									
-									<div class="col-md-12 text-center">
+									
 										<!-- nuevo-->
 										<div class="col-md-12 text-center">
 										<!--boton--->
 										<button type="submit" class="btn btn-success">Ingresar empleado</button>
-									</div>
+									</div><br><br>
 									<div class="col-md-12 text-center">
 									<!-- buton trigger modal -->
 									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Visualizar Proveedores</button>
@@ -125,8 +126,8 @@ include 'url_include.php';
 							</form>
 						</div><!--fin del cuerpo-->		
 						</div>
-						</div>
-						</div><!-- fin class container--->
+					</div>
+				</div><!-- fin class container---><
 <!-- Modal-->
 
 	<div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledy="exampleModalLongTitle" aria-hidden="true">
@@ -153,8 +154,8 @@ include 'url_include.php';
 							<th>Fecha de nacimiento</th>
 							<th>Cargo del empleado</th>
 							<th>Telefono del empleado</th>
-							<th>Id de la tienda</th>
 							<th>Estado del usuario</th>
+							<th>Id de la tienda</th>
 							<!--
 								<th>borrar</th>
 								<th>editar</th>
@@ -162,7 +163,7 @@ include 'url_include.php';
 						</tr>
 					</thead>
 					<tbody>
-						<?php foreach($dempleados as $de):?>
+						<?php foreach($dempleado as $de):?>
 						<tr>
 							<!--<td><input type="radio" name="editar" value="<?=$u->id_empleado?>"/></td>-->
 							<!--<td><?=$de->id_empleado?></td>-->
@@ -173,8 +174,9 @@ include 'url_include.php';
 							<td><?=$de->fecha_nacimiento?></td>
 							<td><?=$de->cargo_empleado?></td>
 							<td><?=$de->telefono_empleado?></td>
-							<td><?=$de->id_tienda?></td>
 							<td><?=$de->estado_empleado?></td>
+							<td><?=$de->id_tienda?></td>
+							
 							<!-- <td><a href="<?php echo base_url();?>Datosempleado/eliminar?id=<?php echo $de->id_empleado;?>">Eliminar</a></td>-->
 							<td><a href="<?php echo base_url();?>Datosempleado/editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>
 						</tr>
@@ -192,4 +194,6 @@ include 'url_include.php';
 
 </body>
 
+
+<script src="<?php echo base_url();?>/js/Script_datose.js"></script>
 </html>
