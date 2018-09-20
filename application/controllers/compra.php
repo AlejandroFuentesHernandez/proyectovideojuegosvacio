@@ -22,7 +22,15 @@ class Compra extends CI_Controller
     	$this->load->view('compra_view', $data);
     }
 
-    public function editar()//metodo editar("comoYoQuiero")
+    public function cliente()
+	{
+		$resultado=$this->compra->getCompra();
+		foreach ($resultado as $item) {
+			echo '<option value="'.$item['id_proveedores'].'">'.$item['nombre_empresa'].'</option>';
+		}
+	}
+
+    public function editar()//metodo editar
     {
     	
     	$data['variable']=$this->compra->mostrarById($this->input->get('id'));
@@ -33,13 +41,14 @@ class Compra extends CI_Controller
         public function RegistroCompra()
         {  //Obteniendo datos del formulario, los cuales los almacenaremos en una variable 
 
-        	//$id_compra=$this->input->post('id_compra');
-        	$codigo = $this->input->post('codigo_juego');
+            $codigo = $this->input->post('codigo_juego');
 			$juego =$this->input->post('nombre_juego');
 			$cantidad = $this->input->post('cantidad_juego');
 			$fecha = $this->input->post('fecha_compra');
 			$precio = $this->input->post('precio_unitario_compra');
 			$total = $this->input->post('total_compra');
+			$nombre = $this->input->post('nombre_empresa');
+			//$id_proveedores=$this->input->post('id_proveedores');
 
         	//mandamos los datos por medio de un array al modelo, cada elemento corresponde con una columna en la tabla Proveedores de la Base de datos, esto quiere decir que lo que esta al lado izquierdo serian dichas columnas y tendran el valor correspondiente de la informacion que se mande del formulario.
 				$data=array
@@ -50,7 +59,9 @@ class Compra extends CI_Controller
 					'cantidad_juego'=>$cantidad,
 					'fecha_compra'=>$fecha,
 					'precio_unitario_compra'=>$precio,
-					'total_compra'=>$total
+					'total_compra'=>$total,
+					'id_proveedores'=>$nombre
+					//'id_proveedores'=>$id_proveedores
 				); 
 
 				//mandamos a llamar un metodo de nuestro modelo, donde mandaremos como parametro el array. 

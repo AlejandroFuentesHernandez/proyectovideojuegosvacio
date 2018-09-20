@@ -35,12 +35,12 @@
               <!-- Cuerpo-->
                       <div class="panel-body"> 
                         <form id="gracia" action="<?php echo site_url(); ?>/Compra/RegistroCompra" method="POST">
-                            <!------------------ESTO ESTARA OCULTO--------------------------------------
-                    <div class="col-md-12 form-group input-group">
-                      <label for="" class="input-group-addon"> Id:</label>
-                      <input type="text" id="idCompra" name="id_compra" class="form-control">
-                    </div>
-                  <------------------------------------------------------------------------->
+                            <div class="col-md-12 form-group input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+                                <label for="" class="input-group-addon"> Seleccionar Proveedor:</label>
+                                <select class="form-control" id='nombre_empresa' name="nombre_empresa">
+                                </select>
+                            </div>    
 
                             <!-- Primer campo-->
                            <div class="col-md-12 form-group input-group">
@@ -159,6 +159,10 @@
 </body>
 </html>
 <script type="text/javascript">
+  $(document).ready(function()
+{
+ llenarCliente();
+});
 
   function operacion()
 {
@@ -168,4 +172,17 @@
     $('#total').val(multi);
 }
 
+function llenarCliente()
+{
+  $.ajax({
+    type:"POST",
+    url:'<?php echo site_url();?>Compra/cliente',
+    success: function(data)
+    {
+      $('#nombre_empresa').html('');
+      $('#nombre_empresa').html(data);
+    }
+
+  });
+}
 </script>

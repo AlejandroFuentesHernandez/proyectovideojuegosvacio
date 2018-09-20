@@ -1,15 +1,20 @@
 <?php
-function __construct()
-{
-    //parent:: __construct();
-    $this->load->database();
-}
-//Creamos la insercion de datos a una tabla
-class Compra_model extends CI_Model{ //Inicio de Insercion
+//Inicia la Clase Compra_model//
+class Compra_model extends CI_Model
+{ 
     
+    //Se manda a llamar a la compra//
+        public function getCompra()
+        {
+            $this->load->database();
+            $resultado=$this->db->get('tab_proveedores');
+            return $resultado->result_array();
+        }//Fin de llamado de la compra/
+     
+     //Se inserta los datos//
     public function insertar($data)
     {
-        //Se inserta los datos//
+        
         $x=$this->db->insert('tab_compra', $data);
          if($x==true)
         {
@@ -56,5 +61,5 @@ class Compra_model extends CI_Model{ //Inicio de Insercion
 }//Fin modificacionde datos//
 
 
-}
+}//Finaliza la Clase Compra_model//
 
