@@ -236,13 +236,6 @@
                                 </li>
                             </ul>
                         </li>
-                       <!-- 
-                         <li>
-                            <a href="tables.html"><i class="fa fa-user fa-fw"></i>Clientes<span class="fa arrow"></span></a>
-                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="<?php echo site_url(); ?>add-cliente">Ingresar Clientes</a>
-                                </li>-->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Compras<span class="fa arrow"></span></a>
@@ -254,6 +247,26 @@
                                     <a href="buttons.html"></a>
                                 </li>
                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Tiendas<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo site_url(); ?>add-usuario">Crear Sucursales</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> Inventario<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo site_url(); ?>add-usuario">Visualizar Inventario</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
