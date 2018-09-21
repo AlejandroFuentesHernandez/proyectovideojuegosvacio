@@ -167,7 +167,7 @@
   function operacion()
 {
     var uno=parseInt($('#cantidad').val());
-    var dos=parseInt($('#precio').val());
+    var dos=$('#precio').val();
     var multi=uno*dos;
     $('#total').val(multi);
 }
