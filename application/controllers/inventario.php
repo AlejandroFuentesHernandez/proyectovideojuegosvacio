@@ -53,27 +53,28 @@ class Inventario extends CI_Controller
          $stock_minimo=$this->input->post('stock_minimo');
          $precio_venta=$this->input->post('precio_venta');
          $fecha_ingreso=$this->input->post('fecha_ingreso'); 
-        // $estado_inventario=$this->input->post('estado_inventario');
+         $estado_inventario=$this->input->post('estado_inventario');
          $id_tienda=$this->input->post('tienda');  
                
 
-        	$data=array
-				(	
-					'cantidad_existente'=>$cantidad_existente,
-					'stock_minimo'=>$stock_minimo,
-					'precio_venta'=>$precio_venta,
-                    'fecha_ingreso'=>$fecha_ingreso,
-                    'id_tienda'=>$id_tienda,
-				); 
+        $data=array
+		(	
+			'cantidad_existente'=>$cantidad_existente,
+            'stock_minimo'=>$stock_minimo,
+            'precio_venta'=>$precio_venta,
+            'estado_inventario'=>$estado_inventario,
+            'fecha_ingreso'=>$fecha_ingreso,
+            'id_tienda'=>$id_tienda,		
+		); 
 
-				$registro=$this->inventario->insertar($data); 
+		$registro=$this->inventario->insertar($data); 
 				          
-				if($registro==1){
-					echo 1;
-				}
-				else{
-					echo 0; 
-				}
+			if($registro==1){
+			     echo 1;
+			}
+			else{
+			     echo 0; 
+			}
     }
 
    /* public function eliminar()
