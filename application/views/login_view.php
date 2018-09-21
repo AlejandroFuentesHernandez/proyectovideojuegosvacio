@@ -52,6 +52,9 @@
                                 <div class="form-group">
                                     <label>Digite su contraseña<input class="form-control" placeholder="Contraseña" name="password" type="password" value="" required></label>
                                 </div>
+                                <!--<div class="form-group">
+                                    <label>Ingrese nuevamente su contraseña<input class="form-control" placeholder="Contraseña" name="password2" type="password" value="" required></label>
+                                </div>-->
                                 <div class="checkbox">
                                     <label>
                                         <input name="remember" type="checkbox" value="Remember Me">Recordar Usuario
