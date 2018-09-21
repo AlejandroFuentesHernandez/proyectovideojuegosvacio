@@ -59,3 +59,5 @@ $route['proveedores'] = 'proveedores/index';
 $route['add-compra'] = 'compra/index';
 $route['index'] = 'Login/index';
 $route['add-cliente'] = 'clientes/index';
+$route['tiendas'] = 'tienda/index';
+$route['inventario'] = 'inventario/index';

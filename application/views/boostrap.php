@@ -201,7 +201,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?php echo site_url(); ?>inicio"><i class="fa fa-dashboard fa-fw"></i> Início </a>
+                            <a href="<?php echo site_url(); ?>inicio"><i class="fa fa-home fa-fw"></i> Início </a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> Usuarios<span class="fa arrow"></span></a>
@@ -255,7 +255,7 @@
                             <a href="#"><i class="fa fa-money fa-fw"></i> Tiendas<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo site_url(); ?>add-usuario">Crear Sucursales</a>
+                                    <a href="<?php echo site_url(); ?>tiendas">Crear Sucursales</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -265,7 +265,7 @@
                             <a href="#"><i class="fa fa-tasks fa-fw"></i> Inventario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo site_url(); ?>add-usuario">Visualizar Inventario</a>
+                                    <a href="<?php echo site_url(); ?>inventario">Registro Inventario</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
