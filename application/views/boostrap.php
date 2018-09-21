@@ -221,7 +221,7 @@
                             </ul>
                         </li>
                          <li>
-                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i>Proveedores<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-shopping-cart  fa-fw"></i>Proveedores<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo site_url(); ?>proveedores">Ingresar Proveedor</a>
@@ -238,7 +238,7 @@
                         </li>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Compras<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-credit-card  fa-fw"></i> Compras<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo site_url(); ?>add-compra">Realizar Compra</a>
@@ -252,7 +252,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Tiendas<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-money fa-fw"></i> Tiendas<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo site_url(); ?>add-usuario">Crear Sucursales</a>
@@ -262,7 +262,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Inventario<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-tasks fa-fw"></i> Inventario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo site_url(); ?>add-usuario">Visualizar Inventario</a>
