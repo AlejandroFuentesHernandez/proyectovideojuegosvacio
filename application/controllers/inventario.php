@@ -31,48 +31,48 @@ class Inventario extends CI_Controller
         $id_juego=$this->input->post('id');
         echo $this->inventario->getExistencia($id_juego);       
     }
-    /*public function Registrar_inventario()
+
+     public function cargartienda()
+    {
+        $resultado=$this->inventario->getTienda();
+        foreach($resultado as $item){
+            echo '<option value="'.$item['id_tienda'].'">'.$item['nombre_tienda'].'</option>';
+        }
+    }
+
+      public function cargar_precio()
+    {   
+        $id_precio=$this->input->post('id');
+        echo $this->inventario->getPrecio($id_precio);       
+    }
+
+    public function Registrar_inventario()
     {  
 
-            //$id_proveedores=$this->input->post('id_proveedor');
-        	$nombre_juego=$this->input->post('nombre_juego');
-        	$cantidad_existente=$this->input->post('cantidad_existente');
-        	$stock_minimo=$this->input->post('$stock_minimo');
-            $precio_venta=$this->input->post('precio_venta');
-            $fecha_ingreso=$this->input->post('fecha_ingreso'); 
-        	$estado_inventario=$this->input->post('estado_inventario');
-        	
+         $cantidad_existente=$this->input->post('cantidad_existente');
+         $stock_minimo=$this->input->post('stock_minimo');
+         $precio_venta=$this->input->post('precio_venta');
+         $fecha_ingreso=$this->input->post('fecha_ingreso'); 
+        // $estado_inventario=$this->input->post('estado_inventario');
+         $id_tienda=$this->input->post('tienda');  
+               
 
-        	//mandamos los datos por medio de un array al modelo, cada elemento corresponde con una columna en la tabla Proveedores de la Base de datos, esto quiere decir que lo que esta al lado izquierdo serian dichas columnas y tendran el valor correspondiente de la informacion que se mande del formulario.
-				$data=array
+        	$data=array
 				(	
-					//'id_proveedores'=>$id_proveedores,
-					'nombre_empresa'=>$nombre_empresa,
-					'tipo_persona'=>$tipo_persona,
-					'representante_empresa'=>$representante_empresa,
-                    'direccion_proveedores'=>$direccion_proveedores,
-                    'correo_proveedores'=>$correo_proveedores,
-					'contacto_proveedores'=>$contacto_proveedores, 
-					'estado_provedores'=>$estado_provedores, 
+					'cantidad_existente'=>$cantidad_existente,
+					'stock_minimo'=>$stock_minimo,
+					'precio_venta'=>$precio_venta,
+                    'fecha_ingreso'=>$fecha_ingreso,
+                    'id_tienda'=>$id_tienda,
 				); 
 
-				//mandamos a llamar un metodo de nuestro modelo, donde mandaremos como parametro el array. 
-				$registro=$this->proveedores->insertar($data); 
-				$mensaje['insertar']="Registro exitoso"; //NO OLVIDAR BORRAR MENSAJE!!!!! xD 
-              
+				$registro=$this->inventario->insertar($data); 
+				          
 				if($registro==1){
-					$ruta=base_url('Proveedores');
-
-					echo "<script>
-							alert('Proveedor guardado satifactoriamente.');
-							window.location= '{$ruta}'; 
-							</script>";
-					$this->load->view('ingresarproveedores_view', $mensaje);
-					
-
+					echo 1;
 				}
 				else{
-					$this->error();
+					echo 0; 
 				}
     }
 
