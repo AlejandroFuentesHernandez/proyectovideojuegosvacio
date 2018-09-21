@@ -5,17 +5,33 @@ class Datos_usuario extends CI_Controller{
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('datos_usuario_model');
+		$this->load->model('datos_usuario_model','usuario','TRUE');
 	}
 	public function index()
 	{
 		
-		$usuario=$this->datos_usuario_model->mostrar();
+		$usuario=$this->usuario->mostrar();
 
 		$data['dusuario']=$usuario;
 
 		$this->load->view('datos_usuarios_view',$data);
 	}
+		
+		public function cargaridempleado(){
+		//$this->load->model('datos_usuario_model','usuario','TRUE'); solo si no renombramos arriba el modelo
+		$resultado=$this->usuario->getEmpleado();
+		foreach ($resultado as $item) {
+			echo'<option value="'.$item['id_empleado'].'">'.$item['nombre_empleado'].$item['cargo_empleado'].'</option>';
+		}
+	}
+
+	public function editar()
+	{
+		$data['variable']=$this->usuario->mostrarById($this->input)
+	}
+
+
+
 	public function registrousuarios()
 	{
 	

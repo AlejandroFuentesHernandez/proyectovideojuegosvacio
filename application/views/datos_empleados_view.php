@@ -13,7 +13,7 @@
 //id_ tienda varchar
 
 */
-include 'url_include.php';
+
 
 ?>
 <!DOCTYPE html>
@@ -121,7 +121,7 @@ include 'url_include.php';
 									</div><br><br>
 									<div class="col-md-12 text-center">
 									<!-- buton trigger modal -->
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Visualizar Proveedores</button>
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Visualizar empleado</button>
 								</div>
 							</form>
 						</div><!--fin del cuerpo-->		
@@ -195,5 +195,27 @@ include 'url_include.php';
 </body>
 
 
-<script src="<?php echo base_url();?>/js/Script_datose.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+  {
+    llenarTienda();
+  });
+
+function llenarTienda()
+{
+  $.ajax({
+    type:"POST",
+    url:'<?php echo site_url();?>Datos_empleado/cargaridtienda',
+    success: function(data)
+    {
+      $('#id_tienda').html('');
+      $('#id_tienda').html(data);
+    }
+
+  });
+}
+$('#exampleModalLong').on('shown.bs.modal',function(){
+  $('#myInput').trigger('focus');
+});
+</script>
 </html>

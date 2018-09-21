@@ -18,6 +18,7 @@
 
 			//$data['insertar']="";
 			$data['dempleado']=$empleado;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
+			$this->load->view('url_include.php');
 			$this->load->view('datos_empleados_view',$data);
 			
 		}

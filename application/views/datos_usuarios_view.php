@@ -61,7 +61,7 @@ include 'url_include.php';
 								<!-- quinto campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Estado usuario</label>
-									<select id="estado_usuario" name="estado_usuario" onblur="" class="form-control">
+									<select id="estado_usuario" name="estado_usuario" class="form-control">
 										<option value="habilitado">habilitado</option>
 										<option value="inhabilitado">inhabilitado</option>
 									</select>
@@ -70,18 +70,10 @@ include 'url_include.php';
 								<!-- sexto campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Id del empleado:</label>
-									<input type="text" id="id_empleado" name="id_empleado"  onblur=""placeholder="id empleado"class="form-control">
-								</div>
-								
-								<div>
-									<button type="button" onclick="">
-										Click
-									</button>
-									<label id=""></label><input type="text" placeholder="ver" id="campo">
+									<select id="id_empleado" name="id_empleado" class="form-control"></select>
 								</div>
 
-
-								<div class="col-md-12 text-center"><a href="<? echo site_url();?>datos_usuario.php" class="btn btn-primary">nuevo usuario</a>
+								<div class="col-md-12 text-center">
 									<!-- boton -->
 									<button type="submit"  id="ingresar"  class="btn btn-success">Ingresar usuario</button>
 								</div>
@@ -125,7 +117,7 @@ include 'url_include.php';
 							</tr>
 						</thead>
 						<tbody>
-							<!--<?php foreach($dusuario as $du):?>-->
+							<?php foreach($dusuario as $du):?>
 								<tr>
 									<!--<td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td>-->
 									<!--<td><?=$du->id_usuario?></td> -->
@@ -135,7 +127,7 @@ include 'url_include.php';
 									<td><?=$du->id_empleado?></td>
 									<td><?=$du->estado_usuario?></td>
 								</tr>
-							<!--<?php endforeach;?>-->
+							<?php endforeach;?>
 						</tbody>
 					</table>
 				</div>

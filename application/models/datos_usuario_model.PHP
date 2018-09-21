@@ -10,7 +10,16 @@ function __construct()
 		$this->load->database();
 	}
 class Datos_usuario_model extends CI_Model
-{
+{//insertar id
+	public function getEmpleado(){
+		$this->load->database();
+		$resultado=$this->db->get('tab_datos_empleado');
+		return $resultado->result_array();
+	}//fin de la llamada cliente
+	
+
+
+
 	public function insertar($data){
 		
 		$x=$this->db->insert('tab_usuario',$data);
