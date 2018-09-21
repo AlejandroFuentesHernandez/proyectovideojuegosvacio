@@ -153,6 +153,7 @@
 							<th>Direccion del empleado</th>
 							<th>Fecha de nacimiento</th>
 							<th>Cargo del empleado</th>
+							<th>Correo electronico</th>
 							<th>Telefono del empleado</th>
 							<th>Estado del usuario</th>
 							<th>Id de la tienda</th>
@@ -173,6 +174,7 @@
 							<td><?=$de->direccion_empleado?></td>
 							<td><?=$de->fecha_nacimiento?></td>
 							<td><?=$de->cargo_empleado?></td>
+							<td><?=$de->correo_empleado?></td>
 							<td><?=$de->telefono_empleado?></td>
 							<td><?=$de->estado_empleado?></td>
 							<td><?=$de->id_tienda?></td>
