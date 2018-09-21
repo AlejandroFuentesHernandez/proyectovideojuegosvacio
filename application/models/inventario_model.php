@@ -29,9 +29,15 @@ class Inventario_model extends CI_Model
         return $result->row()->precio_unitario_compra;
     }
 
-    public function insertar($data){
+    public function insertar($id_compra, $cantidad_existente,$stock_minimo,$precio_venta,$fecha_ingreso, $estado_inventario,$id_tienda)
+    {
+        $resultado=$this->db->query("INSERT INTO tab_inventario (cantidad_existente, stock_minimo,precio_venta,fecha_ingreso, estado_inventario, id_tienda) VALUES(".$cantidad_existente.", ".$stock_minimo.", ".$precio_venta.",'".$fecha_ingreso."','".$estado_inventario."', ".$id_tienda.")");
 
-    $resultado=$this->db->insert('tab_inventario', $data); 
+         $id_inventario=$this->db->insert_id();
+
+        $this->db->query("INSERT INTO tab_inv_compra(id_inventario, id_compra) VALUES(".$id_inventario.", ".$id_compra.")");
+           
+
         if($resultado==true)
         {
             return 1;
@@ -43,16 +49,16 @@ class Inventario_model extends CI_Model
 
     }
 
+    public function mostrar()
+    {
+        $inventario=$this->db->get('tab_inventario'); 
+        return $inventario->result();
+
+    }
 
 
-/*	public function mostrar()
-	{
-		$proveedores=$this->db->get('tab_proveedores'); //que es lo mismo que:  SELECT * FROM tab_proveedores
-		return $proveedores->result();
 
-	}
-
-	public function eliminar($eliminar)
+/*	public function eliminar($eliminar)
     {
         $proveedores=$this->db->query('DELETE FROM tab_proveedores WHERE id_proveedores='.$eliminar); 
     }
