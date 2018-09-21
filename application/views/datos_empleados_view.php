@@ -36,7 +36,7 @@
 					<!--parte 2 -->
 					<div class="col-md-6">
 						<div class="panel panel-primary">
-							<div class="panel-heading">Ingresar empleado</div>
+							<div class=" panel panel-heading">Ingresar empleado</div>
 						<!--<div class="panel-heading">Agregar </div>-->
 						<!--cuerpo-->
 						<div class="panel-body">
@@ -125,7 +125,7 @@
 								</div>
 							</form>
 						</div><!--fin del cuerpo-->		
-						</div>
+						</div><!--fin del primary -->
 					</div>
 				</div><!-- fin class container---><
 <!-- Modal-->
@@ -180,7 +180,7 @@
 							<td><?=$de->id_tienda?></td>
 							
 							<!-- <td><a href="<?php echo base_url();?>Datosempleado/eliminar?id=<?php echo $de->id_empleado;?>">Eliminar</a></td>-->
-							<td><a href="<?php echo base_url();?>Datosempleado/editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>
+							<!--<td><a href="<?php echo base_url();?>Datosempleado/editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>-->
 						</tr>
 
 						<?php endforeach; ?>

@@ -1,29 +1,25 @@
 <?php
-//define('BASEPATH') OR exit('No direct script access allowed');
-
-/**
- * 
- */
-
 function __construct()
-	{
-		$this->load->database();
-	}
+{
+	//parent:: __construct();
+	$this->load->database();
+}
+
 class Datos_usuario_model extends CI_Model
-{//insertar id
-	public function getEmpleado(){
-		$this->load->database();
-		$resultado=$this->db->get('tab_datos_empleado');
-		return $resultado->result_array();
-	}//fin de la llamada cliente
-	
+{
 
+	public function getTienda()//insertar id
+        {
+            $this->load->database();
+            $resultado=$this->db->get('tab_tienda');
+            return $resultado->result_array();
+        }//Fin de llamado de cliente//
 
-
+	//Inicio de insercion
 	public function insertar($data){
 		
 		$x=$this->db->insert('tab_usuario',$data);
-		if ($x==true) {
+		if ($x) {
 			return 1;
 		}
 		else
@@ -31,21 +27,32 @@ class Datos_usuario_model extends CI_Model
 			return 0;
 		}
 	}
-
-	public function mostrar()
+		public function mostrar()
 	{
 		$usuarios=$this->db->get('tab_usuario');
 		return $usuarios->result();
 	}
-
-	public function eliminar($data)
+	public function mostrarById($id)
 	{
-		$cliente=$this->db->query('delete from tab_usuario where id_usuario'.$data);
+		$this->db->where('id_usuario');
+		$usuario=$this->bd->get('tab_usuario');
+		return $usuario->result_array();
 	}
+	
+		public function eliminar($data)
+	{
+		$usuario=$this->db->query('delete from tab_usuario where id_usuario'.$data);
+	}
+
+		public function modificar($data)
+		{
+			$this->bd->set('nombre_usuario',$data['nombre_usuario']);
+			$this->bd->set('contraseña_usuario',$data['contraseña_usuario']);
+			$this->bd->set('rol_usuario',$data['rol_usuario']);
+			$this->bd->set('estado_usuario',$data['estado_usuario']);
+			$this->bd->set('id_empleado',$data['id_empleado']);
+		}
 }
-
-
-
 
 
 	//los modelos no necesitan un constructor
@@ -101,6 +108,5 @@ class Datos_usuario_model extends CI_Model
 
 	}*/
 
-
-
 ?>
+

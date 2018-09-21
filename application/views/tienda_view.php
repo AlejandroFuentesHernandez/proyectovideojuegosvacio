@@ -44,7 +44,6 @@ include 'url_include.php';
 								<label for="" class="input-group-addon">Telefono tienda</label>
 								<input type="text" id="telefono_tienda" name="telefono_tienda" class="form-control" onblur="" placeholder="5555-5555"></div>
 
-
 								<div class="col-md-12 text-center">
 										<!-- boton-->
 										<button type="submit" class="btn btn-success">Ingresar tienda</button>

@@ -13,26 +13,27 @@ class Datos_usuario extends CI_Controller{
 		$usuario=$this->usuario->mostrar();
 
 		$data['dusuario']=$usuario;
-
+		$this->load->view('url_include.php');
 		$this->load->view('datos_usuarios_view',$data);
 	}
 		
-		public function cargaridempleado(){
+		public function cargarIdEmpleado(){
 		//$this->load->model('datos_usuario_model','usuario','TRUE'); solo si no renombramos arriba el modelo
-		$resultado=$this->usuario->getEmpleado();
+		$resultado=$this->usuario->getiienda();
 		foreach ($resultado as $item) {
-			echo'<option value="'.$item['id_empleado'].'">'.$item['nombre_empleado'].$item['cargo_empleado'].'</option>';
+			echo'<option value"'.$item['id_tienda'].'">'.$item['nombre_tienda'].'</option>';
 		}
 	}
 
 	public function editar()
 	{
-		$data['variable']=$this->usuario->mostrarById($this->input)
+		$data['variable']=$this->usuario->mostrarById($this->input->get('id'));
+		$this->load->view('modificar',$data);
+
 	}
 
 
-
-	public function registrousuarios()
+	public function RegistroUsuarios()
 	{
 	
 		//$id_usuario=$this->post('id_usuario');
@@ -53,24 +54,36 @@ class Datos_usuario extends CI_Controller{
 
 		);
 
-		$registro=$this->datos_usuario_model->insertar($data);
+		$registro=$this->usuario->insertar($data);
 		
 		if($registro==1){
 			$ruta=base_url('Datos_usuario');
 			echo "<script>
-			alert('ingresado exitosamente');
+			alert('Usuario guardado exitosamente');
 			window.location='{$ruta};
 			'</script>";
 			$this->load->view('datos_usuarios_view');
 		}
 		else{
-			$this->error();
+			//$this->error();
 		}
 	}
 	public function eliminar()
 	{
-		$eliminar=$_Get['id'];
-		$this->datos_usuario_model->usuario($usuario);
+		$eliminar=$_GET['id'];
+		$this->usuario->usuario($usuario);
+		$this->index();
+	}
+
+	public function modificar()
+	{
+		$data['id']=$_POST['id_usuario'];
+		$data['nombre_usuario']=$_POST['nombre_usuario'];
+		$data['contraseña_usuario']=$_POST['contraseña_usuario'];
+		$data['rol_usuario']=$_POST['rol_usuario'];
+		$data['estado_usuario']=$_POST['estado_usuario'];
+		$data['id_empleado']=$_POST['id_empleado'];
+		$this->usuario->modificar($data);
 		$this->index();
 	}
 }
