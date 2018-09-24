@@ -31,6 +31,15 @@ class Venta extends CI_Controller
         }
     }
   
+  public function cargar_precio()
+    {   
+        //$id_precio=$this->input->post('id');
+        //$id_precio = filter_input(INPUT_POST, 'id');var_dump($id_precio);
+        
+        $data['hola']=$this->venta->getPrecio();       
+        //print_r($data);
+    }
+
      public function Registrar_venta()
     {  
             //capturamos los datos del formulario
@@ -51,6 +60,12 @@ class Venta extends CI_Controller
             else{
                  echo 0; 
             }
+    }
+
+     public function mostrar()
+    {  
+        $data['de']=$this->venta->getDetalle();
+        $this->load->view('mostrar_inventario',$data);
     }
 
 }

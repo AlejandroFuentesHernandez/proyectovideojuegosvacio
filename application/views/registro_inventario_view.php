@@ -167,7 +167,7 @@ function guardar(){
           swal("Datos ingresados exitosamente",'Excelente','success'); 
         }
 
-        if(data==0){
+        else{
            swal("No se pudieron ingresar datos"); 
         }
       }

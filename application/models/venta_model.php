@@ -15,6 +15,27 @@ class Venta_model extends CI_Model
         return $resultado->result_array();
     }
 
+
+   public function getPrecio(){
+   /* $q= "SELECT i.id_inventario, i.precio_venta FROM tab_inventario i JOIN tab_inv_compra iv ON iv.id_inventario= i.id_inventario JOIN tab_compra c ON c. id_compra=iv.id_compra WHERE c.id_compra=9";
+       $query= $this->db->query($q);print_r($query);
+        return $query->result();*/
+        $id=$this->input->post('id');
+        $this->db->select('i.id_inventario, i.precio_venta');
+        $this->db->from('tab_inventario i');
+        $this->db->join('tab_inv_compra ic','ic.id_inventario=i.id_inventario');
+        $this->db->join('tab_compra c','c.id_compra=ic.id_compra');
+        $this->db->where('c.id_compra',$id); //esto es igual a SELECT i.cantidad_existente, i.stock_minimo, i.precio_venta, i.fecha_ingreso, i.estado_inventario, c.nombre_juego FROM tab_inventario i JOIN tab_inv_compra iv ON iv.id_inventario= i.id_inventario JOIN tab_compra c ON c. id_compra=iv.id_compra
+        $query=$this->db->get();
+        if($query->num_rows()>0){
+            return $query->result();
+        }else{
+            return false;
+        }
+    
+    }
+
+
      public function insertar($numero_factura, $estado_factura,$fecha_venta,$tipo_pago,$cantidad_producto, $total_factura, $observaciones_factura, $id_cliente)
     {
         $resultado=$this->db->query("INSERT INTO ventas (numero_factura, estado_factura, fecha_venta, tipo_pago,total_factura, cantidad_producto, observaciones_factura, id_cliente) VALUES(".$numero_factura.",'".$estado_factura."', '".$fecha_venta."','".$tipo_pago."',".$total_factura.", ".$cantidad_producto.",'".$observaciones_factura."', ".$id_cliente.")");

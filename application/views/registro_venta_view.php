@@ -25,7 +25,7 @@
                 <!-- Primer campo-->
                 <div class="col-md-12 form-group input-group">
                     <label for="" class="input-group-addon">Nombre del juego:</label>
-                    <select class="form-control" id='nombre_juego' name="nombre_juego">
+                    <select class="form-control" id='nombre_juego' name="nombre_juego" onchange="llenarPrecio()">
                     </select>
                 </div> 
                  <!-- Segundo  campo-->
@@ -135,6 +135,21 @@ function llenarcliente()
     }
   });
 }
+
+function llenarPrecio()
+{
+  var id=$('#nombre_juego').val();
+  $.ajax({
+    type:"POST",
+    url:"<?php  echo site_url();?>Venta/cargar_precio",
+    data:'id='+id,
+    success: function(data)
+    {
+      $('#precio_venta').val(data);
+    }
+  });
+}
+
 
 function guardar(){
     $.ajax({

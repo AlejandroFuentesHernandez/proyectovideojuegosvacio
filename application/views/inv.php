@@ -25,6 +25,8 @@
 
     <!-- Custom CSS -->
     <link href="<?php echo site_url();?>dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Morris Charts CSS -->
+    <link href="<?php echo base_url(); ?>vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="<?php echo site_url();?>vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -285,60 +287,85 @@
 <!--ESTO ES EL ESPACIO PARA MOSTRAR EN PANTALLA-->
         <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-md-12">
                     <h1 class="page-header">Tables</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Producto</th>
-                                        <th>Cantidad existente</th>
-                                        <th>Stock minimo</th>
-                                        <th>Precio Venta</th>
-                                        <th>Fecha de ingreso</th>
-                                        <th>Estado Invenatario</th>
-                                        <th>Editar</th>
-                                    </tr>
-                                </thead>
+           
+    <!--Fila 1-->
+     <!-- Fila 2-->
+    <div class="row" > 
+          <!--PARTE 2-->
+      <div class="col-md-6">
+        <div class="panel panel-primary"> 
+          <div class="panel-heading">Agregar Inventario</div>
+              <!-- Cuerpo-->
+          <div class="panel-body"> 
+            <form id="formInventario" action="" method="POST"> 
+              <!-- Primer campo-->
+              <div class="col-md-12 form-group input-group">
+                <label for="" class="input-group-addon">Nombre del juego:</label>
+                <select class="form-control" id='nombre_juego' name="nombre_juego" onchange="llenarCantidad()&llenarPrecio()" >
+                </select>
+              </div>         
+              <!-- Segundo campo-->
+              <div class="col-md-12 form-group input-group">
+                <label for="" class="input-group-addon">Cantidad Existente:</label>
+                <input type="number" min="1" id="cantidad_existente" name="cantidad_existente" class="form-control" readonly="readonly">
+              </div>                              
+              <!-- Tercero campo-->
+              <div class="col-md-12 form-group input-group">
+                <label for="" class="input-group-addon">Stock minimo:</label>
+                <input type="number" min="1" id="stock_minimo" name="stock_minimo" class="form-control">
+              </div>
+              <!-- Cuarto campo-->
+              <div class="col-md-12 form-group input-group">
+                <label for="" class="input-group-addon">Precio compra:</label>
+                <input type="text" id="precio_compra" name="precio_compra" class="form-control">
+              </div>
 
-                                 <tbody>
-                                    <?php foreach ($detalle as $inv): ?>
-                                    <tr>
-                                        <td><?=$inv->nombre_juego?></td>
-                                        <td><?=$inv->cantidad_existente?></td>
-                                        <td><?=$inv->stock_minimo?></td>
-                                        <td><?=$inv->precio_venta?></td>
-                                        <td><?=$inv->fecha_ingreso?> </td>
-                                        <td><?=$inv->estado_inventario?> </td>
-                                        <td>
-                                         <a href="<?php echo base_url();?>Inventario/mostrarId?idi=<?php echo $inv->id_inventario;?>" class="btn btn-info">Editar</a>
-                                        </td>           
-                           
-                                    </tr>
-             
-                                    <?php endforeach;?>
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
+              <div class="col-md-12 form-group input-group">
+                <label for="" class="input-group-addon">Porcentaje de ganancia:</label>
+                <input type="number" min="0" max="1" step="0.01" id="porcentaje" name="porcentaje" class="form-control" onblur="operacion()">
+              </div>
+
+              <div class="col-md-12 form-group input-group">
+                <label for="" class="input-group-addon">Precio Venta:</label>
+                <input type="text" id="precio_venta" name="precio_venta" class="form-control">
+              </div>
+              <!-- Quinto campo-->
+              <div class="col-md-12 form-group input-group">
+                <label for="" class="input-group-addon">Fecha de ingreso</label>
+                <input type="date" id="fecha_ingreso" name="fecha_ingreso" class="form-control">
+              </div>
+              <!-- sexto campo-->
+               <div class="col-md-12 form-group input-group">
+                <label for="" class="input-group-addon">Estado:</label>
+                <select class="form-control" id="estado_inventario" name="estado_inventario">
+                  <option value=""></option>
+                  <option value="Habilitado">Habilitado</option>
+                  <option value="Deshabilitado">Deshabilitado</option>
+                </select>
+              </div>
+              <!-- septimo campo-->
+              <div class="col-md-12 form-group input-group">
+                <label for="" class="input-group-addon">Tienda:</label>
+                <select class="form-control" id="tienda" name="tienda">
+                </select>
+              </div>
+              <div class="col-md-12 text-center">
+                <!-- nuevo-->
+                <a href="<?php echo site_url();?>Inventario" class="btn btn-primary">Limpiar</a>
+                <!-- Boton-->
+                <button type="button" onclick="guardar()"class="btn btn-success">Guardar Inventario</button>
+              </div>
+            </form>
+          </div>   <!-- FIN DEL CUERPO -->          
+        </div>  <!-- FIN DEL Panel -->       
+      </div> 
+    </div>   
   
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
         </div>
         <!-- /#page-wrapper -->
         <!-- /AQUI TERMINA LO QUE SE MUESTRA -->
