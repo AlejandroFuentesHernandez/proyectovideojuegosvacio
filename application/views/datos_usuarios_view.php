@@ -79,7 +79,7 @@
 								<div class="col-md-12 text-center">
 									<!-- boton -->
 									<button type="submit" class="btn btn-success">Ingresar usuario</button>
-								</div>
+								</div><br><br>
 								<div class="col-md-12 text-center">
 									<!-- buton trigger modal -->
 									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Visualizar usuarios</button>
