@@ -78,7 +78,7 @@
 				alert('Empleado guardado satisfactoriamente.');
 				window.location='{$ruta}';
 				</script>";
-				$this->load('datos_emplados_view');
+				$this->load('datos_empleados_view');
 					}
 			else{
 				$this->error();

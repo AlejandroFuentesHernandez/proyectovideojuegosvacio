@@ -33,25 +33,21 @@
 						<!--<div class="panel-heading" -->
 						<!-- cuerpo -->
 						<div class="panel-body">
-							<form id="formus" action="<?php echo site_url();?>Datos_usuario/RegistroUsuarios" method="POST">
+							<form id="formus" action="<?php echo site_url();?>Datos_usuario/RegistroUsuario" method="POST">
 								<!--
 									<div class="col-md-12 form-group input-group">
-										<input type="text" id="idprov" name="id_" class="form-control">
+										<input type="text" id="id_usuario" name="id_usuario" class="form-control">
 									</div>
-
-
-								"<?php echo site_url();?>Datos_usuario/RegistroUsuarios"
-
 								-->
 								<!-- primer campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Nombre usuario:</label>
-									<input type="text"  id="nombre_usuario" name="nombre_usuario" class="form-control"placeholder="Nombre usuario" >
+									<input type="text"  id="nombre_usuario" name="nombre_usuario" class="form-control" placeholder="Nombre usuario" >
 								</div>
 								<!-- segundo campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Contraseña:</label>
-									<input type="text" id="contraseña_usuario" name="contraseña_usuario"class="form-control" placeholder="contraseña" >
+									<input type="password" id="contraseña_usuario" name="contraseña_usuario" class="form-control" placeholder="contraseña" >
 								</div>
 								<!--tercero campo -->
 								<div class="col-md-12 form-group input-group">
@@ -115,9 +111,10 @@
 								<th>Rol del usuario</th>
 								<th>Estado del usuario</th>
 								<th>Id empleado</th>
+								<th>editar</th>
 								<!--
 								<th>borrar</th>
-								<th>editar</th>
+								
 								-->
 							</tr>
 						</thead>
@@ -150,24 +147,26 @@
 </body>
 
 <script type="text/javascript">
-	$$(document).ready(function()
+	$(document).ready(function()
   {
-    llenarTienda();
+    llenarEmpleado();
   });
 
-function llenarTienda()
+function llenarEmpleado()
 {
   $.ajax({
     type:"POST",
-    url:'<?php echo site_url();?>Datos_usuario/cargaridtienda',
+    url:'<?php echo site_url();?>Datos_usuario/cargaridEmpleado',
     success: function(data)
     {
-      $('#id_tienda').html('');
-      $('#id_tienda').html(data);
+      $('#id_empleado').html('');
+      $('#id_empleado').html(data);
     }
 
   });
-  $('#exampleModalLong').on('shown.bs.modal',function(){
-  $('#myInput').trigger('focus');
+  $('#exampleModalLong').
+  on('shown.bs.modal',
+  function(){$('#myInput').trigger('focus');}
+  );
 </script>
 </html>

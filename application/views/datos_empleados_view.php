@@ -157,10 +157,11 @@
 							<th>Telefono del empleado</th>
 							<th>Estado del usuario</th>
 							<th>Id de la tienda</th>
+							<th>editar</th>
 							<!--
-								<th>borrar</th>
-								<th>editar</th>
-							-->
+								<th>borrar</th>-->
+								
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -180,7 +181,7 @@
 							<td><?=$de->id_tienda?></td>
 							
 							<!-- <td><a href="<?php echo base_url();?>Datosempleado/eliminar?id=<?php echo $de->id_empleado;?>">Eliminar</a></td>-->
-							<!--<td><a href="<?php echo base_url();?>Datosempleado/editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>-->
+							<td><a href="<?php echo base_url();?>Datosempleado/editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>
 						</tr>
 
 						<?php endforeach; ?>

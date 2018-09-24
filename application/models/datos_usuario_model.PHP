@@ -8,10 +8,10 @@ function __construct()
 class Datos_usuario_model extends CI_Model
 {
 
-	public function getTienda()//insertar id
+	public function getIdEmpleado()//insertar id
         {
             $this->load->database();
-            $resultado=$this->db->get('tab_tienda');
+            $resultado=$this->db->get('tab_datos_empleados');
             return $resultado->result_array();
         }//Fin de llamado de cliente//
 

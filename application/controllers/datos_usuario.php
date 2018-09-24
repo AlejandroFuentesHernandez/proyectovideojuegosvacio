@@ -1,7 +1,10 @@
 <?php
 	//define('BASEPATH') OR exit('No direct script access allowed');
 
+	//controlador para hacer el crud de los usuario
+
 class Datos_usuario extends CI_Controller{
+	
 	public function __construct()
 	{
 		parent::__construct();
@@ -9,7 +12,6 @@ class Datos_usuario extends CI_Controller{
 	}
 	public function index()
 	{
-		
 		$usuario=$this->usuario->mostrar();
 
 		$data['dusuario']=$usuario;
@@ -17,11 +19,11 @@ class Datos_usuario extends CI_Controller{
 		$this->load->view('datos_usuarios_view',$data);
 	}
 		
-		public function cargarIdEmpleado(){
+		public function cargaridEmpleado(){
 		//$this->load->model('datos_usuario_model','usuario','TRUE'); solo si no renombramos arriba el modelo
-		$resultado=$this->usuario->getiienda();
+		$resultado=$this->usuario->getIdEmpleado();
 		foreach ($resultado as $item) {
-			echo'<option value"'.$item['id_tienda'].'">'.$item['nombre_tienda'].'</option>';
+			echo'<option value"'.$item['id_empleado'].'">'.$item['nombre_empleado'].'</option>';
 		}
 	}
 
@@ -33,7 +35,7 @@ class Datos_usuario extends CI_Controller{
 	}
 
 
-	public function RegistroUsuarios()
+	public function RegistroUsuario()
 	{
 	
 		//$id_usuario=$this->post('id_usuario');
@@ -65,7 +67,7 @@ class Datos_usuario extends CI_Controller{
 			$this->load->view('datos_usuarios_view');
 		}
 		else{
-			//$this->error();
+			$this->error();
 		}
 	}
 	public function eliminar()
@@ -84,7 +86,7 @@ class Datos_usuario extends CI_Controller{
 		$data['estado_usuario']=$_POST['estado_usuario'];
 		$data['id_empleado']=$_POST['id_empleado'];
 		$this->usuario->modificar($data);
-		$this->index();
+		//$this->index();
 	}
 }
 ?>
