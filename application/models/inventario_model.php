@@ -49,38 +49,39 @@ class Inventario_model extends CI_Model
 
     }
 
-    public function mostrar()
-    {
-        $inventario=$this->db->get('tab_inventario'); 
-        return $inventario->result();
-
+public function getDetalle(){
+        $this->db->select('i.id_inventario, i.cantidad_existente, i.stock_minimo, i.precio_venta, i.fecha_ingreso, i.estado_inventario, c.nombre_juego');
+        $this->db->from('tab_inventario i');
+        $this->db->join('tab_inv_compra ic','ic.id_inventario=i.id_inventario');
+        $this->db->join('tab_compra c','c.id_compra=ic.id_compra'); //esto es igual a SELECT i.cantidad_existente, i.stock_minimo, i.precio_venta, i.fecha_ingreso, i.estado_inventario, c.nombre_juego FROM tab_inventario i JOIN tab_inv_compra iv ON iv.id_inventario= i.id_inventario JOIN tab_compra c ON c. id_compra=iv.id_compra
+        $query=$this->db->get();
+        if($query->num_rows()>0){
+            return $query->result();
+        }else{
+            return false;
+        }
     }
-
-
-
-/*	public function eliminar($eliminar)
-    {
-        $proveedores=$this->db->query('DELETE FROM tab_proveedores WHERE id_proveedores='.$eliminar); 
-    }
-
+    
     public function mostrarById($id)
     {
-        $this->db->where('id_proveedores='.$id);
-        $proveedores=$this->db->get('tab_proveedores'); //que es lo mismo que:  SELECT * FROM tab_proveedores
-        return $proveedores->result_array();
+        $this->db->where('id_inventario='.$id);
+        $inventario=$this->db->get('tab_inventario'); 
+        return $inventario->result_array();
     }
-
+/*$this->db->WHERE('id_compra', $id);
+        $result=$this->db->get('tab_compra');
+        return $result->row()->precio_unitario_compra;
+    }*/
        public function modificar($data)
     {
-    	$this->db->set('nombre_empresa', $data['nombre']);
-    	$this->db->set('tipo_persona', $data['tipo']);
-    	$this->db->set('representante_empresa', $data['representante']);
-    	$this->db->set('direccion_proveedores', $data['direccion']);
-    	$this->db->set('correo_proveedores', $data['correo']);
-    	$this->db->set('contacto_proveedores', $data['contacto']);
-    	$this->db->set('estado_provedores', $data['estado']);
-    	$this->db->where('id_proveedores', $data['id']);
-    	$this->db->update('tab_proveedores');  
-	}*/
+    	
+    	$this->db->set('cantidad_existente', $data['existencia']);
+    	$this->db->set('stock_minimo', $data['stock']);
+    	$this->db->set('precio_venta', $data['precio']);
+    	$this->db->set('fecha_ingreso', $data['fecha']);
+    	$this->db->set('estado_inventario', $data['estado']);
+        $this->db->where('id_inventario', $data['id']);
+    	$this->db->update('tab_inventario');  
+	}
 
 }

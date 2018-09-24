@@ -14,10 +14,9 @@ class Inventario extends CI_Controller
     }
 
     public function index()
-    { 
-        $inventario=$this->inventario->mostrar();
-        $data['inventario']=$invenrtario;
-    	$this->load->view('registro_inventario_view',$data);
+    {  
+        
+    	$this->load->view('registro_inventario_view');
     }
 
     public function cargarjuego()
@@ -50,29 +49,18 @@ class Inventario extends CI_Controller
 
     public function Registrar_inventario()
     {  
-
+            //capturamos los datos del formulario
          $id_compra=$this->input->post('nombre_juego');
          $cantidad_existente=$this->input->post('cantidad_existente');
          $stock_minimo=$this->input->post('stock_minimo');
          $precio_venta=$this->input->post('precio_venta');
          $fecha_ingreso=$this->input->post('fecha_ingreso'); 
          $estado_inventario=$this->input->post('estado_inventario');
-         $id_tienda=$this->input->post('tienda');  
-               
+         $id_tienda=$this->input->post('tienda'); 
 
-       /* $data=array
-		(	
-
-			'cantidad_existente'=>$cantidad_existente,
-            'stock_minimo'=>$stock_minimo,
-            'precio_venta'=>$precio_venta,
-            'estado_inventario'=>$estado_inventario,
-            'fecha_ingreso'=>$fecha_ingreso,
-            'id_tienda'=>$id_tienda,		
-		); */
-
-		$registro=$this->inventario->insertar($id_compra, $cantidad_existente,$stock_minimo,$precio_venta,$fecha_ingreso, $estado_inventario, $id_tienda); 
-                          
+         //mandamos los datos del formulario al modelo
+  		$registro=$this->inventario->insertar($id_compra, $cantidad_existente,$stock_minimo,$precio_venta,$fecha_ingreso, $estado_inventario, $id_tienda); 
+          //Dependiendo si la inserccion a la base de datos fue exitosa mandaremos un uno o un cero               
             if($registro==1){
                  echo 1;
             }
@@ -81,44 +69,37 @@ class Inventario extends CI_Controller
             }
     }
 
-   /* public function eliminar()
-        {
-            
-        $eliminar = $_GET['idp'];
-        $this->proveedores->eliminar($eliminar);
-        $this->index();
-
-        }
-
-    public function mostrarId()
-    {        
-        $data['editarprov']=$this->proveedores->mostrarById($this->input->get('idp'));
-        $this->load->view('editar_proveedores_view', $data);
+    public function mostrar()
+    {  
+        $data['detalle']=$this->inventario->getDetalle();
+        $this->load->view('mostrar_inventario',$data);
     }
 
+    public function mostrarId()
+    {   
+        $id_inventario=$this->input->get('idi');
+        $data['idi_inv']=$this->inventario->mostrarById($id_inventario);
+       // print_r($data);
+       $this->load->view('editar_inventario_view', $data);
+    }
 
     public function modificar()
         {
 
-            $data ['id'] = $_POST['id_proveedores'];
-            $data ['nombre'] = $_POST['nombre_empresa'];
-            $data ['tipo'] = $_POST['tipo_persona'];
-            $data ['representante'] = $_POST['representante_empresa'];
-            $data ['direccion'] = $_POST['direccion_proveedores'];
-            $data ['correo'] = $_POST['correo_proveedores'];
-            $data ['contacto'] = $_POST['contacto_proveedores'];
-            $data ['estado'] = $_POST['estado_provedores'];
-            $this->proveedores->modificar($data);
-            $this->index();
+            $data ['id'] = $_POST['id_inventario'];
+            $data ['existencia'] = $_POST['cantidad_existente'];
+            $data ['stock'] = $_POST['stock_minimo'];
+            $data ['precio'] = $_POST['precio_venta'];
+            $data ['fecha'] = $_POST['fecha_ingreso'];
+            $data ['estado'] = $_POST['estado_inventario'];
+            $data ['tienda'] = $_POST['tienda'];
+            $this->inventario->modificar($data);
+            $this->mostrar();
 
         }
 
-       /*public function mostrar_proveedores() esta funcion ya se realizo arriba
-        {
-        	$proveedores= $this->proveedores->mostrar(); 
-        	$data['dproveedores']=$proveedores; 
-        	$this->load->view('mostrarproveedores_view', $data); 
 
-        }*/
+    
+
 }
 
