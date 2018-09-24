@@ -8,14 +8,13 @@ class Datos_usuario extends CI_Controller{
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('datos_usuario_model','usuario','TRUE');
+		$this->load->model('Datos_usuario_model','usuario','TRUE');
 	}
 	public function index()
 	{
 		$usuario=$this->usuario->mostrar();
 
 		$data['dusuario']=$usuario;
-		$this->load->view('url_include.php');
 		$this->load->view('datos_usuarios_view',$data);
 	}
 		
@@ -23,18 +22,11 @@ class Datos_usuario extends CI_Controller{
 		//$this->load->model('datos_usuario_model','usuario','TRUE'); solo si no renombramos arriba el modelo
 		$resultado=$this->usuario->getIdEmpleado();
 		foreach ($resultado as $item) {
-			echo'<option value"'.$item['id_empleado'].'">'.$item['nombre_empleado'].'</option>';
+			echo'<option value="'.$item['id_empleados'].'">'.$item['nombre_empleado'].'</option>';
 		}
 	}
 
-	public function editar()
-	{
-		$data['variable']=$this->usuario->mostrarById($this->input->get('id'));
-		$this->load->view('modificar',$data);
-
-	}
-
-
+	
 	public function RegistroUsuario()
 	{
 	
@@ -64,17 +56,18 @@ class Datos_usuario extends CI_Controller{
 			alert('Usuario guardado exitosamente');
 			window.location='{$ruta};
 			'</script>";
-			$this->load->view('datos_usuarios_view');
+			$this->index();
 		}
 		else{
 			$this->error();
 		}
 	}
-	public function eliminar()
+
+	public function editar()
 	{
-		$eliminar=$_GET['id'];
-		$this->usuario->usuario($usuario);
-		$this->index();
+		$data['variable']=$this->usuario->mostrarById($this->input->get('id'));
+		$this->load->view('modificar_usuarios_view',$data);
+
 	}
 
 	public function modificar()

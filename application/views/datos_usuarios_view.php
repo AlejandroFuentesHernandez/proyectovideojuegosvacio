@@ -14,6 +14,7 @@
 <head>
 	<title>Ingresar usarios</title>
 	<meta charset="utf-8">
+	 <?php include 'url_include.php';?>
 	
 </head>
 <body style="padding:20px">
@@ -84,9 +85,8 @@
 					</div>
 				</div>
 			</div><!--fin class container-->
-
 <!-- Modal -->
-<div>
+
 	<div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledy="exampleModalLongTitle" arial-hidden="true">
 
 		<div class="modal-dialog modal-lg" role="document">
@@ -121,16 +121,17 @@
 						<tbody>
 							<?php foreach($dusuario as $du):?>
 								<tr>
-									<!--<td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td>-->
-									<!--<td><?=$du->id_usuario?></td> -->
+									
+									
 									<td><?=$du->nombre_usuario?></td>
 									<td><?=$du->contraseña_usuario?></td>
 									<td><?=$du->rol_usuario?></td>
 									<td><?=$du->estado_usuario?></td>
 									<td><?=$du->id_empleado?></td>
 
-								<!-- <td><a href="<?php echo base_url();?>Datos_usuario/eliminar?id=<?php echo $du->id_usuario;?>">Eliminar</a></td>-->
-		<td><a href="<?php echo base_url();?>Datos_usuario/editar?id=<?php echo $du->id_usuario;?>">Modificar</a></td>
+								
+									<td><a href="<?php echo base_url();?>Datos_usuario/editar?id=<?php echo $du->id_usuario;?>">Modificar</a>
+									</td>
 								</tr>
 							<?php endforeach;?>
 						</tbody>
@@ -143,6 +144,8 @@
 			</div>
 		</div>
 	</div>
+</div>
+
 
 </body>
 
@@ -164,9 +167,10 @@ function llenarEmpleado()
     }
 
   });
-  $('#exampleModalLong').
-  on('shown.bs.modal',
-  function(){$('#myInput').trigger('focus');}
-  );
+ }
+  
+   $('#exampleModalLong').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    });
 </script>
 </html>

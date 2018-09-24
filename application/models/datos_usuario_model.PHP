@@ -10,16 +10,15 @@ class Datos_usuario_model extends CI_Model
 
 	public function getIdEmpleado()//insertar id
         {
-            $this->load->database();
             $resultado=$this->db->get('tab_datos_empleados');
             return $resultado->result_array();
-        }//Fin de llamado de cliente//
+        }
 
 	//Inicio de insercion
 	public function insertar($data){
 		
 		$x=$this->db->insert('tab_usuario',$data);
-		if ($x) {
+		if ($x==true) {
 			return 1;
 		}
 		else
@@ -34,7 +33,7 @@ class Datos_usuario_model extends CI_Model
 	}
 	public function mostrarById($id)
 	{
-		$this->db->where('id_usuario');
+		$this->db->where('id_usuario=' .$id);
 		$usuario=$this->bd->get('tab_usuario');
 		return $usuario->result_array();
 	}
