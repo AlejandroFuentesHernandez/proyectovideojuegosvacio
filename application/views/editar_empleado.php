@@ -27,22 +27,12 @@
                 <form id="formProv" action="<?php echo site_url(); ?>Datos_empleado/modificar" method="POST"> 
 
                   <?php foreach ($editarempleado as $item) { ?> 
-               //id_empleados int
-//numero_empleado varchar
-//nombre_empleado varchar
-//DUI_empleados   varchar
-//direccion_empleado    varchar
-//fecha_nacimiento date
-//cargo_empleado  varchar
-//correo_empleado varchar
-//telefono_ empleado varchar
-//estado_usuario (enum varchar)
-//id_ tienda varchar
+               
                   <!-- Primer campo-->
                   <!-- <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Id Empleado</label>
                       <input type="text" id="id_empleado" name="id_empleado" class="form-control" value="<?=$item['id_empleado'];?>" >
-                   </div> -->
+                   //</div> -->
                    <!-- Segundo campo-->
                    <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Numero empleado</label>

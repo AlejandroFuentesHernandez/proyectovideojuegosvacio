@@ -36,6 +36,7 @@
 		{
 			$data['variable']=$this->empleado->mostrarById($this->input->get('id'));
 			$this->load->view('modificar',$data);
+			
 		}
 
 		public function RegistroEmpleados()
@@ -94,6 +95,7 @@
 
 		public function modificar()
 		{
+			$this->load->view('editar_empleado',$data);
 			$data['id']=$_POST['id_empleados'];
 			$data['numero_empleado']=$_POST['numero_empleado'];
 			$data['nombre_empleado']=$_POST['nombre_empleado']; 

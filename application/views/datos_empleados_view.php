@@ -51,7 +51,7 @@
 								<!-- primer campo-->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Numero de empleado:</label>
-									<input type="text" id="numero_empleado" name="numero_empleado" class="form-control" onblur="" placeholder="Numero empleados">
+									<input type="text" id="numero_empleado" name="numero_empleado" class="form-control" onblur="numero_empleadov()" required placeholder="Numero empleados">
 								</div>
 								<!-- segundo campo-->
 								<div class="col-md-12 form-group input-group">
@@ -196,7 +196,7 @@
 	</div>
 
 </body>
-
+<script src='<?php echo base_url();?>js/Script_datose.js'></script>
 
 <script type="text/javascript">
 	$(document).ready(function()
@@ -217,8 +217,8 @@ function llenarTienda()
 
   });
 }
-$('#exampleModalLong').on('shown.bs.modal',function(){
-  $('#myInput').trigger('focus');
-});
+//$('#exampleModalLong').on('shown.bs.modal',function(){
+  //$('#myInput').trigger('focus');
+//});
 </script>
 </html>

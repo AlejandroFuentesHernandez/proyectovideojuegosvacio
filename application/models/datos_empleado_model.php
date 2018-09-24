@@ -39,6 +39,7 @@ public function mostrarById($id)
 	$this->db->where('id_empleados');
 	$empleado=$this->bd->get('tab_datos_empleados');
 	return $empleado->result_array();
+	$this->load->view('editar_empleado',$data);
 }
 	
 public function eliminar($data)
@@ -49,6 +50,7 @@ public function eliminar($data)
 
 public function modificar($data)
 {
+	$this->load->view('editar_empleado',$data);
 	$this->bd->set('numero_empleado',$data['numero_empleado']);
 	$this->bd->set('nombre_empleado',$data['nombre_empleado']);
 	$this->bd->set('DUI_empleados',$data['DUI_empleados']);

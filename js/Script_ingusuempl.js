@@ -1,7 +1,3 @@
-function asignarusuario()
-{
-	$(#ingreusuario).toggle();
-}
 function campovacioemple()
 {
 	var v_numero_empleado=document.getElementsById("numero_empleado").value.trim();
@@ -68,5 +64,13 @@ function campovaciousuario()
 	if(v2_estado_usuario=='')
 	{
 		$('estado_usuario').focus();
+	}
+
+}
+function numero_empleadov()
+{
+	var v_numero_empleado=document.getElementsById("numero_empleado").value.trim();
+	if(v_numero_empleado==''){
+		$('numero_empleado').focus();
 	}
 }
