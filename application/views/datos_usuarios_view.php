@@ -43,17 +43,17 @@
 								<!-- primer campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Nombre usuario:</label>
-									<input type="text"  id="nombre_usuario" name="nombre_usuario" class="form-control" placeholder="Nombre usuario" >
+									<input type="text"  id="nombre_usuario" name="nombre_usuario" class="form-control"  onblur="nombre_usuariov()" require placeholder="Nombre usuario" >
 								</div>
 								<!-- segundo campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Contraseña:</label>
-									<input type="password" id="contraseña_usuario" name="contraseña_usuario" class="form-control" placeholder="contraseña" >
+									<input type="password" id="contraseña_usuario" name="contraseña_usuario" class="form-control"  onblur=" contraseña_usuariov()" require placeholder="contraseña" >
 								</div>
 								<!--tercero campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Rol usuario:</label>
-									<input type="text" id="rol_usuario" name="rol_usuario" class="form-control" placeholder="rol_usuario" >
+									<input type="text" id="rol_usuario" name="rol_usuario" class="form-control" onblur="rol_usuariov()" require placeholder="rol_usuario" >
 								</div>
 								<!-- cuarto campo -->
 								<div class="col-md-12 form-group input-group">
@@ -130,7 +130,7 @@
 									<td><?=$du->id_empleado?></td>
 
 								
-									<td><a href="<?php echo base_url();?>Datos_usuario/editar?id=<?php echo $du->id_usuario;?>">Modificar</a>
+									<td><a href="<?php echo base_url();?>Datos_usuario\editar?id=<?php echo $du->id_usuario;?>">Modificar</a>
 									</td>
 								</tr>
 							<?php endforeach;?>
@@ -148,7 +148,7 @@
 
 
 </body>
-<!--<script src='<?php echo base_url();?>js/Script_datosu.js'></script>-->
+<script src='<?php echo base_url();?>js/Script_datosu.js'></script>
 <script type="text/javascript">
 	$(document).ready(function()
   {
@@ -169,8 +169,8 @@ function llenarEmpleado()
   });
  }
   
-   $('#exampleModalLong').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus')
-    });
+  // $('#exampleModalLong').on('shown.bs.modal', function () {
+    //  $('#myInput').trigger('focus')
+  //  });
 </script>
 </html>
