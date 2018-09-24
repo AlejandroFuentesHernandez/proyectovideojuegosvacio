@@ -21,7 +21,7 @@
 				</tr>
 			</thhead>
 			<tbody>
-				<?php foreach($dusuarios as $du):?>
+				<?php foreach($variable as $du):?>
 					<tr>
 						<!--<td><input type="radio" name="editar" value="<?=$u->id?>"/></td> -->
 						<td><?=$du->nombre_usuario?></td>
