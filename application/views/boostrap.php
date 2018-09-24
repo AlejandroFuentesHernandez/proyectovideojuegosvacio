@@ -268,7 +268,7 @@
                                     <a href="<?php echo site_url(); ?>inventario">Registro Inventario</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url(); ?>mostrar">Mostrar Inventario</a>
+                                    <a href="<?php echo site_url(); ?>view-inventario">Mostrar Inventario</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
