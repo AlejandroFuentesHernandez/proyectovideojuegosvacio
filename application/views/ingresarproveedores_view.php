@@ -90,7 +90,7 @@
                       <a href="<?php echo site_url();?>Proveedores" class="btn btn-primary">Nuevo proveedor</a>
                     <!-- Boton-->
                       <button type="submit" class="btn btn-success">Guardar proveedor</button>
-                    </div>
+                    </div><br><br>
                     <!-- Button trigger modal -->
                     <div class="col-md-12  text-center">
                     
