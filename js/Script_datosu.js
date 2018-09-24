@@ -3,33 +3,33 @@ $('exampleModalLong').on('shown.bs.modal',function(){
 });
 function id_usuariov()
 {
-var id_usuario=document.getElementsById('id_usuario').value.trim();
+var id_usuario=document.getElementById("id_usuario").value.trim();
 	if(id_usuario=='')
 	{
-		$('id_usuario').focus();
+		$("#id_usuario").focus();
 	}
 }
 function nombre_usuariov()
 {
-	var nombre_usuarios=document.getElementsById('nombre_usuarios').value.trim();
-	if(nombre_usuarios=='')
+	var nombre_usuario=document.getElementById("nombre_usuario").value;
+	if(nombre_usuario=='')
 	{
-		$('nombre_usuarios').focus();
+		$("#nombre_usuario").focus();
 	}
 }
 function contraseña_usuariov()
 {
-	var contraseña_usuario=document.getElementsById('contraseña_usuario').value.trim();
+	var contraseña_usuario=document.getElementById('contraseña_usuario').value.trim();
 	if(contraseña_usuario=='')
 	{
-		$('contraseña_usuario').focus();
+		$("#contraseña_usuario").focus();
 	}
 }
 function rol_usuariov()
 {
-	var rol_usuario=document.getElementsById('rol_usuario').value.trim();
+	var rol_usuario=document.getElementById("rol_usuario").value.trim();
 	if(rol_usuario=='')
 	{
-		$('rol_usuario').focus();
+		$("#rol_usuario").focus();
 	}
 }

@@ -37,9 +37,9 @@ return $empleado->result();
 public function mostrarById($id)
 {
 	$this->db->where('id_empleados');
-	$empleado=$this->bd->get('tab_datos_empleados');
+	$empleado=$this->db->get('tab_datos_empleados');
 	return $empleado->result_array();
-	$this->load->view('editar_empleado',$data);
+
 }
 	
 public function eliminar($data)
@@ -51,16 +51,16 @@ public function eliminar($data)
 public function modificar($data)
 {
 	$this->load->view('editar_empleado',$data);
-	$this->bd->set('numero_empleado',$data['numero_empleado']);
-	$this->bd->set('nombre_empleado',$data['nombre_empleado']);
-	$this->bd->set('DUI_empleados',$data['DUI_empleados']);
-	$this->bd->set('direccion_empleado',$data['direccion_empleado']);
-	$this->bd->set('fecha_nacimiento',$data['fecha_nacimiento']);
-	$this->bd->set('cargo_empleado',$data['cargo_empleado']);
-	$this->bd->set('correo_empleado',$data['correo_empleado']);
-	$this->bd->set('telefono_empleado',$data['telefono_empleado']);
-	$this->bd->set('estado_usuario',$data['estado_usuario']);
-	$this->bd->set('id_tienda',$data['id_tienda']);
+	$this->db->set('numero_empleado',$data['numero_empleado']);
+	$this->db->set('nombre_empleado',$data['nombre_empleado']);
+	$this->db->set('DUI_empleados',$data['DUI_empleados']);
+	$this->db->set('direccion_empleado',$data['direccion_empleado']);
+	$this->db->set('fecha_nacimiento',$data['fecha_nacimiento']);
+	$this->db->set('cargo_empleado',$data['cargo_empleado']);
+	$this->db->set('correo_empleado',$data['correo_empleado']);
+	$this->db->set('telefono_empleado',$data['telefono_empleado']);
+	$this->db->set('estado_usuario',$data['estado_usuario']);
+	$this->db->set('id_tienda',$data['id_tienda']);
 
 }
 

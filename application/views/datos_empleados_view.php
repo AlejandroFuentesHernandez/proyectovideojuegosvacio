@@ -56,27 +56,27 @@
 								<!-- segundo campo-->
 								<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Nombre del empleado:</label>
-								<input type="text"  id="nombre_empleado" name="nombre_empleado" onblur="" placeholder="Nombre empleado"class="form-control">
+								<input type="text"  id="nombre_empleado" name="nombre_empleado" onblur="nombre_empleadov()" require placeholder="Nombre empleado"class="form-control">
 								</div>
 								<!--tercer campo-->
 								<div class="col-md-12 form-group input-group" >
 									<label for="" class="input-group-addon">DUI del empleado:</label>
-									<input type="text" id="DUI_empleado" onblur=""  placeholder="55555555-5" name="DUI_empleado" class="form-control">
+									<input type="text" id="DUI_empleado" onblur=" Dui_empleadov()"  require placeholder="55555555-5" name="DUI_empleado" class="form-control">
 								</div>
 						<!--cuarto campo-->
 						<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Direccion del empleado:</label>
-								<textarea id="direccion_empleado" name="direccion_empleado" onblur="" class="form-control"></textarea>
+								<textarea id="direccion_empleado" name="direccion_empleado" onblur="dirreccion_empleadov()" class="form-control"></textarea>
 						</div>
 								<!--quinto campo-->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Fecha de nacimiento:</label>
-									<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" onblur="" class="form-control">
+									<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" onblur="fecha_nacimientov()" class="form-control">
 								</div>
 									<!--sexto campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Cargo del empleado:</label>
-										<input type="text" id="cargo_empleado" name="cargo_empleado" onblur=""placeholder="Vendedor" class="form-control">
+										<input type="text" id="cargo_empleado" name="cargo_empleado" onblur="cargo_empleadov()" require placeholder="Vendedor" class="form-control">
 									</div>
 										<!-- septimo campo-->
 
@@ -84,7 +84,7 @@
 
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Correo del empleado</label>
-										<input type="text"  id="correo_empleado" name="correo_empleado" onblur=""placeholder="asdf@asd.as" class="form-control">
+										<input type="text"  id="correo_empleado" name="correo_empleado" onblur="" require placeholder="asdf@asd.as" class="form-control">
 									</div>
 
 
@@ -127,7 +127,7 @@
 						</div><!--fin del cuerpo-->		
 						</div><!--fin del primary -->
 					</div>
-				</div><!-- fin class container---><
+				</div><!-- fin class container--->
 <!-- Modal-->
 
 	<div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledy="exampleModalLongTitle" aria-hidden="true">
@@ -181,7 +181,7 @@
 							<td><?=$de->id_tienda?></td>
 							
 							<!-- <td><a href="<?php echo base_url();?>Datosempleado/eliminar?id=<?php echo $de->id_empleado;?>">Eliminar</a></td>-->
-							<td><a href="<?php echo base_url();?>Datosempleado/editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>
+							<td><a href="<?php echo base_url();?>Datos_empleado\editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>
 						</tr>
 
 						<?php endforeach; ?>

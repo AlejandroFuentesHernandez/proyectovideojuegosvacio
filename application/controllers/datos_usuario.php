@@ -65,8 +65,8 @@ class Datos_usuario extends CI_Controller{
 
 	public function editar()
 	{
-		$data['variable']=$this->usuario->mostrarById($this->input->get('id'));
-		$this->load->view('modificar_usuarios_view',$data);
+		$data['usuario']=$this->usuario->mostrarById($this->input->get('id'));
+		$this->load->view('editar_usuario',$data);
 
 	}
 

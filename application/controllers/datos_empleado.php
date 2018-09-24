@@ -21,6 +21,7 @@
 			$this->load->view('url_include.php');
 			$this->load->view('datos_empleados_view',$data);
 			
+			
 		}
 
 		public function cargaridtienda()
@@ -34,8 +35,8 @@
 
 		public function editar()
 		{
-			$data['variable']=$this->empleado->mostrarById($this->input->get('id'));
-			$this->load->view('modificar',$data);
+			$data['empleado']=$this->empleado->mostrarById($this->input->get('id'));
+			$this->load->view('modificar_e',$data);
 			
 		}
 
@@ -95,7 +96,7 @@
 
 		public function modificar()
 		{
-			$this->load->view('editar_empleado',$data);
+			
 			$data['id']=$_POST['id_empleados'];
 			$data['numero_empleado']=$_POST['numero_empleado'];
 			$data['nombre_empleado']=$_POST['nombre_empleado']; 
@@ -107,7 +108,7 @@
 			$data['telefono_empleado']=$_POST['telefono_ empleado'];
 			$data['estado_usuario']=$_POST['estado_usuario'];
 			$data['id_tienda']=$_POST['id_ tienda'];
-			$this->empleado->modificar($data);
+			$this->empleado->RegistroEmpleados($data);
 			$this->index();
 		}
 }

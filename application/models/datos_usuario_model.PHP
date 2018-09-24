@@ -34,7 +34,7 @@ class Datos_usuario_model extends CI_Model
 	public function mostrarById($id)
 	{
 		$this->db->where('id_usuario=' .$id);
-		$usuario=$this->bd->get('tab_usuario');
+		$usuario=$this->db->get('tab_usuario');
 		return $usuario->result_array();
 	}
 	
@@ -45,11 +45,11 @@ class Datos_usuario_model extends CI_Model
 
 		public function modificar($data)
 		{
-			$this->bd->set('nombre_usuario',$data['nombre_usuario']);
-			$this->bd->set('contraseña_usuario',$data['contraseña_usuario']);
-			$this->bd->set('rol_usuario',$data['rol_usuario']);
-			$this->bd->set('estado_usuario',$data['estado_usuario']);
-			$this->bd->set('id_empleado',$data['id_empleado']);
+			$this->db->set('nombre_usuario',$data['nombre_usuario']);
+			$this->db->set('contraseña_usuario',$data['contraseña_usuario']);
+			$this->db->set('rol_usuario',$data['rol_usuario']);
+			$this->db->set('estado_usuario',$data['estado_usuario']);
+			$this->db->set('id_empleado',$data['id_empleado']);
 		}
 }
 

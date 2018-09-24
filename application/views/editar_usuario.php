@@ -1,5 +1,5 @@
 <?php 
-include "url_editar.php";
+include "url_include.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,7 @@ include "url_editar.php";
 					<!--cuerpo-->
 					<div class="panel-body">
 						<form id="formUsu" name="formUsu" action="<?php echo site_url();?>Datosusuario" method="POST">
-							<?php foreach($editarusuario as $item){?>
+							<?php foreach($usuario as $item){?>
 							<!-- -->
 							<!--<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Id Usuario</label>
@@ -29,33 +29,33 @@ include "url_editar.php";
 							</div>-->
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Nombre usuario</label>
-								<input type="text" id="nombre_usuario" name="nombre_usuario" class="form-group" value="<?=$item['nombre_usuario'];?>">
+								<input type="text" id="nombre_usuario" name="nombre_usuario" class="form-control" value="<?=$item['nombre_usuario'];?>">
 							</div>
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Contraseña usuario</label>
-								<input type="password" id="contraseña_usuario" name="contraseña_usuario" value="<?=$item['contraseña_usuario']; ?>">
+								<input type="password" id="contraseña_usuario" name="contraseña_usuario" value="<?=$item['contraseña_usuario']; ?>" class="form-control">
 							</div>
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Estado usuario</label>
 								<select class="form-control" id="estado_usuario" name="estado_usuario">
                           		<option value=""></option>
                           		<option value="Habilitado">Habilitado</option>
-                          		<option value="Deshabilitado">Deshabilitado</option>
+                          		<option value="Deshabilitado">Deshabilitado</option></select>
 							</div>
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Id Empleado</label>
-								<input type="text" id="id_empleado" name="id_empleado">
+								<input type="text" id="id_empleado" name="id_empleado" class="form-control">
 							</div>
 								<div class="col-md-12 text-center">
                     <!-- nuevo-->
-                      <a href="<?php echo site_url();?>Datosusuario" class="btn btn-primary">Nuevo proveedor</a> 
+                     
                     <!-- Boton-->
                       <button type="submit" class="btn btn-success">Guardar usuario</button>
                     </div>
                     <!-- Button trigger modal -->
                     <div class="col-md-12  text-center"> 
                       <input type="hidden" id="id_usuario" name="id_usuario" value="<?php echo $item['id_usuario'];?>"/>                     
-                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#usuario"> Visualizar usuario </button> 
+                      <!--<button type="button" class="btn btn-info" data-toggle="modal" data-target="#usuario"> Visualizar usuario </button>--> 
                     </div>  
 						</form>
 						<?php }?>
