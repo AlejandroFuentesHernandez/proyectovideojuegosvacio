@@ -48,7 +48,12 @@
 								<!-- segundo campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Contraseña:</label>
-									<input type="password" id="contraseña_usuario" name="contraseña_usuario" class="form-control"  onblur=" contraseña_usuariov()" require placeholder="contraseña" >
+									<input type="password" id="pass1" name="contraseña_usuario" class="form-control"  onblur=" contraseña_usuariov()" require placeholder="contraseña" >
+								</div>
+
+								<div class="col-md-12 form-group input-group">
+									<label for="" class="input-group-addon">Confirmar Contraseña:</label>
+									<input type="password" id="pass2" name="contraseña_usuario" class="form-control"  onblur=" comprobarContra()" require placeholder="contraseña" >
 								</div>
 								<!--tercero campo -->
 								<div class="col-md-12 form-group input-group">
@@ -168,6 +173,16 @@ function llenarEmpleado()
 
   });
  }
+
+ function comprobarContra(){
+   var pass1 = $('pass1').value();
+   var pass2 = $ ('pass2').value();
+
+    if (pass1 == pass2)
+       alert("Las dos claves son iguales")
+    else
+       alert("Las dos claves son distintas")
+} 
   
   // $('#exampleModalLong').on('shown.bs.modal', function () {
     //  $('#myInput').trigger('focus')
