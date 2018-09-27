@@ -151,12 +151,12 @@
 							<th>Nombre del empleado</th>
 							<th>DUI del empleado</th>
 							<th>Direccion del empleado</th>
-							<th>Fecha de nacimiento</th>
+							<!--<th>Fecha de nacimiento</th>-->
 							<th>Cargo del empleado</th>
 							<th>Correo electronico</th>
 							<th>Telefono del empleado</th>
 							<th>Estado del usuario</th>
-							<th>Id de la tienda</th>
+							<!--<th>Id de la tienda</th>-->
 							<th>editar</th>
 							<!--
 								<th>borrar</th>-->
@@ -173,12 +173,12 @@
 							<td><?=$de->nombre_empleado?></td>
 							<td><?=$de->DUI_empleado?></td>
 							<td><?=$de->direccion_empleado?></td>
-							<td><?=$de->fecha_nacimiento?></td>
+							<!--<td><?=$de->fecha_nacimiento?></td>-->
 							<td><?=$de->cargo_empleado?></td>
 							<td><?=$de->correo_empleado?></td>
 							<td><?=$de->telefono_empleado?></td>
 							<td><?=$de->estado_empleado?></td>
-							<td><?=$de->id_tienda?></td>
+							<!--<td><?=$de->id_tienda?></td>-->
 							
 							<!-- <td><a href="<?php echo base_url();?>Datosempleado/eliminar?id=<?php echo $de->id_empleado;?>">Eliminar</a></td>-->
 							<td><a href="<?php echo base_url();?>Datos_empleado\editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>
