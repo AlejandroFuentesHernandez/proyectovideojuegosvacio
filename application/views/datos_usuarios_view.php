@@ -13,11 +13,19 @@
 <html>
 <head>
 	<title>Ingresar usarios</title>
+		<!--SOLICITAMOS LOS ESTILOS CSS Y LIBRERIAS DE JS-->
+	<?php require 'application/views/Plantilla/bootstrap.php' ;?>
 	<meta charset="utf-8">
 	 <?php include 'url_include.php';?>
 	
 </head>
-<body style="padding:20px">
+<body>
+		<!--SOLICITAMOS LA NEVEGACION Y EL PANEL-->
+	<?php require 'application/views/Plantilla/nav.php' ;?>
+	<?php require 'application/views/Plantilla/panel.php' ;?>
+
+	<!--INICIA APLICACION-->
+
 		<div class="container-fluid">
 			<!-- columna1-->
 			<div class="row">
@@ -151,7 +159,9 @@
 	</div>
 </div>
 
+	<!--FINALIZA APLICACION-->
 
+	<?php require 'application/views/Plantilla/footer.php' ;?>
 </body>
 <script src='<?php echo base_url();?>js/Script_datosu.js'></script>
 <script type="text/javascript">

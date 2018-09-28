@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Registro de clientes</title>
+  <!--SOLICITAMOS LOS ESTILOS CSS Y LIBRERIAS DE JS-->
+  <?php require 'application/views/Plantilla/bootstrap.php' ;?>
+
       <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -18,20 +21,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
-<body style="padding: 20px">
+<body>
+    <!--SOLICITAMOS LA NEVEGACION Y EL PANEL-->
+  <?php require 'application/views/Plantilla/nav.php' ;?>
+  <?php require 'application/views/Plantilla/panel.php' ;?>
+
+  <!--INICIA APLICACION-->
+
     <div class="container-fluid">
-        <!--columna 1-->
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h1>Registro de Clientes</h1>
-            </div>
-        </div>
          <!-- Columna 2-->
         <div class="row" style=" padding-left: 435px;" > 
           <!--PARTE 2-->
             <div class="col-md-6">
                 <div class="panel panel-primary"> 
-                  <div class="panel-heading">Agregar Cliente</div>
+                  <div class="panel-heading"><h1>Agregar Cliente</h1></div>
               <!-- Cuerpo-->
                       <div class="panel-body"> 
                         <form id="gracia" action="<?php echo site_url(); ?>Clientes/RegistroCliente" method="POST">
@@ -157,7 +160,9 @@
   </div>
 </div>
   
+  <!--FINALIZA APLICACION-->
 
+  <?php require 'application/views/Plantilla/footer.php' ;?>
 </body>
 </html>
 
