@@ -27,7 +27,7 @@ public function index()
          $resultado=$this->LM->verificarUsuario($user, $pass);//utilizamos metodo del modelo
 
 		if ($resultado==1) {
-         	$this->load->view('boostrap');
+         	$this->load->view('bootstrap');
 
          }
          else
