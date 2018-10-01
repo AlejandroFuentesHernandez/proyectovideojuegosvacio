@@ -106,47 +106,6 @@
 
     <div class="modal-content">
 
-      <div class="modal-header">
-        <h1 class="modal-title" id="exampleModalLongTitle">Clientes</h1>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-         <!-- TABLA PARA MOSTRAR DATOS-->
-                       <table border="solid" class="text-center">
-                         <thead>
-                            <tr>
-                                <th >Nombre de cliente</th>
-                                <th>Fecha de nacimiento</th>
-                                <th>Edad de cliente</th>
-                                <th>Número de DUI</th> 
-                                <th>Número de NIT</th>
-                                <th>Estado de cliente</th>
-                                <th>Telefono de cliente</th>
-                               <!-- <th>Eliminar</th>-->
-                                <th>Modificar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($dcliente as $dc):?>
- 
-                            <tr>
-                                <!-- <td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td> -->
-                                <td><?=$dc->nombre_cliente?></td>
-                                <td><?=$dc->fecha_nacimiento_cliente?></td>
-                                <td><?=$dc->edad_cliente?></td>
-                                <td><?=$dc->numero_DUI?></td>
-                                <td><?=$dc->numero_NIT?></td>
-                                <td><?=$dc->estado_cliente?></td>
-                                <td><?=$dc->telefono_cliente?></td>
-                              <!--  <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>-->
-                                <td><a href="<?php echo base_url(); ?>Clientes/comoYoQuiero?id=<?php echo $dc->id_cliente;?>">Modificar</a></td>
-                            </tr>
-             
-                            <?php endforeach;?>
-                        </tbody>
-                      </table>
 
                        <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

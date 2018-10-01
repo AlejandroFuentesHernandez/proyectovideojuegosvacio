@@ -29,7 +29,7 @@ class Cliente_model extends CI_Model{ //Inicio de Insercion
         return $clientes->result();
     }//Fin de muestra de datos//
      
-    public function mostrarById($id)
+    public function getMostrar($id)
     {
         $this->db->where('id_cliente='.$id);
         $clientes=$this->db->get('tab_cliente'); //que es lo mismo que:  SELECT * FROM tab_proveedores

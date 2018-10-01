@@ -67,38 +67,40 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Producto</th>
-                                        <th>Cantidad existente</th>
-                                        <th>Stock minimo</th>
-                                        <th>Precio Venta</th>
-                                        <th>Fecha de ingreso</th>
-                                        <th>Estado Invenatario</th>
-                                        <th>Editar</th>
-                                    </tr>
-                                </thead>
-
-                                 <tbody>
-                                    <?php foreach ($detalle as $inv): ?>
-                                    <tr>
-                                        <td><?=$inv->nombre_juego?></td>
-                                        <td><?=$inv->cantidad_existente?></td>
-                                        <td><?=$inv->stock_minimo?></td>
-                                        <td><?=$inv->precio_venta?></td>
-                                        <td><?=$inv->fecha_ingreso?> </td>
-                                        <td><?=$inv->estado_inventario?> </td>
-                                        <td>
-                                         <a href="<?php echo base_url();?>Inventario/mostrarId?idi=<?php echo $inv->id_inventario;?>" class="btn btn-info">Editar</a>
-                                        </td>           
-                           
-                                    </tr>
+ <!-- TABLA PARA MOSTRAR DATOS-->
+                       <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                         <thead>
+                            <tr>
+                                <th >Nombre de cliente</th>
+                                <th>Fecha de nacimiento</th>
+                                <th>Edad de cliente</th>
+                                <th>Número de DUI</th> 
+                                <th>Número de NIT</th>
+                                <th>Estado de cliente</th>
+                                <th>Telefono de cliente</th>
+                               <!-- <th>Eliminar</th>-->
+                                <th>Modificar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($dcliente as $dc):?>
+ 
+                            <tr>
+                                <!-- <td><input type="radio" name="editar" value="<?=$u->idContacto?>"/></td> -->
+                                <td><?=$dc->nombre_cliente?></td>
+                                <td><?=$dc->fecha_nacimiento_cliente?></td>
+                                <td><?=$dc->edad_cliente?></td>
+                                <td><?=$dc->numero_DUI?></td>
+                                <td><?=$dc->numero_NIT?></td>
+                                <td><?=$dc->estado_cliente?></td>
+                                <td><?=$dc->telefono_cliente?></td>
+                              <!--  <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>-->
+                                <td><a href="<?php echo base_url(); ?>Clientes/comoYoQuiero?id=<?php echo $dc->id_cliente;?>">Modificar</a></td>
+                            </tr>
              
-                                    <?php endforeach;?>
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
+                            <?php endforeach;?>
+                        </tbody>
+                      </table>
   
                         </div>
                         <!-- /.panel-body -->
@@ -142,3 +144,18 @@
         });
     });
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        

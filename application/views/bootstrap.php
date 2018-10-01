@@ -66,7 +66,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url(); ?>add-cliente">Cliente Nuevo</a></li>
-          <li><a href="#">Ver Clientes</a></li>
+          <li><a href="<?php echo site_url(); ?>view-clientes">Ver Clientes</a></li>
         </ul>
       </li>
 

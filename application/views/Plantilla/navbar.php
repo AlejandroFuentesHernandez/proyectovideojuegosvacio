@@ -12,7 +12,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo site_url(); ?>index"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+        <li><a href="<?php echo site_url(); ?>index"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión</a>
           <ul class="dropdown-menu">
           <li><a href="#">Perfil</a></li>
           <li><a href="#">Cerrar Sesión</a></li>

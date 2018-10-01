@@ -7,21 +7,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Clientes extends CI_Controller
 {
     
-    public function __construct()
+  public function __construct()
     {
        parent::__construct();  // Constructor del padre
-       $this->load->model('Cliente_model', 'cliente', TRUE); //Forma de como cargar el modelo para poder acceder a sus metodos, en el primer paramentro se pone el nombre del modelo, en el segundo se le esta asignando un nombre diferente al modelo y en el tercero se le pondra TRUE para que se conecte automaticamente a la base de datos 
-    }
-    //Mostrar datos ingresados//
-    public function index(){
-
-    	//$this->load
-    	$cliente= $this->cliente->mostrar();
-    	//$data['insertar']=""; 
-    	$data['dcliente']=$cliente;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
-    	$this->load->view('clientes_view', $data);
+       $this->load->model('Cliente_model','cliente',TRUE); 
     }
 
+    public function index()
+    {  
+        
+    	$this->load->view('clientes_view');
+    }
     public function comoYoQuiero()
     {
     	
@@ -100,6 +96,18 @@ class Clientes extends CI_Controller
 			$this->index();
 
 		}
+
+        	public function mostrar()
+		{
+
+			//$this->load
+    	$cliente= $this->cliente->mostrar();
+    	//$data['insertar']=""; 
+    	$data['dcliente']=$cliente;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
+    	 $this->load->view('mostrar_clientes',$data);
+
+		}
+
 
 
 }
