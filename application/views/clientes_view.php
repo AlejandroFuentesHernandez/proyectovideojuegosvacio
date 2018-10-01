@@ -86,12 +86,7 @@
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
                               <button type="submit" class="btn btn-success">Ingresar Cliente</button>
-                          </div><br><br>
-                          <div class="col-md-12 text-center">
-                            <!-- Button trigger modal -->
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> Visualizar clientes 
-                              </button>
-                            </div> 
+                          </div><br><br> 
                         </form>
                     </div> <!--Fin del cuerpo-->
                 </div>
