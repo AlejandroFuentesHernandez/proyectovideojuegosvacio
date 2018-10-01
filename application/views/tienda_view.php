@@ -11,21 +11,16 @@ include 'url_include.php';
 	<title>Datos Tienda</title>
 	<meta charset="utf-8">
 	<script src="<?php echo base_url();?>/js/Script_tienda.js"></script>
+	<?php require 'application/views/Plantilla/navbar.php';?>
 </head>
 <body style="padding: 20px">
 	<div class="container-fluid">
-		<!--columna1 -->
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<h1>Datos tienda</h1>
-			</div>
-		</div>
-		<!-- columna 2-->
+
 		<div class="row" style="padding-left: 435px;">
 			<!--parte 2 -->
 			<div class="col-md-6">
 				<div class="panel panel-primary">
-					<div class="panel-heading">Datos tienda</div>
+					<div class="panel-heading"><h1>Datos tienda</h1></div>
 					<!--<div class -->
 					<!--cuerpo -->
 					<div class="panel-body">
@@ -59,6 +54,7 @@ include 'url_include.php';
 			</div><!-- col md6-->
 		</div><!-- row -->
 	</div><!-- finclass container-->
+	<hr>
 
 
 	
@@ -112,7 +108,7 @@ include 'url_include.php';
 			</div>
 
 		</div>
-	
-
+		  <!--FINALIZA APLICACION-->
+  <?php require 'application/views/Plantilla/footer.php' ;?>
 </body>
 </html>

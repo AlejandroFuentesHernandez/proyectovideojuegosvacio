@@ -4,21 +4,17 @@
     <meta charset="utf-8">
     <title>Inventario</title>
     <?php include 'url_include.php';?>
+    <?php require 'application/views/Plantilla/navbar.php';?>
+
 </head>
 <body>
   <div class="container-fluid">
-    <!--Fila 1-->
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>Registro de Inventario</h1>
-      </div>           
-    </div>
-         <!-- Fila 2-->
+
     <div class="row" style=" padding-left: 435px;"> 
           <!--PARTE 2-->
       <div class="col-md-6">
         <div class="panel panel-primary"> 
-          <div class="panel-heading">Agregar Inventario</div>
+          <div class="panel-heading"><h1>Agregar Inventario</h1></div>
               <!-- Cuerpo-->
           <div class="panel-body"> 
             <form id="formInventario" action="" method="POST"> 
@@ -84,7 +80,10 @@
         </div>  <!-- FIN DEL Panel -->       
       </div> 
     </div>   
-  </div> <!-- fin class container-->   
+  </div> <!-- fin class container-->
+  <hr>
+    <!--FINALIZA APLICACION-->
+  <?php require 'application/views/Plantilla/footer.php' ;?>   
 </body>
 </html>
 <script type="text/javascript">

@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Registro de clientes</title>
-  <!--SOLICITAMOS LOS ESTILOS CSS Y LIBRERIAS DE JS-->
-  <?php require 'application/views/Plantilla/bootstrap.php' ;?>
+
 
       <script
   src="https://code.jquery.com/jquery-3.3.1.js"
@@ -19,12 +18,11 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<?php require 'application/views/Plantilla/navbar.php';?>
 </head>
 
 <body>
-    <!--SOLICITAMOS LA NEVEGACION Y EL PANEL-->
-  <?php require 'application/views/Plantilla/nav.php' ;?>
-  <?php require 'application/views/Plantilla/panel.php' ;?>
 
   <!--INICIA APLICACION-->
 
@@ -100,6 +98,7 @@
             </div>
         </div>
     </div> <!-- fin class container-->
+    <hr>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

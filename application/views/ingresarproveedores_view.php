@@ -16,22 +16,16 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<?php require 'application/views/Plantilla/navbar.php';?>
 </head>
 <body>
     <div class="container-fluid">
-      <!--Fila 1-->
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h1>Registro de Proveedores</h1>
-            </div>
-        </div>
-         <!-- Fila 2-->
+
         <div class="row" style=" padding-left: 435px;"> 
           <!--PARTE 2-->
           <div class="col-md-6">
              <div class="panel panel-primary"> 
-              <div class="panel-heading">Agregar Proveedores</div>
+              <div class="panel-heading"><h1>Agregar Proveedores</h1></div>
               <!-- Cuerpo-->
               <div class="panel-body"> 
                 <form id="formProv" action="<?php echo site_url(); ?>Proveedores/Registrar_proveedores" method="POST"> 
@@ -102,6 +96,7 @@
           </div> 
         </div>
     </div> <!-- fin class container-->
+    <hr>
 
 
 
@@ -166,13 +161,8 @@
     </div>
   </div>
 </div>
-
-            
-      
- 
-
-   
-
+  <!--FINALIZA APLICACION-->
+  <?php require 'application/views/Plantilla/footer.php' ;?>
 </body>
 </html>
 

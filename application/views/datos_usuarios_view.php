@@ -14,31 +14,21 @@
 <head>
 	<title>Ingresar usarios</title>
 		<!--SOLICITAMOS LOS ESTILOS CSS Y LIBRERIAS DE JS-->
-	<?php require 'application/views/Plantilla/bootstrap.php' ;?>
+
 	<meta charset="utf-8">
 	 <?php include 'url_include.php';?>
-	
+	<?php require 'application/views/Plantilla/navbar.php';?>
 </head>
 <body>
-		<!--SOLICITAMOS LA NEVEGACION Y EL PANEL-->
-	<?php require 'application/views/Plantilla/nav.php' ;?>
-	<?php require 'application/views/Plantilla/panel.php' ;?>
-
 	<!--INICIA APLICACION-->
 
 		<div class="container-fluid">
-			<!-- columna1-->
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h1>Ingresar usuarios</h1>
-				</div>
-			</div>
 			<!--columna2-->
 			<div class="row" style="padding-left: 435px;">
 				<!-- parte 2 -->
 				<div class="col-md-6">
 					<div class="panel panel-primary">
-						<div class="panel panel-heading">Ingresar usuario</div>
+						<div class="panel panel-heading"><h1>Ingresar usuario</h1></div>
 						<!--<div class="panel-heading" -->
 						<!-- cuerpo -->
 						<div class="panel-body">
@@ -98,6 +88,7 @@
 					</div>
 				</div>
 			</div><!--fin class container-->
+			<hr>
 <!-- Modal -->
 
 	<div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledy="exampleModalLongTitle" arial-hidden="true">

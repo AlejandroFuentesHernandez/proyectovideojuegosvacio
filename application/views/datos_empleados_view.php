@@ -21,22 +21,15 @@
 <head>
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
-	
+	<?php require 'application/views/Plantilla/navbar.php';?>
 </head>
 <body style="padding: 20px">
 		<div class="container-fluid">
-			<!--columna1-->
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<h1>Ingresar Empleado</h1>
-					</div>
-				</div>
-				<!--columna 2-->
 				<div class="row" style="padding-left: 435px;">
 					<!--parte 2 -->
 					<div class="col-md-6">
 						<div class="panel panel-primary">
-							<div class=" panel panel-heading">Ingresar empleado</div>
+							<div class=" panel panel-heading"><h1>Ingresar empleado</h1></div>
 						<!--<div class="panel-heading">Agregar </div>-->
 						<!--cuerpo-->
 						<div class="panel-body">
@@ -128,6 +121,7 @@
 						</div><!--fin del primary -->
 					</div>
 				</div><!-- fin class container--->
+				<hr>
 <!-- Modal-->
 
 	<div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledy="exampleModalLongTitle" aria-hidden="true">
@@ -195,6 +189,9 @@
 		</div>
 	</div>
 
+  <!--FINALIZA APLICACION-->
+
+  <?php require 'application/views/Plantilla/footer.php' ;?>
 </body>
 <script src='<?php echo base_url();?>js/Script_datose.js'></script>
 
