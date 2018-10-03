@@ -111,6 +111,14 @@
 			$this->empleado->RegistroEmpleados($data);
 			$this->index();
 		}
+		public function mostrar()
+		{
+			$empleado=$this->empleado->mostrar();
+			$data['dempleado']=$empleado;
+
+			$this->load->view('url_include');
+			$this->load->view('mostar_empleados_view',$data);
+		}
 }
 
 ?>

@@ -52,7 +52,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Empleados <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url(); ?>add-empleado">Ingresar Empleado</a></li>
-          <li><a href="#">Mostrar Empleado</a></li>
+          <li><a href="<?php echo site_url(); ?>view-empleado">Mostrar Empleado</a></li>
         </ul>
       </li>
 
