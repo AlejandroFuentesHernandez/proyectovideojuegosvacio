@@ -152,7 +152,7 @@
 
 	<!--FINALIZA APLICACION-->
 
-	<?php require 'application/views/Plantilla/footer.php' ;?>
+	
 </body>
 <script src='<?php echo base_url();?>js/Script_datosu.js'></script>
 <script type="text/javascript">

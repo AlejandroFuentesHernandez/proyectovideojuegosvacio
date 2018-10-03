@@ -32,14 +32,14 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuario <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url(); ?>add-usuario">Crear Usuario</a></li>
-          <li><a href="#">Mostrar Usuario</a></li>
+          <li><a href="<?php echo site_url();?>view-usuario">Mostrar Usuario</a></li>
         </ul>
       </li>
 
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Empleados <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url(); ?>add-empleado">Ingresar Empleado</a></li>
-          <li><a href="#">Mostrar Empleado</a></li>
+          <li><a href="<?php echo site_url(); ?>view-empleado">Mostrar Empleado</a></li>
         </ul>
       </li>
 
@@ -53,7 +53,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Clientes<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url(); ?>add-cliente">Cliente Nuevo</a></li>
-          <li><a href="#">Ver Clientes</a></li>
+          <li><a href="<?php echo site_url(); ?>view-clientes">Ver Clientes</a></li>
         </ul>
       </li>
 

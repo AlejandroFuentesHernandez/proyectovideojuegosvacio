@@ -27,7 +27,7 @@
 
 		public function editar()
 		{
-			$data['variable']=$this->tienda->mostrarById($this->input->get('id'));
+			$data['dtienda']=$this->tienda->mostrarById($this->input->get('id'));
 			$this->load->view('modificar_tienda',$data);
 		}
 		//Insertar registros a base de datos//
@@ -83,6 +83,18 @@
 			$data['telefono_tienda']=$_POST['telefono_tienda'];
 			$this->tienda->modificar($data);
 			$this->index();
+		}
+
+		public function mostrar()
+		{
+			$tienda=$this->tienda->mostrar();
+			$data['dtienda']=$tienda;
+
+			$this->load->view('Plantilla/navbar');
+			$this->load->view('url_mostrar-e-h');
+			$this->load->view('mostrar_tienda',$data);
+			$this->load->view('url_mostrar_u_f');
+			$this->load->view('Plantilla/footer');
 		}
 
 	}
