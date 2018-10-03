@@ -116,8 +116,11 @@
 			$empleado=$this->empleado->mostrar();
 			$data['dempleado']=$empleado;
 
-			$this->load->view('url_include');
+			$this->load->view('Plantilla/navbar');
+			$this->load->view('url_mostrar_e_h');
 			$this->load->view('mostar_empleados_view',$data);
+			$this->load->view('url_mostrar_u_f');
+			$this->load->view('Plantilla/footer');
 		}
 }
 
