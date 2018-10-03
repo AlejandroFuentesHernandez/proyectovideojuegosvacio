@@ -1,4 +1,5 @@
-<script src="<?php echo site_url();?>vendor/datatables/js/jquery.dataTables.min.js"></script>
+<!-- DataTables JavaScript -->
+    <script src="<?php echo site_url();?>vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="<?php echo site_url();?>vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="<?php echo site_url();?>vendor/datatables-responsive/dataTables.responsive.js"></script>
 

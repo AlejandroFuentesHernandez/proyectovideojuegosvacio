@@ -45,7 +45,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuario <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url(); ?>add-usuario">Crear Usuario</a></li>
-          <li><a href="#">Mostrar Usuario</a></li>
+          <li><a href="<?php echo site_url();?>view-usuario">Mostrar Usuario</a></li>
         </ul>
       </li>
 

@@ -15,6 +15,7 @@ class Datos_usuario extends CI_Controller{
 		$usuario=$this->usuario->mostrar();
 
 		$data['dusuario']=$usuario;
+		$this->load->view('url_include');
 		$this->load->view('datos_usuarios_view',$data);
 	}
 		
@@ -25,7 +26,12 @@ class Datos_usuario extends CI_Controller{
 			echo'<option value="'.$item['id_empleados'].'">'.$item['nombre_empleado'].'</option>';
 		}
 	}
+	public function editar()
+	{
+		$data['usuario']=$this->usuario->mostrarById($this->input->get('id'));
+		$this->load->view('editar_usuario',$data);
 
+	}
 	
 	public function RegistroUsuario()
 	{
@@ -62,13 +68,13 @@ class Datos_usuario extends CI_Controller{
 			$this->error();
 		}
 	}
-
-	public function editar()
+	public function eliminar()
 	{
-		$data['usuario']=$this->usuario->mostrarById($this->input->get('id'));
-		$this->load->view('editar_usuario',$data);
-
+		$eliminar=$_GET['id'];
+		$this->usuario->usuario($usuario);
+		$this->index();
 	}
+	
 
 	public function modificar()
 	{
@@ -80,6 +86,20 @@ class Datos_usuario extends CI_Controller{
 		$data['id_empleado']=$_POST['id_empleado'];
 		$this->usuario->modificar($data);
 		//$this->index();
+	}
+	public function mostrar()
+	{
+		$usuario=$this->usuario->mostrar();
+		$data['dusuario']=$usuario;
+
+		$this->load->view('url_mostrar_e_h');
+		$this->load->view('url_mostrar_u_f');
+		$this->load->view('Plantilla/navbar');
+		$this->load->view('mostrar_usuarios_view',$data);
+		$this->load->view('Plantilla/footer');
+		
+		
+		
 	}
 }
 ?>
