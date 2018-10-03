@@ -11,7 +11,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php require 'application/view/Plantilla/navbar.php';?>
+
 <head>
 	<title></title>
 	<meta charset="utf-8">
@@ -68,10 +68,11 @@
 										<th>Cargo empleado</th>
 										<th>Id tienda</th>
 										<th>Estado empleado</th>
+										<th>editar</th>
 									</tr>
 								</thead><!--thead-->
 								<tbody>
-									<?php foreach ($dempleados as $de): ?>
+									<?php foreach ($dempleado as $de): ?>
 									<tr>
 										<!--<td><input type="radio" name="editar" value="<?=$u->id?>"/></td> -->
 										<td><?=$de->numero_empleado?></td>
@@ -82,7 +83,7 @@
 										<td><?=$de->cargo_empleado?></td>
 										<td><?=$de->id_tienda?></td>
 										<td><?=$de->estado_empleado?></td>
-										<td><a href="" class="btn btn-info">Editar</a></td>
+										<td><a href="<?php echo base_url();?>Datos_empleado\editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>
 									</tr>	
 										<?php endforeach;?>
 								</tbody><!-- tbody-->
