@@ -6,7 +6,7 @@
 <head>
 	<title>Ingresar Empleados</title>
 	<meta charset="utf-8">
-	<?php require 'application/views/Plantilla/navbar.php';?>
+<?php require 'application/views/Plantilla/navbar.php';?>
 </head>
 <body style="padding: 20px">
 		<div class="container-fluid">
@@ -166,8 +166,7 @@
 	</div>
 
   <!--FINALIZA APLICACION-->
-
- <!--hp require 'application/views/Plantilla/footer.php' ;?>-->
+<?php require 'application/views/Plantilla/footer.php' ;?>  
 </body>
 <!--ipt src='<?php echo base_url();?>js/Script_datose.js'></script>-->
 
