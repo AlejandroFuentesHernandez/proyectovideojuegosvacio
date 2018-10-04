@@ -85,9 +85,9 @@ class Compra extends CI_Controller
         	
 			$eliminar = $_GET['id'];
 			$this->compra->eliminar($eliminar);
-			$this->index();*/
+			$this->index();
 
-		}
+		}*/
 
 
 		public function modificar()

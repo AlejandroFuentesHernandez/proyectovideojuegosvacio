@@ -38,7 +38,7 @@ class Datos_usuario extends CI_Controller{
 	
 		//$id_usuario=$this->post('id_usuario');
 		$nombre_usuario=$this->input->post('nombre_usuario');
-		$contraseña_usuario=$this->input->post('contraseña_usuario');
+		$contraseña_usuario=md5($this->input->post('contraseña_usuario'));
 		$rol_usuario=$this->input->post('rol_usuario');
 		$estado_usuario=$this->input->post('estado_usuario');
 		$id_empleado=$this->input->post('id_empleado');
