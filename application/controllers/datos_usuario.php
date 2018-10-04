@@ -92,10 +92,10 @@ class Datos_usuario extends CI_Controller{
 		$usuario=$this->usuario->mostrar();
 		$data['dusuario']=$usuario;
 
-		$this->load->view('url_mostrar_e_h');
-		$this->load->view('url_mostrar_u_f');
 		$this->load->view('Plantilla/navbar');
+		$this->load->view('url_mostrar_e_h');
 		$this->load->view('mostrar_usuarios_view',$data);
+		$this->load->view('url_mostrar_u_f');
 		$this->load->view('Plantilla/footer');
 		
 		

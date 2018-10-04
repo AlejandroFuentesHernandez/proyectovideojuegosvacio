@@ -1,19 +1,4 @@
 <?php
-/*
-//id_empleados int
-//numero_empleado varchar
-//nombre_empleado varchar
-//DUI_empleados		varchar
-//direccion_empleado		varchar
-//fecha_nacimiento date
-//cargo_empleado	varchar
-//correo_empleado varchar
-//telefono_ empleado varchar
-//estado_usuario (enum varchar)
-//id_ tienda varchar
-
-*/
-
 
 ?>
 <!DOCTYPE html>
@@ -37,7 +22,6 @@
 								<!-- Esto estara oculto
 									<div class="col-md-12 form-group input-group">
 										<input type="text" id="id_empleados" name="id_empleados" class="form-control"
-
 										>
 									</div>
 								-->
@@ -72,15 +56,11 @@
 										<input type="text" id="cargo_empleado" name="cargo_empleado" onblur="cargo_empleadov()" require placeholder="Vendedor" class="form-control">
 									</div>
 										<!-- septimo campo-->
-
-
-
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Correo del empleado</label>
 										<input type="text"  id="correo_empleado" name="correo_empleado" onblur="" require placeholder="asdf@asd.as" class="form-control">
 									</div>
-
-
+										<!-- octavo campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Telefono del empleado</label>
 										<input type=""  id="telefono_empleado" name="telefono_empleado" onblur=""placeholder="5555-5555" class="form-control">
@@ -88,7 +68,7 @@
 
 
 									
-													<!--octavo campo html solo reconoce name no id el ajax si por id-->
+													<!--noveno campo html solo reconoce name no id el ajax si por id-->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Estado_usuario</label>
 												<select id="estado_empleado" name="estado_empleado" class="form-control">
@@ -96,17 +76,13 @@
 													<option value="inhabilitado">inhabilitado</option>
 												</select>
 									</div>
-
+											<!-- decimo campo-->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Id tienda</label>
 										<select id="id_tienda" name="id_tienda" class="form-control">
 										</select>
 									</div> 
 
-
-          							
-									
-									
 										<!-- nuevo-->
 										<div class="col-md-12 text-center">
 										<!--boton--->
@@ -191,9 +167,9 @@
 
   <!--FINALIZA APLICACION-->
 
-  <?php require 'application/views/Plantilla/footer.php' ;?>
+ <!--hp require 'application/views/Plantilla/footer.php' ;?>-->
 </body>
-<script src='<?php echo base_url();?>js/Script_datose.js'></script>
+<!--ipt src='<?php echo base_url();?>js/Script_datose.js'></script>-->
 
 <script type="text/javascript">
 	$(document).ready(function()
@@ -207,7 +183,7 @@ function llenarTienda()
     type:"POST",
     url:'<?php echo site_url();?>Datos_empleado/cargaridtienda',
     success: function(data)
-    {
+    	{
       $('#id_tienda').html('');
       $('#id_tienda').html(data);
     }
