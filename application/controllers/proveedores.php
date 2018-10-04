@@ -101,7 +101,7 @@ class Proveedores extends CI_Controller
         $proveedores= $this->proveedores->mostrar();
          $data['dproveedores']=$proveedores;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
         $this->load->view('Plantilla/navbar');
-        $this->load->view('ingresarproveedores_view', $data);
+        $this->load->view('mostrarproveedores_view', $data);
         $this->load->view('Plantilla/footer');
 
         }
