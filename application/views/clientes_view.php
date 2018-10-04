@@ -75,7 +75,6 @@
                                   <option value="Habilitado" class="form-control">Habilitado</option>
                                   <option value="Deshabilitado" class="form-control">Deshabilitado</option>
                               </select>
-                              <!--<input type="text" id="estado" name="estado_cliente" class="form-control" required>-->
                            </div>
                             <!-- Sexto campo-->
                            <div class="col-md-12 form-group input-group">
