@@ -25,7 +25,7 @@
 										<tr>
 											<!-- <th>id del usuario</th>-->
 											<th>Nombre del usuario</th>
-											<th>Contraseña del usuario</th>
+											<!--<th>Contraseña del usuario</th>-->
 											<th>Rol del usuario</th>
 											<th>Id del empleado</th>
 											<th>Estado del usuario</th>
@@ -36,7 +36,7 @@
 											<tr>
 												<!--<td><input type="radio" name="editar" value="<?=$u->id?>"/></td> -->
 												<td><?=$du->nombre_usuario?></td>
-												<td><?=$du->contraseña_usuario?></td>
+												<!--<td><?=$du->contraseña_usuario?></td>-->
 												<td><?=$du->rol_usuario?></td>
 												<td><?=$du->id_empleado?></td>
 												<td><?=$du->estado_usuario?></td>
