@@ -94,7 +94,7 @@
                                 <td><?=$dc->estado_cliente?></td>
                                 <td><?=$dc->telefono_cliente?></td>
                               <!--  <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>-->
-                                <td><a href="<?php echo base_url(); ?>Clientes/comoYoQuiero?id=<?php echo $dc->id_cliente;?>">Modificar</a></td>
+                                <td><a href="<?php echo base_url(); ?>Clientes/comoYoQuiero?id=<?php echo $dc->id_cliente;?>"" class="btn btn-info">Modificar</a></td>
                             </tr>
              
                             <?php endforeach;?>

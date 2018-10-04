@@ -92,7 +92,7 @@
                                 <td><?=$dc->precio_unitario_compra?></td>
                                 <td><?=$dc->total_compra?></td>
                                 <!--<td><a href="<?php echo base_url(); ?>Compra/eliminar?id=<?php echo $dc->id_compra;?>">Eliminar</a></td>-->
-                                <td><a href="<?php echo base_url(); ?>Compra/editar?id=<?php echo $dc->id_compra;?>">Modificar</a></td>
+                                <td><a href="<?php echo base_url(); ?>Compra/editar?id=<?php echo $dc->id_compra;?>"class="btn btn-info">Modificar</a></td>
                             </tr>
              
                             <?php endforeach;?>
