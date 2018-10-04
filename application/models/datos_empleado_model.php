@@ -66,7 +66,7 @@ public function eliminar($data)
 
 public function modificar($data)
 {
-	$this->load->view('editar_empleado',$data);
+	$this->load->view('modificar_e',$data);
 	$this->db->set('numero_empleado',$data['numero_empleado']);
 	$this->db->set('nombre_empleado',$data['nombre_empleado']);
 	$this->db->set('DUI_empleados',$data['DUI_empleados']);
@@ -75,7 +75,7 @@ public function modificar($data)
 	$this->db->set('cargo_empleado',$data['cargo_empleado']);
 	$this->db->set('correo_empleado',$data['correo_empleado']);
 	$this->db->set('telefono_empleado',$data['telefono_empleado']);
-	$this->db->set('estado_usuario',$data['estado_usuario']);
+	$this->db->set('estado_empleado',$data['estado_empleado']);
 	$this->db->set('id_tienda',$data['id_tienda']);
 
 }

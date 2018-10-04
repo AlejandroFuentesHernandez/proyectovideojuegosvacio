@@ -9,7 +9,7 @@
 		public function __construct()
 		{
 		parent:: __construct();
-		$this->load->model('tienda_model','tienda','TRUE');
+		$this->load->model('Tienda_model','tienda','TRUE');
 		/*
 		forma de cargar el mosdelo para poder acceder a sus metodos, en el primer parametro se pone el nombre del modelo, en le pondra TRUE para que se conecte automaticamente a la base de datos
 		*/
