@@ -19,7 +19,7 @@ public function index()
          $this->load->helper('url');//instanciamos url's dinamicos BORRAR
          //recuperamos datos del formulario
          $user= $this->input->post('usuario');
-         $pass=$this->input->post('password');
+         $pass=md5($this->input->post('password'));
          //-----------------------------------------------
 
          $this->load->model('Login_model','LM', true);//llamamos al modelo
