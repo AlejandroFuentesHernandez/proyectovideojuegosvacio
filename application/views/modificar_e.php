@@ -28,7 +28,7 @@
                 <form id="formProv" action="<?php echo site_url(); ?>Datos_empleado/modificar" method="POST"> 
                     <?php foreach ($id as $idd) { ?>
                      
-                      <input type="hidden" id="numero_empleado" name="numero_empleado" value="<?php echo $idd->id_empleados; ?>">
+                      <input type="hidden" id="id_empleados" name="id_empleados" value="<?php echo $idd->id_empleados; ?>">
 
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Numero empleado</label>

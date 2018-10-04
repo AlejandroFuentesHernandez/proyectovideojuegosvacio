@@ -112,7 +112,7 @@
 		public function modificar()
 		{
 			
-			$data['id']=$_POST['id_empleados'];
+			$data['id_empleados']=$_POST['id_empleados'];
 			$data['numero_empleado']=$_POST['numero_empleado'];
 			$data['nombre_empleado']=$_POST['nombre_empleado']; 
 			$data['DUI_empleados']=$_POST['DUI_empleados'];		
@@ -124,7 +124,7 @@
 			$data['estado_usuario']=$_POST['estado_usuario'];
 			$data['id_tienda']=$_POST['id_ tienda'];
 			$this->empleado->RegistroEmpleados($data);
-			$this->index();
+			//$this->index();
 		}
 		public function mostrar()
 		{
