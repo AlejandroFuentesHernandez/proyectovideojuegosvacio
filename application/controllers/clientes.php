@@ -19,10 +19,11 @@ class Clientes extends CI_Controller
     	$this->load->view('clientes_view');
     	$this->load->view('Plantilla/footer');
     }
+
+  
     public function comoYoQuiero()
     {
-    	
-    	$data['variable']=$this->cliente->mostrarById($this->input->get('id'));
+    	$data['variable']=$this->cliente->getMostrar($this->input->get('id'));
     	$this->load->view('editar_clientes', $data);
     }
 
@@ -94,7 +95,7 @@ class Clientes extends CI_Controller
 			$data ['estado'] = $_POST['estado_cliente'];
 			$data ['telefono'] = $_POST['telefono_cliente'];
 			$this->cliente->update($data);
-			$this->index();
+			$this->comoYoQuiero();
 
 		}
 
