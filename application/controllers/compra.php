@@ -44,9 +44,9 @@ class Compra extends CI_Controller
 			$precio = $this->input->post('precio_unitario_compra');
 			$total = $this->input->post('total_compra');
 			$nombre = $this->input->post('nombre_empresa');
-			//$id_proveedores=$this->input->post('id_proveedores');
+			
 
-        	//mandamos los datos por medio de un array al modelo, cada elemento corresponde con una columna en la tabla Proveedores de la Base de datos, esto quiere decir que lo que esta al lado izquierdo serian dichas columnas y tendran el valor correspondiente de la informacion que se mande del formulario.
+        	//mandamos los datos por medio de un array al modelo, cada elemento corresponde con una columna en la tabla compra de la Base de datos, esto quiere decir que lo que esta al lado izquierdo serian dichas columnas y tendran el valor correspondiente de la informacion que se mande del formulario.
 				$data=array
 				(	
 					//'id_compra'=>$id_compra,
@@ -80,12 +80,12 @@ class Compra extends CI_Controller
 				}
         }
 
-        public function eliminar()
+      /*  public function eliminar()
         {
         	
 			$eliminar = $_GET['id'];
 			$this->compra->eliminar($eliminar);
-			$this->index();
+			$this->index();*/
 
 		}
 
