@@ -84,11 +84,7 @@
                     <!-- Boton-->
                       <button type="submit" class="btn btn-success">Guardar proveedor</button>
                     </div><br><br>
-                    <!-- Button trigger modal -->
-                    <div class="col-md-12  text-center">
-                    
-                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#proveedores"> Visualizar Proveedores </button>
-                    </div>         
+        
                 </form>
               </div>   <!-- FIN DEL CUERPO -->          
              </div>  <!-- FIN DEL Panel -->       
@@ -109,59 +105,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-                    <div class="table-responsive">  
-                     <!-- TABLA PARA MOSTRAR DATOS-->
-                      <table class="table table-striped table-hover table-bordered">
-                         <thead>
-                            <tr>
-                                <th> Id </th>
-                                <th>Nombre</th>
-                                <th>Tipo de persona</th>
-                                <th>Representante de la empresa</th> 
-                                <th>Direccion </th>
-                                <th>Correo</th>
-                                <th>Contacto</th>
-                                <th>Estado</th>
-                                <th>Acciones</th>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($dproveedores as $dp):
-                             ?>
- 
-                            <tr>
-                               
-                                <td><?=$dp->id_proveedores?></td>
-                                <td><?=$dp->nombre_empresa?></td>
-                                <td><?=$dp->tipo_persona?></td>
-                                <td><?=$dp->representante_empresa?></td>
-                                <td><?=$dp->direccion_proveedores?> </td>
-                                <td><?=$dp->correo_proveedores?> </td>
-                                <td><?=$dp->contacto_proveedores?></td>
-                                <td><?=$dp->estado_provedores?></td>
-                                <td>
-                                  <a href="<?php echo base_url();?>Proveedores/mostrarId?idp=<?php echo $dp->id_proveedores;?>" class="btn btn-info">Editar</a>
-                                  <a href="<?php echo base_url();?>Proveedores/eliminar?idp=<?php echo $dp->id_proveedores;?>" class="btn btn-info">Eliminar </a>
-                                </td>
-                          
-                              </tr>
-             
-                            <?php endforeach;?>
-                        </tbody>
-                      </table>
-                    </div>  
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <!--  <button type="button" class="btn btn-primary">Save changes</button>-->
-      </div>
+
+  
     </div>
   </div>
 </div>
-  <!--FINALIZA APLICACION-->
-  <?php require 'application/views/Plantilla/footer.php' ;?>
 </body>
 </html>
 
