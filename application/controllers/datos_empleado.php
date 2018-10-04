@@ -33,10 +33,25 @@
 			}
 		}
 
+		public function cargaridtienda2()
+		{
+			//$this->load->model('datos_empleado_model','empleado','TRUE');
+			$resultado=$this->empleado->getTienda2();
+			foreach ($resultado as $item) {
+				echo '<option value="'.$item['$idd->cargo_empleado'].'">'.$item['$idd->nombre_tienda'].'</option>';
+			}
+		}
+
 		public function editar()
 		{
-			$data['empleado']=$this->empleado->mostrarById($this->input->get('id'));
+			$data['id']=$this->empleado->buscarcampos($this->input->get('id'));
+			
+			//$this->db->select('id_empleados',$data);
+			//$this->db->from('tab_datos_empleados');
 			$this->load->view('modificar_e',$data);
+
+				
+
 			
 		}
 

@@ -15,6 +15,13 @@ class Datos_empleado_model extends CI_Model
             return $resultado->result_array();
         }//Fin de llamado de cliente//
 
+        public function getTienda2()//insertar id
+        {
+            $this->load->database();
+            $resultado=$this->db->get('tab_tienda');
+            return $resultado->result_array();
+        }//Fin de llamado de cliente//
+
 //Inicio de insercion
 	public function insertar($data)
 	{
@@ -33,12 +40,21 @@ public function mostrar(){
 $empleado=$this->db->get('tab_datos_empleados');//que es lo mismo que: SELECT * FROM tab_empleados
 return $empleado->result();
 }
-
 public function mostrarById($id)
 {
-	$this->db->where('id_empleados');
-	$empleado=$this->db->get('tab_datos_empleados');
+	$this->db->where('id_empleados'.$id);
+	$empleado=$this->db->get('tab_empleados');
 	return $empleado->result_array();
+}
+
+
+public function buscarcampos($id)
+{
+	//$this->db->select('id_empleados',$data);$this->db->from('tab_datos_empleados');
+
+	$this->db->where('id_empleados',$id);
+	$empleado=$this->db->get('tab_datos_empleados');
+	return $empleado->result();
 
 }
 	
