@@ -80,7 +80,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tiendas<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url(); ?>tiendas">Crear Nueva Tienda</a></li>
-          <li><a href="#">Mostrar Sucursales</a></li>
+          <li><a href="<?php echo site_url(); ?>view-tienda">Mostrar Sucursales</a></li>
         </ul>
       </li>
 

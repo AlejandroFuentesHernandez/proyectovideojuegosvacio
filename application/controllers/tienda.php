@@ -91,7 +91,7 @@
 			$data['dtienda']=$tienda;
 
 			$this->load->view('Plantilla/navbar');
-			$this->load->view('url_mostrar-e-h');
+			$this->load->view('url_mostrar_e_h');
 			$this->load->view('mostrar_tienda',$data);
 			$this->load->view('url_mostrar_u_f');
 			$this->load->view('Plantilla/footer');

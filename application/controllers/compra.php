@@ -108,15 +108,13 @@ class Compra extends CI_Controller
         //Funcion para Mostrar datos ingresados//
 		public function mostrar()
 		{
-
-    	//$this->load
     	$compra= $this->compra->mostrar();
-    	//$data['insertar']=""; 
     	$data['dcompra']=$compra;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
-    	 $this->load->view('mostrar_compra',$data);
+    	$this->load->view('Plantilla/navbar');
+    	$this->load->view('mostrar_compra',$data);
+    	$this->load->view('Plantilla/footer');
 
 		}
 
 }
 
-  
