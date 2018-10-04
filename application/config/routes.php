@@ -66,3 +66,4 @@ $route['view-inventario'] = 'inventario/mostrar';
 $route['view-clientes'] = 'clientes/mostrar';
 $route['view-empleado'] = 'datos_empleado/mostrar';
 $route['view-usuario'] = 'datos_usuario/mostrar';
+$route['view-compra'] = 'compra/mostrar';

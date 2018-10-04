@@ -73,7 +73,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Compras<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url(); ?>add-compra">Nueva Compra</a></li>
-          <li><a href="#">Mostrar Compra</a></li>
+          <li><a href="<?php echo site_url(); ?>view-compra">Mostrar Compra</a></li>
         </ul>
       </li>
 

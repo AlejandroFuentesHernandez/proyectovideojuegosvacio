@@ -75,12 +75,7 @@
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
                               <button type="submit" class="btn btn-success">Realizar compra</button>
-                          </div><br><br>
-                          <div class="col-md-12 text-center">
-                            <!-- Button trigger modal -->
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"> Visualizar Compras 
-                              </button>
-                            </div> 
+                          </div><br> 
                         </form>
                     </div> <!--Fin del cuerpo-->
                 </div>
@@ -92,55 +87,6 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h1 class="modal-title" id="exampleModalLongTitle">Compras</h1>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-         <!-- TABLA PARA MOSTRAR DATOS-->
-                       <table border="solid" class="text-center">
-                         <thead>
-                            <tr>
-                                <th>Codigo de juego</th>
-                                <th>Nombre de juego</th>
-                                <th>Cantidad producto</th>
-                                <th>Fecha de compra</th> 
-                                <th>Precio U.Compra</th>
-                                <th>Total de compra</th>
-                               <!-- <th>Eliminar</th>-->
-                                <th>Modificar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($dcompra as $dc):?>
- 
-                            <tr>
-                                <!-- <td><input type="radio" name="editar" value="<?=$u->id_compra?>"/></td> -->
-                                <td><?=$dc->codigo_juego?></td>
-                                <td><?=$dc->nombre_juego?></td>
-                                <td><?=$dc->cantidad_juego?></td>
-                                <td><?=$dc->fecha_compra?></td>
-                                <td><?=$dc->precio_unitario_compra?></td>
-                                <td><?=$dc->total_compra?></td>
-                                <!--<td><a href="<?php echo base_url(); ?>Compra/eliminar?id=<?php echo $dc->id_compra;?>">Eliminar</a></td>-->
-                                <td><a href="<?php echo base_url(); ?>Compra/editar?id=<?php echo $dc->id_compra;?>">Modificar</a></td>
-                            </tr>
-             
-                            <?php endforeach;?>
-                        </tbody>
-                      </table>
-
-                       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      <!--  <button type="button" class="btn btn-primary">Save changes</button>-->
-      </div>
-
-      </div>
      
     </div>
   </div>

@@ -12,14 +12,10 @@ class Compra extends CI_Controller
        parent::__construct();  // Constructor del padre
        $this->load->model('Compra_model', 'compra', TRUE); //Forma de como cargar el modelo para poder acceder a sus metodos, en el primer paramentro se pone el nombre del modelo, en el segundo se le esta asignando un nombre diferente al modelo y en el tercero se le pondra TRUE para que se conecte automaticamente a la base de datos 
     }
-    //Mostrar datos ingresados//
-    public function index(){
-
-    	//$this->load
-    	$compra= $this->compra->mostrar();
-    	//$data['insertar']=""; 
-    	$data['dcompra']=$compra;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
-    	$this->load->view('compra_view', $data);
+    
+    public function index()
+    {
+    $this->load->view('compra_view');
     }
 
     public function cliente()
@@ -108,6 +104,19 @@ class Compra extends CI_Controller
 			$this->index();
 
 		}
+        
+        //Funcion para Mostrar datos ingresados//
+		public function mostrar()
+		{
 
+    	//$this->load
+    	$compra= $this->compra->mostrar();
+    	//$data['insertar']=""; 
+    	$data['dcompra']=$compra;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
+    	 $this->load->view('mostrar_compra',$data);
+
+		}
 
 }
+
+  
