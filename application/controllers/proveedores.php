@@ -14,9 +14,7 @@ class Proveedores extends CI_Controller
     }
 
     public function index(){ //Esta funcion se ejecutara por defecto cuando se ingrese al controlador, en ella se muestra los datos de la base
-    	$this->load->view('Plantilla/navbar');
-    	$proveedores= $this->proveedores->mostrar();
-        $this->load->view('Plantilla/footer');
+    	    	$proveedores= $this->proveedores->mostrar();
     	
     }
 
