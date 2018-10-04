@@ -15,7 +15,9 @@ class Compra extends CI_Controller
     
     public function index()
     {
-    $this->load->view('compra_view');
+    	$this->load->view('Plantilla/navbar');
+    	$this->load->view('compra_view');
+    	$this->load->view('Plantilla/footer');
     }
 
     public function cliente()

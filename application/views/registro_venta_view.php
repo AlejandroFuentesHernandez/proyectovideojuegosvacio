@@ -7,17 +7,11 @@
 </head>
 <body>
   <div class="container-fluid">
-    <!--Fila 1-->
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h1>Registro de Venta</h1>
-      </div>           
-    </div>
-         <!-- Fila 2-->
+         <!-- Fila 1-->
     <div class="row"  style=" padding-left: 435px;"> 
         <div class="col-md-6">
           <div class="panel panel-primary">
-            <div class="panel-heading">Registro de Ventas
+            <div class="panel-heading"><h1>Registro de Ventas</h1>
             </div>
             <!-- Cuerpo-->
             <div class="panel-body"> 

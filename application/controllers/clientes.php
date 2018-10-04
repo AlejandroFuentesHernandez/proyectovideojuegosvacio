@@ -15,8 +15,9 @@ class Clientes extends CI_Controller
 
     public function index()
     {  
-        
+        $this->load->view('Plantilla/navbar');
     	$this->load->view('clientes_view');
+    	$this->load->view('Plantilla/footer');
     }
     public function comoYoQuiero()
     {
@@ -100,12 +101,11 @@ class Clientes extends CI_Controller
         	public function mostrar()
 		{
 
-			//$this->load
     	$cliente= $this->cliente->mostrar();
-    	//$data['insertar']=""; 
     	$data['dcliente']=$cliente;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
+    	 $this->load->view('Plantilla/navbar');
     	 $this->load->view('mostrar_clientes',$data);
-
+    	 $this->load->view('Plantilla/footer');
 		}
 
 

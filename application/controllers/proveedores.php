@@ -14,11 +14,10 @@ class Proveedores extends CI_Controller
     }
 
     public function index(){ //Esta funcion se ejecutara por defecto cuando se ingrese al controlador, en ella se muestra los datos de la base
-    	
+    	$this->load->view('Plantilla/navbar');
     	$proveedores= $this->proveedores->mostrar();
-    	//$data['insertar']=""; 
-    	$data['dproveedores']=$proveedores;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
-    	$this->load->view('ingresarproveedores_view', $data);
+        $this->load->view('Plantilla/footer');
+    	
     }
 
     public function Registrar_proveedores()
@@ -99,12 +98,16 @@ class Proveedores extends CI_Controller
 
         }
 
-       /*public function mostrar_proveedores() esta funcion ya se realizo arriba
+    public function mostrar()
         {
-        	$proveedores= $this->proveedores->mostrar(); 
-        	$data['dproveedores']=$proveedores; 
-        	$this->load->view('mostrarproveedores_view', $data); 
+        $proveedores= $this->proveedores->mostrar();
+         $data['dproveedores']=$proveedores;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
+        $this->load->view('Plantilla/navbar');
+        $this->load->view('ingresarproveedores_view', $data);
+        $this->load->view('Plantilla/footer');
 
-        }*/
+        }
 }
 
+
+       

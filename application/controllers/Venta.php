@@ -11,8 +11,9 @@ class Venta extends CI_Controller
 
   public function index()
     {  
-        
+        $this->load->view('Plantilla/navbar');
     	$this->load->view('registro_venta_view');
+        $this->load->view('Plantilla/footer');
     }
 
   public function cargarjuego()

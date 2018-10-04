@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php require 'application/views/Plantilla/navbar.php';?>
 <head>
 
     <meta charset="utf-8">
@@ -122,11 +121,7 @@
     <script src="<?php echo site_url();?>vendor/datatables-responsive/dataTables.responsive.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo site_url();?>dist/js/sb-admin-2.js"></script>
-
-  
-    <!--FINALIZA APLICACION-->
-  <?php require 'application/views/Plantilla/footer.php' ;?>   
+    <script src="<?php echo site_url();?>dist/js/sb-admin-2.js"></script>  
 </body>
 
 </html>
