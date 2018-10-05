@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
 
@@ -29,10 +29,11 @@
           <div class="col-md-12">
             <div class="panel panel-heading">Empleado</div>
               <div class="panel-body">
-                <form id="formProv" action="<?php echo site_url(); ?>Datos_empleado/modificar" method="POST"> 
-                    <!--<?php foreach ($id as $idd) { ?>-->
+               <form id="formProv" action="<?php echo site_url(); ?>Datos_empleado/modificar" method="POST"> 
+
+                    <?php foreach ($id as $idd) { ?>
                      
-                      <input type="hidden" id="id_empleados" name="id_empleados" value="<?php echo $idd->id_empleados; ?>">
+                      <!--<input type="hidden" id="id_empleados" name="id_empleados" value="<?php echo $idd->id_empleados; ?>">-->
 
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Numero empleado</label>
@@ -49,7 +50,7 @@
                     <!-- Tercero campo   <?php echo $idd->DUI_empleado; ?>"-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">DUI empleado :</label>
-                      <input type="text" id="DUI_empleado" name="DUI_empleado" class="form-control" value=">
+                      <input type="text" id="DUI_empleado" name="DUI_empleado" class="form-control" value="">
                     </div>
                     <!-- Cuarto campo-->
                     <div class="col-md-12 form-group input-group">
@@ -97,7 +98,7 @@
                     <!--boton--->
                     <button type="submit" class="btn btn-success">Ingresar empleado</button>
                   </div>
-                  <!--<?php }?>-->
+                  <?php }?>
                   </form><!-- form-->
               </div><!-- panel-body-->
           </div><!-- col-md-12-->
