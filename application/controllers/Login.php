@@ -10,8 +10,10 @@ public function error()
 }
 public function index()
 	{
+      $this->load->view('Plantilla/nav');
 		$this->load->helper('url'); //esto sirve para habilitar las url BORRAR
 		$this->load->view('login_view');
+      $this->load->view('Plantilla/footer');
 	}
 
 	public function iniciosesion()
