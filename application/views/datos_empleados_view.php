@@ -38,7 +38,7 @@
 								<!--tercer campo-->
 								<div class="col-md-12 form-group input-group" >
 									<label for="" class="input-group-addon">DUI del empleado:</label>
-									<input type="text" id="DUI_empleado" onblur=" Dui_empleadov()"  require placeholder="55555555-5" name="DUI_empleado" class="form-control">
+									<input type="text" id="DUI_empleado" onblur=" Dui_empleadov()"  require  title="00000000-0" placeholder="55555555-5" name="DUI_empleado" class="form-control">
 								</div>
 						<!--cuarto campo-->
 						<div class="col-md-12 form-group input-group">
@@ -63,7 +63,7 @@
 										<!-- octavo campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Telefono del empleado</label>
-										<input type=""  id="telefono_empleado" name="telefono_empleado" onblur="" title="0000-0000" class="form-control">
+										<input type=""  id="telefono_empleado" name="telefono_empleado" onblur="" title="0000-0000" placeholder="0000-0000" class="form-control">
 									</div>
 
 
@@ -176,6 +176,7 @@
   {
     llenarTienda();
     mascara();
+    duimascara();
   });
 
 function llenarTienda()
@@ -196,6 +197,12 @@ function mascara()
 	jQuery(function($){
     $("#telefono_empleado").inputmask({"mask":"9999-9999"});
     });
+}
+function duimascara()
+{
+	jQuery(function($){
+		$("#DUI_empleado").inputmask({"mask":"99999999-9"});
+	});
 }
 //$('#exampleModalLong').on('shown.bs.modal',function(){
   //$('#myInput').trigger('focus');
