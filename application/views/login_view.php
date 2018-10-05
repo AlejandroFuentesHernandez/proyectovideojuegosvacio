@@ -47,10 +47,10 @@
                         <form action="<?php echo site_url(); ?>Login/iniciosesion" method=POST role="form">
                             <fieldset>
                                 <div class="form-group">
-                                  <label>Ingrese su usuario<i class="glyphicon glyphicon-user"></i><input type="text" name="usuario" placeholder="Usuario" autocomplete="off" class="form-control" autofocus required></label>
+                                  <label>Ingrese su usuario<i class="glyphicon glyphicon-user"></i><input type="text" name="usuario" placeholder="Usuario" autocomplete="off" class="form-control col-md-4" autofocus required></label>
                                 </div>
                                 <div class="form-group">
-                                    <label>Digite su contraseña <i class="glyphicon glyphicon-lock"></i><input class="form-control" placeholder="Contraseña" name="password" type="password" value="" required></label>
+                                    <label>Digite su contraseña <i class="glyphicon glyphicon-lock"></i><input class="form-control col-md-4" placeholder="Contraseña" name="password" type="password" value="" required></label>
                                 </div>
                                 <!--<div class="form-group">
                                     <label>Ingrese nuevamente su contraseña<input class="form-control" placeholder="Contraseña" name="password2" type="password" value="" required></label>
@@ -61,7 +61,7 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" name="login"  value="Iniciar Sesion" class="btn btn-lg btn-success btn-block">Iniciar Sesion</button>
+                                <button type="submit" name="login"  value="Iniciar Sesion" class="btn btn-lg btn-danger btn-block">Iniciar Sesion</button>
                                
                             </fieldset>
                         </form>
