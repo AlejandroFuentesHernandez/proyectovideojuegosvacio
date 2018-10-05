@@ -47,7 +47,7 @@
 										<td><?=$de->cargo_empleado?></td>
 										<td><?=$de->id_tienda?></td>
 										<td><?=$de->estado_empleado?></td>
-										<td><a href="<?php echo base_url();?>Datos_empleado\editar?id=<?php echo $de->id_empleados;?>">Modificar</a></td>
+										<td><a href="<?php echo base_url();?>Datos_empleado\editar?id=<?php echo $de->id_empleados;?>" data-dismiss="modal" class="btn btn-info">Modificar</a></td>
 									</tr>	
 										<?php endforeach;?>
 								</tbody><!-- tbody-->
@@ -76,5 +76,8 @@
             }
              
         });
+    });
+    $('#exampleModalLong2').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus');
     });
     </script>  
