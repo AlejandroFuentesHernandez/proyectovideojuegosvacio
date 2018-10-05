@@ -1,4 +1,4 @@
-<?php
+<?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Venta extends CI_Controller
@@ -41,7 +41,7 @@ class Venta extends CI_Controller
         //print_r($data);
     }
 
-     public function Registrar_venta()
+  public function Registrar_venta()
     {  
             //capturamos los datos del formulario
          $numero_factura=$this->input->post('numero_factura');
@@ -53,7 +53,7 @@ class Venta extends CI_Controller
          $observaciones_factura=$this->input->post('observaciones_factura'); 
          $id_cliente=$this->input->post('id_cliente'); 
          //mandamos los datos del formulario al modelo
-      $registro=$this->venta->insertar($numero_factura, $estado_factura,$fecha_venta,$tipo_pago,$cantidad_producto, $total_factura, $observaciones_factura, $id_cliente); 
+        $registro=$this->venta->insertar($numero_factura, $estado_factura,$fecha_venta,$tipo_pago,$cantidad_producto, $total_factura, $observaciones_factura, $id_cliente); 
           //Dependiendo si la inserccion a la base de datos fue exitosa mandaremos un uno o un cero               
             if($registro==1){
                  echo 1;
@@ -61,12 +61,6 @@ class Venta extends CI_Controller
             else{
                  echo 0; 
             }
-    }
-
-     public function mostrar()
-    {  
-        $data['de']=$this->venta->getDetalle();
-        $this->load->view('mostrar_inventario',$data);
     }
 
 }

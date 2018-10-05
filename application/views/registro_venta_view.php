@@ -18,7 +18,7 @@
               <form id="formVentas" action="" method="POST">
                 <!-- Primer campo-->
                 <div class="col-md-12 form-group input-group">
-                    <label for="" class="input-group-addon">Nombre del juego:</label>
+                    <label for="" class="input-group-addon">Juego:</label>
                     <select class="form-control" id='nombre_juego' name="nombre_juego" onchange="llenarPrecio()">
                     </select>
                 </div> 
@@ -100,6 +100,7 @@
 $(document).ready(function(){
   llenarProducto();
   llenarcliente();
+  llenartienda();
   $('#nombre_juego').select2();
    
 });

@@ -29,9 +29,9 @@ class Inventario_model extends CI_Model
         return $result->row()->precio_unitario_compra;
     }
 
-    public function insertar($id_compra, $cantidad_existente,$stock_minimo,$precio_venta,$fecha_ingreso, $estado_inventario,$id_tienda)
+    public function insertar($id_compra, $cantidad_existente,$stock_minimo,$porcentaje,$precio_venta,$fecha_ingreso, $estado_inventario,$id_tienda)
     {
-        $resultado=$this->db->query("INSERT INTO tab_inventario (cantidad_existente, stock_minimo,precio_venta,fecha_ingreso, estado_inventario, id_tienda) VALUES(".$cantidad_existente.", ".$stock_minimo.", ".$precio_venta.",'".$fecha_ingreso."','".$estado_inventario."', ".$id_tienda.")");
+        $resultado=$this->db->query("INSERT INTO tab_inventario (cantidad_existente, stock_minimo, porcentaje_ganancia,precio_venta,fecha_ingreso, estado_inventario, id_tienda) VALUES(".$cantidad_existente.", ".$stock_minimo.", ".$porcentaje.", ".$precio_venta.",'".$fecha_ingreso."','".$estado_inventario."', ".$id_tienda.")");
 
          $id_inventario=$this->db->insert_id();
 
