@@ -142,10 +142,15 @@
 		}
 		 public function mostrarId()
     {   
-        $id_empleados=$this->input->get('idi');
-        $data['idi_inv']=$this->empleados->mostrarById($id_empleados);
-       // print_r($data);
+        $id_empleados=$this->input->get('id');
+        $data['id']=$this->empleado->mostrarById($id_empleados);
+        print_r($data);
+        $this->load->view('Plantilla/navbar');
+        	$this->load->view('url_head');
+			$this->load->view('url_incmod_e');
+			$this->load->view('url_include');
        $this->load->view('modificar_e', $data);
+       $this->load->view('url_mostrar_u_f');
     }
 
 

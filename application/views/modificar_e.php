@@ -30,55 +30,55 @@
             <div class="panel panel-heading">Empleado</div>
               <div class="panel-body">
                 <form id="formProv" action="<?php echo site_url(); ?>Datos_empleado/modificar" method="POST"> 
-                    <?php foreach ($id as $idd) { ?>
+                    <!--<?php foreach ($id as $idd) { ?>-->
                      
                       <input type="hidden" id="id_empleados" name="id_empleados" value="<?php echo $idd->id_empleados; ?>">
 
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Numero empleado</label>
                       <input type="text" id="numero_empleado" name="numero_empleado" class="form-control" 
-                      value="<?php echo $idd->numero_empleado; ?>">
-                        
+                     >
+                        <!--  value="<?php echo $idd->numero_empleado; ?>"-->
                   
                    </div>
-                    <!-- Segundo campo-->
+                    <!-- Segundo campo      value="<?php echo $idd->nombre_empleado; ?>"-->
                    <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Nombre empleado:</label>
-                      <input type="text" id="nombre_empleado" name="nombre_empleado" class="form-control" value="<?php echo $idd->nombre_empleado; ?>"> 
+                      <input type="text" id="nombre_empleado" name="nombre_empleado" class="form-control" > 
                     </div>
-                    <!-- Tercero campo-->
+                    <!-- Tercero campo   <?php echo $idd->DUI_empleado; ?>"-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">DUI empleado :</label>
-                      <input type="text" id="DUI_empleado" name="DUI_empleado" class="form-control" value="<?php echo $idd->DUI_empleado; ?>">
+                      <input type="text" id="DUI_empleado" name="DUI_empleado" class="form-control" value=">
                     </div>
                     <!-- Cuarto campo-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Direccion:</label>
-                      <!--<textarea id="direccion_empleado" name="direccion_empleado" class="form-control" value="<?php echo $idd->direccion_empleado;?>"></textarea>-->
-                      <input type="text" id="direccion_empleado" name="direccion_empleado" class="form-control" value="<?php echo $idd->direccion_empleado;?>">
+                      <!--<textarea id="direccion_empleado" name="direccion_empleado" class="form-control" value="<?php echo $idd->direccion_empleado;?>"></textarea>        value="<?php echo $idd->direccion_empleado;?>"-->
+                      <input type="text" id="direccion_empleado" name="direccion_empleado" class="form-control" >
                     </div>
-                     <!-- Quinto campo-->
+                     <!-- Quinto campo    value="<?php echo $idd->fecha_nacimiento;?>"-->
                     <div class="col-md-12 form-group input-group">
                         <label for="" class="input-group-addon">Fecha nacimiento:</label>
-                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" onblur="" class="form-control" value="<?php echo $idd->fecha_nacimiento;?>">
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" onblur="" class="form-control" >
                     </div>
-                       <!-- sexto campo-->
+                       <!-- sexto campo   value="<?php echo $idd->cargo_empleado;?>"-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Cargo empleado :</label>
-                      <input type="text" id="cargo_empleado" name="cargo_empleado" class="form-control" value="<?php echo $idd->cargo_empleado;?>">
+                      <input type="text" id="cargo_empleado" name="cargo_empleado" class="form-control" >
                     </div>
-
+                      <!-- value="<?php echo $idd->correo_empleado;?>"-->
                       <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Correo empleado :</label>
-                      <input type="text" id="correo_empleado" name="correo_empleado" class="form-control" value="<?php echo $idd->correo_empleado;?>">
+                      <input type="text" id="correo_empleado" name="correo_empleado" class="form-control" >
                     </div>
-
+                      <!-- value="<?php echo $idd->telefono_empleado;?>"-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Telefono empleado :</label>
-                      <input type="text" id="telefono_empleado" name="telefono_empleado" class="form-control" value="<?php echo $idd->telefono_empleado;?>">
+                      <input type="text" id="telefono_empleado" name="telefono_empleado" class="form-control" >
                     </div>
 
-                    <!-- septimo campo-->
+                    <!-- septimo campo  -->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Estado usuario:</label>
                         <select class="form-control" id="estado_usuario" name="estado_usuario">
@@ -97,7 +97,7 @@
                     <!--boton--->
                     <button type="submit" class="btn btn-success">Ingresar empleado</button>
                   </div>
-                  <?php }?>
+                  <!--<?php }?>-->
                   </form><!-- form-->
               </div><!-- panel-body-->
           </div><!-- col-md-12-->

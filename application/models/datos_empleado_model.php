@@ -42,8 +42,8 @@ return $empleado->result();
 }
 public function mostrarById($id)
 {
-	$this->db->where('id_empleados'.$id);
-	$empleado=$this->db->get('tab_empleados');
+	$this->db->where('id_empleados',$id);
+	$empleado=$this->db->get('tab_datos_empleados');
 	return $empleado->result_array();
 }
 
