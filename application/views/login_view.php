@@ -54,12 +54,12 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Recordar Usuario
+                                        <input type="checkbox" value="Remember Me" >Recordar Usuario
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button type="submit" name="login"  value="Iniciar Sesion" class="btn btn-lg btn-danger btn-block">Iniciar Sesion</button><br>
-                                <p>No tienes cuenta? <a href="<?php echo site_url(); ?>add-usuario">Regístrate</a></p>
+                            
 
                                 </div>
                                
