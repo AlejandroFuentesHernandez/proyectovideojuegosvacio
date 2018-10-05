@@ -24,3 +24,16 @@
     $("#phone").inputmask({"mask": " 9999-9999"});
     });
  </script>
+
+
+ <!--uso del archivo mascara-->
+ <!-- se cambia en el campo las propiedades "title"= 0000-0000 se coloca id="phone"
+ se crea una funcion en el script y se llama
+ function mascara()
+function mascara()
+{
+    jQuery(function($){
+    $("#telefono_empleado").inputmask({"mask":"9999-9999"});
+    });
+}
+ -->

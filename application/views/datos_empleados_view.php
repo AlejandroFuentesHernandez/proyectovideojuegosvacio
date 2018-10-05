@@ -63,7 +63,7 @@
 										<!-- octavo campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Telefono del empleado</label>
-										<input type=""  id="telefono_empleado" name="telefono_empleado" onblur=""placeholder="5555-5555" class="form-control">
+										<input type=""  id="telefono_empleado" name="telefono_empleado" onblur="" title="0000-0000" class="form-control">
 									</div>
 
 
@@ -175,13 +175,14 @@
 	$(document).ready(function()
   {
     llenarTienda();
+    mascara();
   });
 
 function llenarTienda()
 {
   $.ajax({
     type:"POST",
-    url:'<?php echo site_url();?>Datos_empleado/cargaridtienda2',
+    url:'<?php echo site_url();?>Datos_empleado/cargaridtienda',
     success: function(data)
     	{
       $('#id_tienda').html('');
@@ -189,6 +190,12 @@ function llenarTienda()
     }
 
   });
+}
+function mascara()
+{
+	jQuery(function($){
+    $("#telefono_empleado").inputmask({"mask":"9999-9999"});
+    });
 }
 //$('#exampleModalLong').on('shown.bs.modal',function(){
   //$('#myInput').trigger('focus');
