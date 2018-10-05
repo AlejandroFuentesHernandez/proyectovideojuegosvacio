@@ -7,7 +7,6 @@
 	<meta charset="utf-8">
 
 	 <?php include 'url_include.php';?>
-    <?php require 'application/views/Plantilla/navbar.php';?>
 </head>
 <body>
 	<!--INICIA APLICACION-->

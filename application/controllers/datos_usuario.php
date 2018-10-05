@@ -16,6 +16,7 @@ class Datos_usuario extends CI_Controller{
 
 		$data['dusuario']=$usuario;
 		$this->load->view('url_include');
+		$this->load->view('Plantilla/navbar');
 		$this->load->view('datos_usuarios_view',$data);
 	}
 		
