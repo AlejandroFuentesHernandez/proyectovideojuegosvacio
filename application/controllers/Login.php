@@ -13,7 +13,7 @@ public function index()
       $this->load->view('Plantilla/nav');
 		$this->load->helper('url'); //esto sirve para habilitar las url BORRAR
 		$this->load->view('login_view');
-      $this->load->view('Plantilla/footer');
+      $this->load->view('Plantilla/foo');
 	}
 
 	public function iniciosesion()

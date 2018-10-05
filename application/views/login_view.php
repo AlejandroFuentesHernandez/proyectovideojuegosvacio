@@ -34,7 +34,7 @@
 
 </head>
 
-<body style="background-image:url('<?php echo base_url(); ?>Videojuegos.jpg'); ">
+<body style="background-image:url('<?php echo base_url(); ?>video.jpg'); " class="responsive">
 
     <div class="container">
         <div class="row">
