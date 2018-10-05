@@ -19,7 +19,7 @@
 <!--Fin de imagenes finales-->
 
 <footer class="container-fluid text-center">
-  <p><font color="yellow">&copy; Derechos Reservados, 2018</font> </p>
+  <p>&copy; Derechos Reservados, 2018 </p>
 </footer>
 
 </body>

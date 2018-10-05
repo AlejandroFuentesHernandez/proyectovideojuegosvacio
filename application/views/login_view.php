@@ -41,27 +41,27 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><h1>Inicio de Sesión</h1></h3>
+                        <h3><span class="glyphicon glyphicon-lock"></span> Inicio de Sesion</h3>
                     </div>
                     <div class="panel-body">
                         <form action="<?php echo site_url(); ?>Login/iniciosesion" method=POST role="form">
                             <fieldset>
                                 <div class="form-group">
-                                  <label>Ingrese su usuario<i class="glyphicon glyphicon-user"></i><input type="text" name="usuario" placeholder="Usuario" autocomplete="off" class="form-control col-md-4" autofocus required></label>
-                                </div>
+                                  <label><span class="glyphicon glyphicon-user"></span> Ingrese su usuario</label><input type="text" name="usuario" placeholder="Usuario" autocomplete="off" class="form-control col-md-4" autofocus required>
+                                </div><br><br>
                                 <div class="form-group">
-                                    <label>Digite su contraseña <i class="glyphicon glyphicon-lock"></i><input class="form-control col-md-4" placeholder="Contraseña" name="password" type="password" value="" required></label>
+                                    <label> <span class="glyphicon glyphicon-eye-open"></span> Digite su contraseña</label><input class="form-control col-md-4" placeholder="Contraseña" name="password" type="password" value="" required>
                                 </div>
-                                <!--<div class="form-group">
-                                    <label>Ingrese nuevamente su contraseña<input class="form-control" placeholder="Contraseña" name="password2" type="password" value="" required></label>
-                                </div>-->
                                 <div class="checkbox">
                                     <label>
                                         <input name="remember" type="checkbox" value="Remember Me">Recordar Usuario
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" name="login"  value="Iniciar Sesion" class="btn btn-lg btn-danger btn-block">Iniciar Sesion</button>
+                                <button type="submit" name="login"  value="Iniciar Sesion" class="btn btn-lg btn-danger btn-block">Iniciar Sesion</button><br>
+                                <p>No tienes cuenta? <a href="<?php echo site_url(); ?>add-usuario">Regístrate</a></p>
+
+                                </div>
                                
                             </fieldset>
                         </form>
