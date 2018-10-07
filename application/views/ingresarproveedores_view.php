@@ -3,19 +3,6 @@
 <head>
     <meta charset="utf-8">
     <title>Proveedores</title>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-    <!-- Bootstrap CDN -->
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -27,14 +14,7 @@
               <div class="panel-heading"><h1>Agregar Proveedores</h1></div>
               <!-- Cuerpo-->
               <div class="panel-body"> 
-                <form id="formProv" action="<?php echo site_url(); ?>Proveedores/Registrar_proveedores" method="POST"> 
-                  <!------------------ESTO ESTARA OCULTO--------------------------------------
-                    <div class="col-md-12 form-group input-group">
-                      <label for="" class="input-group-addon"> Id:</label>
-                      <input type="text" id="idprov" name="id_proveedor" class="form-control">
-                    </div>
-                  <------------------------------------------------------------------------->                   
-                  <!-- Primer campo-->
+                <form id="formProv" action="" method="POST"> 
                    <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Nombre de la empresa:</label>
                       <input type="text" id="nombre" name="nombre_empresa" class="form-control">
@@ -56,7 +36,7 @@
                      <!-- Cuarto campo-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Direccion:</label>
-                      <input type="text" id="direccion" name="direccion_proveedores" class="form-control">
+                      <textarea id="direccion" name="direccion_proveedores" class="form-control"></textarea> 
                     </div>
                     <!-- Quinto campo-->
                     <div class="col-md-12 form-group input-group">
@@ -66,7 +46,7 @@
                     <!-- sexto campo-->
                     <div class="col-md-12 form-group input-group">
                         <label for="" class="input-group-addon">Contacto:</label>
-                        <input type="text" id="contacto" name="contacto_proveedores" class="form-control">
+                        <input type="text" id="contacto" name="contacto_proveedores" class="form-control" placeholder="2222-2222">
                     </div>
                     <!-- septimo campo-->
                     <div class="col-md-12 form-group input-group">
@@ -80,9 +60,9 @@
 
                     <div class="col-md-12 text-center">
                     <!-- nuevo-->
-                      <a href="<?php echo site_url();?>Proveedores" class="btn btn-primary">Nuevo proveedor</a>
+                      <a href="<?php echo site_url();?>Proveedores" class="btn btn-primary">Limpiar</a>
                     <!-- Boton-->
-                      <button type="submit" class="btn btn-success">Guardar proveedor</button>
+                      <button type="button" class="btn btn-success" onclick="guardar()">Guardar</button>
                     </div><br><br>
         
                 </form>
@@ -93,28 +73,35 @@
     </div> <!-- fin class container-->
     <hr>
 
-
-
-<!-- Modal -->
-<div class="modal fade" id="proveedores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document"> <!-- Establece el ancho y el margen del modal-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title" id="exampleModalLongTitle">Proveedores</h1>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-  
-    </div>
-  </div>
-</div>
 </body>
 </html>
 
 <script>
-    $('#proveedores').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus')
+jQuery(function($){
+    $("#contacto").inputmask({"mask": " 9999-9999"});
     });
+
+function guardar(){
+    if($('#nombre').val()==''||$('#tipo').val()==''||$('#direccion').val()==''||$('#repre').val()==''||$('#correo').val()==''||$('#contacto').val()==''||$('#estado').val()=='')
+    {
+      swal('Los campos no pueden estar vacios');
+    }else {
+      $.ajax({
+      type:"POST",
+      url:'<?php echo site_url();?>Proveedores/Registrar_proveedores', 
+      data: $('#formProv').serialize(),
+      success: function(data)
+      {
+        if(data==1){
+          swal("Datos ingresados exitosamente",'Excelente','success'); 
+        }
+
+        else{
+           swal("Los datos no se pudieron introducir"); 
+        }
+      }
+    });
+      
+    }
+  }
 </script>

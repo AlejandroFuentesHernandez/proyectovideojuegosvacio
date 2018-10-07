@@ -24,10 +24,10 @@ class Proveedores_model extends CI_Model
 
 	}
 
-	public function eliminar($eliminar)
+	/*public function eliminar($eliminar)
     {
         $proveedores=$this->db->query('DELETE FROM tab_proveedores WHERE id_proveedores='.$eliminar); 
-    }
+    }*/
 
     public function mostrarById($id)
     {
