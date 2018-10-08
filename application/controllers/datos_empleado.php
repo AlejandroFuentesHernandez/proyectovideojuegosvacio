@@ -149,7 +149,7 @@
         	$this->load->view('url_head');
 			$this->load->view('url_incmod_e');
 			$this->load->view('url_include');
-       //$this->load->view('modificar_e',$data);
+       $this->load->view('modificar_e',$data);
        $this->load->view('url_mostrar_u_f');
     }
 
