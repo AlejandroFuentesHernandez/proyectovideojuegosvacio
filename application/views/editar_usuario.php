@@ -33,31 +33,14 @@ require "application/views/Plantilla/navbar.php";
 					<div panel-heading>Editar usuario</div><!-- panel-heading-->
 					<!-- cuerpo -->
 					<div class="panel-body">
-						<form id="formusuario" action="<?php echo base_url();?>Datos_usuario/modificar" method="POST"></form>
-						<?php foreach ?>
-						<?php ?><!--foreach-->
-					</div><!-- panel-body-->
-				</div><!-- panel primary-->
-			</div><!-- col-md-12-->
-
-				<h1>Actualizar</h1>
-			</div>
-		</div><!-- clas row titulo-->
-		<div class="row" style="padding-left: 435px;"><!-- row central-->
-			<div class="col-md-6">
-				<div class="panel padding-primary">
-					<div class="panel-heading">Editar Usuario</div><!-- panel heading-->
-					<!--cuerpo-->
-					<!--<div class="panel-body">-->
-						<!--<form id="formUsu" name="formUsu" action="" method="POST"><-- form-->
-							<!--<?php //foreach($usuario as $item){?>-->
-							
-							<!--<div class="col-md-12 form-group input-group">
-								<label for="" class="input-group-addon">Id Usuario</label>
-								<input type="text" id="id_usuario" name="id_usuario">
-								<?php //echo site_url();?>Datosusuario
-							</div>-->
-							<div class="col-md-12 form-group input-group">
+						<form id="formusuario" action="<?php echo base_url();?>Datos_usuario/modificar" method="POST">
+						<!--<?php foreach ($du as $idd){?>-->
+						<!-- primer campo-->
+						<div class="col-md-12 form-group input-group">
+						<!-- ID-->
+						<!--<input type="hidden" id="id_usuario" name="id_usuario" value="<?php //echo $idd['id_usuario'];?>"/>-->
+						</div><!-- col-md-12-->
+						<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Nombre usuario</label>
 								<input type="text" id="nombre_usuario" name="nombre_usuario" class="form-control" value="">
 							</div>
@@ -76,17 +59,30 @@ require "application/views/Plantilla/navbar.php";
 								<label for="" class="input-group-addon">Id Empleado</label>
 								<select class="form-control" id="id_empleado" name="id_empleado"></select>
 							</div>
-								<div class="col-md-12 text-center">
+							<div class="col-md-12 text-center">
                     <!-- nuevo-->
                      
                     <!-- Boton-->
                       <button type="submit" class="btn btn-success">Guardar usuario</button>
                     </div>
-                    <!-- Button trigger modal -->
+                     <!-- Button trigger modal -->
                     <div class="col-md-12  text-center"> 
                       <input type="hidden" id="id_usuario" name="id_usuario" value=""/>                     
                       <button type="button" class="btn btn-info" data-toggle="modal" data-target="#usuario"> Visualizar usuario </button>
                     </div>  
+						<!--<?php }?>--><!--foreach-->
+					</form><!--form -->
+					</div><!-- panel-body-->
+				</div><!-- panel primary-->
+			</div><!-- col-md-12-->
+
+				
+							
+							
+							
+							
+								
+                   
 						<!--</form><-- form -->
 					
 					<!--</div>-->
