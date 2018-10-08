@@ -1,16 +1,45 @@
 <?php 
 include "url_include.php";
+require "application/views/Plantilla/navbar.php";
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="autor" content="">
+<!-- DataTables css -->
+<link  href="../vendor/datatables-plugins/DataTables.bootsrap.css" rel="stylesheet">
+<!-- DataTables Responsive css-->
+<link href="../vendor/datatables-responsive/DataTables.responsive.css" rel="stylesheet">
 	<title>Editar Usuario</title>
 
 </head><!-- head -->
 <body>
-		<div class="row">
-			<div class="col-md-12 text-center">
+	<!-- Inicio modal en-->
+	<div id="page-wrapper">
+		<div class="modal fade" data-backdrop="static" id="usuariomodal" role="dialog" aria-labelledy="exampleModalLongTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document"><!-- Establecer el ancho y el margen del modal-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<!-- fila 2-->
+
+						<div class="row">
+							<!-- parte 2-->
+			<div class="col-md-12">
+				<div class="panel panel-primary">
+					<div panel-heading>Editar usuario</div><!-- panel-heading-->
+					<!-- cuerpo -->
+					<div class="panel-body">
+						<form id="formusuario" action="<?php echo base_url();?>Datos_usuario/modificar" method="POST"></form>
+						<?php foreach ?>
+						<?php ?><!--foreach-->
+					</div><!-- panel-body-->
+				</div><!-- panel primary-->
+			</div><!-- col-md-12-->
+
 				<h1>Actualizar</h1>
 			</div>
 		</div><!-- clas row titulo-->
@@ -64,5 +93,14 @@ include "url_include.php";
 				</div><!-- panel padding-->
 			</div><!-- col md6 -->
 		</div><!-- row central-->
+
+
+
+					</div><!-- modal-body-->
+				</div><!-- modal-content-->
+			</div><!-- modal-dialog-->
+		</div><!-- modal fade-->
+	</div><!-- page-wrapper-->
+		
 </body>
 </html>
