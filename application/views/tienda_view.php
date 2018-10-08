@@ -37,7 +37,7 @@ include 'url_include.php';
 							<!--tercer campo -->
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Telefono tienda</label>
-								<input type="text" id="telefono_tienda" name="telefono_tienda" class="form-control" required placeholder="5555-5555"></div>
+								<input type="text" id="telefono_tienda" name="telefono_tienda"  title="0000-0000" placeholder="0000-0000" class="form-control" required></div>
 
 								<div class="col-md-12 text-center">
 										<!-- boton-->
@@ -116,9 +116,15 @@ include 'url_include.php';
 <script type="text/javascript">
 $(document).ready(function()
   {
+    mascara();
     validar();
   });
-
+function mascara()
+{
+	jQuery(function($){
+    $("#telefono_tienda").inputmask({"mask":"9999-9999"});
+    });
+}
 function validar()
 {
 	if($('#nombre_tienda').val()==''||$('#direccion_tienda').val()==''||$('#telefono_tienda').val()=='')
