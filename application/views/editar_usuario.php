@@ -28,75 +28,63 @@ require "application/views/Plantilla/navbar.php";
 
 						<div class="row">
 							<!-- parte 2-->
-			<div class="col-md-12">
-				<div class="panel panel-primary">
-					<div panel-heading>Editar usuario</div><!-- panel-heading-->
-					<!-- cuerpo -->
-					<div class="panel-body">
-						<form id="formusuario" action="<?php echo base_url();?>Datos_usuario/modificar" method="POST">
-						<!--<?php foreach ($du as $idd){?>-->
-						<!-- primer campo-->
-						<div class="col-md-12 form-group input-group">
-						<!-- ID-->
-						<!--<input type="hidden" id="id_usuario" name="id_usuario" value="<?php //echo $idd['id_usuario'];?>"/>-->
-						</div><!-- col-md-12-->
-						<div class="col-md-12 form-group input-group">
-								<label for="" class="input-group-addon">Nombre usuario</label>
-								<input type="text" id="nombre_usuario" name="nombre_usuario" class="form-control" value="">
-							</div>
-							<div class="col-md-12 form-group input-group">
-								<label for="" class="input-group-addon">Contraseña usuario</label>
-								<input type="password" id="contraseña_usuario" name="contraseña_usuario" value="" class="form-control">
-							</div>
-							<div class="col-md-12 form-group input-group">
-								<label for="" class="input-group-addon">Estado usuario</label>
-								<select class="form-control" id="estado_usuario" name="estado_usuario">
-                          		<option value=""></option>
-                          		<option value="Habilitado">Habilitado</option>
-                          		<option value="Deshabilitado">Deshabilitado</option></select>
-							</div>
-							<div class="col-md-12 form-group input-group">
-								<label for="" class="input-group-addon">Id Empleado</label>
-								<select class="form-control" id="id_empleado" name="id_empleado"></select>
-							</div>
-							<div class="col-md-12 text-center">
-                    <!-- nuevo-->
-                     
-                    <!-- Boton-->
-                      <button type="submit" class="btn btn-success">Guardar usuario</button>
-                    </div>
-                     <!-- Button trigger modal -->
-                    <div class="col-md-12  text-center"> 
-                      <input type="hidden" id="id_usuario" name="id_usuario" value=""/>                     
-                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#usuario"> Visualizar usuario </button>
-                    </div>  
-						<!--<?php }?>--><!--foreach-->
-					</form><!--form -->
-					</div><!-- panel-body-->
-				</div><!-- panel primary-->
-			</div><!-- col-md-12-->
-
-				
-							
-							
-							
-							
-								
-                   
-						<!--</form><-- form -->
-					
-					<!--</div>-->
-				</div><!-- panel padding-->
-			</div><!-- col md6 -->
-		</div><!-- row central-->
-
-
-
-					</div><!-- modal-body-->
-				</div><!-- modal-content-->
-			</div><!-- modal-dialog-->
+							<div class="col-md-12">
+								<div class="panel panel-primary">
+									<div panel-heading>Editar usuario</div><!-- panel-heading-->
+									<!-- cuerpo -->
+										<div class="panel-body">
+											<form id="formusuario" action="<?php echo base_url();?>Datos_usuario/modificar" method="POST">
+												<!--<?php //foreach ($du as $idd){?>-->
+													<!-- primer campo-->
+												<div class="col-md-12 form-group input-group">
+												<!-- ID-->
+												<!--<input type="hidden" id="id_usuario" name="id_usuario" value="<?php //echo $idd['id_usuario'];?>"/>-->
+												</div><!-- col-md-12-->
+												<div class="col-md-12 form-group input-group">
+													<label for="" class="input-group-addon">Nombre usuario</label>
+													<input type="text" id="nombre_usuario" name="nombre_usuario" class="form-control" value="">
+												</div>
+												<div class="col-md-12 form-group input-group">
+													<label for="" class="input-group-addon">Contraseña usuario</label>
+													<input type="password" id="contraseña_usuario" name="contraseña_usuario" value="" class="form-control">
+												</div>
+												<div class="col-md-12 form-group input-group">
+													<label for="" class="input-group-addon">Estado usuario</label>
+														<select class="form-control" id="estado_usuario" name="estado_usuario">
+                          									<option value=""></option>
+                          									<option value="Habilitado">Habilitado</option>
+                          									<option value="Deshabilitado">Deshabilitado</option></select>
+												</div>
+												<div class="col-md-12 form-group input-group">
+													<label for="" class="input-group-addon">Id Empleado</label>
+													<select class="form-control" id="id_empleado" name="id_empleado"></select>
+												</div>
+												<div class="col-md-12 text-center">
+                    								<!-- nuevo-->
+                    								<!-- Boton-->
+                      							<button type="submit" class="btn btn-success">Guardar usuario</button>
+                    							</div>
+                     							<!-- Button trigger modal -->
+                   								<div class="col-md-12  text-center"> 
+                      							<input type="hidden" id="id_usuario" name="id_usuario" value=""/>                     
+                      							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#usuario"> Visualizar usuario </button>
+                    							</div>  
+												<!--<?php }?>--><!--foreach-->
+											</form><!--form -->
+										</div><!-- panel-body fin del cuerpo-->
+									</div><!-- panel primary-->
+								</div><!-- col-md-12-->
+								<div class="modal-footer">
+									<a href="<?php echo base_url();?>" btn btn-danger>close</a>
+								</div><!-- modal-footer-->
+							</div><!-- row-->
+				</div><!-- modal-body-->
+			</div><!-- modal-content-->
 		</div><!-- modal fade-->
-	</div><!-- page-wrapper-->
-		
+		</div><!-- page-wapper-->
+		<!-- DataTables javascript-->
+		<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+		<script src="../vendor/datatables-plugins/dataTables.bootsrap.min.js"></script>
+		<script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
 </body>
 </html>
