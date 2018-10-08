@@ -141,7 +141,7 @@ function llenarPrecio()
     dataType:'json', 
     success: function(data)
     {
-      $('#precio_venta').val(data.precio_venta);
+      $('#precio_venta').val(data[0].precio_venta);
       
     }
   });
