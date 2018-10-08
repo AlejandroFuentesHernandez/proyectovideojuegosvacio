@@ -30,23 +30,24 @@ class Inventario_model extends CI_Model
     }
 
     public function insertar($id_compra, $cantidad_existente,$stock_minimo,$porcentaje,$precio_venta,$fecha_ingreso, $estado_inventario,$id_tienda)
-    {
-        $resultado=$this->db->query("INSERT INTO tab_inventario (cantidad_existente, stock_minimo, porcentaje_ganancia,precio_venta,fecha_ingreso, estado_inventario, id_tienda) VALUES(".$cantidad_existente.", ".$stock_minimo.", ".$porcentaje.", ".$precio_venta.",'".$fecha_ingreso."','".$estado_inventario."', ".$id_tienda.")");
+    {   
+        $this->db->trans_begin();//Inicio de transacción//
+        
+        $this->db->query("INSERT INTO tab_inventario (cantidad_existente, stock_minimo, porcentaje_ganancia,precio_venta,fecha_ingreso, estado_inventario, id_tienda) VALUES(".$cantidad_existente.", ".$stock_minimo.", ".$porcentaje.", ".$precio_venta.",'".$fecha_ingreso."','".$estado_inventario."', ".$id_tienda.")");
 
-         $id_inventario=$this->db->insert_id();
-
-        $this->db->query("INSERT INTO tab_inv_compra(id_inventario, id_compra) VALUES(".$id_inventario.", ".$id_compra.")");
-           
-
-        if($resultado==true)
+         $id_inventario=$this->db->insert_id(); //Funciona para recuperar el ultimo id autoincrement ingresado//
+        for ($i=0; $i<$cantidad_existente; $i++) { 
+           $this->db->query("INSERT INTO tab_inv_compra(id_inventario, id_compra) VALUES(".$id_inventario.", ".$id_compra.")");  
+        }
+        
+        if($this->db->trans_status()===false)
         {
+            $this->db->trans_rollback();//no se guarda nada en la base, todo sera como que si no se hubiera pasado nada
+                return 0;
+        }else{
+            $this->db->trans_commit(); //Guarda datos en la base
             return 1;
-        }
-        else
-        {
-            return 0;
-        }
-
+        }   
     }
 
 public function getDetalle(){

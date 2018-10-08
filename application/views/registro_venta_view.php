@@ -59,12 +59,12 @@
                 <!-- Sexto campo-->
                 <div class="col-md-12 form-group input-group">
                   <label for="" class="input-group-addon">Cantidad de Producto:</label>
-                  <input type="number" min="1" id="cantidad_producto" name="cantidad_producto" class="form-control">
+                  <input type="number" min="1" id="cantidad_producto" name="cantidad_producto" class="form-control" onblur="operacion()">
                 </div>
                 <!-- Septimo campo-->
                 <div class="col-md-12 form-group input-group">
                   <label for="" class="input-group-addon">Total Factura:</label>
-                  <input type="text" id="   total_factura" name="total_factura" class="form-control">
+                  <input type="text" id="total_factura" name="total_factura" class="form-control">
                 </div>
                 <!-- Octavo campo-->
                 <div class="col-md-12 form-group input-group">
@@ -100,7 +100,7 @@
 $(document).ready(function(){
   llenarProducto();
   llenarcliente();
-  llenartienda();
+ 
   $('#nombre_juego').select2();
    
 });
@@ -131,23 +131,35 @@ function llenarcliente()
   });
 }
 
-function llenarPrecio()
+function llenarPrecio() 
 {
   var id=$('#nombre_juego').val();
-  $.ajax({
+    $.ajax({
     type:"POST",
-    url:"<?php  echo site_url();?>Venta/cargar_precio",
+    url:"<?php echo site_url();?>Venta/cargar_precio",
     data:'id='+id,
+    dataType:'json', 
     success: function(data)
     {
-      $('#precio_venta').val(data);
+      $('#precio_venta').val(data.precio_venta);
+      
     }
   });
 }
-
+function operacion()
+{
+    var precio_venta=parseFloat($('#precio_venta').val());
+    var cantidad=$('#cantidad_producto').val();
+    var total=precio_venta*cantidad;
+    $('#total_factura').val(total);
+}
 
 function guardar(){
-    $.ajax({
+    if($('#nombre_juego').val()==''||$('#numero_factura').val()==''||$('#estado_factura').val()==''||$('#fecha_venta').val()==''||$('#tipo_pago').val()==''||$('#precio_venta').val()==''||$('#cantidad_producto').val()==''||$('#total_factura').val()==''||$('#observaciones_factura').val()==''||$('id_cliente').val()=='')
+    {
+      swal('Los campos no pueden estar vacios');
+    }else {
+      $.ajax({
       type:"POST",
       url:'<?php echo site_url();?>Venta/Registrar_venta', 
       data: $('#formVentas').serialize(),
@@ -162,6 +174,8 @@ function guardar(){
         }
       }
     });
+      
+    }
   }
 
 </script>

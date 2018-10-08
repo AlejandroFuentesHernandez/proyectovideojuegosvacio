@@ -19,9 +19,9 @@ class Venta extends CI_Controller
   public function cargarjuego()
     {
         $resultado=$this->venta->getJuego();
-        foreach($resultado as $item){
-            echo '<option value="'.$item['id_compra'].'">'.$item['nombre_juego'].'</option>';
-        }
+         foreach($resultado as $item){
+         echo '<option value="'.$item['id_compra'].'">'.$item['nombre_juego'].'</option>';
+      }
     }
 
   public function cargarcliente()
@@ -34,13 +34,12 @@ class Venta extends CI_Controller
   
   public function cargar_precio()
     {   
-        //$id_precio=$this->input->post('id');
-        //$id_precio = filter_input(INPUT_POST, 'id');var_dump($id_precio);
         
-        $data['hola']=$this->venta->getPrecio();       
-        //print_r($data);
+        $id=$this->input->post('id');
+        $result=$this->venta->getPrecio($id); 
+        echo json_encode($result);     
     }
-
+     
   public function Registrar_venta()
     {  
             //capturamos los datos del formulario

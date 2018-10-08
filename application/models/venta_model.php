@@ -5,32 +5,30 @@ class Venta_model extends CI_Model
 {
 	public function getJuego()
     {
-        $resultado=$this->db->query("SELECT com.id_compra, com.nombre_juego From tab_compra com JOIN tab_inv_compra inco ON inco.id_compra= com.id_compra");
+        $resultado=$this->db->query("SELECT DISTINCT com.id_compra, com.nombre_juego From tab_compra com JOIN tab_inv_compra inco ON inco.id_compra= com.id_compra");
         return $resultado->result_array();
     }
 
-    public function getCliente()
-    {
+    public function getCliente(){
         $resultado=$this->db->get('tab_cliente');
         return $resultado->result_array();
     }
 
-   public function getPrecio(){
-   /* $q= "SELECT i.id_inventario, i.precio_venta FROM tab_inventario i JOIN tab_inv_compra iv ON iv.id_inventario= i.id_inventario JOIN tab_compra c ON c. id_compra=iv.id_compra WHERE c.id_compra=9";
-       $query= $this->db->query($q);print_r($query);
-        return $query->result();*/
-        $id=$this->input->post('id');
-        $this->db->select('i.id_inventario, i.precio_venta');
+   public function getPrecio($id){
+    /*$r=$this->db->query("SELECT DISTINCT i.precio_venta FROM tab_inventario i JOIN tab_inv_compra iv ON iv.id_inventario= i.id_inventario JOIN tab_compra c ON c.id_compra=iv.id_compra WHERE c.id_compra=1");*/
+        $this->db->distinct('ic.id_inventario');
+        $this->db->select('i.precio_venta');
         $this->db->from('tab_inventario i');
         $this->db->join('tab_inv_compra ic','ic.id_inventario=i.id_inventario');
         $this->db->join('tab_compra c','c.id_compra=ic.id_compra');
         $this->db->where('c.id_compra',$id); 
         $query=$this->db->get();
         if($query->num_rows()>0){
+           
             return $query->result();
         }else{
             return false;
-        }
+        } 
     }
     public function insertar($numero_factura, $estado_factura,$fecha_venta,$tipo_pago,$cantidad_producto, $total_factura, $observaciones_factura, $id_cliente)
     {

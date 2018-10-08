@@ -58,15 +58,16 @@ class Inventario extends CI_Controller
          $fecha_ingreso=$this->input->post('fecha_ingreso'); 
          $estado_inventario=$this->input->post('estado_inventario');
          $id_tienda=$this->input->post('tienda'); 
+         
 
          //mandamos los datos del formulario al modelo
   		$registro=$this->inventario->insertar($id_compra, $cantidad_existente,$stock_minimo, $porcentaje, $precio_venta,$fecha_ingreso, $estado_inventario, $id_tienda); 
           //Dependiendo si la inserccion a la base de datos fue exitosa mandaremos un uno o un cero               
-            if($registro==1){
-                 echo 1;
+            if($registro==0){
+                 echo 0;
             }
             else{
-                 echo 0; 
+                 echo 1; 
             }
     }
 
