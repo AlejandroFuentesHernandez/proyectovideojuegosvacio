@@ -3,17 +3,10 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- DataTables CSS -->
-    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- DataTables Responsive CSS -->
-    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">--
+    <--<meta name="viewport" content="width=device-width, initial-scale=1">--
+    <--<meta name="description" content="">--
+    <--<meta name="author" content="">-->
   <title>Editar empleados</title>
 </head>
 <body>
@@ -111,10 +104,6 @@
 </div><!-- page-wrapper-->
 </body>
 
-<!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
 
 </html>
 

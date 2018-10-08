@@ -79,7 +79,23 @@ public function modificar($data)
 	$this->db->set('id_tienda',$data['id_tienda']);
 
 }
+public function getMostrar()
+{
+	$this->db->where('id_empleado='.$id);
+	$empleado=$this->db->get('tab_empleados');
+	return $empleado->result_array();
+}
 
+public function update($data)
+{
+	$this->db->set('id_empleado',$data['id']);
+	$this->db->set('',$data['']);
+
+
+
+	$this->db->where('id_empleado',$data['id']);
+	$this->db->update('tab_empleados');
+}
 
 
 }

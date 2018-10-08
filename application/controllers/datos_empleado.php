@@ -13,36 +13,13 @@
 
 		public function index()
 		{
-			//$this->load
 			$empleado=$this->empleado->mostrar();
-
-			//$data['insertar']="";
 			$data['dempleado']=$empleado;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
-			//$this->load->view('url_include.php');
 			$this->load->view('url_principalH');
 			$this->load->view('Plantilla/navbar');
 			$this->load->view('datos_empleados_view',$data);
-
-			
-			
-		}
-
-		public function cargaridtienda()
-		{
-			//$this->load->model('datos_empleado_model','empleado','TRUE');
-			$resultado=$this->empleado->getTienda();
-			foreach ($resultado as $item) {
-				echo '<option value="'.$item['id_tienda'].'">'.$item['nombre_tienda'].'</option>';
-			}
-		}
-
-		public function cargaridtienda2()
-		{
-			//$this->load->model('datos_empleado_model','empleado','TRUE');
-			$resultado=$this->empleado->getTienda2();
-			foreach ($resultado as $item) {
-				echo '<option value="'.$item['$idd->cargo_empleado'].'">'.$item['$idd->nombre_tienda'].'</option>';
-			}
+			$this->load->view('url_principalF');
+			$this->load->view('Plantilla/footer');	
 		}
 
 		public function editar()
@@ -51,14 +28,14 @@
 			
 			//$this->db->select('id_empleados',$data);
 			//$this->db->from('tab_datos_empleados');
+			$this->load->view('url_principalH');
 			$this->load->view('Plantilla/navbar');
-			$this->load->view('url_incmod_e');
-			$this->load->view('url_include');
-			
+			$data['idd']=$this->empleado->getMostrar($this->input->get('id'));
 			$this->load->view('modificar_e',$data);
+			$this->load->view('url_principalF');
+			$this->load->view('Plantilla/footer');
 				
 		}
-
 		public function RegistroEmpleados()
 		{
 			
@@ -106,17 +83,10 @@
 				}
 		
 		}
-		public function eliminar()
-		{
-			$eliminar=$_GET['id'];
-			$this->empleado->empleado($empleado);
-			$this->index();
-		}
-
 		public function modificar()
 		{
 			
-			$data['id_empleados']=$_POST['id_empleados'];
+			$data['id']=$_POST['id_empleados'];
 			$data['numero_empleado']=$_POST['numero_empleado'];
 			$data['nombre_empleado']=$_POST['nombre_empleado']; 
 			$data['DUI_empleados']=$_POST['DUI_empleados'];		
@@ -127,8 +97,8 @@
 			$data['telefono_empleado']=$_POST['telefono_ empleado'];
 			$data['estado_usuario']=$_POST['estado_usuario'];
 			$data['id_tienda']=$_POST['id_ tienda'];
-			$this->empleado->RegistroEmpleados($data);
-			//$this->index();
+			$this->empleado->update($data);
+			$this->editar();
 		}
 		public function mostrar()
 		{
@@ -140,6 +110,31 @@
 			$this->load->view('mostar_empleados_view',$data);
 			$this->load->view('url_mostrar_u_f');
 			$this->load->view('Plantilla/footer');
+		}
+
+		public function cargaridtienda()
+		{
+			//$this->load->model('datos_empleado_model','empleado','TRUE');
+			$resultado=$this->empleado->getTienda();
+			foreach ($resultado as $item) {
+				echo '<option value="'.$item['id_tienda'].'">'.$item['nombre_tienda'].'</option>';
+			}
+		}
+
+		public function cargaridtienda2()
+		{
+			//$this->load->model('datos_empleado_model','empleado','TRUE');
+			$resultado=$this->empleado->getTienda2();
+			foreach ($resultado as $item) {
+				echo '<option value="'.$item['$idd->cargo_empleado'].'">'.$item['$idd->nombre_tienda'].'</option>';
+			}
+		}
+
+		public function eliminar()
+		{
+			$eliminar=$_GET['id'];
+			$this->empleado->empleado($empleado);
+			$this->index();
 		}
 		 public function mostrarId()
     {   
