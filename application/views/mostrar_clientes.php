@@ -93,8 +93,9 @@
                                 <td><?=$dc->numero_NIT?></td>
                                 <td><?=$dc->estado_cliente?></td>
                                 <td><?=$dc->telefono_cliente?></td>
-                              <!--  <td><a href="<?php echo base_url(); ?>Clientes/eliminar?id=<?php echo $dc->id_cliente;?>">Eliminar</a></td>-->
-                                <td><a href="<?php echo base_url(); ?>Clientes/comoYoQuiero?id=<?php echo $dc->id_cliente;?>"" class="btn btn-info">Modificar</a></td>
+                              <!--  <td><a href="<?php //echo base_url(); ?>Clientes/eliminar?id=<?php //echo $dc->id_cliente;?>">Eliminar</a></td>
+                                <td><a href="<?php// echo base_url(); ?>Clientes/comoYoQuiero?id=<?php //echo $dc->id_cliente;?>"" class="btn btn-info">Modificar</a></td>-->
+                                <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Modificar25</button></td>
                             </tr>
              
                             <?php endforeach;?>

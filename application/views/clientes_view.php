@@ -70,7 +70,7 @@
                             <!-- Sexto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Estado de Cliente:</label>
-                              <select name="estado_cliente">
+                              <select class="form-control" id="estado" name="estado_cliente">
                                   <option value="Habilitado" class="form-control">Habilitado</option>
                                   <option value="Deshabilitado" class="form-control">Deshabilitado</option>
                               </select>
@@ -114,17 +114,35 @@
 </body>
 </html>
 
-<script>
-    $('#exampleModalLong').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus')
-    });
-</script>
-
-
-</body>
-</html>
-
 <script type="text/javascript">
+jQuery(function($){
+    $("#telefono").inputmask({"mask": " 9999-9999"});
+    });
+
+function guardar(){
+    if($('#nombre').val()==''||$('#fecha').val()==''||$('#edad').val()==''||$('#DUI').val()==''||$('#NIT').val()==''||$('#estado').val()==''||$('#telefono').val()=='')
+    {
+      swal('Los campos no pueden estar vacios');
+    }else {
+      $.ajax({
+      type:"POST",
+      url:'<?php echo site_url();?>Clientes/RegistroCliente', 
+      data: $('#gracia').serialize(),
+      success: function(data)
+      {
+        if(data==1){
+          swal("Datos ingresados exitosamente",'Excelente','success'); 
+        }
+
+        else{
+           swal("Los datos no se pudieron introducir"); 
+        }
+      }
+    });
+      
+    }
+  }
+
   function calculaEdad()
 {
     var hoy = new Date();
