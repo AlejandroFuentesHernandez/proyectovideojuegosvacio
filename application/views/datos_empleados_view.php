@@ -28,42 +28,42 @@
 								<!-- primer campo-->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Numero de empleado:</label>
-									<input type="text" id="numero_empleado" name="numero_empleado" class="form-control" onblur="numero_empleadov()" required placeholder="Numero empleados">
+									<input type="text" id="numero_empleado" name="numero_empleado" class="form-control" required placeholder="Numero empleados">
 								</div>
 								<!-- segundo campo-->
 								<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Nombre del empleado:</label>
-								<input type="text"  id="nombre_empleado" name="nombre_empleado" onblur="nombre_empleadov()" require placeholder="Nombre empleado"class="form-control">
+								<input type="text"  id="nombre_empleado" name="nombre_empleado" placeholder="Nombre empleado" class="form-control" required>
 								</div>
 								<!--tercer campo-->
 								<div class="col-md-12 form-group input-group" >
 									<label for="" class="input-group-addon">DUI del empleado:</label>
-									<input type="text" id="DUI_empleado" onblur=" Dui_empleadov()"  require  title="00000000-0" placeholder="55555555-5" name="DUI_empleado" class="form-control">
+									<input type="text" id="DUI_empleado" title="00000000-0" placeholder="55555555-5" name="DUI_empleado" required class="form-control">
 								</div>
 						<!--cuarto campo-->
 						<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Direccion del empleado:</label>
-								<textarea id="direccion_empleado" name="direccion_empleado" onblur="dirreccion_empleadov()" class="form-control"></textarea>
+								<textarea id="direccion_empleado" name="direccion_empleado" required class="form-control"></textarea>
 						</div>
 								<!--quinto campo-->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Fecha de nacimiento:</label>
-									<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" onblur="fecha_nacimientov()" class="form-control">
+									<input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required class="form-control">
 								</div>
 									<!--sexto campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Cargo del empleado:</label>
-										<input type="text" id="cargo_empleado" name="cargo_empleado" onblur="cargo_empleadov()" require placeholder="Vendedor" class="form-control">
+										<input type="text" id="cargo_empleado" name="cargo_empleado" required placeholder="Vendedor" class="form-control">
 									</div>
 										<!-- septimo campo-->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Correo del empleado</label>
-										<input type="text"  id="correo_empleado" name="correo_empleado" onblur="" require placeholder="asdf@asd.as" class="form-control">
+										<input type="text"  id="correo_empleado" name="correo_empleado" required placeholder="asdf@asd.as" class="form-control">
 									</div>
 										<!-- octavo campo -->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Telefono del empleado</label>
-										<input type=""  id="telefono_empleado" name="telefono_empleado" onblur="" title="0000-0000" placeholder="0000-0000" class="form-control">
+										<input type=""  id="telefono_empleado" name="telefono_empleado" title="0000-0000" placeholder="0000-0000"  required class="form-control">
 									</div>
 
 
@@ -71,7 +71,7 @@
 													<!--noveno campo html solo reconoce name no id el ajax si por id-->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Estado_usuario</label>
-												<select id="estado_empleado" name="estado_empleado" class="form-control">
+												<select id="estado_empleado" name="estado_empleado" class="form-control" required>
 													<option value="habilitado">habilitado</option>
 													<option value="inhabilitado">inhabilitado</option>
 												</select>
@@ -79,14 +79,14 @@
 											<!-- decimo campo-->
 									<div class="col-md-12 form-group input-group">
 										<label for="" class="input-group-addon">Id tienda</label>
-										<select id="id_tienda" name="id_tienda" class="form-control">
+										<select id="id_tienda" name="id_tienda" class="form-control" required>
 										</select>
 									</div> 
 
 										<!-- nuevo-->
 										<div class="col-md-12 text-center">
-										<!--boton--->
-										<button type="submit" class="btn btn-success">Ingresar empleado</button>
+										<!--boton-->
+										<button type="submit" class="btn btn-success" onclick="validar()">Ingresar empleado</button>
 									</div><br><br>
 									<div class="col-md-12 text-center">
 									<!-- buton trigger modal -->
@@ -177,6 +177,7 @@
     llenarTienda();
     mascara();
     duimascara();
+    validar();
   });
 
 function llenarTienda()
@@ -203,6 +204,30 @@ function duimascara()
 	jQuery(function($){
 		$("#DUI_empleado").inputmask({"mask":"99999999-9"});
 	});
+}
+function validar()
+{
+	if($('#numero_empleado').val()==''||$('#nombre_empleado').val()==''||$('#DUI_empleado').val()==''||$('#direccion_empleado').val()==''||$('#fecha_nacimiento').val()==''||$('#cargo_empleado').val()==''||$('#correo_empleado').val()==''||$('#telefono_empleado').val()==''||$('#estado_empleado').val()==''||$('#id_empleado').val()=='')
+    {
+      swal('Los campos no pueden estar vacios');
+    }else {
+      $.ajax({
+      type:"POST",
+      url:'<?php echo site_url();?>Datos_empleado/RegistroEmpleados', 
+      data: $('#formemple').serialize(),
+      success: function(data)
+      {
+        if(data==1){
+          swal("Datos ingresados exitosamente",'Excelente','success'); 
+        }
+
+        else{
+           swal("Los datos no se pudieron introducir"); 
+        }
+      }
+    });
+      
+    }
 }
 
 $('#exampleModalLong2').on('shown.bs.modal', function () {

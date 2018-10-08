@@ -30,27 +30,27 @@
 								<!-- primer campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Nombre usuario:</label>
-									<input type="text"  id="nombre_usuario" name="nombre_usuario" class="form-control"  onblur="nombre_usuariov()" require placeholder="Nombre usuario" >
+									<input type="text"  id="nombre_usuario" name="nombre_usuario" class="form-control" required placeholder="Nombre usuario" >
 								</div>
 								<!-- segundo campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Contraseña:</label>
-									<input type="password" id="pass1" name="contraseña_usuario" class="form-control"  onblur=" contraseña_usuariov()" require placeholder="contraseña" >
+									<input type="password" id="pass1" name="contraseña_usuario" class="form-control" required placeholder="contraseña" >
 								</div>
 
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Confirmar Contraseña:</label>
-									<input type="password" id="pass2" name="contraseña_usuario" class="form-control"  onblur=" comprobarContra()" require placeholder="contraseña" >
+									<input type="password" id="pass2" name="contraseña_usuario" onblur="comprobarContra()" class="form-control" required placeholder="contraseña" >
 								</div>
 								<!--tercero campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Rol usuario:</label>
-									<input type="text" id="rol_usuario" name="rol_usuario" class="form-control" onblur="rol_usuariov()" require placeholder="rol_usuario" >
+									<input type="text" id="rol_usuario" name="rol_usuario" class="form-control" required placeholder="rol_usuario" >
 								</div>
 								<!-- cuarto campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Estado usuario</label>
-									<select id="estado_usuario" name="estado_usuario" class="form-control">
+									<select id="estado_usuario" name="estado_usuario" required class="form-control" ="">
 										<option value="habilitado">habilitado</option>
 										<option value="inhabilitado">inhabilitado</option>
 									</select>
@@ -59,13 +59,13 @@
 								<!-- quinto campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Id del empleado:</label>
-									<select id="id_empleado" name="id_empleado" class="form-control"></select>
+									<select id="id_empleado" name="id_empleado"  required class="form-control"></select>
 								</div>
 
 								<!--nuevo usuario guardar -->
 								<div class="col-md-12 text-center">
 									<!-- boton -->
-									<button type="submit" class="btn btn-success">Ingresar usuario</button>
+									<button type="submit" class="btn btn-success" onclick="validar()">Ingresar usuario</button>
 								</div><br><br>
 								<div class="col-md-12 text-center">
 									<!-- buton trigger modal -->
@@ -143,7 +143,7 @@
 <?php require 'application/views/Plantilla/footer.php' ;?>  
 	
 </body>
-<script src='<?php echo base_url();?>js/Script_datosu.js'></script>
+<script src='<?php echo base_url();?>js/jquery.min.js'></script>
 <script type="text/javascript">
 	$(document).ready(function()
   {
@@ -169,10 +169,34 @@ function llenarEmpleado()
    var pass2 = $ ('pass2').value();
 
     if (pass1 == pass2)
-       alert("Las dos claves son iguales")
+       alert("Las dos claves son iguales");
     else
-       alert("Las dos claves son distintas")
-} 
+       alert("Las dos claves son distintas");
+}
+function validar()
+{
+	if($('#nombre_usuario').val()==''||$('#pass1').val()==''||$('#pass2').val()==''||$('#rol_usuario').val()==''||$('#estado_usuario').val()==''||$('#id_empleado').val()=='')
+    {
+      swal('Los campos no pueden estar vacios');
+    }else {
+      $.ajax({
+      type:"POST",
+      url:'<?php echo site_url();?>Datos_usuarios/RegistroUsuario', 
+      data: $('#formus').serialize(),
+      success: function(data)
+      {
+        if(data==1){
+          swal("Datos ingresados exitosamente",'Excelente','success'); 
+        }
+
+        else{
+           swal("Los datos no se pudieron introducir"); 
+        }
+      }
+    });
+      
+    }
+}
 
 /*function mascara()
 {
