@@ -51,6 +51,7 @@ class Inventario_model extends CI_Model
     }
 
 public function getDetalle(){
+        $this->db->distinct('i.id_inventario');
         $this->db->select('i.id_inventario, i.cantidad_existente, i.stock_minimo, i.precio_venta, i.fecha_ingreso, i.estado_inventario, c.nombre_juego');
         $this->db->from('tab_inventario i');
         $this->db->join('tab_inv_compra ic','ic.id_inventario=i.id_inventario');
