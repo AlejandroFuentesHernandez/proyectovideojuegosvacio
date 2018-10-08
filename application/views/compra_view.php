@@ -85,13 +85,13 @@
 
 <script type="text/javascript">
 function guardar(){
-    if($('#nombre_empresa').val()==''||$('#codigo').val()==''||$('#nombre').val()==''||$('#cantidad').val()==''||$('#fecha').val()==''||$('#precio').val()==''||$('#total').val()=='')
+    if($('#codigo').val()==''||$('#nombre').val()==''||$('#cantidad').val()==''||$('#fecha').val()==''||$('#precio').val()==''||$('#total').val()=='')
     {
       swal('Los campos no pueden estar vacios');
     }else {
       $.ajax({
       type:"POST",
-      url:'<?php echo site_url();?>Clientes/RegistroCliente', 
+      url:'<?php echo site_url();?>Compra/RegistroCompra', 
       data: $('#gracia').serialize(),
       success: function(data)
       {
@@ -111,7 +111,7 @@ function guardar(){
 
   $(document).ready(function()
 {
- llenarCliente();
+ Proveedor();
 });
 
   function operacion()
@@ -122,7 +122,7 @@ function guardar(){
     $('#total').val(multi);
 }
 
-function llenarCliente()
+function Proveedor()
 {
   $.ajax({
     type:"POST",

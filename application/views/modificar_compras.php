@@ -39,7 +39,7 @@
                             <!-- Tercer campo-->
                             <div class="col-md-12 form-group input-group">
                                <label for="" class="input-group-addon"> Cantidad producto:</label>
-                              <input type="text" id="cantidad" name="cantidad_juego" class="form-control"  value="<?php echo $item['fecha_compra'];?>" required>
+                              <input type="text" id="cantidad" name="cantidad_juego" class="form-control"  value="<?php echo $item['cantidad_juego'];?>" required>
                            </div>
                            <!-- Cuarto campo-->
                            <div class="col-md-12 form-group input-group">
@@ -49,12 +49,12 @@
                              <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Precio Unitario de Compra:</label>
-                              <input type="text" id="precio" onblur="operacion()" name="precio_unitario_compra" class="form-control"  value="<?php echo $item['precio_unitario_compra'];?>" required>
+                              <input disabled="" type="text" id="precio" onblur="operacion()" name="precio_unitario_compra" class="form-control"  value="<?php echo $item['precio_unitario_compra'];?>" required>
                            </div>
                             <!-- Sexto campo--> 
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Total de compra:</label>
-                              <input type="text" id="total"  name="total_compra" class="form-control"  value="<?php echo $item['total_compra'];?>" required>
+                              <input  type="text" id="total"  name="total_compra" class="form-control"  value="<?php echo $item['total_compra'];?>" required>
                            </div>
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
