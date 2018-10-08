@@ -93,6 +93,12 @@
 </body>
 </html>
 <script type="text/javascript">
+  jQuery(function($){
+    $("#telefono").inputmask({"mask": " 9999-9999"});
+    $("#DUI").inputmask({"mask": " 99999999-9"});
+    $("#NIT").inputmask({"mask": " 9999-999999-999-9"});
+    });
+
 $(document).ready(function(){
   $('#editar_cliente').modal("show");
 });
