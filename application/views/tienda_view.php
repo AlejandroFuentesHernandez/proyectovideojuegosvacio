@@ -29,15 +29,15 @@ include 'url_include.php';
 							<!--primer campo-->
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Nombre tienda</label>
-								<input type="text" id="nombre_tienda" name="nombre_tienda" class="form-control" onblur="" placeholder="Nombre tienda"></div>
+								<input type="text" id="nombre_tienda" name="nombre_tienda" class="form-control" required placeholder="Nombre tienda"></div>
 							<!-- segundo campo-->
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Direccion tienda</label>
-								<textarea id="direccion_tienda" name="direccion_tienda" class="form-control" onblur="" placeholder="direccion"></textarea></div>
+								<textarea id="direccion_tienda" name="direccion_tienda" class="form-control" required placeholder="direccion"></textarea></div>
 							<!--tercer campo -->
 							<div class="col-md-12 form-group input-group">
 								<label for="" class="input-group-addon">Telefono tienda</label>
-								<input type="text" id="telefono_tienda" name="telefono_tienda" class="form-control" onblur="" placeholder="5555-5555"></div>
+								<input type="text" id="telefono_tienda" name="telefono_tienda" class="form-control" required placeholder="5555-5555"></div>
 
 								<div class="col-md-12 text-center">
 										<!-- boton-->
@@ -110,5 +110,38 @@ include 'url_include.php';
 		</div>
 		  <!--FINALIZA APLICACION-->
   <?php require 'application/views/Plantilla/footer.php' ;?>
+  <script src='<?php echo base_url();?>js/jquery.min.js'></script>
 </body>
+
+<script type="text/javascript">
+$(document).ready(function()
+  {
+    validar();
+  });
+
+function validar()
+{
+	if($('#nombre_tienda').val()==''||$('#direccion_tienda').val()==''||$('#telefono_tienda').val()=='')
+    {
+      swal('Los campos no pueden estar vacios');
+    }else {
+      $.ajax({
+      type:"POST",
+      url:'<?php echo site_url();?>Tienda/RegistroTienda', 
+      data: $('#formtienda').serialize(),
+      success: function(data)
+      {
+        if(data==1){
+          swal("Datos ingresados exitosamente",'Excelente','success'); 
+        }
+
+        else{
+           swal("Los datos no se pudieron introducir"); 
+        }
+      }
+    });
+      
+    }
+}
+</script>
 </html>

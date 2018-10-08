@@ -148,6 +148,8 @@
 	$(document).ready(function()
   {
     llenarEmpleado();
+    validar();
+    comprobarContra ();
   });
 
 function llenarEmpleado()
@@ -164,9 +166,9 @@ function llenarEmpleado()
   });
  }
 
- function comprobarContra(){
-   var pass1 = $('pass1').value();
-   var pass2 = $ ('pass2').value();
+ function comprobarContra (){
+   var pass1 = $('#pass1').value();
+   var pass2 = $ ('#pass2').value();
 
     if (pass1 == pass2)
        alert("Las dos claves son iguales");
