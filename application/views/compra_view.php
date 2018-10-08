@@ -3,25 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Registro de compras</title>
-      <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-    <!-- Bootstrap CDN -->
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
+      
 
 </head>
 
-<body style="padding: 20px">
+<body>
 
     <div class="container-fluid">
          <!-- Columna 2-->
@@ -32,7 +18,7 @@
                   <div class="panel-heading"><h1>Registrar Compra</h1></div>
               <!-- Cuerpo-->
                       <div class="panel-body"> 
-                        <form id="gracia" action="<?php echo site_url(); ?>/Compra/RegistroCompra" method="POST">
+                        <form id="gracia" action="" method="POST">
                             <div class="col-md-12 form-group input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
                                 <label for="" class="input-group-addon"> Seleccionar Proveedor:</label>
@@ -74,7 +60,7 @@
 
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
-                              <button type="submit" class="btn btn-success">Realizar compra</button>
+                              <button type="button" class="btn btn-success" onclick="guardar()">Realizar compra</button>
                           </div><br> 
                         </form>
                     </div> <!--Fin del cuerpo-->
@@ -87,20 +73,42 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="6" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
-     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      <!--  <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
     </div>
   </div>
 </div>
 </body>
 </html>
 
-<script>
-    $('#exampleModalLong').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus')
-    });
-</script>
-
 <script type="text/javascript">
+function guardar(){
+    if($('#nombre_empresa').val()==''||$('#codigo').val()==''||$('#nombre').val()==''||$('#cantidad').val()==''||$('#fecha').val()==''||$('#precio').val()==''||$('#total').val()=='')
+    {
+      swal('Los campos no pueden estar vacios');
+    }else {
+      $.ajax({
+      type:"POST",
+      url:'<?php echo site_url();?>Clientes/RegistroCliente', 
+      data: $('#gracia').serialize(),
+      success: function(data)
+      {
+        if(data==1){
+          swal("Datos ingresados exitosamente",'Excelente','success'); 
+        }
+
+        else{
+           swal("Los datos no se pudieron introducir"); 
+        }
+      }
+    });
+      
+    }
+  }
+
+
   $(document).ready(function()
 {
  llenarCliente();

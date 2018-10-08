@@ -4,21 +4,6 @@
     <meta charset="utf-8">
     <title>Registro de clientes</title>
 
-
-      <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-    <!-- Bootstrap CDN -->
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -34,7 +19,7 @@
                   <div class="panel-heading"><h1>Agregar Cliente</h1></div>
               <!-- Cuerpo-->
                       <div class="panel-body"> 
-                        <form id="gracia" action="<?php echo site_url(); ?>Clientes/RegistroCliente" method="POST">
+                        <form id="gracia" action="" method="POST">
                             <!------------------ESTO ESTARA OCULTO--------------------------------------
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon"> Id:</label>
@@ -45,27 +30,27 @@
                             <!-- Primer campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Nombre del cliente:</label>
-                              <input type="text" id="nombre" name="nombre_cliente" class="form-control" required>
+                              <input type="text" id="nombre" name="nombre_cliente" class="form-control">
                            </div>
                             <!-- Segundo campo-->
                             <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Fecha de nacimiento cliente:</label>
-                              <input type="date" id="fecha" onblur="calculaEdad()" name="fecha_nacimiento_cliente" class="form-control" required>
+                              <input type="date" id="fecha" onblur="calculaEdad()" name="fecha_nacimiento_cliente" class="form-control">
                            </div>
                             <!-- Tercer campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Edad de Cliente:</label>
-                              <input type="text" id="edad" name="edad_cliente" class="form-control" required>
+                              <input type="text" id="edad" name="edad_cliente" class="form-control">
                            </div>
                              <!-- Cuarto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Número de DUI:</label>
-                              <input type="text" id="DUI" name="numero_DUI" class="form-control" required>
+                              <input type="text" id="DUI" name="numero_DUI" class="form-control" >
                            </div>
                              <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Número de NIT:</label>
-                              <input type="text" id="NIT" name="numero_NIT" class="form-control" required>
+                              <input type="text" id="NIT" name="numero_NIT" class="form-control" >
                            </div>
                             <!-- Sexto campo-->
                            <div class="col-md-12 form-group input-group">
@@ -78,12 +63,12 @@
                             <!-- Sexto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Telefono de cliente:</label>
-                              <input type="text" id="telefono" name="telefono_cliente" class="form-control" required>
+                              <input type="text" id="telefono" name="telefono_cliente" class="form-control">
                            </div>
 
                            <div class="col-md-12 text-center">
                             <!-- Boton-->
-                              <button type="submit" class="btn btn-success">Ingresar Cliente</button>
+                              <button type="button" class="btn btn-success" onclick="guardar()">Ingresar Cliente</button>
                           </div><br><br> 
                         </form>
                     </div> <!--Fin del cuerpo-->

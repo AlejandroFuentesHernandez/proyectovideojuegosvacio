@@ -14,17 +14,22 @@ class Clientes extends CI_Controller
     }
 
     public function index()
-    {  
+    {  	$this->load->view('url_include');
         $this->load->view('Plantilla/navbar');
-    	$this->load->view('clientes_view');
+        $cliente= $this->cliente->mostrar();
+    	$data['dcliente']=$cliente;
+    	$this->load->view('clientes_view', $data);
     	$this->load->view('Plantilla/footer');
     }
 
   
-    public function comoYoQuiero()
-    {
+    public function editar()
+    {   
+    	$this->load->view('url_include');
+    	$this->load->view('Plantilla/navbar');
     	$data['variable']=$this->cliente->getMostrar($this->input->get('id'));
     	$this->load->view('editar_clientes', $data);
+    	$this->load->view('Plantilla/footer');
     }
 
       //Insertar registros a base de datos//
@@ -55,32 +60,24 @@ class Clientes extends CI_Controller
 
 				//mandamos a llamar un metodo de nuestro modelo, donde mandaremos como parametro el array. 
 				$registro=$this->cliente->insertar($data); 
-				$mensaje['insertar']="Registro exitoso"; //NO OLVIDAR BORRAR MENSAJE!!!!! xD 
               
 				if($registro==1){
-					$ruta=base_url('clientes');
-
-					echo "<script>
-							alert('Cliente guardado satifactoriamente.');
-							window.location= '{$ruta}'; 
-							</script>";
-					$this->load->view('clientes_view', $mensaje);
 					
-
+                     echo 1;
 				}
 				else{
-					$this->error();
+					echo 0;
 				}
         }
 
-        public function eliminar()
+        /*  public function eliminar()
         {
         	
 			$eliminar = $_GET['id'];
 			$this->cliente->eliminar($eliminar);
 			$this->index();
 
-		}
+		}*/
 
 
 		public function modificar()
@@ -95,7 +92,7 @@ class Clientes extends CI_Controller
 			$data ['estado'] = $_POST['estado_cliente'];
 			$data ['telefono'] = $_POST['telefono_cliente'];
 			$this->cliente->update($data);
-			$this->comoYoQuiero();
+			$this->editar();
 
 		}
 
@@ -104,9 +101,10 @@ class Clientes extends CI_Controller
 
     	$cliente= $this->cliente->mostrar();
     	$data['dcliente']=$cliente;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
-    	 $this->load->view('Plantilla/navbar');
-    	 $this->load->view('mostrar_clientes',$data);
-    	 $this->load->view('Plantilla/footer');
+    	$this->load->view('url_mostrar_e_h');
+    	$this->load->view('Plantilla/navbar');
+    	$this->load->view('mostrar_clientes',$data);
+    	$this->load->view('Plantilla/footer');
 		}
 
 

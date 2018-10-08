@@ -39,8 +39,7 @@ class Cliente_model extends CI_Model{ //Inicio de Insercion
     //Inicio de eliminacion de datos// 
     public function eliminar($data)
     {
-        $cliente=$this->db->query('delete from tab_cliente where id_cliente
-            ='.$data); 
+        $cliente=$this->db->query('delete from tab_cliente where id_cliente='.$data); 
     }//Fin de eliminacion de datos//
 
     public function update ($data){
