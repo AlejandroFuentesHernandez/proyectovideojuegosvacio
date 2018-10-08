@@ -113,7 +113,7 @@
                        
                 </div>
                 <div class="modal-footer">
-                	<a href="<?php echo base_url();?>Inventario/mostrar" class="btn btn-secondary">Close</a>
+                	<a href="<?php echo base_url();?>Inventario/mostrar" class="btn btn-danger">Close</a>
                    
                 </div>
             </div>
