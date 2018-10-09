@@ -1,20 +1,14 @@
-<?php
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-with,initial-scale=1">
-	<meta name="descripcion" content="">
-	<meta name="author" content="">
-	<title>Tienda</title>
+	<title> Modificar Tienda</title>
 	
 </head>
 <body>
 	<!-- Inicio modal en el se podra editar el tienda-->
-	<div id="page-wrapper">
-		<div class="modal fade" data-backdrop="static" id="tienda" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	
+		<div class="modal fade" data-backdrop="static" id="modificar_tienda" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 			<div class="modal-dialog" role="document"><!-- establecer el ancho y el margen del modal-->
 				<div class="modal-content">
 					<div class="modal-body">
@@ -63,6 +57,12 @@
 				</div><!-- modal-content-->
 			</div><!-- modal-dialog-->
 		</div><!-- modal fade-->
-	</div><!-- page-wrapper-->
+	
 </body>
-</html>
+
+<script>
+ <script type="text/javascript">
+	$(document).ready(function(){
+		$('#modificar_tienda').modal("show");
+	});
+    </script>

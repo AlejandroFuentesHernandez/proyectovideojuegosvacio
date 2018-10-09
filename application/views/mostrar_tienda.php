@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-witdth, inicial-scale=1">
@@ -51,9 +51,3 @@
 
 </body>
 </html>
-<script>
- <script type="text/javascript">
-	$(document).ready(function(){
-		$('#modificar_tienda').modal("show");
-	});
-    </script>
