@@ -15,11 +15,9 @@
 		{
 			$empleado=$this->empleado->mostrar();
 			$data['dempleado']=$empleado;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
-			//$this->load->view('url_principalH');
 			$this->load->view('urlcompleto');
 			$this->load->view('Plantilla/navbar');
 			$this->load->view('datos_empleados_view',$data);
-			//$this->load->view('url_principalF');
 			$this->load->view('Plantilla/footer');	
 		}
 
@@ -29,11 +27,10 @@
 			
 			//$this->db->select('id_empleados',$data);
 			//$this->db->from('tab_datos_empleados');
-			$this->load->view('url_principalH');
+			$this->load->view('urlcompleto');
 			$this->load->view('Plantilla/navbar');
 			$data['idd']=$this->empleado->getMostrar($this->input->get('id'));
 			$this->load->view('modificar_e',$data);
-			$this->load->view('url_principalF');
 			$this->load->view('Plantilla/footer');
 				
 		}
@@ -107,9 +104,8 @@
 			$data['dempleado']=$empleado;
 
 			$this->load->view('Plantilla/navbar');
-			$this->load->view('url_mostrar_e_h');
+			$this->load->view('urlcompleto');
 			$this->load->view('mostar_empleados_view',$data);
-			$this->load->view('url_mostrar_u_f');
 			$this->load->view('Plantilla/footer');
 		}
 
@@ -143,11 +139,9 @@
         $data['idd']=$this->empleado->mostrarById($id_empleados);
         //print_r($data);
         $this->load->view('Plantilla/navbar');
-        	$this->load->view('url_head');
-			$this->load->view('url_incmod_e');
-			$this->load->view('url_include');
-       $this->load->view('modificar_e',$data);
-       $this->load->view('url_mostrar_u_f');
+       	$this->load->view('urlcompleto');	
+       	$this->load->view('modificar_e',$data);
+       	
     }
 
 

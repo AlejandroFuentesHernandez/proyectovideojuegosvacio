@@ -22,7 +22,10 @@
 			$tienda=$this->tienda->mostrar();
 			//$data['insertar']="";
 			$data['dtienda']=$tienda;//enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
+			$this->load->view('Plantilla/navbar');
+			$this->load->view('urlcompleto');
 			$this->load->view('tienda_view',$data);
+			$this->load->view('plantilla/footer');
 		}
 
 		public function editar()
@@ -91,9 +94,8 @@
 			$data['dtienda']=$tienda;
 
 			$this->load->view('Plantilla/navbar');
-			$this->load->view('url_mostrar_e_h');
+			$this->load->view('urlcompleto');
 			$this->load->view('mostrar_tienda',$data);
-			$this->load->view('url_mostrar_u_f');
 			$this->load->view('Plantilla/footer');
 		}
 

@@ -5,8 +5,6 @@
 		<!--SOLICITAMOS LOS ESTILOS CSS Y LIBRERIAS DE JS-->
 		      
 	<meta charset="utf-8">
-
-	 <?php include 'url_include.php';?>
 </head>
 <body>
 	<!--INICIA APLICACION-->
@@ -140,7 +138,6 @@
 </div>
 
 	<!--FINALIZA APLICACION-->
-<?php require 'application/views/Plantilla/footer.php' ;?>  
 	
 </body>
 <script src='<?php echo base_url();?>js/jquery.min.js'></script>

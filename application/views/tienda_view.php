@@ -1,9 +1,4 @@
 <?php
-//id_tienda
-//nombre_tienda
-//direccion_tienda
-//telefono_tienda
-include 'url_include.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +6,7 @@ include 'url_include.php';
 	<title>Datos Tienda</title>
 	<meta charset="utf-8">
 	<script src="<?php echo base_url();?>/js/Script_tienda.js"></script>
-	<?php require 'application/views/Plantilla/navbar.php';?>
+	
 </head>
 <body style="padding: 20px">
 	<div class="container-fluid">
@@ -109,8 +104,6 @@ include 'url_include.php';
 
 		</div>
 		  <!--FINALIZA APLICACION-->
-  <?php require 'application/views/Plantilla/footer.php' ;?>
-  <script src='<?php echo base_url();?>js/jquery.min.js'></script>
 </body>
 
 <script type="text/javascript">
