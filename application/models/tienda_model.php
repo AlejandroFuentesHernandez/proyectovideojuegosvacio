@@ -48,6 +48,8 @@ class Tienda_model extends CI_Model
     	$this->db->set('nombre_tienda',$data['nombre_tienda']);
     	$this->db->set('direccion_tienda',$data)['direccion_tienda'];
     	$this->db->set('telefono_tienda',$data)['telefono_tienda'];
+        $this->db->where('id_tienda',$data['id']);
+        $this->db->update('tab_tienda');
     }
 	}
 
