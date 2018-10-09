@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-witdth, inicial-scale=1">
@@ -52,12 +52,8 @@
 </body>
 </html>
 <script>
+ <script type="text/javascript">
 	$(document).ready(function(){
-		$('#dataTables-example').DataTable({
-			responsive:true,
-			"language":{
-				"url": "js/lenguaje.js"
-			}
-		});
+		$('#modificar_tienda').modal("show");
 	});
-</script>
+    </script>

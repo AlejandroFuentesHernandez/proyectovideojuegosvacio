@@ -36,7 +36,7 @@
 									</tr>
 								</thead><!--thead-->
 								<tbody>
-									<?php foreach ($dempleado as $de): ?>
+									<?php foreach ($dempleado as $de):?>
 									<tr>
 										<!--<td><input type="radio" name="editar" value="<?=$u->id?>"/></td> -->
 										<td><?=$de->numero_empleado?></td>
@@ -70,7 +70,14 @@
 </html>
 
  <script>
-   $(document).ready(function(){
-  $('#empleadosmodal').modal("show");
-});
+  $(document).ready(function() {
+        //Page-Level Demo Scripts - Tables - Use for reference 
+        $('#dataTables-example').DataTable({
+            responsive: true,
+            "language": {
+                "url": "js/lenguaje.js"
+            }
+             
+        });
+    });
     </script>  

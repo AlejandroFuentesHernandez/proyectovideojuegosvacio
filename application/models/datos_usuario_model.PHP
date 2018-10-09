@@ -33,14 +33,20 @@ class Datos_usuario_model extends CI_Model
 	}
 	public function mostrarById($id)
 	{
-		$this->db->where('id_usuario=' .$id);
+		$this->db->where('id_usuario=',$id);
 		$usuario=$this->db->get('tab_usuario');
-		return $usuario->result_array();
+		return $usuario->result();
 	}
 	
 		public function eliminar($data)
 	{
 		$usuario=$this->db->query('delete from tab_usuario where id_usuario'.$data);
+	}
+	public function buscarcampos($id)
+	{
+		$this->db->where('id_usuario',$id);
+		$usuario=$this->db->get('tab_usuario');
+		return $usuario->result();
 	}
 
 		public function modificar($data)

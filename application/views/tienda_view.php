@@ -5,7 +5,7 @@
 <head>
 	<title>Datos Tienda</title>
 	<meta charset="utf-8">
-	<script src="<?php echo base_url();?>/js/Script_tienda.js"></script>
+	<!--<script src="<?php echo base_url();?>/js/Script_tienda.js"></script>-->
 	
 </head>
 <body style="padding: 20px">

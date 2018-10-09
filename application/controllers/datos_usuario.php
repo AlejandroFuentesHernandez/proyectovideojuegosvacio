@@ -12,29 +12,22 @@ class Datos_usuario extends CI_Controller{
 	}
 	public function index()
 	{
-		$usuario=$this->usuario->mostrar();
-
-		$data['dusuario']=$usuario;
-		
-		$this->load->view('Plantilla/navbar');
 		$this->load->view('urlcompleto');
+		$this->load->view('Plantilla/navbar');
+		$usuario=$this->usuario->mostrar();
+		$data['dusuario']=$usuario;
 		$this->load->view('datos_usuarios_view',$data);
-	}
-		
-		public function cargaridEmpleado(){
-		//$this->load->model('datos_usuario_model','usuario','TRUE'); solo si no renombramos arriba el modelo
-		$resultado=$this->usuario->getIdEmpleado();
-		foreach ($resultado as $item) {
-			echo'<option value="'.$item['id_empleados'].'">'.$item['nombre_empleado'].'</option>';
-		}
+		$this->load->view('Plantilla/footer');	
 	}
 	public function editar()
 	{
-		$data['usuario']=$this->usuario->mostrarById($this->input->get('id'));
+		$this->load->view('urlcompleto');
+		$this->load->view('Plantilla/navbar');
+		$data['dusuario']=$this->usuario->buscarcampos($this->input->get('id'));
 		$this->load->view('editar_usuario',$data);
+		$this->load->view('Plantilla/footer');
 
 	}
-	
 	public function RegistroUsuario()
 	{
 	
@@ -70,14 +63,6 @@ class Datos_usuario extends CI_Controller{
 			$this->error();
 		}
 	}
-	public function eliminar()
-	{
-		$eliminar=$_GET['id'];
-		$this->usuario->usuario($usuario);
-		$this->index();
-	}
-	
-
 	public function modificar()
 	{
 		$data['id']=$_POST['id_usuario'];
@@ -86,9 +71,10 @@ class Datos_usuario extends CI_Controller{
 		$data['rol_usuario']=$_POST['rol_usuario'];
 		$data['estado_usuario']=$_POST['estado_usuario'];
 		$data['id_empleado']=$_POST['id_empleado'];
-		$this->usuario->modificar($data);
-		//$this->index();
+		$this->usuario->update($data);
+		$this->editar();
 	}
+
 	public function mostrar()
 	{
 		$usuario=$this->usuario->mostrar();
@@ -98,9 +84,21 @@ class Datos_usuario extends CI_Controller{
 		$this->load->view('urlcompleto');
 		$this->load->view('mostrar_usuarios_view',$data);
 		$this->load->view('Plantilla/footer');
-		
-		
-		
 	}
+		
+		public function cargaridEmpleado(){
+		//$this->load->model('datos_usuario_model','usuario','TRUE'); solo si no renombramos arriba el modelo
+		$resultado=$this->usuario->getIdEmpleado();
+		foreach ($resultado as $item) {
+			echo'<option value="'.$item['id_empleados'].'">'.$item['nombre_empleado'].'</option>';
+		}
+	}
+	public function eliminar()
+	{
+		$eliminar=$_GET['id'];
+		$this->usuario->usuario($usuario);
+		$this->index();
+	}
+		
 }
 ?>

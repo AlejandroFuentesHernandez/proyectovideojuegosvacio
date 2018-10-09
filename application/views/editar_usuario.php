@@ -1,6 +1,4 @@
 <?php 
-include "url_include.php";
-require "application/views/Plantilla/navbar.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,9 +9,9 @@ require "application/views/Plantilla/navbar.php";
 <meta name="description" content="">
 <meta name="autor" content="">
 <!-- DataTables css -->
-<link  href="../vendor/datatables-plugins/DataTables.bootsrap.css" rel="stylesheet">
+
 <!-- DataTables Responsive css-->
-<link href="../vendor/datatables-responsive/DataTables.responsive.css" rel="stylesheet">
+
 	<title>Editar Usuario</title>
 
 </head><!-- head -->
@@ -69,7 +67,7 @@ require "application/views/Plantilla/navbar.php";
                       							<input type="hidden" id="id_usuario" name="id_usuario" value=""/>                     
                       							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#usuario"> Visualizar usuario </button>
                     							</div>  
-												<!--<?php }?>--><!--foreach-->
+												<!--<?php //}?>--><!--foreach-->
 											</form><!--form -->
 										</div><!-- panel-body fin del cuerpo-->
 									</div><!-- panel primary-->
@@ -83,8 +81,6 @@ require "application/views/Plantilla/navbar.php";
 		</div><!-- modal fade-->
 		</div><!-- page-wapper-->
 		<!-- DataTables javascript-->
-		<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-		<script src="../vendor/datatables-plugins/dataTables.bootsrap.min.js"></script>
-		<script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+		
 </body>
 </html>
