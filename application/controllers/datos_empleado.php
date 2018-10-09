@@ -8,28 +8,24 @@
 		public function __construct()
 		{
 			parent::__construct();//constructor del padre
-			$this->load->model('datos_empleado_model','empleado','TRUE');//forma de cargar el modelo para poder acceder a sus metodos, en el primer parametro sepone el nombre del modelo, en el segundo se le esta asignado un nombre diferente al modelo y en el tercero se le pondra TRUE para que se conecte automaticamente a la base de datos
+			$this->load->model('datos_empleado_model','empleado',TRUE);//forma de cargar el modelo para poder acceder a sus metodos, en el primer parametro sepone el nombre del modelo, en el segundo se le esta asignado un nombre diferente al modelo y en el tercero se le pondra TRUE para que se conecte automaticamente a la base de datos
 		}
 
 		public function index()
 		{
-			$empleado=$this->empleado->mostrar();
-			$data['dempleado']=$empleado;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
 			$this->load->view('urlcompleto');
 			$this->load->view('Plantilla/navbar');
+			$empleado=$this->empleado->mostrar();
+			$data['dempleado']=$empleado;//enviamos la variable vacia,para que cuando le mandemos parametros no me de el error de variable indefinida
 			$this->load->view('datos_empleados_view',$data);
 			$this->load->view('Plantilla/footer');	
 		}
 
 		public function editar()
 		{
-			$data['id']=$this->empleado->buscarcampos($this->input->get('id'));
-			
-			//$this->db->select('id_empleados',$data);
-			//$this->db->from('tab_datos_empleados');
 			$this->load->view('urlcompleto');
 			$this->load->view('Plantilla/navbar');
-			$data['idd']=$this->empleado->getMostrar($this->input->get('id'));
+			$data['variable']=$this->empleado->buscarcampos($this->input->get('id'));
 			$this->load->view('modificar_e',$data);
 			$this->load->view('Plantilla/footer');
 				

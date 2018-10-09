@@ -52,9 +52,9 @@ public function buscarcampos($id)
 {
 	//$this->db->select('id_empleados',$data);$this->db->from('tab_datos_empleados');
 
-	$this->db->where('id_empleados',$id);
+	$this->db->where('id_empleados'.$id);
 	$empleado=$this->db->get('tab_datos_empleados');
-	return $empleado->result();
+	return $empleado->result_array();
 
 }
 	
@@ -69,7 +69,7 @@ public function modificar($data)
 	$this->load->view('modificar_e',$data);
 	$this->db->set('numero_empleado',$data['numero_empleado']);
 	$this->db->set('nombre_empleado',$data['nombre_empleado']);
-	$this->db->set('DUI_empleados',$data['DUI_empleados']);
+	$this->db->set('DUI_empleado',$data['DUI_empleado']);
 	$this->db->set('direccion_empleado',$data['direccion_empleado']);
 	$this->db->set('fecha_nacimiento',$data['fecha_nacimiento']);
 	$this->db->set('cargo_empleado',$data['cargo_empleado']);
@@ -88,11 +88,17 @@ public function getMostrar()
 
 public function update($data)
 {
-	$this->db->set('id_empleado',$data['id']);
-	$this->db->set('',$data['']);
-
-
-
+	$this->db->set('id_empleados',$data['id_empleado']);
+	$this->db->set('numero_empleado',$data['numero_empleado']);
+	$this->db->set('nombre_empleado',$data['nombre_empleado']);
+	$this->db->set('DUI_empleado',$data['DUI_empleado']);
+	$this->db->set('direccion_empleado',$data['direccion_empleado']);
+	$this->db->set('fecha_nacimiento',$data['fecha_nacimiento']);
+	$this->db->set('cargo_empleado',$data['cargo_empleado']);
+	$this->db->set('correo_empleado',$data['correo_empleado']);
+	$this->db->set('telefono_empleado',$data['telefono_empleado']);
+	$this->db->set('estado_empleado',$data['estado_empleado']);
+	$this->db->set('id_tienda',$data['id_tienda']);
 	$this->db->where('id_empleado',$data['id']);
 	$this->db->update('tab_empleados');
 }

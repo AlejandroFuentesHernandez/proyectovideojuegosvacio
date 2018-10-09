@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -26,7 +26,7 @@
               <div class="panel-body">
                <form id="formEmple" action="<?php echo base_url(); ?>Datos_empleado/modificar" method="POST"> 
 
-                    <!--<?php foreach ($id as $idd) { ?>-->
+                    <!--<?php foreach ($id as $item) { ?>-->
 
                     <div class="col-md-12 form-group input-group">
                       <!-- id   value="<?php //echo $idd['id_empleados']; ?>"-->
@@ -87,6 +87,7 @@
                   <div class="col-md-12 text-center">
                     <!--boton--->
                     <button type="submit" class="btn btn-success">Ingresar empleado</button>
+                    <a href="<?php echo base_url();?>Datos_empleado/mostrarID?" class="btn btn-secondary">Close</a>
                   </div>
                   <!--<?php }?>-->
                   </form><!-- form-->
@@ -96,7 +97,7 @@
         </div><!-- row-->
       </div><!-- modal-body-->
         <div class="modal-footer">
-          <a href="<?php echo base_url();?>Datos_empleado/mostrarID?" class="btn btn-secondary">Close</a>
+          
         </div><!-- modal-footer-->
     </div><!-- modal-content-->
   </div><!-- modal-dialog-->

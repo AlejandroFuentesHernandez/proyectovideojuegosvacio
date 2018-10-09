@@ -1,6 +1,4 @@
 <?php
-include 'url_include.php';
-require 'application/views/Plantilla/navbar.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,10 +8,6 @@ require 'application/views/Plantilla/navbar.php';
 	<meta name="viewport" content="width=device-with,initial-scale=1">
 	<meta name="descripcion" content="">
 	<meta name="author" content="">
-	<!-- DataTables css-->
-	<link href="../vendor/datatables-plugins/DataTables.bootstrap.css" rel="stylesheet">
-	<!-- DataTables responsive css-->
-	<link href="../vendor/datatables-responsive" rel="stylesheet">
 	<title>Tienda</title>
 	
 </head>
@@ -70,10 +64,5 @@ require 'application/views/Plantilla/navbar.php';
 			</div><!-- modal-dialog-->
 		</div><!-- modal fade-->
 	</div><!-- page-wrapper-->
-	<!-- DataTables JavaScript-->
-	<script src="..vendor/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-	<script src="../vendor/dataTables-responsive/dataTables.dataTables-responsive.js"></script>
-
 </body>
 </html>

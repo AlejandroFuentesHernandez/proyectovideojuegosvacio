@@ -77,7 +77,7 @@
 
                     <!--<?php //foreach ($de as $idd) { ?>-->
                      
-                      <input type="hidden" id="id_empleados" name="id_empleados" value="<?php echo $idd->id_empleados; ?>">
+                      <input type="hidden" id="id_empleados" name="id_empleados" value="<?php echo $id->id_empleados; ?>">
 
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Numero empleado</label>
