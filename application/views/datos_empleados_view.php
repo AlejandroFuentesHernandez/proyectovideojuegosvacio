@@ -165,6 +165,8 @@
 		</div>
 	</div>
 
+
+
   <!--FINALIZA APLICACION-->
 
  <!--hp require 'application/views/Plantilla/footer.php' ;?>-->
@@ -193,13 +195,13 @@ function llenarTienda()
 
   });
 }
-function mascara()
+function mascara ()
 {
 	jQuery(function($){
     $("#telefono_empleado").inputmask({"mask":"9999-9999"});
     });
 }
-function duimascara()
+function duimascara ()
 {
 	jQuery(function($){
 		$("#DUI_empleado").inputmask({"mask":"99999999-9"});
