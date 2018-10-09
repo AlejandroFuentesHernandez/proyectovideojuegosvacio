@@ -44,7 +44,7 @@ public function mostrarById($id)
 {
 	$this->db->where('id_empleados',$id);
 	$empleado=$this->db->get('tab_datos_empleados');
-	return $empleado->result_array();
+	return $empleado->result();
 }
 
 
@@ -52,9 +52,9 @@ public function buscarcampos($id)
 {
 	//$this->db->select('id_empleados',$data);$this->db->from('tab_datos_empleados');
 
-	$this->db->where('id_empleados'.$id);
+	$this->db->where('id_empleados',$id);
 	$empleado=$this->db->get('tab_datos_empleados');
-	return $empleado->result_array();
+	return $empleado->result();
 
 }
 	

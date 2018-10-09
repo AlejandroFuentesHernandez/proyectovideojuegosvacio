@@ -25,7 +25,7 @@
 		{
 			$this->load->view('urlcompleto');
 			$this->load->view('Plantilla/navbar');
-			$data['variable']=$this->empleado->buscarcampos($this->input->get('id'));
+			$data['dempleado']=$this->empleado->buscarcampos($this->input->get('id'));
 			$this->load->view('modificar_e',$data);
 			$this->load->view('Plantilla/footer');
 				

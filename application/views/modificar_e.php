@@ -26,14 +26,14 @@
               <div class="panel-body">
                <form id="formEmple" action="<?php echo base_url(); ?>Datos_empleado/modificar" method="POST"> 
 
-                    <!--<?php foreach ($id as $item) { ?>-->
+                    <?php //foreach ($variable as $item) { ?>
 
                     <div class="col-md-12 form-group input-group">
                       <!-- id   value="<?php //echo $idd['id_empleados']; ?>"-->
                       <!--<input type="hidden" id="id_empleados" name="id_empleados" />-->
                       <!-- Primer campo-->
-                      <label for="" class="input-group-addon">Numero empleado</label>
-                      <input type="text" id="numero_empleado" name="numero_empleado" class="form-control"> <!--  value="<?php //echo $idd->numero_empleado; ?>"-->
+                      <!--<label for="" class="input-group-addon">Numero empleado</label>
+                      <input type="text" id="numero_empleado" name="numero_empleado" class="form-control"> <--  value="<?php //echo $idd->numero_empleado; ?>"-->
                    </div>
                     <!-- Segundo campo      value="<?php //echo $idd->nombre_empleado; ?>"-->
                    <div class="col-md-12 form-group input-group">
@@ -89,7 +89,7 @@
                     <button type="submit" class="btn btn-success">Ingresar empleado</button>
                     <a href="<?php echo base_url();?>Datos_empleado/mostrarID?" class="btn btn-secondary">Close</a>
                   </div>
-                  <!--<?php }?>-->
+                  <?php //}?>
                   </form><!-- form-->
               </div><!-- panel-body-->
             </div><!-- panel-primary-->
@@ -128,9 +128,7 @@ function llenarTienda2()
 
   }); 
 }
-$('#exampleModalLong2').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus');
-    });
+
   </script>
    
       
