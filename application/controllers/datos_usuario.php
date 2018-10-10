@@ -92,6 +92,14 @@ class Datos_usuario extends CI_Controller{
 		foreach ($resultado as $item) {
 			echo'<option value="'.$item['id_empleados'].'">'.$item['nombre_empleado'].'</option>';
 		}
+		
+	}
+	public function cargaridEmpleado2(){
+		$this->load->model('datos_usuario_model','usuario','TRUE'); //solo si no renombramos arriba el modelo
+		$resultado=$this->usuario->getIdEmpleado();
+		foreach ($resultado as $item) {
+			echo'<option value="'.$item['id_empleados'].'">'.$item['nombre_empleado'].'</option>';
+		}
 	}
 	public function eliminar()
 	{

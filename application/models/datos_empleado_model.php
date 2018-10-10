@@ -44,7 +44,7 @@ public function mostrarById($id)
 {
 	$this->db->where('id_empleados',$id);
 	$empleado=$this->db->get('tab_datos_empleados');
-	return $empleado->result();
+	return $empleado->result_array();
 }
 
 
@@ -54,7 +54,7 @@ public function buscarcampos($id)
 
 	$this->db->where('id_empleados',$id);
 	$empleado=$this->db->get('tab_datos_empleados');
-	return $empleado->result();
+	return $empleado->result_array();
 
 }
 	
@@ -97,7 +97,7 @@ public function update($data)
 	$this->db->where('id_empleado',$data['id']);
 	$this->db->update('tab_empleados');
 }
-public function getmostrar()
+public function getmostrar($id)
 	{
 	$this->db->where('id_empleados',$id);
 	$empleado=$this->db->get('tab_datos_empleados');

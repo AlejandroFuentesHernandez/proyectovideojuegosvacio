@@ -42,18 +42,18 @@
 													<label for="" class="input-group-addon">Nombre usuario</label>
 													<input type="text" id="nombre_usuario" name="nombre_usuario" class="form-control" value="<?php echo $idd['nombre_usuario'];?>">
 												</div>
-												<div class="col-md-12 form-group input-group">
-													<label for="" class="input-group-addon">Contraseña usuario</label>
-													<input type="text" id="contraseña_usuario" name="contraseña_usuario" value="" class="form-control" value="<?php echo $idd['contraseña_usuario'];?>">
-												</div>
 												<!--<div class="col-md-12 form-group input-group">
+													<label for="" class="input-group-addon">Contraseña usuario</label>
+													<input type="text" id="contraseña_usuario" name="contraseña_usuario" value="" class="form-control" value="<?php //echo $idd['contraseña_usuario'];?>">
+												</div>
+												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">confirmar contraseña</label>
 													<input type="password" id="pass2" name="contraseña_usuario" value="" class="form-control"><label id="diferente"></label>
 												</div>-->
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Estado usuario</label>
-														<select class="form-control" id="estado_usuario" name="estado_usuario">
-                          									<option value="<?php echo $idd['estado_usuario'];?>"></option>
+														<select class="form-control" id="estado_usuario" name="estado_usuario" value="<?php echo $idd['estado_usuario'];?>" >
+                          								
                           									<option value="Habilitado">Habilitado</option>
                           									<option value="Deshabilitado">Deshabilitado</option></select>
 												</div>
@@ -69,7 +69,7 @@
                      							<!-- Button trigger modal -->
                    								<div class="col-md-12  text-center"> 
                       							<input type="hidden" id="id_usuario" name="id_usuario" value=""/>                     
-                      							<a href="<?php echo base_url();?>Datos_usuario/mostrar" class="btn btn-danger">close</a>
+                      							
                     							</div>  
 												<?php }?><!--foreach-->
 											</form><!--form -->
@@ -77,6 +77,7 @@
 									</div><!-- panel primary-->
 								</div><!-- col-md-12-->
 								<div class="modal-footer">
+									<a href="<?php echo base_url();?>Datos_usuario/mostrar" class="btn btn-danger">close</a>
 								</div><!-- modal-footer-->
 							</div><!-- row-->
 				</div><!-- modal-body-->

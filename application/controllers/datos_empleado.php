@@ -27,7 +27,7 @@
 			$this->load->view('Plantilla/navbar');
 			$data['dempleado']=$this->empleado->getmostrar($this->input->get('id'));
 			$this->load->view('modificar_e',$data);
-			$this->load->view('Plantilla/footer');
+			//$this->load->view('Plantilla/footer');
 				
 		}
 		public function RegistroEmpleados()
@@ -130,7 +130,7 @@
 			$this->index();
 		}
 		 public function mostrarId()
-    {   
+   {   
         $id_empleados=$this->input->get('id');
         $data['idd']=$this->empleado->mostrarById($id_empleados);
         //print_r($data);
