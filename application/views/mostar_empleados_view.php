@@ -47,7 +47,7 @@
 										<td><?=$de->cargo_empleado?></td>
 										<td><?=$de->id_tienda?></td>
 										<td><?=$de->estado_empleado?></td>
-										<td><a href="<?php echo base_url();?>Datos_empleado/editar?id=<?php echo $de->id_empleados;?>"class="btn btn-info" data-dismiss="modal">Modificar</a>
+										<td><a href="<?php echo base_url();?>Datos_empleado/editar?id=<?php echo $de->id_empleados;?>"class="btn btn-info" data-dismiss="modal">Modificar</a></td>
 											
 
 									</tr>	
