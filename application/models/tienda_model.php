@@ -32,9 +32,9 @@ class Tienda_model extends CI_Model
 
     public function mostrarById($id)
     {
-    	$this->db->where('id_tienda');
+    	$this->db->where('id_tienda',$id);
     	$tienda=$this->db->get('tab_tienda');//que es lo mismo que: Select * FRom Tab_proveedores
-    	return $tienda->result_array();
+    	return $tienda->result();
     }
     //Inicio de eliminacion de datos//
     public function eliminar($data)
