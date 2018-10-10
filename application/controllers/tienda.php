@@ -32,6 +32,7 @@
 			$this->load->view('Plantilla/navbar');
 			$data['dtienda']=$this->tienda->getmostrar($this->input->get('id'));
 			$this->load->view('modificar_tienda',$data);
+			$this->load->view('Plantilla/footer');
 		}
 		//Insertar registros a base de datos//
 		public function RegistroTienda()

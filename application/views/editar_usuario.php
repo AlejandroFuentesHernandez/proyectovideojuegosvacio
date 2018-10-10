@@ -47,6 +47,10 @@
 													<input type="password" id="contraseña_usuario" name="contraseña_usuario" value="" class="form-control">
 												</div>
 												<div class="col-md-12 form-group input-group">
+													<label for="" class="input-group-addon">confirmar contraseña</label>
+													<input type="password" id="pass2" name="contraseña_usuario" value="" class="form-control"><label id="diferente"></label>
+												</div>
+												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Estado usuario</label>
 														<select class="form-control" id="estado_usuario" name="estado_usuario">
                           									<option value=""></option>
@@ -84,3 +88,65 @@
 		
 </body>
 </html>
+<script src='<?php echo base_url();?>js/jquery.min.js'>
+$(document).ready(function()
+  {
+    llenarEmpleado();
+    validar();
+    comprobarContra();
+  });
+
+function llenarEmpleado()
+{
+  $.ajax({
+    type:"POST",
+    url:'<?php echo site_url();?>Datos_usuario/cargaridEmpleado',
+    success: function(data)
+    {
+      $('#id_empleado').html('');
+      $('#id_empleado').html(data);
+    }
+
+  });
+ }
+function validar()
+{
+	if($('#nombre_usuario').val()==''||$('#contraseña_usuario').val()==''||$('#pass2').val()==''||$('#rol_usuario').val()==''||$('#estado_usuario').val()==''||$('#id_empleado').val()=='')
+    {
+      swal('Los campos no pueden estar vacios');
+    }else {
+      $.ajax({
+      type:"POST",
+      url:'<?php echo site_url();?>Datos_usuarios/RegistroUsuario', 
+      data: $('#formus').serialize(),
+      success: function(data)
+      {
+        if(data==1){
+          swal("Datos ingresados exitosamente",'Excelente','success'); 
+        }
+
+        else{
+           swal("Los datos no se pudieron introducir"); 
+        }
+      }
+    });
+      
+    }
+}
+function comprobarContra ()
+	{
+		if($('#contraseña_usuario').val()!=$('#pass2').val())
+		{
+			//alert( 'si se esta haciendo');
+			$('#diferente').html();
+			$('#diferente').html('<font color="red"><h6>Las contraseñas no coinciden</h6></font>');
+			$('#diferente').addClass('error');
+			$('#ingresar').hide();
+		}else{
+			$('#diferente').html();
+			$('#diferente').html('<font color="green>"<h6>Las contraseñas coinciden</h6></font>');
+			$('#ingresar').show();
+			
+		}
+	}
+	</script>

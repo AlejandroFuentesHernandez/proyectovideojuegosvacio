@@ -25,7 +25,7 @@
 		{
 			$this->load->view('urlcompleto');
 			$this->load->view('Plantilla/navbar');
-			$data['dempleado']=$this->empleado->buscarcampos($this->input->get('id'));
+			$data['dempleado']=$this->empleado->getmostrar($this->input->get('id'));
 			$this->load->view('modificar_e',$data);
 			$this->load->view('Plantilla/footer');
 				
@@ -99,8 +99,8 @@
 			$empleado=$this->empleado->mostrar();
 			$data['dempleado']=$empleado;
 
-			$this->load->view('Plantilla/navbar');
 			$this->load->view('urlcompleto');
+			$this->load->view('Plantilla/navbar');
 			$this->load->view('mostar_empleados_view',$data);
 			$this->load->view('Plantilla/footer');
 		}
@@ -139,7 +139,7 @@
        	$this->load->view('modificar_e',$data);
        	
     }
-
+	
 
 
 }

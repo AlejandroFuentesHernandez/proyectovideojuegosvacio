@@ -41,7 +41,7 @@
 											<!-- cuarto campo-->
 											<div class="col-md-12 form-group input-group">
 												<label for="" class="input-group-addon">Telefono_tienda</label>
-												<input type="text" id="telefono_tienda" name="telefono_tienda" class="form-control" value="<?php echo $idd['telefono_tienda'];?>"></div>
+												<input type="text" id="telefono_tienda" name="telefono_tienda" title="0000-0000" placeholder="0000-0000" class="form-control" value="<?php echo $idd['telefono_tienda'];?>"></div>
 											</div>
 											<?php }?>
 											<!-- boton-->
@@ -68,5 +68,12 @@
 <script>
 	$(document).ready(function(){
 		$('#modificar_tienda').modal("show");
+		mascara();
 	});
+	function mascara()
+{
+	jQuery(function($){
+    $("#telefono_tienda").inputmask({"mask":"9999-9999"});
+    });
+}
     </script>

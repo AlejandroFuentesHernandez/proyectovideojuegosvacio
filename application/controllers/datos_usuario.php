@@ -8,7 +8,7 @@ class Datos_usuario extends CI_Controller{
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Datos_usuario_model','usuario','TRUE');
+		$this->load->model('Datos_usuario_model','usuario',TRUE);
 	}
 	public function index()
 	{
@@ -23,7 +23,7 @@ class Datos_usuario extends CI_Controller{
 	{
 		$this->load->view('urlcompleto');
 		$this->load->view('Plantilla/navbar');
-		$data['dusuario']=$this->usuario->buscarcampos($this->input->get('id'));
+		$data['dusuario']=$this->usuario->getmostrar($this->input->get('id'));
 		$this->load->view('editar_usuario',$data);
 		$this->load->view('Plantilla/footer');
 

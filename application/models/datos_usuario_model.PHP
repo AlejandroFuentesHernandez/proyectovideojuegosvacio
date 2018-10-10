@@ -56,6 +56,24 @@ class Datos_usuario_model extends CI_Model
 			$this->db->set('rol_usuario',$data['rol_usuario']);
 			$this->db->set('estado_usuario',$data['estado_usuario']);
 			$this->db->set('id_empleado',$data['id_empleado']);
+			$this->db->where('id_usuario',$data['id']);
+			$this->db->update('tab_usuario');
+		}
+		public function update($data)
+		{
+			$this->db->set('id_usuario',$data['id']);
+			$this->db->set('nombre_usuario',$data['nombre_usuario']);
+			$this->db->set('rol_usuario',$data['rol_usuario']);
+			$this->db->set('estado_usuario',$data['estado_usuario']);
+			$this->db->set('id_usuario',$data['id_usuario']);
+			$this->db->where('id_usuario',$data['id_usuario']);
+			$this->db->update('tab_usuario');
+		}
+		public function getmostrar($id)
+		{
+			$this->db->where('id_usuario',$id);
+			$usuario=$this->db->get('tab_usuario');
+			return $usuario->resut_array();
 		}
 }
 

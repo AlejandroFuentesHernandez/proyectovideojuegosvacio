@@ -33,12 +33,12 @@
 								<!-- segundo campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Contraseña:</label>
-									<input type="password" id="pass1" name="contraseña_usuario" class="form-control" required placeholder="contraseña" >
+									<input type="password" id="contraseña_usuario" name="contraseña_usuario" class="form-control" required placeholder="contraseña" >
 								</div>
 
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Confirmar Contraseña:</label>
-									<input type="password" id="pass2" name="contraseña_usuario" onblur="comprobarContra()" class="form-control" required placeholder="contraseña" ><label id="diferente"></label>
+									<input type="password" id="pass2" name="pass2" onblur="comprobarContra()" class="form-control" required placeholder="contraseña" ><label id="diferente"></label>
 								</div>
 								<!--tercero campo -->
 								<div class="col-md-12 form-group input-group">
@@ -164,7 +164,7 @@ function llenarEmpleado()
  }
 function validar()
 {
-	if($('#nombre_usuario').val()==''||$('#pass1').val()==''||$('#pass2').val()==''||$('#rol_usuario').val()==''||$('#estado_usuario').val()==''||$('#id_empleado').val()=='')
+	if($('#nombre_usuario').val()==''||$('#contraseña_usuario').val()==''||$('#pass2').val()==''||$('#rol_usuario').val()==''||$('#estado_usuario').val()==''||$('#id_empleado').val()=='')
     {
       swal('Los campos no pueden estar vacios');
     }else {
@@ -188,7 +188,7 @@ function validar()
 }
 function comprobarContra ()
 	{
-		if($('#pass1').val()!=$('#pass2').val())
+		if($('#contraseña_usuario').val()!=$('#pass2').val())
 		{
 			//alert( 'si se esta haciendo');
 			$('#diferente').html();
