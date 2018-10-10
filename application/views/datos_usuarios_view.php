@@ -38,7 +38,7 @@
 
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Confirmar Contraseña:</label>
-									<input type="password" id="pass2" name="contraseña_usuario" onblur="comprobarContra()" class="form-control" required placeholder="contraseña" >
+									<input type="password" id="pass2" name="contraseña_usuario" onblur="comprobarContra()" class="form-control" required placeholder="contraseña" ><label id="diferente"></label>
 								</div>
 								<!--tercero campo -->
 								<div class="col-md-12 form-group input-group">
@@ -63,7 +63,7 @@
 								<!--nuevo usuario guardar -->
 								<div class="col-md-12 text-center">
 									<!-- boton -->
-									<button type="submit" class="btn btn-success" onclick="validar()">Ingresar usuario</button>
+									<button type="submit" id="ingresar" class="btn btn-success" onclick="validar()">Ingresar usuario</button>
 								</div><br><br>
 								<div class="col-md-12 text-center">
 									<!-- buton trigger modal -->
@@ -146,7 +146,7 @@
   {
     llenarEmpleado();
     validar();
-    comprobarContra ();
+    comprobarContra();
   });
 
 function llenarEmpleado()
@@ -162,16 +162,6 @@ function llenarEmpleado()
 
   });
  }
-
- function comprobarContra (){
-   var pass1 = $('#pass1').value();
-   var pass2 = $ ('#pass2').value();
-
-    if (pass1 == pass2)
-       alert("Las dos claves son iguales");
-    else
-       alert("Las dos claves son distintas");
-}
 function validar()
 {
 	if($('#nombre_usuario').val()==''||$('#pass1').val()==''||$('#pass2').val()==''||$('#rol_usuario').val()==''||$('#estado_usuario').val()==''||$('#id_empleado').val()=='')
@@ -196,6 +186,22 @@ function validar()
       
     }
 }
+function comprobarContra ()
+	{
+		if($('#pass1').val()!=$('#pass2').val())
+		{
+			//alert( 'si se esta haciendo');
+			$('#diferente').html();
+			$('#diferente').html('<font color="red"><h6>Las contraseñas no coinciden</h6></font>');
+			$('#diferente').addClass('error');
+			$('#ingresar').hide();
+		}else{
+			$('#diferente').html();
+			$('#diferente').html('<font color="green>"<h6>Las contraseñas coinciden</h6></font>');
+			$('#ingresar').show();
+			
+		}
+	}
 
 /*function mascara()
 {
