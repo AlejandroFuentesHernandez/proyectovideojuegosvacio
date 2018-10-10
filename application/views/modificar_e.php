@@ -88,7 +88,7 @@
                   <div class="col-md-12 text-center">
                     <!--boton--->
                     <button type="submit" class="btn btn-success">Ingresar empleado</button>
-                    <a href="<?php echo base_url();?>Datos_empleado/mostrarID?" class="btn btn-secondary">Close</a>
+                    <a href="<?php echo base_url();?>Datos_empleado/?" class="btn btn-secondary">Close</a>
                   </div>
                   <?php //}?>
                   </form><!-- form-->
@@ -110,14 +110,12 @@
 </html>
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
   $(document).ready(function()
   {
     llenarTienda2();
-    llenarTienda();
     mascara();
     duimascara();
-    validar();
   });
 
 function llenarTienda2()
@@ -145,5 +143,4 @@ function duimascara ()
     $("#DUI_empleado").inputmask({"mask":"99999999-9"});
   });
 }
-
-  </script>
+  </script>-->

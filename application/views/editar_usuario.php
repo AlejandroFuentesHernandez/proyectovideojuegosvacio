@@ -28,38 +28,38 @@
 							<!-- parte 2-->
 							<div class="col-md-12">
 								<div class="panel panel-primary">
-									<div panel-heading>Editar usuario</div><!-- panel-heading-->
+									<div class="panel-heading">Editar usuario</div><!-- panel-heading-->
 									<!-- cuerpo -->
 										<div class="panel-body">
 											<form id="formusuario" action="<?php echo base_url();?>Datos_usuario/modificar" method="POST">
-												<!--<?php //foreach ($du as $idd){?>-->
+												<?php foreach ($dusuario as $idd){?>
 													<!-- primer campo-->
 												<div class="col-md-12 form-group input-group">
 												<!-- ID-->
-												<!--<input type="hidden" id="id_usuario" name="id_usuario" value="<?php //echo $idd['id_usuario'];?>"/>-->
+												<input type="hidden" id="id_usuario" name="id_usuario" value="<?php echo $idd['id_usuario'];?>"/>
 												</div><!-- col-md-12-->
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Nombre usuario</label>
-													<input type="text" id="nombre_usuario" name="nombre_usuario" class="form-control" value="">
+													<input type="text" id="nombre_usuario" name="nombre_usuario" class="form-control" value="<?php echo $idd['nombre_usuario'];?>">
 												</div>
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Contraseña usuario</label>
-													<input type="password" id="contraseña_usuario" name="contraseña_usuario" value="" class="form-control">
+													<input type="text" id="contraseña_usuario" name="contraseña_usuario" value="" class="form-control" value="<?php echo $idd['contraseña_usuario'];?>">
 												</div>
-												<div class="col-md-12 form-group input-group">
+												<!--<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">confirmar contraseña</label>
 													<input type="password" id="pass2" name="contraseña_usuario" value="" class="form-control"><label id="diferente"></label>
-												</div>
+												</div>-->
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Estado usuario</label>
 														<select class="form-control" id="estado_usuario" name="estado_usuario">
-                          									<option value=""></option>
+                          									<option value="<?php echo $idd['estado_usuario'];?>"></option>
                           									<option value="Habilitado">Habilitado</option>
                           									<option value="Deshabilitado">Deshabilitado</option></select>
 												</div>
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Id Empleado</label>
-													<select class="form-control" id="id_empleado" name="id_empleado"></select>
+													<select class="form-control" id="id_empleado" name="id_empleado" value="<?php echo $idd['id_empleado'];?>"></select>
 												</div>
 												<div class="col-md-12 text-center">
                     								<!-- nuevo-->
@@ -69,15 +69,14 @@
                      							<!-- Button trigger modal -->
                    								<div class="col-md-12  text-center"> 
                       							<input type="hidden" id="id_usuario" name="id_usuario" value=""/>                     
-                      							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#usuario"> Visualizar usuario </button>
+                      							<a href="<?php echo base_url();?>Datos_usuario/mostrar" class="btn btn-danger">close</a>
                     							</div>  
-												<!--<?php //}?>--><!--foreach-->
+												<?php }?><!--foreach-->
 											</form><!--form -->
 										</div><!-- panel-body fin del cuerpo-->
 									</div><!-- panel primary-->
 								</div><!-- col-md-12-->
 								<div class="modal-footer">
-									<a href="<?php echo base_url();?>" btn btn-danger>close</a>
 								</div><!-- modal-footer-->
 							</div><!-- row-->
 				</div><!-- modal-body-->
@@ -88,9 +87,10 @@
 		
 </body>
 </html>
-<script src='<?php echo base_url();?>js/jquery.min.js'>
+<script>
 $(document).ready(function()
   {
+  	$('#usuariomodal').modal("show");
     llenarEmpleado();
     validar();
     comprobarContra();

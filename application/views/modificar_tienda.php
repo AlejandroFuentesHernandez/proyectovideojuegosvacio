@@ -50,7 +50,7 @@
 											
 											</div>
 											<div class="modal-footer">
-												<a href="<?php echo base_url();?>Tienda/modificar" class="btn btn-danger">Close</a>
+												<a href="<?php echo base_url();?>Tienda/mostrar" class="btn btn-danger">Close</a>
 											</div>
 										</form><!-- form body-->
 									</div><!-- panel-body-->
