@@ -30,7 +30,7 @@
 		{
 			$this->load->view('urlcompleto');
 			$this->load->view('Plantilla/navbar');
-			$data['dtienda']=$this->tienda->mostrarById($this->input->get('id'));
+			$data['dtienda']=$this->tienda->getmostrar($this->input->get('id'));
 			$this->load->view('modificar_tienda',$data);
 		}
 		//Insertar registros a base de datos//
@@ -72,11 +72,11 @@
 		}
 		public function modificar()
 		{
-			$data['id']=$_POST['id_tienda'];
-			$data['nombre_tienda']=$_POST['nombre_tienda'];
-			$data['direccion_tienda']=$_POST['direccion_tienda'];
-			$data['telefono_tienda']=$_POST['telefono_tienda'];
-			$this->tienda->modificar($data);
+			$data['id']= $_POST['id_tienda'];
+			$data['nombre_tienda']= $_POST['nombre_tienda'];
+			$data['direccion_tienda']= $_POST['direccion_tienda'];
+			$data['telefono_tienda']= $_POST['telefono_tienda'];
+			$this->tienda->update($data);
 			$this->editar();
 		}
 

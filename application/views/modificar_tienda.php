@@ -21,38 +21,43 @@
 									<!-- cuerpo-->
 									<div class="panel-body">
 										<form id="formTienda" action="<?php echo base_url();?>Tienda/modificar" method="POST">
-											<!--<?php //foreach($dt as $idd){?>-->
+											<?php foreach($dtienda as $idd){?>
+
 											<!-- primer campo-->
 											<div class="col-md-12 form-group input-group">
 												<!-- id-->
-												<!--<input type="hidden" id="id_tienda" name="id_tienda" value="<?php //echo $idd['id_tienda']?>"/>-->
+												<input type="hidden" id="id_tienda" name="id_tienda" value="<?php echo $idd['id_tienda'];?>">
 												<!-- segundo campo -->
 												<label for="" class="input-group-addon">Nombre tienda</label>
-												<input type="text" id="nombre_tienda" name="nombre_tienda" class="form-control">
+												<input type="text" id="nombre_tienda" name="nombre_tienda" class="form-control"
+												value="<?php echo $idd['nombre_tienda'];?>">
 											</div>
 											<!-- tercer campo-->
 											<div class="col-md-12 form-group input-group">
 												<label for="" class="input-group-addon">Direccion tienda</label>
-												<input type="text" id="direccion_tienda" name="direccion_tienda" class="form-control">
+												<input type="text" id="direccion_tienda" name="direccion_tienda" class="form-control"
+												value="<?php echo $idd['direccion_tienda'];?>">
 											</div>
 											<!-- cuarto campo-->
 											<div class="col-md-12 form-group input-group">
 												<label for="" class="input-group-addon">Telefono_tienda</label>
-												<input type="text" id="telefono_tienda" name="telefono_tienda" class="form-control"></div>
+												<input type="text" id="telefono_tienda" name="telefono_tienda" class="form-control" value="<?php echo $idd['telefono_tienda'];?>"></div>
 											</div>
-											<!--<?php }?>-->
+											<?php }?>
 											<!-- boton-->
 											<div class="col-md-12 text-center">
 											<button type="submit" class="btn btn-success">Guardar Tienda</button>
+											
+											</div>
+											<div class="modal-footer">
+												<a href="<?php echo base_url();?>Tienda/modificar" class="btn btn-danger">Close</a>
 											</div>
 										</form><!-- form body-->
 									</div><!-- panel-body-->
 								</div><!-- panel-primary-->
 							</div><!-- col-md-12-->
 						</div><!-- row-->
-							<div class="modal-footer">
-								<a href="<?php echo base_url();?>Tienda/modificar" class="btn btn-danger">Close</a>
-							</div>
+							
 					</div><!-- modal-body-->
 				</div><!-- modal-content-->
 			</div><!-- modal-dialog-->
@@ -61,7 +66,6 @@
 </body>
 
 <script>
- <script type="text/javascript">
 	$(document).ready(function(){
 		$('#modificar_tienda').modal("show");
 	});

@@ -46,10 +46,26 @@ class Tienda_model extends CI_Model
     public function modificar($data)
     {
     	$this->db->set('nombre_tienda',$data['nombre_tienda']);
-    	$this->db->set('direccion_tienda',$data)['direccion_tienda'];
-    	$this->db->set('telefono_tienda',$data)['telefono_tienda'];
+    	$this->db->set('direccion_tienda',$data['direccion_tienda']);
+    	$this->db->set('telefono_tienda',$data['telefono_tienda']);
         $this->db->where('id_tienda',$data['id']);
         $this->db->update('tab_tienda');
+    }
+
+    public function update($data)
+    {
+        $this->db->set('id_tienda',$data['id']);
+        $this->db->set('nombre_tienda',$data['nombre_tienda']);
+        $this->db->set('direccion_tienda',$data['direccion_tienda']);
+        $this->db->set('telefono_tienda',$data['telefono_tienda']);
+        $this->db->where('id_tienda',$data['id']);
+        $this->db->update('tab_tienda');
+    }
+    public function getmostrar($id)
+    {
+        $this->db->where('id_tienda',$id);
+        $tienda=$this->db->get('tab_tienda');
+        return $tienda->result_array();
     }
 	}
 
