@@ -70,7 +70,7 @@ class Datos_usuario extends CI_Controller{
 		//$data['contraseña_usuario']=$_POST['contraseña_usuario'];
 		$data['rol_usuario']=$_POST['rol_usuario'];
 		$data['estado_usuario']=$_POST['estado_usuario'];
-		//$data['id_empleado']=$_POST['id_empleado'];
+		$data['id_empleado']=$_POST['id_empleado'];
 		$this->usuario->update($data);
 		$this->editar();
 	}

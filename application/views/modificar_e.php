@@ -37,7 +37,7 @@
                     <!-- Tercero campo   <?php //echo $idd->DUI_empleado; ?>"         title="00000000-0" placeholder="55555555-5"-->
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">DUI empleado :</label>
-                      <input type="textarea" id="DUI_empleado" name="DUI_empleado"  class="form-control" value="<?php echo $idd['DUI_empleado']?>">
+                      <input type="text" id="DUI_empleado" name="DUI_empleado"  class="form-control" value="<?php echo $idd['DUI_empleado']?>">
                     </div>
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Direccion:</label>
@@ -67,8 +67,8 @@
                     </div>
                     <!-- noveno campo  -->
                     <div class="col-md-12 form-group input-group">
-                      <label for="" class="input-group-addon">Estado usuario:</label>
-                        <select class="form-control" id="estado_usuario" name="estado_usuario">
+                      <label for="" class="input-group-addon">Estado empleado:</label>
+                        <select class="form-control" id="estado_empleado" name="estado_empleado">
                           <option value="Habilitado">Habilitado</option>
                           <option value="Deshabilitado">Deshabilitado</option>
                         </select>
@@ -106,11 +106,25 @@
   $(document).ready(function()
   {
     $('#empleadosmodal').modal("show");
+    llenarTienda();
     llenarTienda2();
     mascara();
     duimascara();
   });
 
+function llenarTienda()
+{
+  $.ajax({
+    type:"POST",
+    url:'<?php echo site_url();?>Datos_empleado/cargaridtienda',
+    success: function(data)
+      {
+      $('#id_tienda').html('');
+      $('#id_tienda').html(data);
+    }
+
+  });
+}
 function llenarTienda2()
 {
   $.ajax({

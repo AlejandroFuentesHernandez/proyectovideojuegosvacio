@@ -94,8 +94,8 @@ public function update($data)
 	$this->db->set('telefono_empleado',$data['telefono_empleado']);
 	$this->db->set('estado_empleado',$data['estado_empleado']);
 	$this->db->set('id_tienda',$data['id_tienda']);
-	$this->db->where('id_empleado',$data['id']);
-	$this->db->update('tab_empleados');
+	$this->db->where('id_empleados',$data['id']);
+	$this->db->update('tab_datos_empleados');
 }
 public function getmostrar($id)
 	{
