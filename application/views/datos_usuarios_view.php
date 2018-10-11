@@ -98,7 +98,7 @@
 							<tr>
 								<!--<th>Id del usuario</th> -->
 								<th>Nombre del usuario</th>
-								<th>Contraseña del usuario</th>
+								<!--<th>Contraseña del usuario</th>-->
 								<th>Rol del usuario</th>
 								<th>Estado del usuario</th>
 								<th>Id empleado</th>
@@ -115,7 +115,7 @@
 									
 									
 									<td><?=$du->nombre_usuario?></td>
-									<td><?=$du->contraseña_usuario?></td>
+									<!--<td><?=$du->contraseña_usuario?></td>-->
 									<td><?=$du->rol_usuario?></td>
 									<td><?=$du->estado_usuario?></td>
 									<td><?=$du->id_empleado?></td>

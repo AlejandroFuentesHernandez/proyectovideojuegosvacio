@@ -26,7 +26,7 @@
 									<!--<th style="" scope="">Id_empleado</th>-->
 										<th>Numero Empleado</th>
 										<th>Nombre empleado</th>
-										<th>DUI empleado</th>
+										<!--<th>DUI empleado</th>-->
 										<th>Dirrecion empleados</th>
 										<th>Fecha nacimiento</th>
 										<th>Cargo empleado</th>
@@ -41,7 +41,7 @@
 										<!--<td><input type="radio" name="editar" value="<?=$u->id?>"/></td> -->
 										<td><?=$de->numero_empleado?></td>
 										<td><?=$de->nombre_empleado?></td>
-										<td><?=$de->DUI_empleado?></td>
+										<!--<td><?=$de->DUI_empleado?></td>-->
 										<td><?=$de->direccion_empleado?></td>
 										<td><?=$de->fecha_nacimiento?></td>
 										<td><?=$de->cargo_empleado?></td>
@@ -53,6 +53,7 @@
 									</tr>	
 										<?php endforeach;?>
 								</tbody><!-- tbody-->
+								
 							</table><!-- table-->
 						</div><!-- panel-body-->
 						<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong2"></button>-->

@@ -51,6 +51,10 @@
 													<input type="password" id="pass2" name="contraseña_usuario" value="" class="form-control"><label id="diferente"></label>
 												</div>-->
 												<div class="col-md-12 form-group input-group">
+													<label for="" class="input-group-addon">Rol usuario</label>
+													<input type="text" id="rol_usuario" name="rol_usuario" class="form-control" value="<?php echo $idd['rol_usuario'];?>">
+												</div>
+												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Estado usuario</label>
 														<select class="form-control" id="estado_usuario" name="estado_usuario" value="<?php echo $idd['estado_usuario'];?>" >
                           								
