@@ -20,6 +20,11 @@ class Datos_empleado_model extends CI_Model
             $resultado=$this->db->get('tab_datos_empleados');
             return $resultado->result_array();
         }
+        public function obtenertienda()
+        {
+        	$resultado=$this->db->get('tab_tienda');
+        	return $resultado->result_array();
+        }
         public function getTienda2()//insertar id
         {
             $this->load->database();

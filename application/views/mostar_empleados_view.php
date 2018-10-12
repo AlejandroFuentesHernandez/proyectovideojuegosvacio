@@ -31,9 +31,10 @@
 										<!--<th>Fecha nacimiento</th>-->
 										<th>Cargo empleado</th>
 										<th>Correo empleado</th>
-										<th>Telefono_empleado</th>
+										<th>Telefono empleado</th>
 										<th>Estado empleado</th>
 										<th>Id tienda</th>
+										
 										<th>editar</th>
 									</tr>
 								</thead><!--thead-->
@@ -51,6 +52,7 @@
 										<td><?=$de->telefono_empleado?></td>
 										<td><?=$de->estado_empleado?></td>
 										<td><?=$de->id_tienda?></td>
+										
 										<td><a href="<?php echo base_url();?>Datos_empleado/editar?id=<?php echo $de->id_empleados;?>"class="btn btn-info" data-dismiss="modal">Modificar</a></td>
 											
 
@@ -137,5 +139,33 @@
              
         });
     });
+  $(document).ready(function()
+  	{
+  		llenarTienda();
+  		vertienda();
+  	});
+
+  function vertienda()
+  {
+  	$.ajax({
+  		type:"POST",
+  		url:'<?php echo site_url();?>Datos_empleado/cargarNtienda'
+  	});
+  	$('#tienda').html('');
+  	$('#tienda').html();
+  }
+  function llenarTienda()
+{
+  $.ajax({
+    type:"POST",
+    url:'<?php echo site_url();?>Datos_empleado/cargaridtienda',
+    success: function(data)
+    	{
+      $('#id_tienda').html('');
+      $('#id_tienda').html(data);
+    }
+
+  });
+}
 
     </script>  

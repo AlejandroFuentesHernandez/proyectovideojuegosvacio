@@ -83,14 +83,14 @@
 			$data['id']=$_POST['id_empleados'];
 			$data['numero_empleado']=$_POST['numero_empleado'];
 			$data['nombre_empleado']=$_POST['nombre_empleado']; 
-			$data['DUI_empleados']=$_POST['DUI_empleados'];		
+			$data['DUI_empleado']=$_POST['DUI_empleado'];		
 			$data['direccion_empleado']=$_POST['direccion_empleado'];
 			$data['fecha_nacimiento']=$_POST['fecha_nacimiento'];
 			$data['cargo_empleado']=$_POST['cargo_empleado'];
 			$data['correo_empleado']=$_POST['correo_empleado'];
-			$data['telefono_empleado']=$_POST['telefono_ empleado'];
-			$data['estado_usuario']=$_POST['estado_usuario'];
-			$data['id_tienda']=$_POST['id_ tienda'];
+			$data['telefono_empleado']=$_POST['telefono_empleado'];
+			$data['estado_empleado']=$_POST['estado_empleado'];
+			$data['id_tienda']=$_POST['id_tienda'];
 			$this->empleado->update($data);
 			$this->editar();
 		}
@@ -113,6 +113,15 @@
 				echo '<option value="'.$item['id_tienda'].'">'.$item['nombre_tienda'].'</option>';
 			}
 		}
+
+		public function cargarNtienda()
+		{
+			$resultado=$this->empleado->obtenertienda();
+			foreach ($resultado as $item) {
+				echo $item['nombre_tienda'];
+			}
+		}
+
 		public function cargarEmpleado(){
 		$resultado=$this->empleado->getestado();
 		foreach ($resultado as $item) {
