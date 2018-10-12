@@ -37,5 +37,10 @@ public function index()
          	$this->error();
          }
 	}
+
+   public function inicio()
+   {
+      $this->load->view('bootstrap');
+   }
 	
 }

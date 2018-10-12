@@ -49,7 +49,7 @@
                              <!-- Quinto campo-->
                            <div class="col-md-12 form-group input-group">
                               <label for="" class="input-group-addon"> Precio Unitario de Compra:</label>
-                              <input disabled="" type="text" id="precio" onblur="operacion()" name="precio_unitario_compra" class="form-control"  value="<?php echo $item['precio_unitario_compra'];?>" required>
+                              <input  type="text" id="precio" onblur="operacion()" name="precio_unitario_compra" class="form-control"  value="<?php echo $item['precio_unitario_compra'];?>" required>
                            </div>
                             <!-- Sexto campo--> 
                            <div class="col-md-12 form-group input-group">

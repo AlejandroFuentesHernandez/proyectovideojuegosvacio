@@ -21,11 +21,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"><b>Game Store</b></a>
+      <a class="navbar-brand" ><b>Game Store</b></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo site_url(); ?>index"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+        <li><a href="<?php echo site_url(); ?>index"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a>
           <ul class="dropdown-menu">
           <li><a href="#">Perfil</a></li>
           <li><a href="#">Cerrar Sesión</a></li>
