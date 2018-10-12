@@ -197,7 +197,7 @@ function comprobarContra ()
 			$('#ingresar').hide();
 		}else{
 			$('#diferente').html();
-			$('#diferente').html('<font color="green>"<h6>Las contraseñas coinciden</h6></font>');
+			$('#diferente').html('<font color="green"><h6>Las contraseñas coinciden</h6></font>');
 			$('#ingresar').show();
 			
 		}

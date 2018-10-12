@@ -48,16 +48,13 @@
 												</div>
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Estado usuario</label>
-													<input type="hidden" id="valor" name="valor" value="<?php echo $idd['estado_usuario'];?>">
-														
+													<input type="text" id="valor" name="valor" value="<?php echo $idd['estado_usuario'];?>">
 														<select class="form-control" id="estado_usuario" name="estado_usuario">
-															<option value="<?php? echo $op1;?>"><?php echo $op1;?></option>
-															<option value="<?php echo $op2;?>"><?php echo $op2;?></option>
                           								</select>
 												</div>
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Id Empleado</label>
-													<select class="form-control" id="id_empleado" name="id_empleado" value="<?php echo $idd['id_empleado'];?>"></select>
+													<select class="form-control" id="id_empleado" name="id_empleado"></select>
 												</div>
 												<div class="col-md-12 text-center">
                     								<!-- nuevo-->
@@ -90,17 +87,16 @@
 $(document).ready(function()
   {
   	$('#usuariomodal').modal("show");
-    determinar();
-    //modificarEmpleado();
+    llenarEstado();
+    llenarEmpleado();
     validar();
-    comprobarContra();
   });
 
- function modificar()
+ function llenarEstado()
 {
   $.ajax({
     type:"POST",
-    url:'<?php echo site_url();?>Datos_usuario/editarEmpleado',
+    url:'<?php echo site_url();?>Datos_usuario/cargarEstado',
     success: function(data)
     {
       $('#estado_usuario').html('');
@@ -109,19 +105,18 @@ $(document).ready(function()
 
   });
  }
- function determinar()
- {
- 	if($('#valor').val()=='Habilitado')
- 	{
- 		   $op1="Habilitado";
- 		   $op2="Deshabilitado";
- 		 
- 	}
- 	if($('#valor').val()=='Deshabilitado')
- 	{
- 		$('#op2').addOption('Habilitado');
- 		 $('#op1').addOption('Deshabilitado');
- 	}
+ function llenarEmpleado()
+{
+  $.ajax({
+    type:"POST",
+    url:'<?php echo site_url();?>Datos_usuario/cargaridEmpleado2',
+    success: function(data)
+    {
+      $('#id_empleado').html('');
+      $('#id_empleado').html(data);
+    }
+
+  });
  }
 function validar()
 {
@@ -147,20 +142,5 @@ function validar()
       
     }
 }
-function comprobarContra ()
-	{
-		if($('#contraseña_usuario').val()!=$('#pass2').val())
-		{
-			//alert( 'si se esta haciendo');
-			$('#diferente').html();
-			$('#diferente').html('<font color="red"><h6>Las contraseñas no coinciden</h6></font>');
-			$('#diferente').addClass('error');
-			$('#ingresar').hide();
-		}else{
-			$('#diferente').html();
-			$('#diferente').html('<font color="green>"<h6>Las contraseñas coinciden</h6></font>');
-			$('#ingresar').show();
-			
-		}
-	}
+
 	</script>
