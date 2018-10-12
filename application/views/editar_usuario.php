@@ -36,6 +36,7 @@
 													<!-- primer campo-->
 												<div class="col-md-12 form-group input-group">
 												<!-- ID-->
+
 												<input type="hidden" id="id_usuario" name="id_usuario" value="<?php echo $idd['id_usuario'];?>"/>
 												</div><!-- col-md-12-->
 												<div class="col-md-12 form-group input-group">
@@ -48,17 +49,17 @@
 												</div>
 
 					                            <div class="col-md-12 form-group input-group">
-					                                  <label for="" class="input-group-addon"> Estado de Cliente:</label>
+					                                  <label for="" class="input-group-addon"> Estado de Usuario:</label>
 					                                  <select class="form-control" id="estado_usuario"  name="estado_usuario">
 					                        
-					                                 <?php if($item['estado_usuario']=='Habilitado'){?>
-					                                  <option value="Habilitado" class="form-control" selected="true">Habilitado</option>
+					                                 <!--<?php //if($item['estado_usuario']=='Habilitado'){?>-->
+					                                  <option value="Habilitado" class="form-control">Habilitado</option>
 					                                  <option value="Deshabilitado" class="form-control">Deshabilitado</option>
-					                                 <?php }else{?>
-					                                  <option value="Habilitado" class="form-control" >Habilitado</option>
-					                                  <option value="Deshabilitado" class="form-control" selected="true">Deshabilitado</option>
+					                                 <!--<?php //}else{?>-->
+					                                  <!--<option value="Habilitado" class="form-control" >Habilitado</option>
+					                                  <option value="Deshabilitado" class="form-control" selected="true">Deshabilitado</option>-->
 					    
-					                                  <?php }?>
+					                                  <!--<?php //}?>-->
 				                              		</select>
 				                                </div>
 
@@ -73,7 +74,7 @@
                     							</div>
                      							<!-- Button trigger modal -->
                    								<div class="col-md-12  text-center"> 
-                      							<input type="hidden" id="id_usuario" name="id_usuario" value=""/>                     
+                      						                    
                       							
                     							</div>  
 												<?php }?><!--foreach-->
@@ -97,7 +98,7 @@
 $(document).ready(function()
   {
   	$('#usuariomodal').modal("show");
-    llenarEstado();
+    //llenarEstado();
     llenarEmpleado();
     validar();
   });

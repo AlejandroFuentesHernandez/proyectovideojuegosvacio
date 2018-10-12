@@ -29,6 +29,7 @@
 											<th>Rol del usuario</th>
 											<th>Id del empleado</th>
 											<th>Estado del usuario</th>
+											<th>Id empleado</th>
 											<th>Editar</th>
 										</tr>
 									</thead><!-- thead-->
@@ -41,6 +42,7 @@
 												<td><?=$du->rol_usuario?></td>
 												<td><?=$du->id_empleado?></td>
 												<td><?=$du->estado_usuario?></td>
+												<td><?=$du->id_empleado?></td>
 												<td><a href="<?php echo base_url();?>Datos_usuario/editar?id=<?php echo $du->id_usuario;?>"class="btn btn-info" data-dismiss="modal">Modificar</a></td>
 											</tr>
 											<?php endforeach;?>

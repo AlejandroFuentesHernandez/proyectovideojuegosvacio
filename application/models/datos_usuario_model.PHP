@@ -22,7 +22,7 @@ class Datos_usuario_model extends CI_Model
         }
         public function getempl()//insertar id
         {
-            $resultado=$this->db->get('tab_usuario');
+            $resultado=$this->db->get('tab_datos_empleados');
             return $resultado->result_array();
         }
 
@@ -45,7 +45,13 @@ class Datos_usuario_model extends CI_Model
 		$usuarios=$this->db->get('tab_usuario');
 		return $usuarios->result();
 	}
-	
+		public function mostrarById($id)
+		{
+			$this->db->where('id_usuario',$id);
+			$usuario=$this->get('tab_usuario');
+			return $usuario->result();
+		}
+	 
 		public function eliminar($data)
 	{
 		$usuario=$this->db->query('delete from tab_usuario where id_usuario'.$data);
@@ -60,7 +66,7 @@ class Datos_usuario_model extends CI_Model
 		public function modificar($data)
 		{
 			$this->db->set('nombre_usuario',$data['nombre_usuario']);
-			$this->db->set('contraseña_usuario',$data['contraseña_usuario']);
+			//$this->db->set('contraseña_usuario',$data['contraseña_usuario']);
 			$this->db->set('rol_usuario',$data['rol_usuario']);
 			$this->db->set('estado_usuario',$data['estado_usuario']);
 			$this->db->set('id_empleado',$data['id_empleado']);
@@ -69,12 +75,12 @@ class Datos_usuario_model extends CI_Model
 		}
 		public function update($data)
 		{
-			$this->db->set('id_usuario',$data['id']);
 			$this->db->set('nombre_usuario',$data['nombre_usuario']);
+			//$this->db->set('contraseña_usuario',$data['contraseña_usuario']);
 			$this->db->set('rol_usuario',$data['rol_usuario']);
 			$this->db->set('estado_usuario',$data['estado_usuario']);
-			$this->db->set('id_usuario',$data['id_usuario']);
-			$this->db->where('id_usuario',$data['id_usuario']);
+			$this->db->set('id_empleado',$data['id_empleado']);
+			$this->db->where('id_usuario',$data['id']);
 			$this->db->update('tab_usuario');
 		}
 		public function getmostrar($id)
@@ -99,14 +105,14 @@ class Datos_usuario_model extends CI_Model
 		$this->db->set('nombre_usuario',$data['nombre_usuario']);
 		$this->db->set('contraseña_usuario',$data['contraseña_usuario']);
 		$this->db->set('rol_usuario',$data['rol_usuario']);
-		$this->db->set('id_empleado',$data['id_empleado']);
+		$this->db->set('id_empleados',$data['id_empleados']);
 		$this->db->set('estado_usuario',$data['estado_usuario']);
 		$this->db->insert('tab_usuario');
 	}
-	public function deshabilitar_usuarios($id_empleado,$estado_usuario)
+	public function deshabilitar_usuarios($id_empleados,$estado_usuario)
 	{
 		$this->db->set('estado_usuario',$data['estado_usuario']);
-		$this->db->where('id_empleado',$id_empleado);
+		$this->db->where('id_empleados',$id_empleados);
 		$this->db->update('tab_usuario');
 	}
 //no se usa porque borra toda la linea y se pierde informacion
@@ -115,13 +121,13 @@ class Datos_usuario_model extends CI_Model
 		$this->db->where('id_usuario',$id_usuario);
 		//$this->db->delete('tab_datos_empleados');
 	}
-	public function obtener_usuario($id_empleado)
+	public function obtener_usuario($id_empleados)
 	{
 		//obtener usuarios en base numero empleado
-		$this->db->select('id_empleado','nombre_usuario','contraseña_usuario','rol_usuario','estado_usuario',);
+		$this->db->select('id_empleados','nombre_usuario','contraseña_usuario','rol_usuario','estado_usuario',);
 		$this->db->from('tab_usuario');
 		//iria id?
-		$this->db->where('id_empleado'.$id_empleado);
+		$this->db->where('id_empleados'.$id_empleados);
 		return $tab_usuario->row();
 
 	}
@@ -131,7 +137,7 @@ class Datos_usuario_model extends CI_Model
 	$this->db->set('nombre_usuario',$data['nombre_usuario']);
 	$this->db->set('contraseña_usuario',$data['contraseña_usuario']);
 	$this->db->set('rol_usuario',$data['rol_usuario']);
-	$this->db->set('id_empleado',$data['id_empleado']);
+	$this->db->set('id_empleados',$data['id_empleados']);
 	$this->db->set('estado_usuario',$data['estado_usuario']);
 
 	$this->db->where('id_usuario'),$data['id_usuario'];

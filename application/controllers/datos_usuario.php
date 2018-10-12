@@ -36,7 +36,7 @@ class Datos_usuario extends CI_Controller{
 		$contraseña_usuario=md5($this->input->post('contraseña_usuario'));
 		$rol_usuario=$this->input->post('rol_usuario');
 		$estado_usuario=$this->input->post('estado_usuario');
-		$id_empleado=$this->input->post('id_empleado');
+		$id_empleados=$this->input->post('id_empleados');
 
 		$data=array
 		(
@@ -99,7 +99,7 @@ class Datos_usuario extends CI_Controller{
 		foreach ($resultado as $item) {
 			
 			if($resultado!=$dusuario){
-			echo'<option value="'.$item['id_usuario'].'">'.$item['rol_usuario'].'</option>';
+			echo'<option value="'.$item['id_usuario'].'">'.$item['estado_usuario'].'</option>';
 			}
 		}
 	}
@@ -109,7 +109,7 @@ class Datos_usuario extends CI_Controller{
 			
 			if($resultado!=$dusuario)
 			{
-				echo'<option value="'.$item['id_usuario'].'">'.$item['nombre_usuario'].'</option>';
+				echo'<option value="'.$item['id_empleados'].'">'.$item['nombre_empleado'].'</option>';
 			}
 			
 		}
