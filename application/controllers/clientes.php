@@ -14,7 +14,7 @@ class Clientes extends CI_Controller
     }
 //Metodo  que invoca la vista principal a pantalla//
     public function index()
-    {  	$this->load->view('url_include');
+    {  	$this->load->view('urlcompleto');
         $this->load->view('Plantilla/navbar');
         $cliente= $this->cliente->mostrar();
     	$data['dcliente']=$cliente;
@@ -25,7 +25,7 @@ class Clientes extends CI_Controller
   //Método para editar los datos de clientes//
     public function editar()
     {   
-    	$this->load->view('url_include');
+    	$this->load->view('urlcompleto');
     	$this->load->view('Plantilla/navbar');
     	$data['variable']=$this->cliente->getMostrar($this->input->get('id'));
     	$this->load->view('editar_clientes', $data);
@@ -100,7 +100,7 @@ class Clientes extends CI_Controller
 
     	$cliente= $this->cliente->mostrar();
     	$data['dcliente']=$cliente;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
-    	$this->load->view('url_mostrar_e_h');
+    	$this->load->view('urlcompleto');
     	$this->load->view('Plantilla/navbar');
     	$this->load->view('mostrar_clientes',$data);
     	$this->load->view('Plantilla/footer');

@@ -91,7 +91,7 @@
     <script>
     $(document).ready(function() {
         //Page-Level Demo Scripts - Tables - Use for reference 
-        $('#dataTables-example').DataTable({
+        $('#tab_compras').DataTable({
             responsive: true,
             "language": {
                 "url": "js/lenguaje.js"

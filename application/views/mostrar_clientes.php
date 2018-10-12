@@ -28,7 +28,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body" class="table-responsive">
  <!-- TABLA PARA MOSTRAR DATOS-->
-                       <table width="100%" class="table table-striped table-bordered table-hover" id="tab_clientes">
+                       <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                          <thead style="text-align:center;">
                             <tr>
                                 <th >Nombre de cliente</th>

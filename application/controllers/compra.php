@@ -15,7 +15,7 @@ class Compra extends CI_Controller
     
     public function index()
     {
-    	$this->load->view('url_include');
+    	$this->load->view('urlcompleto');
     	$this->load->view('Plantilla/navbar');
     	$compra= $this->compra->mostrar();
     	$data['dcompra']=$compra; 
@@ -33,7 +33,7 @@ class Compra extends CI_Controller
 
     public function editar()//metodo editar
     {
-    	$this->load->view('url_include');
+    	$this->load->view('urlcompleto');
     	$this->load->view('Plantilla/navbar');
     	$data['variable']=$this->compra->mostrarById($this->input->get('id'));
     	$this->load->view('modificar_compras', $data); 
@@ -108,7 +108,7 @@ class Compra extends CI_Controller
 		{
     	$compra= $this->compra->mostrar();
     	$data['dcompra']=$compra;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
-    	$this->load->view('url_mostrar_e_h');
+    	$this->load->view('urlcompleto');
     	$this->load->view('Plantilla/navbar');
     	$this->load->view('mostrar_compra',$data);
     	$this->load->view('Plantilla/footer');
