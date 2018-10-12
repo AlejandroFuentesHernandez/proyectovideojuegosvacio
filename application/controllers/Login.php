@@ -34,7 +34,7 @@ public function index()
          }
          else
          {
-         	$this->error();
+         	redirect('index');
          }
 	}
 
