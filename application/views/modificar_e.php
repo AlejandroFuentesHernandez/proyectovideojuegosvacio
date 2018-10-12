@@ -46,7 +46,7 @@
 
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Fecha Nacimiento:</label>
-                      <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control">
+                      <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control" value="<?php echo $idd['fecha_nacimiento']?>">
                     </div>
 
                     <div class="col-md-12 form-group input-group">
@@ -69,8 +69,6 @@
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Estado empleado:</label>
                         <select class="form-control" id="estado_empleado" name="estado_empleado">
-                          <option value="Habilitado">Habilitado</option>
-                          <option value="Deshabilitado">Deshabilitado</option>
                         </select>
                     </div>
 
@@ -106,12 +104,26 @@
   $(document).ready(function()
   {
     $('#empleadosmodal').modal("show");
+    llenarEstado();
+    
     llenarTienda();
     llenarTienda2();
     mascara();
     duimascara();
   });
+function llenarEstado()
+{
+  $.ajax({
+    type:"POST",
+    url:'<?php echo site_url();?>Datos_empleado/cargarEmpleado',
+    success: function(data)
+    {
+      $('#estado_empleado').html('');
+      $('#estado_empleado').html(data);
+    }
 
+  });
+ }
 function llenarTienda()
 {
   $.ajax({

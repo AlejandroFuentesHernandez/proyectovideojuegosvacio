@@ -113,7 +113,15 @@
 				echo '<option value="'.$item['id_tienda'].'">'.$item['nombre_tienda'].'</option>';
 			}
 		}
-
+		public function cargarEmpleado(){
+		$resultado=$this->empleado->getestado();
+		foreach ($resultado as $item) {
+			
+			if($resultado!=$dusuario){
+			echo'<option value="'.$item['id_empleados'].'">'.$item['estado_empleado'].'</option>';
+			}
+		}
+	}
 		public function cargaridtienda2()
 		{
 			//$this->load->model('datos_empleado_model','empleado','TRUE');
