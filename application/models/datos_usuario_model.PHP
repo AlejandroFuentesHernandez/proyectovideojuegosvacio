@@ -69,7 +69,7 @@ class Datos_usuario_model extends CI_Model
 			//$this->db->set('contraseña_usuario',$data['contraseña_usuario']);
 			$this->db->set('rol_usuario',$data['rol_usuario']);
 			$this->db->set('estado_usuario',$data['estado_usuario']);
-			$this->db->set('id_empleado'||,$data['id_empleado']);
+			$this->db->set('id_empleado',$data['id_empleado']);
 			$this->db->where('id_usuario',$data['id']);
 			$this->db->update('tab_usuario');
 		}
