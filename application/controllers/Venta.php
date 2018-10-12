@@ -11,10 +11,7 @@ class Venta extends CI_Controller
 
   public function index()
     {  
-        $this->load->view('url_include');
         $this->load->view('Plantilla/navbar');
-        $venta= $this->venta->mostrar();
-        $data['venta']=$venta;
     	$this->load->view('registro_venta_view');
         $this->load->view('Plantilla/footer');
     }
@@ -64,18 +61,6 @@ class Venta extends CI_Controller
                  echo 0; 
             }
     }
-
-         public function mostrar()
-        {
-
-            $venta= $this->venta->mostrar();
-            $data['venta']=$venta;  //enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
-            $this->load->view('url_mostrar_e_h');
-            $this->load->view('Plantilla/navbar');
-            $this->load->view('mostrar_venta',$data);
-            $this->load->view('Plantilla/footer');
-        }
-
 
 
 }
