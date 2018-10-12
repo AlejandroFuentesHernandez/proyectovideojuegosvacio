@@ -64,6 +64,12 @@ class Venta extends CI_Controller
 public function mostrar()
 {
     $venta=$this->venta->mostrar();
+    $data['dventa']=$venta;
+
+    $this->load->view('url_completo');
+    $this->load->view('Plantilla/navbar');
+    $this->load->view('mostrar_venta',$data);
+    $this->load->view('Plantilla/footer');
 }
 
 }

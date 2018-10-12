@@ -47,7 +47,8 @@ class Venta_model extends CI_Model
     }
 public function mostrar()
 {
-    
+    $venta=$this->db->get('tab_venta');
+    return $tienda->result();
 }
 
 }
