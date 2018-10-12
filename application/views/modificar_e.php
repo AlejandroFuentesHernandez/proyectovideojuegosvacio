@@ -52,6 +52,7 @@
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Cargo empleado:</label>
                       <input type="text" id="cargo_empleado" name="cargo_empleado" class="form-control" value="<?php echo $idd['cargo_empleado']?>">
+
                     </div>
 
                     <!-- septimo campo value="<?php //echo $idd->correo_empleado;?>"-->
@@ -69,6 +70,8 @@
                     <div class="col-md-12 form-group input-group">
                       <label for="" class="input-group-addon">Estado empleado:</label>
                         <select class="form-control" id="estado_empleado" name="estado_empleado">
+                          <option value="Habilitado">Habilitado</option>
+                          <option value="Deshabilitado">Deshabilitado</option>
                         </select>
                     </div>
 
@@ -104,18 +107,18 @@
   $(document).ready(function()
   {
     $('#empleadosmodal').modal("show");
-    llenarEstado();
+    //llenarEstado();
     
     llenarTienda();
     llenarTienda2();
     mascara();
     duimascara();
   });
-function llenarEstado()
+/*function llenarEstado()
 {
   $.ajax({
     type:"POST",
-    url:'<?php echo site_url();?>Datos_empleado/cargarEmpleado',
+    url:'<?php //echo site_url();?>Datos_empleado/cargarEmpleado',
     success: function(data)
     {
       $('#estado_empleado').html('');
@@ -123,7 +126,7 @@ function llenarEstado()
     }
 
   });
- }
+ }*/
 function llenarTienda()
 {
   $.ajax({
