@@ -45,6 +45,9 @@ class Venta_model extends CI_Model
         }
 
     }
-
+public function mostrar()
+{
+    
+}
 
 }

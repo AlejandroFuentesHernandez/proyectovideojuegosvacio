@@ -100,7 +100,7 @@ $(document).ready(function()
   	$('#usuariomodal').modal("show");
     //llenarEstado();
     llenarEmpleado();
-    validar();
+    //validar();
   });
 
  function llenarEstado()

@@ -36,7 +36,7 @@ class Datos_usuario extends CI_Controller{
 		$contraseña_usuario=md5($this->input->post('contraseña_usuario'));
 		$rol_usuario=$this->input->post('rol_usuario');
 		$estado_usuario=$this->input->post('estado_usuario');
-		$id_empleados=$this->input->post('id_empleados');
+		$id_empleados=$this->input->post('id_empleado');
 
 		$data=array
 		(
@@ -45,7 +45,7 @@ class Datos_usuario extends CI_Controller{
 			'contraseña_usuario'=>$contraseña_usuario,
 			'rol_usuario'=>$rol_usuario,
 			'estado_usuario'=>$estado_usuario,
-			'id_empleado'=>$id_empleado
+			'id_empleado'=>$id_empleados
 
 		);
 
@@ -71,8 +71,17 @@ class Datos_usuario extends CI_Controller{
 		$data['rol_usuario']=$_POST['rol_usuario'];
 		$data['estado_usuario']=$_POST['estado_usuario'];
 		$data['id_empleado']=$_POST['id_empleado'];
-		$this->usuario->update($data);
-		$this->editar();
+		//$this->usuario->update($data);
+		$resultado=$this->usuario->update($data);
+		if($resultado){
+			$dato['msg']="Exito usuario actualizado";
+		}else{
+			$dato['msg']="Error el usuario no pudo ser actualizado";
+		}
+		$this->load->view('urlcompleto');
+
+		$this->load->view('notificacion',$dato);
+		//$this->mostrar();
 	}
 
 	public function mostrar()

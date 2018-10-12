@@ -179,7 +179,6 @@
     llenarTienda();
     mascara();
     duimascara();
-    validar();
   });
 
 function llenarTienda()

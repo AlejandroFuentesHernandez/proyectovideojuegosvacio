@@ -61,7 +61,10 @@ class Venta extends CI_Controller
                  echo 0; 
             }
     }
-
+public function mostrar()
+{
+    $venta=$this->venta->mostrar();
+}
 
 }
 
