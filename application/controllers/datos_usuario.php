@@ -95,18 +95,22 @@ class Datos_usuario extends CI_Controller{
 		
 	}
 	public function cargarEstado(){
-		$resultado=$this->usuario->get2();
+		$resultado=$this->usuario->getestado();
 		foreach ($resultado as $item) {
 			
+			if($resultado!=$dusuario){
 			echo'<option value="'.$item['id_usuario'].'">'.$item['rol_usuario'].'</option>';
-			
+			}
 		}
 	}
 		public function cargaridEmpleado2(){
-		$resultado=$this->usuario->get2();
+		$resultado=$this->usuario->getempl();
 		foreach ($resultado as $item) {
 			
-			echo'<option value="'.$item['id_usuario'].'">'.$item['nombre_usuario'].'</option>';
+			if($resultado!=$dusuario)
+			{
+				echo'<option value="'.$item['id_usuario'].'">'.$item['nombre_usuario'].'</option>';
+			}
 			
 		}
 	}
