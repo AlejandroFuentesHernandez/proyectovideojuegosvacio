@@ -42,24 +42,18 @@
 													<label for="" class="input-group-addon">Nombre usuario</label>
 													<input type="text" id="nombre_usuario" name="nombre_usuario" class="form-control" value="<?php echo $idd['nombre_usuario'];?>">
 												</div>
-												<!--<div class="col-md-12 form-group input-group">
-													<label for="" class="input-group-addon">Contraseña usuario</label>
-													<input type="text" id="contraseña_usuario" name="contraseña_usuario" value="" class="form-control" value="<?php //echo $idd['contraseña_usuario'];?>">
-												</div>
-												<div class="col-md-12 form-group input-group">
-													<label for="" class="input-group-addon">confirmar contraseña</label>
-													<input type="password" id="pass2" name="contraseña_usuario" value="" class="form-control"><label id="diferente"></label>
-												</div>-->
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Rol usuario</label>
 													<input type="text" id="rol_usuario" name="rol_usuario" class="form-control" value="<?php echo $idd['rol_usuario'];?>">
 												</div>
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Estado usuario</label>
-														<select class="form-control" id="estado_usuario" name="estado_usuario" value="<?php echo $idd['estado_usuario'];?>" >
-                          								
-                          									<option value="Habilitado">Habilitado</option>
-                          									<option value="Deshabilitado">Deshabilitado</option></select>
+													<input type="hidden" id="valor" name="valor" value="<?php echo $idd['estado_usuario'];?>">
+														
+														<select class="form-control" id="estado_usuario" name="estado_usuario">
+															<option value="<?php? echo $op1;?>"><?php echo $op1;?></option>
+															<option value="<?php echo $op2;?>"><?php echo $op2;?></option>
+                          								</select>
 												</div>
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Id Empleado</label>
@@ -96,23 +90,38 @@
 $(document).ready(function()
   {
   	$('#usuariomodal').modal("show");
-    llenarEmpleado();
+    determinar();
+    //modificarEmpleado();
     validar();
     comprobarContra();
   });
 
-function llenarEmpleado()
+ function modificar()
 {
   $.ajax({
     type:"POST",
-    url:'<?php echo site_url();?>Datos_usuario/cargaridEmpleado',
+    url:'<?php echo site_url();?>Datos_usuario/editarEmpleado',
     success: function(data)
     {
-      $('#id_empleado').html('');
-      $('#id_empleado').html(data);
+      $('#estado_usuario').html('');
+      $('#estado_usuario').html(data);
     }
 
   });
+ }
+ function determinar()
+ {
+ 	if($('#valor').val()=='Habilitado')
+ 	{
+ 		   $op1="Habilitado";
+ 		   $op2="Deshabilitado";
+ 		 
+ 	}
+ 	if($('#valor').val()=='Deshabilitado')
+ 	{
+ 		$('#op2').addOption('Habilitado');
+ 		 $('#op1').addOption('Deshabilitado');
+ 	}
  }
 function validar()
 {

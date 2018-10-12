@@ -13,6 +13,11 @@ class Datos_usuario_model extends CI_Model
             $resultado=$this->db->get('tab_datos_empleados');
             return $resultado->result_array();
         }
+        public function get2()//insertar id
+        {
+            $resultado=$this->db->get('tab_datos_empleados');
+            return $resultado->result_array();
+        }
 
 	//Inicio de insercion
 	public function insertar($data){
