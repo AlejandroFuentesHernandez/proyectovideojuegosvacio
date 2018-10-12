@@ -29,7 +29,7 @@ public function index()
          $resultado=$this->LM->verificarUsuario($user, $pass);//utilizamos metodo del modelo
 
 		if ($resultado==1) {
-         	$this->load->view('bootstrap');
+         	redirect('inicio');
 
          }
          else
