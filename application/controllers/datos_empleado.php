@@ -92,7 +92,7 @@
 			$data['estado_empleado']=$_POST['estado_empleado'];
 			$data['id_tienda']=$_POST['id_tienda'];
 			$this->empleado->update($data);
-			$this->editar();
+			$this->mostrar();
 		}
 		public function mostrar()
 		{
