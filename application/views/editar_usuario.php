@@ -46,12 +46,22 @@
 													<label for="" class="input-group-addon">Rol usuario</label>
 													<input type="text" id="rol_usuario" name="rol_usuario" class="form-control" value="<?php echo $idd['rol_usuario'];?>">
 												</div>
-												<div class="col-md-12 form-group input-group">
-													<label for="" class="input-group-addon">Estado usuario</label>
-													<input type="text" id="valor" name="valor" value="<?php echo $idd['estado_usuario'];?>">
-														<select class="form-control" id="estado_usuario" name="estado_usuario">
-                          								</select>
-												</div>
+
+					                            <div class="col-md-12 form-group input-group">
+					                                  <label for="" class="input-group-addon"> Estado de Cliente:</label>
+					                                  <select class="form-control" id="estado_usuario"  name="estado_usuario">
+					                        
+					                                 <?php if($item['estado_usuario']=='Habilitado'){?>
+					                                  <option value="Habilitado" class="form-control" selected="true">Habilitado</option>
+					                                  <option value="Deshabilitado" class="form-control">Deshabilitado</option>
+					                                 <?php }else{?>
+					                                  <option value="Habilitado" class="form-control" >Habilitado</option>
+					                                  <option value="Deshabilitado" class="form-control" selected="true">Deshabilitado</option>
+					    
+					                                  <?php }?>
+				                              		</select>
+				                                </div>
+
 												<div class="col-md-12 form-group input-group">
 													<label for="" class="input-group-addon">Id Empleado</label>
 													<select class="form-control" id="id_empleado" name="id_empleado"></select>

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- Controlador para hacer el CRUD de los proveedores
+ Controlador para hacer el CRUD de Clientes
  */
 class Clientes extends CI_Controller
 {
@@ -12,7 +12,7 @@ class Clientes extends CI_Controller
        parent::__construct();  // Constructor del padre
        $this->load->model('Cliente_model','cliente',TRUE); 
     }
-
+//Metodo  que invoca la vista principal a pantalla//
     public function index()
     {  	$this->load->view('url_include');
         $this->load->view('Plantilla/navbar');
@@ -22,7 +22,7 @@ class Clientes extends CI_Controller
     	$this->load->view('Plantilla/footer');
     }
 
-  
+  //Método para editar los datos de clientes//
     public function editar()
     {   
     	$this->load->view('url_include');
@@ -34,8 +34,7 @@ class Clientes extends CI_Controller
 
       //Insertar registros a base de datos//
         public function RegistroCliente()
-        {  //Obteniendo datos del formulario, los cuales los almacenaremos en una variable 
-
+        {
         	//$id_cliente=$this->input->post('id_cliente');
         	$nombre =$this->input->post('nombre_cliente');
         	$nacimiento =$this->input->post('fecha_nacimiento_cliente');
@@ -79,7 +78,7 @@ class Clientes extends CI_Controller
 
 		}*/
 
-
+//Funcion Modificar es la que se invoca al momento de editar los datos del cliente//
 		public function modificar()
 		{
 

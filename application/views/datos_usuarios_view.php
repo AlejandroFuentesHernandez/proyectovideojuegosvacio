@@ -38,8 +38,9 @@
 
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Confirmar Contraseña:</label>
-									<input type="password" id="pass2" name="pass2" onblur="comprobarContra()" class="form-control" required placeholder="contraseña" ><label id="diferente"></label>
+									<input type="password" id="pass2" onblur="comprobarContra()" name="pass2"  class="form-control" required placeholder="contraseña" >
 								</div>
+								<label id="diferente"></label>
 								<!--tercero campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Rol usuario:</label>
@@ -48,9 +49,9 @@
 								<!-- cuarto campo -->
 								<div class="col-md-12 form-group input-group">
 									<label for="" class="input-group-addon">Estado usuario</label>
-									<select id="estado_usuario" name="estado_usuario" required class="form-control" ="">
-										<option value="habilitado">habilitado</option>
-										<option value="inhabilitado">inhabilitado</option>
+									<select id="estado_usuario" name="estado_usuario" required class="form-control">
+										<option value="Habilitado">Habilitado</option>
+										<option value="Inhabilitado">Inhabilitado</option>
 									</select>
 								</div>
 					
@@ -192,12 +193,12 @@ function comprobarContra ()
 		{
 			//alert( 'si se esta haciendo');
 			$('#diferente').html();
-			$('#diferente').html('<font color="red"><h6>Las contraseñas no coinciden</h6></font>');
+			$('#diferente').html('<font color="red"><p>Las contraseñas no coinciden</p></font>');
 			$('#diferente').addClass('error');
 			$('#ingresar').hide();
 		}else{
 			$('#diferente').html();
-			$('#diferente').html('<font color="green"><h6>Las contraseñas coinciden</h6></font>');
+			$('#diferente').html('<font color="green"><p>Las contraseñas coinciden</p></font>');
 			$('#ingresar').show();
 			
 		}

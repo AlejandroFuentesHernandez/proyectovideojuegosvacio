@@ -4,7 +4,9 @@ function __construct()
 	//parent:: __construct();
 	$this->load->database();
 }
-
+/**
+ Controlador para hacer el CRUD de Usuarios
+ */
 class Datos_usuario_model extends CI_Model
 {
 
@@ -25,7 +27,8 @@ class Datos_usuario_model extends CI_Model
         }
 
 	//Inicio de insercion
-	public function insertar($data){
+	public function insertar($data)
+	{
 		
 		$x=$this->db->insert('tab_usuario',$data);
 		if ($x==true) {
@@ -36,6 +39,7 @@ class Datos_usuario_model extends CI_Model
 			return 0;
 		}
 	}
+
 		public function mostrar()
 	{
 		$usuarios=$this->db->get('tab_usuario');
