@@ -27,7 +27,7 @@
 			$this->load->view('Plantilla/navbar');
 			$data['dempleado']=$this->empleado->getmostrar($this->input->get('id'));
 			$this->load->view('modificar_e',$data);
-			//$this->load->view('Plantilla/footer');
+			$this->load->view('Plantilla/footer');
 				
 		}
 		public function RegistroEmpleados()
@@ -91,8 +91,18 @@
 			$data['telefono_empleado']=$_POST['telefono_empleado'];
 			$data['estado_empleado']=$_POST['estado_empleado'];
 			$data['id_tienda']=$_POST['id_tienda'];
-			$this->empleado->update($data);
-			$this->mostrar();
+			//$this->empleado->update($data);
+
+			$resultado=$this->empleado->update($data);
+			if($resultado)
+			{
+				$dato['msg']="Exito empleado actalizado";
+			}else
+			{
+				$dato['msg']="Error el empleado no pudo ser actualizado";
+			}
+			$this->load->view('urlcompleto');
+			$this->load->view('notificacion_empleado',$dato);
 		}
 		public function mostrar()
 		{

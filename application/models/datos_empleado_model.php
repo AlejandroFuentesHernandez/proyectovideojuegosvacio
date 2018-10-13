@@ -106,6 +106,12 @@ public function update($data)
 	$this->db->set('id_tienda',$data['id_tienda']);
 	$this->db->where('id_empleados',$data['id']);
 	$this->db->update('tab_datos_empleados');
+
+	if($this->db->affected_rows()>0){
+		return true;
+	}else{
+		return false;
+	}
 }
 public function getmostrar($id)
 	{
