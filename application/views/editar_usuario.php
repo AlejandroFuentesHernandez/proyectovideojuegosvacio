@@ -70,7 +70,7 @@
 												<div class="col-md-12 text-center">
                     								<!-- nuevo-->
                     								<!-- Boton-->
-                      							<button type="submit" class="btn btn-success">Guardar usuario</button>
+                      							<button type="submit" class="btn btn-success">Editar usuario</button>
                     							</div>
                      							<!-- Button trigger modal -->
                    								<div class="col-md-12  text-center"> 

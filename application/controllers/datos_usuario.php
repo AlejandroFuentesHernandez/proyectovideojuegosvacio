@@ -49,9 +49,9 @@ class Datos_usuario extends CI_Controller{
 
 		);
 
-		$registro=$this->usuario->insertar($data);
+		$ingresar=$this->usuario->insertar($data);
 		
-		if($registro==1){
+		if($ingresar==1){
 			$ruta=base_url('Datos_usuario');
 			echo "<script>
 			alert('Usuario guardado exitosamente');
