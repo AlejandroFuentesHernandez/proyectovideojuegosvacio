@@ -18,8 +18,8 @@
 		//Mostrar datos ingresados
 		public function index()
 		{
-			$this->load->view('urlcompleto');
 			$this->load->view('Plantilla/navbar');
+			$this->load->view('urlcompleto');
 			$tienda=$this->tienda->mostrar();
 			$data['dtienda']=$tienda;//enviamos la variable vacia, para que cuando le mandemos paramentros no me de el error de variable indefinida
 			$this->load->view('tienda_view',$data);
