@@ -16,7 +16,12 @@ class Venta extends CI_Controller
     	$this->load->view('registro_venta_view');
         $this->load->view('Plantilla/footer');
     }
-        
+  public function editar()
+  {
+    $this->load->view('Plantilla/navbar');
+    $this->load->view('urlcompleto');
+    $this->load->view('Plantilla/footer');
+  }
 
   public function cargarjuego()
     {
@@ -68,7 +73,7 @@ public function mostrar()
     $venta=$this->venta->mostrar();
     $data['dventa']=$venta;
 
-    $this->load->view('url_completo');
+    $this->load->view('urlcompleto');
     $this->load->view('Plantilla/navbar');
     $this->load->view('mostrar_venta',$data);
     $this->load->view('Plantilla/footer');
