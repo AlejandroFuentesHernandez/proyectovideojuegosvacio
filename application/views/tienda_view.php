@@ -110,7 +110,6 @@
 $(document).ready(function()
   {
     mascara();
-    validar();
   });
 function mascara()
 {

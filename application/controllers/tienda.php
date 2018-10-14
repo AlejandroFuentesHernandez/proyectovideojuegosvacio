@@ -77,8 +77,17 @@
 			$data['nombre_tienda']= $_POST['nombre_tienda'];
 			$data['direccion_tienda']= $_POST['direccion_tienda'];
 			$data['telefono_tienda']= $_POST['telefono_tienda'];
-			$this->tienda->update($data);
-			$this->editar();
+			//$this->tienda->update($data);
+			$resultado=$this->tienda->update($data);
+			if($resultado)
+			{
+				$dato['msg']="Exito tienda actualizado";
+			}else
+			{
+				$dato['msg']="Error tienda no actualizada";
+			}
+			$this->load->view('urlcompleto');
+			$this->load->view('notificacion_tienda',$dato);
 		}
 
 		public function mostrar()
