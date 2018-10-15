@@ -66,7 +66,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Ventas<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url(); ?>Venta">Nueva Venta</a></li>
-          <li><a href="<?php echo site_url();  ?>editar_venta">Visualizar Ventas</a></li>
+          <li><a href="<?php echo site_url(); ?>view-venta">Visualizar Ventas</a></li>
         </ul>
       </li>
 

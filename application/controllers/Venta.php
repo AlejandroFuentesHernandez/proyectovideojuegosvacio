@@ -101,7 +101,7 @@ public function modificar()
         //$dato['msg']="Error venta no actualizado";
     //}
     //$this->load->view('urlcompleto');
-    //$this->load->view('notificacion_venta');
+    //$this->load->view('notificacion_venta',$data);
 }
 
 }
