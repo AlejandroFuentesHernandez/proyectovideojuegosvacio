@@ -90,7 +90,7 @@
 			$this->load->view('notificacion_tienda',$dato);
 		}
 
-		public function mostrar()
+		public function visualizar()
 		{
 			$tienda=$this->tienda->mostrar();
 			$data['dtienda']=$tienda;

@@ -70,4 +70,4 @@ $route['view-usuario'] = 'datos_usuario/mostrar';
 $route['view-compra'] = 'compra/mostrar';
 $route['view-tienda'] = 'tienda/mostrar';
 $route['view-proveedores'] = 'proveedores/mostrar';
-$route['view-venta']='ventas/mostrar';
+$route['view-ventas']='ventas/visualizar';

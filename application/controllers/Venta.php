@@ -70,7 +70,7 @@ class Venta extends CI_Controller
                  echo 0; 
             }
     }
-public function mostrar()
+public function visualizar()
 {
     $venta=$this->venta->mostrar();
     $data['dventa']=$venta;
@@ -82,26 +82,26 @@ public function mostrar()
 }
 public function modificar()
 {
-    //$data['id']=$_POST['id_venta'];
-    //$data['numero_factura']=$_POST['numero_factura'];
-    //$data['estado_factura']=$_POST['estado_factura'];
-    //$data['fecha_venta']=$_POST['fecha_venta'];
-    //$data['tipo_pago']=$_POST['tipo_pago'];
-    //$data['total_factura']=$_POST['total_factura'];
-    //$data['cantidad_producto']=$_POST['cantidad_producto'];
-    //$data['observaciones_factura']=$_POST['observaciones_factura'];
-    //$data['id_cliente']=$_POST['id_cliente'];
+    $data['id']=$_POST['id_venta'];
+    $data['numero_factura']=$_POST['numero_factura'];
+    $data['estado_factura']=$_POST['estado_factura'];
+    $data['fecha_venta']=$_POST['fecha_venta'];
+    $data['tipo_pago']=$_POST['tipo_pago'];
+    $data['total_factura']=$_POST['total_factura'];
+    $data['cantidad_producto']=$_POST['cantidad_producto'];
+    $data['observaciones_factura']=$_POST['observaciones_factura'];
+    $data['id_cliente']=$_POST['id_cliente'];
 
-    //$resultado=$this->venta->update($data);
-    //if($resultado)
-    //{
-        //$dato['msg']="Exito venta actualizado";
-    //}else
-    //{
-        //$dato['msg']="Error venta no actualizado";
-    //}
-    //$this->load->view('urlcompleto');
-    //$this->load->view('notificacion_venta',$data);
+    $resultado=$this->venta->update($data);
+    if($resultado)
+    {
+        $dato['msg']="Exito venta actualizado";
+    }else
+    {
+        $dato['msg']="Error venta no actualizado";
+    }
+    $this->load->view('urlcompleto');
+    $this->load->view('notificacion_venta',$data);
 }
 
 }
