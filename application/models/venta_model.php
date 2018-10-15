@@ -51,4 +51,33 @@ public function mostrar()
     return $tienda->result();
 }
 
+public function update()
+{
+    $this->db->set('id_tienda',$data['id']);
+    $this->db->set('numero_factura',$data['numero_factura']);
+    $this->db->set('fecha_factura',$data['fecha_factura']);
+    $this->db->set('tipo_pago',$data['tipo_pago']);
+    $this->db->set('total_factura',$data['total_factura']);
+    $this->db->set('cantidad_producto',$data['cantidad_producto']);
+    $this->db->set('observaciones_factura',$data['observaciones_factura']);
+    $this->db->set('id_cliente',$data['id_cliente']);
+    $resultado=$this->venta->update($data);
+    if($resultado)
+    {
+        $dato['msg']="Exito tienda actualizado";
+    }else
+    {
+        $dato['msg']="Error venta no actualizada";
+    }
+    $this->load->view('urlcompleto');
+    $this->load->view('notificacion_venta',$dato);
+}
+
+public function getmostrar($id)
+{
+    $this->db->where('id_venta',$id);
+    $venta=$this->db->get('tab_venta');
+    return $venta->result_array();
+}
+
 }

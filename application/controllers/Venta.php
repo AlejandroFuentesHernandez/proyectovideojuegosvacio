@@ -20,6 +20,8 @@ class Venta extends CI_Controller
   {
     $this->load->view('Plantilla/navbar');
     $this->load->view('urlcompleto');
+    $data['dventa']=$this->venta->getmostrar($this->input->get('id'));
+    $this->load->view('editar_venta');
     $this->load->view('Plantilla/footer');
   }
 
@@ -77,6 +79,29 @@ public function mostrar()
     $this->load->view('Plantilla/navbar');
     $this->load->view('mostrar_venta',$data);
     $this->load->view('Plantilla/footer');
+}
+public function modificar()
+{
+    //$data['id']=$_POST['id_venta'];
+    //$data['numero_factura']=$_POST['numero_factura'];
+    //$data['estado_factura']=$_POST['estado_factura'];
+    //$data['fecha_venta']=$_POST['fecha_venta'];
+    //$data['tipo_pago']=$_POST['tipo_pago'];
+    //$data['total_factura']=$_POST['total_factura'];
+    //$data['cantidad_producto']=$_POST['cantidad_producto'];
+    //$data['observaciones_factura']=$_POST['observaciones_factura'];
+    //$data['id_cliente']=$_POST['id_cliente'];
+
+    //$resultado=$this->venta->update($data);
+    //if($resultado)
+    //{
+        //$dato['msg']="Exito venta actualizado";
+    //}else
+    //{
+        //$dato['msg']="Error venta no actualizado";
+    //}
+    //$this->load->view('urlcompleto');
+    //$this->load->view('notificacion_venta');
 }
 
 }
